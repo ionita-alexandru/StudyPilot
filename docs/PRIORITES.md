@@ -1,7 +1,9 @@
 # Organisation et priorités StudyPilot
 
-Cadrage révisé le 19 octobre 2026. Ce document est une **proposition à valider**,
-pas une annonce de fonctionnalités livrées. L’état précédent est décrit dans
+Cadrage révisé le 19 octobre 2026. La navigation a été **validée par l’utilisateur**,
+avec un assistant central et une interface interactive et légère. Les modalités
+Express et compléments restent des propositions, pas des fonctionnalités livrées.
+L’état précédent est décrit dans
 `PARCOURS_PEDAGOGIQUE_2026-10-18.md`.
 
 ## Demandes confirmées et constats
@@ -31,8 +33,8 @@ Constats dans le code, sans nouveau test visuel à cette étape :
 
 | Ordre | Travail | Résultat attendu |
 | --- | --- | --- |
-| 1 | Organisation et menu | Une navigation claire, accès progressif aux notions, mêmes fiches et progression partout. |
-| 2 | Assistant : espace et réponses | Chat agrandissable, contexte visible, réponses directes et verdicts cohérents. |
+| 1 | Organisation, menu et place du chatbot | Une navigation claire, un assistant central, accès progressif aux notions, mêmes fiches et progression partout. |
+| 2 | Assistant : espace et réponses | Chat agrandissable, contexte visible, réponses directes et verdicts cohérents ; à traiter avec la refonte de navigation. |
 | 3 | Choix du moteur IA | Comparaison mesurée de la qualité, de la vitesse et des limites selon le matériel réel. |
 | 4 | Guidage commun | Prochaine activité adaptée au niveau, aux prérequis, aux objectifs et aux réponses. |
 | 5 | Express | Programme compatible avec le temps disponible, priorités et limites visibles. |
@@ -44,7 +46,7 @@ données multi-document doit être prévu avant Express pour éviter de refaire 
 planificateur. Les contrôles de sources, couverture et calcul restent nécessaires
 à chaque étape. Les interactions utiles font partie du guidage dès sa construction.
 
-## Organisation proposée, à confirmer
+## Organisation validée
 
 Accueil **Mes cours**. Dans chaque cours :
 
@@ -58,6 +60,10 @@ Le catalogue des fiches reste disponible dans Apprendre : recherche, chapitres
 repliables et liste complète à la demande. L’entrée montre la prochaine action et
 un petit groupe de notions utiles. L’assistant commun reste accessible et agrandissable.
 Préserver les anciennes destinations utiles et le cours sélectionné pendant la migration.
+L’utilisateur confirme cette structure à condition de ne pas négliger le chatbot,
+l’interactivité et la légèreté de l’interface. Ces éléments appartiennent au premier
+lot de conception, pas uniquement aux finitions. L’objectif est de donner envie de
+revenir réviser grâce à des activités utiles et une progression compréhensible.
 
 ## Assistant
 
@@ -76,7 +82,7 @@ Sources officielles consultées le 19 octobre 2026 ; aucun essai comparatif réa
 
 | Piste | Intérêt à tester | Limite ou inconnue |
 | --- | --- | --- |
-| Ollama sur l’autre PC | Calcul local utilisable depuis ce PC | GPU, VRAM, RAM, système, réseau, qualité et latence inconnus. |
+| Ollama sur l’autre PC | Calcul local utilisable depuis ce PC, même sur un autre réseau | RTX 3060 Ti et 16 Go de RAM déclarés ; qualité et latence non mesurées. Adoption conditionnée à un gain réel. |
 | Gemini Flash gratuit | Alternative hébergée au Gemma actuel | Éligibilité et quotas actifs du compte à vérifier ; adaptation nécessaire. |
 | Groq gratuit | Autre candidat hébergé pour le chat | Limites par compte et modèle ; gain non mesuré dans StudyPilot. |
 
@@ -85,6 +91,41 @@ Architecture envisagée : ce PC héberge StudyPilot et interroge l’autre PC su
 réseau privé. Le serveur doit être allumé et joignable ; aucun port public n’est
 nécessaire. Un modèle local évite la facturation par appel mais utilise ressources
 et électricité. Un gros modèle n’est pas automatiquement meilleur ni assez rapide.
+
+### Matériel communiqué et décision provisoire
+
+Déclaration de l’utilisateur : Ryzen 5 3600 à 6 cœurs, 16 Go DDR4, RTX 3060 Ti,
+SSD Samsung 870 EVO 500GB et Samsung MZVLB512HBJQ-000L7. Le système et l’espace
+disponible ne sont pas connus ; aucune inspection de cette machine n’a été faite.
+La [fiche NVIDIA](https://www.nvidia.com/en-us/geforce/graphics-cards/30-series/rtx-3060-3060ti/)
+indique 8 Go de mémoire vidéo pour la RTX 3060 Ti. C’est une caractéristique du
+modèle, pas une mesure effectuée sur le PC.
+
+À titre d’ordre de grandeur, [Qwen3 8B Q4_K_M](https://ollama.com/library/qwen3:8b)
+pèse 5,2 Go et [Qwen3 14B Q4_K_M](https://ollama.com/library/qwen3:14b) 9,3 Go.
+Ce sont les tailles des modèles publiés, pas leur consommation totale :
+[le contexte ajoute des besoins mémoire](https://docs.ollama.com/context-length).
+Un modèle compact quantifié est donc une piste plausible pour ce GPU ; ces exemples
+ne désignent ni le meilleur modèle actuel ni un modèle validé pour StudyPilot.
+Un modèle qui dépasse la mémoire GPU peut nécessiter un partage avec le CPU/RAM,
+avec un risque de ralentissement à mesurer. Les SSD ne remplacent pas la mémoire GPU.
+
+L’utilisateur demande de pouvoir utiliser des réseaux différents et ne souhaite
+cette méthode que si elle apporte une IA plus capable, sans paiement et avec peu
+de restrictions. [Tailscale](https://tailscale.com/docs/how-to/quickstart) permet
+de relier les machines dans un réseau privé ; son
+[offre personnelle est gratuite](https://tailscale.com/pricing) pour l’usage
+personnel non commercial prévu par cette offre. Les deux machines doivent rester
+connectées et le serveur allumé. Une restriction d’accès à ces appareils sera
+nécessaire, sans exposition publique de l’API Ollama.
+
+Le local évite les quotas de requêtes d’un fournisseur pour un modèle exécuté sur
+le PC ; il reste limité par mémoire, vitesse, contexte et disponibilité du PC.
+Il ne donne pas accès gratuitement aux modèles propriétaires des API payantes.
+**Décision provisoire : ne pas déployer le serveur distant comme moteur principal.**
+Le gain de qualité demandé n’est pas démontré. Comparer d’abord les candidats
+hébergés gratuits ; conserver le local comme essai conditionnel si un candidat
+compatible peut améliorer les résultats. Ne pas demander d’achat matériel.
 
 Google propose notamment Gemini 3.8 Flash dans son offre gratuite selon la
 [page tarifaire consultée](https://ai.google.dev/gemini-api/docs/pricing).
@@ -143,8 +184,10 @@ proposition. L’effet sur l’envie de réviser devra être vérifié en usage.
 
 ## Informations et décisions en attente
 
-- Autre PC : GPU/VRAM, RAM, système et réseau entre les machines.
-- Navigation Apprendre / Mes documents / Ma progression à confirmer ou modifier.
+- Autre PC : système, mémoire GPU disponible et accès effectif restent inconnus.
+  Ces détails ne sont nécessaires que si l’essai local conditionnel est retenu.
+- Navigation Apprendre / Mes documents / Ma progression validée ; chatbot central,
+  interactivité et présentation légère confirmés comme contraintes prioritaires.
 - Express : diagnostic facultatif, budget total, durée ou heure butoir, objectif réaliste.
 - Compléments : PDF d’abord, rôle confirmé et ajout explicite au programme obligatoire.
 

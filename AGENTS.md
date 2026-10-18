@@ -30,7 +30,13 @@ et de mettre le dépôt à jour après chaque modification terminée.
   adapter les règles générales uniquement aux trois cours présents localement.
 - Priorités et critères de réussite : `docs/PRIORITES.md`.
 - Distinguer demandes confirmées, propositions à valider et inconnues. Le cadrage
-  du 19 octobre 2026 contient des choix à confirmer avant leur réalisation.
+  du 19 octobre 2026 contient des choix à confirmer avant leur réalisation. La
+  navigation Apprendre / Mes documents / Ma progression est validée ; préserver
+  la place centrale du chatbot et une interface légère et interactive dès le début.
+- L'IA sur le second PC est conditionnelle : l'utilisateur ne la veut que si elle
+  apporte un gain réel de capacité sans paiement et avec peu de restrictions,
+  y compris entre réseaux différents. Ne pas supposer qu'un modèle local est
+  meilleur ; comparer avant de proposer le déploiement ou un achat matériel.
 - Préférer les tests de comportements utiles. Aucun appel IA payant dans la suite
   courante ; réserver les évaluations réelles aux validations explicites et bornées.
 - Commandes : `python -X utf8 tests/run.py` et `node --test tests/ui.cjs`.
