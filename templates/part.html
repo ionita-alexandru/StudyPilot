@@ -1,0 +1,811 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{{ part.title }} · {{ course.title }} | StudyPilot</title>
+
+  <link rel="stylesheet" href="/static/study_chat.css">
+  <script src="/static/study_chat.js" defer></script>
+  <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='workspace.css') }}"
+  >
+
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [
+          ['\\(', '\\)'],
+          ['$', '$']
+        ],
+        displayMath: [
+          ['\\[', '\\]'],
+          ['$$', '$$']
+        ]
+      },
+      chtml: {
+        scale: 1,
+        fontURL: "/static/vendor/mathjax/output/chtml/fonts/woff-v2"
+      }
+    };
+  </script>
+
+  <script
+    id="MathJax-script"
+    async
+    src="{{ url_for('static', filename='vendor/mathjax/tex-chtml.js') }}">
+  </script>
+<script src="{{ url_for('static', filename='entrance.js') }}"></script>
+<script src="{{ url_for('static', filename='study_progress.js') }}"></script>
+</head>
+
+<body>
+
+<div class="sp-app">
+
+  <!-- =========================
+       SIDEBAR
+  ========================== -->
+
+  <aside class="sp-sidebar">
+
+    <a
+      class="sp-brand"
+      href="{{ url_for('index') }}"
+    >
+      <span class="sp-brand-logo"><img src="/static/logo.svg" width="36" height="36" alt=""></span>
+
+      <span class="sp-brand-text">
+        <strong>StudyPilot</strong>
+        <small>
+          Apprendre. Comprendre. Avancer.
+        </small>
+      </span>
+    </a>
+
+
+    <nav class="sp-main-nav">
+
+      <a
+        href="#chat"
+        class="sp-nav-item active"
+      >
+        <span class="sp-nav-icon">◌</span>
+        Discussion
+      </a>
+
+      <a
+         href="{{ url_for('revision_page', course_id=course.course_id) }}"
+         class="sp-nav-item"
+      >
+         <span class="sp-nav-icon">◉</span>
+         Révisions
+        </a>
+
+      <a
+        href="{{ url_for('upload_page') }}"
+        class="sp-nav-item"
+      >
+        <span class="sp-nav-icon">＋</span>
+        Ajouter un cours
+      </a>
+
+      <a
+        href="{{ url_for('index') }}"
+        class="sp-nav-item"
+      >
+        <span class="sp-nav-icon">▤</span>
+        Mes cours
+      </a>
+
+    </nav>
+
+
+    <section class="sp-sidebar-section">
+
+      <div class="sp-sidebar-title">
+        <span>Mes cours</span>
+
+        <a
+          href="{{ url_for('upload_page') }}"
+          aria-label="Ajouter un cours"
+        >
+          ＋
+        </a>
+      </div>
+
+
+      <div class="sp-course-list">
+
+        {% for item in courses %}
+
+          <a
+            href="{{ url_for(
+              'course',
+              course_id=item.course_id
+            ) }}"
+            class="
+              sp-course-link
+              {% if item.course_id == course.course_id %}
+                current
+              {% endif %}
+            "
+          >
+
+            <span class="sp-course-dot"></span>
+
+            <span>
+              {{ item.title }}
+            </span>
+
+          </a>
+
+        {% endfor %}
+
+      </div>
+
+    </section>
+
+
+    <section class="sp-sidebar-section sp-parts">
+
+      <div class="sp-sidebar-title">
+        Parties du cours
+      </div>
+
+
+      <div class="sp-part-list">
+
+        {% for item in plan.parts %}
+
+          <a
+            href="{{ url_for(
+              'part',
+              course_id=course.course_id,
+              part_number=item.number
+            ) }}"
+            class="
+              sp-part-link
+              {% if item.number|string == part.number|string %}
+                current
+              {% endif %}
+            "
+          >
+
+            <span class="sp-part-number">
+              {{ item.number }}
+            </span>
+
+            <span class="sp-part-name">
+              {{ item.title }}
+            </span>
+
+          </a>
+
+        {% endfor %}
+
+      </div>
+
+    </section>
+
+  </aside>
+
+
+
+  <!-- =========================
+       CHAT
+  ========================== -->
+
+  <main
+    id="chat"
+    class="sp-chat"
+    data-course-id="{{ course.course_id }}"
+    data-part-number="{{ part.number }}"
+    data-pdf-url="{{ pdf_url }}"
+  >
+
+    <header class="sp-chat-header">
+
+      <div>
+
+        <p class="sp-chat-kicker">
+
+          <a
+            href="{{ url_for(
+              'course',
+              course_id=course.course_id
+            ) }}"
+          >
+            ← Retour au cours
+          </a>
+
+          <span>·</span>
+
+          {{ course.title }}
+
+        </p>
+
+        <h1>
+          {{ part.title }}
+        </h1>
+
+      </div>
+
+
+      <div class="sp-chat-meta">
+
+        <span>
+          Partie {{ part.number }}/{{ plan.parts|length }}
+        </span>
+
+        <span>
+          Pages {{ part.page_start }}–{{ part.page_end }}
+        </span>
+
+      </div>
+
+    </header>
+
+
+
+    <section
+      id="sp-chat-messages"
+      class="sp-chat-messages"
+      role="log"
+      aria-live="polite"
+    >
+
+      <div class="sp-chat-intro">
+
+        <span class="sp-avatar">
+          SP
+        </span>
+
+        <div>
+
+          <strong>
+            StudyPilot
+          </strong>
+
+          <p>
+            Tu travailles actuellement
+            <b>{{ part.title }}</b>.
+            Pose-moi une question sur cette partie
+            ou sur l'ensemble du cours.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <div class="sp-composer-zone">
+
+      <form
+        id="sp-chat-form"
+        class="sp-chat-form"
+      >
+
+        <a
+          href="{{ url_for('upload_page') }}"
+          class="sp-add-document"
+          title="Ajouter un PDF"
+        >
+          ＋
+        </a>
+
+
+        <label
+          for="sp-chat-question"
+          class="sp-sr-only"
+        >
+          Question
+        </label>
+
+        <input
+          id="sp-chat-question"
+          type="text"
+          maxlength="1000"
+          placeholder="Demander à StudyPilot…"
+          required
+          autocomplete="off"
+        >
+
+
+        <button
+          id="sp-chat-submit"
+          class="sp-send"
+          type="submit"
+          aria-label="Envoyer"
+        >
+          ↑
+        </button>
+
+      </form>
+
+
+      <p
+        id="sp-chat-error"
+        class="sp-error"
+        role="alert">
+      </p>
+
+
+      <div class="sp-quick-prompts">
+
+        <button
+          type="button"
+          data-prompt="Explique-moi simplement cette partie."
+        >
+          Expliquer
+        </button>
+
+        <button
+          type="button"
+          data-prompt="Quelles sont les notions les plus importantes de cette partie ?"
+        >
+          Notions clés
+        </button>
+
+        <button
+          type="button"
+          data-prompt="À quoi sert cette partie dans le cours ?"
+        >
+          À quoi ça sert ?
+        </button>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+
+  <!-- =========================
+       PANNEAU CONTEXTUEL
+  ========================== -->
+
+  <aside class="sp-context">
+
+    <header class="sp-context-header">
+
+      <div>
+
+        <span>
+          Contexte du cours
+        </span>
+
+        <h2>
+          {{ part.title }}
+        </h2>
+
+      </div>
+
+
+      <a
+        class="sp-open-source"
+        href="{{ pdf_url }}#page={{ part.page_start }}"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Ouvrir le PDF"
+      >
+        ↗
+      </a>
+
+    </header>
+
+
+
+    <nav
+      class="sp-context-tabs"
+      role="tablist"
+    >
+
+      <button
+        type="button"
+        class="active"
+        data-panel="overview"
+        aria-selected="true"
+      >
+        Aperçu
+      </button>
+
+      <button
+        type="button"
+        data-panel="cards"
+        aria-selected="false"
+      >
+        Fiches
+
+        {% if cards %}
+          <span>
+            {{ cards|length }}
+          </span>
+        {% endif %}
+      </button>
+
+      <button
+        type="button"
+        data-panel="plan"
+        aria-selected="false"
+      >
+        Plan
+      </button>
+
+      <button
+        type="button"
+        data-panel="pdf"
+        aria-selected="false"
+      >
+        PDF
+      </button>
+
+    </nav>
+
+
+
+    <div class="sp-context-body">
+
+      {% set overview = (part.get('overview') or {}) | overview_view %}
+
+
+      <!-- APERÇU -->
+
+      <section
+        class="sp-context-view active"
+        data-view="overview"
+      >
+
+        {% if overview.get('status') == 'draft' %}
+
+          <article class="sp-context-card">
+
+            <span class="sp-context-eyebrow">
+              Vue d'ensemble
+            </span>
+
+            {% if overview.legacy %}
+            <details class="sp-overview-previous">
+              <summary>Consulter l’aperçu enregistré</summary>
+              {{ overview.summary_html | safe }}
+            </details>
+            {% else %}
+            <div class="sp-overview-lead">{{ overview.summary_html | safe }}</div>
+            {% endif %}
+
+          </article>
+
+          {% if overview.objectives %}
+          <article class="sp-context-card sp-overview-objectives">
+            <h3>À la fin, tu sauras…</h3>
+            <ul>{% for objective in overview.objectives %}<li>{{ objective | safe }}</li>{% endfor %}</ul>
+          </article>
+          {% endif %}
+
+          {% if overview.prerequisite_items %}
+          <article class="sp-context-card">
+            <details class="sp-overview-secondary">
+            <summary>Prérequis</summary>
+            <ul class="sp-overview-prerequisites">{% for item in overview.prerequisite_items %}<li>{{ item | safe }}</li>{% endfor %}</ul>
+            </details>
+          </article>
+          {% endif %}
+
+
+{% if overview.get('key_concepts') %}
+
+  {% set concepts = overview.concept_items %}
+
+  <article class="sp-context-card">
+
+    <h3>
+      Notions à maîtriser
+    </h3>
+
+    <ul class="sp-concepts">
+
+      {% for concept in concepts %}
+
+        <li
+          {% if loop.index > 6 %}
+            class="sp-concept-extra"
+            hidden
+          {% endif %}
+        >
+          {{ concept | safe }}
+        </li>
+
+      {% endfor %}
+
+    </ul>
+
+
+    {% if concepts|length > 6 %}
+
+      <button
+        type="button"
+        class="sp-concepts-toggle"
+        data-concepts-toggle
+        data-total="{{ concepts|length }}"
+      >
+        Voir les {{ concepts|length }} notions ↓
+      </button>
+
+    {% endif %}
+
+  </article>
+
+{% endif %}
+
+
+          {% if overview.get('why_important') and not overview.legacy %}
+
+            <article class="sp-context-card accent">
+
+              <details class="sp-overview-secondary">
+              <summary>À quoi ça sert ?</summary>
+              <div>{{ overview.why_html | safe }}</div>
+              </details>
+
+            </article>
+
+          {% endif %}
+
+
+        {% else %}
+
+          <article class="sp-context-card">
+
+            <p>
+              La vue d'ensemble de cette partie
+              n'est pas disponible.
+            </p>
+
+          </article>
+
+        {% endif %}
+
+      </section>
+
+
+
+      <!-- FICHES -->
+
+      <section
+        class="sp-context-view"
+        data-view="cards"
+        hidden
+      >
+
+        {% if unavailable_cards %}
+          <details class="sp-context-card sp-unavailable">
+            <summary>{{ unavailable_cards|length }} fiche(s) à compléter</summary>
+            <p>Ces fiches ne sont pas proposées en révision : leur contenu est insuffisant ou leur génération doit être reprise.</p>
+            <ul>{% for item in unavailable_cards %}<li><strong>{{ item.title }}</strong> — {{ item.reason }}</li>{% endfor %}</ul>
+          </details>
+        {% endif %}
+        {% if ignored_mentions %}
+          <details class="sp-context-card">
+            <summary>{{ ignored_mentions|length }} mention(s) sans fiche</summary>
+            <p>Ces termes sont cités sans développement suffisant dans le cours.</p>
+            <ul>
+              {% for mention in ignored_mentions %}
+                <li><strong>{{ mention.title }}</strong> — {{ mention.reason }}</li>
+              {% endfor %}
+            </ul>
+          </details>
+        {% endif %}
+        {% if cards %}
+
+          <div class="sp-card-list">
+
+            {% for card in cards %}
+
+              <details
+                class="sp-study-card"
+                {% if loop.first %}open{% endif %}
+              >
+
+                <summary>
+
+                  <span>
+                    {{ card.title_html|safe }}
+                  </span>
+
+                  <small>
+                    {{ card.concept_type|card_type_label }}
+                  </small>
+
+                </summary>
+
+
+                <div class="sp-study-card-body">
+
+                  {% if card.review_provenance == 'editorial_review' %}<p style="font-size:12px;color:#72708a">Fiche préparée et relue · source PDF vérifiée</p>{% endif %}
+                  {{ card.content_html|safe }}
+                  <div class="study-actions">
+                    {% for action, label in [('example', 'Voir un exemple'), ('explain', 'Approfondir'), ('exercise', 'M’entraîner')] %}
+                    <button type="button" data-study-action="{{ action }}" data-card-id="{{ card.card_id }}" data-card-title="{{ card.title }}">{{ label }}</button>
+                    {% endfor %}
+                  </div>
+
+                  {% if card.resources %}
+                  <details class="study-resources"><summary>Ressources liées à cette notion</summary>
+                    {% for resource in card.resources %}
+                    <details><summary>{{ resource.title }}</summary>{{ resource.html|safe }}</details>
+                    {% endfor %}
+                  </details>
+                  {% endif %}
+
+                  {% for illustration in card.illustrations|default([]) %}
+                    <figure class="sp-source-figure">
+                      <a href="{{ pdf_url }}#page={{ illustration.page }}" target="_blank" rel="noopener noreferrer">
+                      <img
+                        src="{{ url_for('card_illustration', course_id=course.course_id, card_id=card.card_id, index=loop.index0) }}"
+                        alt="Illustration du cours : {{ card.title }}"
+                        loading="lazy"
+                        style="display:block;max-width:100%;height:auto"
+                      >
+                      </a>
+                      <figcaption>Extrait original — page {{ illustration.page }}</figcaption>
+                    </figure>
+                  {% endfor %}
+
+                  <p class="sp-card-source">
+
+                    Source :
+
+                    {% for page in card.source_pages %}
+
+                      <a
+                        href="{{ pdf_url }}#page={{ page }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        p.{{ page }}
+                      </a>
+
+                      {% if not loop.last %}
+                        ,
+                      {% endif %}
+
+                    {% endfor %}
+
+                  </p>
+
+                </div>
+
+              </details>
+
+            {% endfor %}
+
+          </div>
+
+
+        {% else %}
+
+          <article class="sp-context-card">
+
+            <p>
+              Aucune fiche disponible pour cette partie.
+            </p>
+
+          </article>
+
+        {% endif %}
+
+      </section>
+
+
+
+      <!-- PLAN -->
+
+      <section
+        class="sp-context-view"
+        data-view="plan"
+        hidden
+      >
+
+        <div class="sp-plan-list">
+
+          {% for item in plan.parts %}
+
+            <a
+              href="{{ url_for(
+                'part',
+                course_id=course.course_id,
+                part_number=item.number
+              ) }}"
+              class="
+                sp-plan-row
+                {% if item.number|string == part.number|string %}
+                  current
+                {% endif %}
+              "
+            >
+
+              <span>
+                {{ item.number }}
+              </span>
+
+              <div>
+
+                <strong>
+                  {{ item.title }}
+                </strong>
+
+                <small>
+                  Pages
+                  {{ item.page_start }}–{{ item.page_end }}
+                </small>
+
+              </div>
+
+            </a>
+
+          {% endfor %}
+
+        </div>
+
+      </section>
+
+
+
+      <!-- PDF -->
+
+      <section
+        class="sp-context-view sp-pdf-view"
+        data-view="pdf"
+        hidden
+      >
+
+        <iframe
+          title="PDF du cours"
+          src="{{ pdf_url }}#page={{ part.page_start }}"
+          loading="lazy">
+        </iframe>
+
+
+        <a
+          class="sp-pdf-link"
+          href="{{ pdf_url }}#page={{ part.page_start }}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Ouvrir dans un nouvel onglet ↗
+        </a>
+
+      </section>
+
+    </div>
+
+  </aside>
+
+</div>
+
+
+<script
+  src="{{ url_for(
+    'static',
+    filename='workspace.js'
+  ) }}"
+  defer>
+</script>
+
+<script
+  src="{{ url_for(
+    'static',
+    filename='part_chat.js'
+  ) }}"
+  defer>
+</script>
+
+<script src="{{ url_for('static', filename='cards.js') }}" defer></script>
+</body>
+</html>

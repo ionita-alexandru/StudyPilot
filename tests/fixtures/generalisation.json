@@ -1,0 +1,27 @@
+{
+  "redactionnel": {
+    "title": "Organiser un fonds documentaire",
+    "topics": ["Classement", "Indexation"],
+    "pages": [{"title": "Classement et indexation", "paragraphs": ["Le classement organise les documents dans des groupes selon un critère choisi. Un classement chronologique suit la date des documents. Il convient de conserver le même critère à l'intérieur d'un groupe.", "L'indexation associe des mots-clés aux documents pour les retrouver. Elle ne déplace pas les documents. Un même document peut recevoir plusieurs mots-clés. Par exemple, un rapport peut être indexé avec les mots-clés transport et énergie.", "Le classement décrit une organisation ; l'indexation facilite la recherche par sujet. Ces deux opérations peuvent être utilisées ensemble."]}]
+  },
+  "programmation": {
+    "title": "Fonctions Python et valeur de retour",
+    "topics": ["Paramètre", "return"],
+    "pages": [{"title": "Définir une fonction", "paragraphs": ["Une fonction regroupe des instructions sous un nom. Un paramètre est un nom déclaré dans la définition de la fonction ; il reçoit l'argument fourni lors de l'appel.", "Le mot-clé return termine l'appel et fournit une valeur à l'appelant. Afficher une valeur avec print ne remplace pas son renvoi avec return.", "Exemple : la fonction doubler prend un nombre et renvoie son double. L'appel doubler(3) fournit la valeur 6."], "code": "def doubler(nombre):\n    return 2 * nombre\n\nresultat = doubler(3)"}]
+  },
+  "mathematique": {
+    "title": "Suite géométrique et raison",
+    "topics": ["Suite géométrique", "Terme général"],
+    "pages": [{"title": "Définition d'une suite géométrique", "paragraphs": ["Une suite géométrique est une suite de nombres dans laquelle on passe d'un terme au suivant en multipliant par une constante q appelée raison. On note u_0 son terme initial.", "Pour tout entier n supérieur ou égal à zéro, la relation de récurrence est :", "u_(n+1) = q * u_n", "Pour tout entier n supérieur ou égal à zéro, le terme général est :", "u_n = u_0 * q^n", "Exemple : si u_0 = 3 et q = 2, les premiers termes sont 3, 6, 12 et 24. La formule donne u_3 = 3 * 2^3 = 24. La raison reste la même à chaque passage."]}]
+  },
+  "illustre": {
+    "title": "Cycle de traitement d'un message",
+    "topics": ["Cycle de traitement", "Validation"],
+    "pages": [{"title": "Lire un cycle de traitement", "paragraphs": ["Le schéma décrit trois étapes successives du traitement d'un message : recevoir, vérifier puis transmettre. Les flèches indiquent l'ordre de ces étapes.", "La validation vérifie que le message contient un destinataire et un contenu non vide. Un message invalide revient à l'étape de réception pour être corrigé ; il n'est pas transmis.", "La transmission intervient seulement après une validation réussie. Le cycle distingue ainsi la réception d'un message de son envoi effectif."], "diagram": true}]
+  },
+  "scan": {
+    "title": "Observation et mesure",
+    "topics": ["Observation", "Mesure"],
+    "pages": [{"title": "Distinguer observation et mesure", "paragraphs": ["Une observation décrit un phénomène perçu. Par exemple, noter que l'eau change de couleur constitue une observation qualitative.", "Une mesure compare une grandeur à une unité. Elle donne un nombre accompagné de son unité. Une longueur de 12 centimètres est une mesure.", "Pour communiquer une mesure, il faut indiquer la grandeur mesurée et l'unité employée. Le nombre seul ne permet pas d'interpréter correctement le résultat."]}]
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "removed": [
+    {
+      "file": "test_foundation.py",
+      "test": "test_atomic_json_round_trip",
+      "reason": "Doublon du test Unicode, atomicité et nettoyage dans test_storage_atomic."
+    },
+    {
+      "file": "test_foundation.py",
+      "test": "test_concept_requires_real_source",
+      "reason": "Ne teste pas son intitulé : construit un objet valide sans tester un rejet. Les preuves absentes et inventées sont testées dans test_concept_inventory et test_source_quality."
+    },
+    {
+      "file": "test_cards.py",
+      "test": "test_card_section_schema_has_only_display_fields",
+      "reason": "Fige les champs internes ; aucun comportement utilisateur. La validation et le rendu des sections sont déjà testés."
+    },
+    {
+      "file": "test_course_repository.py",
+      "test": "test_paths_are_grouped_by_course_id",
+      "reason": "Noms internes déjà exercés par les quatre écritures/lectures et le test de traversée de chemin."
+    },
+    {
+      "file": "test_course_planner.py",
+      "test": "test_overviews_are_separate_and_validated",
+      "reason": "Remplacé par test_generation_contracts : contrat, ancien cache, réponse rejetée puis réparée, reprise sans nouvel appel."
+    },
+    {
+      "file": "test_card_presentation.py",
+      "test": "test_multiline_formula_preserved",
+      "reason": "Cas regroupé dans le test de protection mathématique."
+    },
+    {
+      "file": "test_card_presentation.py",
+      "test": "test_math_inside_inline_code_is_literal",
+      "reason": "Cas regroupé dans le test de protection du code."
+    },
+    {
+      "file": "test_contextual_boundaries.py",
+      "test": "test_no_automatic_adoption",
+      "reason": "Doublon coûteux : les assertions de non-adoption sont intégrées au test qui calcule déjà les mêmes frontières CSS."
+    },
+    {
+      "file": "test_pipeline_recovery.py",
+      "test": "test_order_and_same_model",
+      "reason": "Ancienne orchestration supprimée. Le parcours actif est vérifié par test_study_guide : publication, audit, budget et reprise."
+    },
+    {
+      "file": "test_pipeline_recovery.py",
+      "test": "test_failed_inventory_does_not_generate_cards",
+      "reason": "Ancienne orchestration supprimée. Le parcours actif est vérifié par test_study_guide : publication, audit, budget et reprise."
+    },
+    {
+      "file": "test_coverage_references.py",
+      "test": "test_inventory_error_message_is_in_process_result",
+      "reason": "Ancienne orchestration supprimée. Le parcours actif est vérifié par test_study_guide : publication, audit, budget et reprise."
+    }
+  ],
+  "renamed": {
+    "test_complete_review159.py": "test_editorial_collections.py",
+    "test_real_chat156.py": "test_chat_api.py",
+    "test_full_runner156.py": "test_batch_runner.py",
+    "test_written_visual157.py": "test_visual_transcription.py",
+    "test_generator_resume164.py": "test_generation_resume.py",
+    "test_v15_2_regressions.py": "test_source_assessment.py",
+    "test_v15_recorded_regressions.py": "test_recorded_source_regressions.py",
+    "test_overview.py": "test_generation_contracts.py"
+  }
+}

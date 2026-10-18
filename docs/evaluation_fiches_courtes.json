@@ -1,0 +1,382 @@
+[
+  {
+    "course": "illustre",
+    "outcome": {
+      "status": "ready",
+      "incomplete": 0,
+      "stage": "study_guide",
+      "cards": {
+        "cards_generated": 2
+      },
+      "calls": 3,
+      "network_requests": 8,
+      "reserved_tokens": 35803
+    },
+    "seconds": 47.0,
+    "entries": [
+      {
+        "key": "cycle-traitement-message",
+        "title": "Cycle de traitement d'un message",
+        "role": "core",
+        "kind": "concept",
+        "objective": "Comprendre l'enchaînement logique entre réception, validation et transmission.",
+        "body": "Le traitement d'un message suit trois étapes successives : la réception, la vérification et la transmission. La transmission n'est possible qu'après une validation réussie. Si le message est jugé invalide lors de la vérification, le cycle revient à l'étape de réception pour correction, empêchant ainsi l'envoi d'un message non conforme.",
+        "source_ids": [
+          "p1-0"
+        ],
+        "targets": [],
+        "aliases": [
+          "flux de traitement"
+        ],
+        "id": "study-1f3a3fb9294e3fbe9d7c",
+        "part_id": "part-7e3c13a11522b9d3"
+      },
+      {
+        "key": "criteres-validation-message",
+        "title": "Critères de validation d'un message",
+        "role": "core",
+        "kind": "property",
+        "objective": "Identifier les conditions nécessaires pour qu'un message soit transmis.",
+        "body": "Pour être validé et passer à l'étape de transmission, un message doit impérativement remplir deux conditions : posséder un destinataire et contenir un contenu non vide. Le non-respect de l'un de ces critères entraîne un retour à l'étape de réception.",
+        "source_ids": [
+          "p1-0"
+        ],
+        "targets": [],
+        "aliases": [
+          "conditions de validité"
+        ],
+        "id": "study-f8d20770f4601bfd9235",
+        "part_id": "part-7e3c13a11522b9d3"
+      },
+      {
+        "key": "fig-1-cycle-valide",
+        "title": "Ordre du traitement (message valide)",
+        "role": "example",
+        "kind": "concept",
+        "objective": "Visualiser le cheminement nominal d'un message conforme.",
+        "body": "Schéma linéaire : Recevoir → Vérifier → Transmettre.",
+        "source_ids": [
+          "p1-0"
+        ],
+        "targets": [
+          "study-1f3a3fb9294e3fbe9d7c"
+        ],
+        "aliases": [],
+        "id": "study-af6269e74c34c25ad41f",
+        "part_id": "part-7e3c13a11522b9d3"
+      }
+    ],
+    "parts": [
+      {
+        "part_id": "part-7e3c13a11522b9d3",
+        "status": "complete",
+        "errors": []
+      }
+    ]
+  },
+  {
+    "course": "mathematique",
+    "outcome": {
+      "status": "ready",
+      "incomplete": 0,
+      "stage": "study_guide",
+      "cards": {
+        "cards_generated": 1
+      },
+      "calls": 2,
+      "network_requests": 4,
+      "reserved_tokens": 14363
+    },
+    "seconds": 18.0,
+    "entries": [
+      {
+        "key": "suite_geometrique",
+        "title": "Suite géométrique",
+        "role": "core",
+        "kind": "concept",
+        "objective": "Définir une suite géométrique et ses deux formes de calcul.",
+        "body": "Une suite géométrique est une suite de nombres où chaque terme s'obtient en multipliant le précédent par une constante \\( q \\), appelée raison. \n\nLa relation de récurrence est : \n\\[ u_{n+1} = q \\times u_n \\] \n\nLe terme général, permettant de calculer n'importe quel terme à partir du premier terme \\( u_0 \\), est : \n\\[ u_n = u_0 \\times q^n \\] \n\nCette formule est valable pour tout entier \\( n \\geq 0 \\).",
+        "source_ids": [
+          "p1-0"
+        ],
+        "targets": [],
+        "aliases": [
+          "suite géométrique"
+        ],
+        "id": "study-374350a823a0378fadf6",
+        "part_id": "part-650c515c3419bb61"
+      },
+      {
+        "key": "ex_suite_geometrique_simple",
+        "title": "Exemple de suite géométrique",
+        "role": "example",
+        "kind": "concept",
+        "objective": "Illustrer l'application de la formule du terme général.",
+        "body": "Soit une suite avec \\( u_0 = 3 \\) et \\( q = 2 \\). Les premiers termes sont 3, 6, 12, 24. \nEn utilisant le terme général pour \\( n = 3 \\) : \\( u_3 = 3 \\times 2^3 = 3 \\times 8 = 24 \\).",
+        "source_ids": [
+          "p1-0"
+        ],
+        "targets": [
+          "study-374350a823a0378fadf6"
+        ],
+        "aliases": [],
+        "id": "study-a49b0e586020ada15896",
+        "part_id": "part-650c515c3419bb61"
+      }
+    ],
+    "parts": [
+      {
+        "part_id": "part-650c515c3419bb61",
+        "status": "complete",
+        "errors": []
+      }
+    ]
+  },
+  {
+    "course": "scan",
+    "outcome": {
+      "status": "ready",
+      "incomplete": 0,
+      "stage": "study_guide",
+      "cards": {
+        "cards_generated": 1
+      },
+      "calls": 2,
+      "network_requests": 5,
+      "reserved_tokens": 21061
+    },
+    "seconds": 20.1,
+    "entries": [
+      {
+        "key": "obs_vs_mes",
+        "title": "Observation vs Mesure",
+        "role": "core",
+        "kind": "concept",
+        "objective": "Distinguer une description qualitative d'une quantification avec unité.",
+        "body": "L'observation décrit un phénomène perçu sans valeur numérique, comme un changement de couleur (qualitatif). La mesure compare une grandeur à une unité pour produire un résultat composé d'un nombre et d'une unité (quantitatif). Pour être exploitable, une mesure doit toujours préciser la grandeur concernée et l'unité utilisée, car le nombre seul est insuffisant pour l'interprétation.",
+        "source_ids": [
+          "p1-0"
+        ],
+        "targets": [],
+        "aliases": [
+          "différence observation mesure"
+        ],
+        "id": "study-1ad1efdbeb23c3dee625",
+        "part_id": "part-3816a1db22154bf5"
+      },
+      {
+        "key": "obs_vs_mes_ex",
+        "title": "Exemples d'observation et de mesure",
+        "role": "example",
+        "kind": "concept",
+        "objective": "Illustrer la distinction par des cas concrets.",
+        "body": "Observation : noter que l'eau change de couleur. Mesure : une longueur de 12 centimètres.",
+        "source_ids": [
+          "p1-0"
+        ],
+        "targets": [
+          "study-1ad1efdbeb23c3dee625"
+        ],
+        "aliases": [],
+        "id": "study-a47e57e64efb2ad1d218",
+        "part_id": "part-3816a1db22154bf5"
+      }
+    ],
+    "parts": [
+      {
+        "part_id": "part-3816a1db22154bf5",
+        "status": "complete",
+        "errors": []
+      }
+    ]
+  },
+  {
+    "course": "programmation",
+    "outcome": {
+      "status": "ready",
+      "incomplete": 0,
+      "stage": "study_guide",
+      "cards": {
+        "cards_generated": 2
+      },
+      "calls": 2,
+      "network_requests": 4,
+      "reserved_tokens": 14333
+    },
+    "seconds": 27.2,
+    "entries": [
+      {
+        "key": "def_function",
+        "title": "Définition d'une fonction",
+        "role": "core",
+        "kind": "concept",
+        "objective": "Comprendre la structure et le rôle d'une fonction.",
+        "body": "Une fonction regroupe un ensemble d'instructions sous un nom unique pour les réutiliser. Elle utilise des paramètres, qui sont des noms déclarés dans sa définition pour recevoir les arguments transmis lors de l'appel. Pour transmettre un résultat à l'appelant, on utilise le mot-clé `return`, ce qui interrompt l'exécution de la fonction.",
+        "source_ids": [
+          "p1-0"
+        ],
+        "targets": [],
+        "aliases": [
+          "fonction"
+        ],
+        "id": "study-6de227ed0f738d21e8cb",
+        "part_id": "part-de218e467e7cd14d"
+      },
+      {
+        "key": "return_vs_print",
+        "title": "Différence entre return et print",
+        "role": "core",
+        "kind": "concept",
+        "objective": "Distinguer le renvoi de valeur de l'affichage console.",
+        "body": "Le mot-clé `return` termine l'exécution de la fonction et fournit une valeur utilisable par le reste du programme. À l'inverse, `print` affiche uniquement une information sur la console pour l'utilisateur, mais ne renvoie aucune donnée exploitable par l'appelant pour des calculs ultérieurs.",
+        "source_ids": [
+          "p1-0"
+        ],
+        "targets": [],
+        "aliases": [
+          "retour vs affichage"
+        ],
+        "id": "study-f3c31da5a0505d4371b5",
+        "part_id": "part-de218e467e7cd14d"
+      },
+      {
+        "key": "ex_doubler",
+        "title": "Exemple de fonction de multiplication",
+        "role": "example",
+        "kind": "concept",
+        "objective": "Illustrer la syntaxe d'une fonction simple.",
+        "body": "```python\ndef doubler(nombre):\n    return 2 * nombre\n\nresultat = doubler(3)\n```\nL'appel `doubler(3)` renvoie la valeur 6.",
+        "source_ids": [
+          "p1-0"
+        ],
+        "targets": [
+          "study-6de227ed0f738d21e8cb",
+          "study-f3c31da5a0505d4371b5"
+        ],
+        "aliases": [],
+        "id": "study-c12e4b9ec5942b2f9680",
+        "part_id": "part-de218e467e7cd14d"
+      }
+    ],
+    "parts": [
+      {
+        "part_id": "part-de218e467e7cd14d",
+        "status": "complete",
+        "errors": []
+      }
+    ],
+    "previous_attempt": {
+      "outcome": {
+        "status": "error",
+        "error": "GemmaTransientError",
+        "message": "Gemma : HTTP 500 (INTERNAL) lors de generateContent. Erreur serveur persistante après 3 tentatives. Diagnostic local : data/_ai/gemma_failures.json."
+      },
+      "parts": [
+        {
+          "part_id": "part-de218e467e7cd14d",
+          "status": "partial",
+          "errors": [
+            "Traitement à reprendre."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "course": "redactionnel",
+    "outcome": {
+      "status": "ready",
+      "incomplete": 0,
+      "stage": "study_guide",
+      "cards": {
+        "cards_generated": 2
+      },
+      "calls": 4,
+      "network_requests": 9,
+      "reserved_tokens": 37324
+    },
+    "seconds": 60.0,
+    "entries": [
+      {
+        "key": "classement_documents",
+        "title": "Classement de documents",
+        "role": "core",
+        "kind": "concept",
+        "objective": "Comprendre le principe et la règle du classement documentaire",
+        "body": "Le classement organise les documents en groupes selon un critère choisi. Par exemple, un classement chronologique suit la date des documents. Pour garantir la cohérence de l'organisation, il faut conserver le même critère de tri à l'intérieur d'un même groupe.",
+        "source_ids": [
+          "p1-0"
+        ],
+        "targets": [],
+        "aliases": [
+          "organisation documentaire"
+        ],
+        "id": "study-bd9d7899f2c3328dd916",
+        "part_id": "part-a19ab31c4e5770a1"
+      },
+      {
+        "key": "indexation_documents",
+        "title": "Indexation de documents",
+        "role": "core",
+        "kind": "concept",
+        "objective": "Définir l'indexation et son fonctionnement",
+        "body": "L'indexation consiste à associer des mots-clés aux documents pour faciliter la recherche par sujet. Cette opération ne déplace pas les documents. Un même document peut recevoir plusieurs mots-clés pour couvrir différentes thématiques.",
+        "source_ids": [
+          "p1-0"
+        ],
+        "targets": [],
+        "aliases": [
+          "mots-clés"
+        ],
+        "id": "study-2ddf71df418379c2d7fb",
+        "part_id": "part-a19ab31c4e5770a1"
+      },
+      {
+        "key": "ex_indexation_rapport",
+        "title": "Exemple d'indexation multiple",
+        "role": "example",
+        "kind": "concept",
+        "objective": "Illustrer l'application de plusieurs mots-clés",
+        "body": "Un rapport peut être indexé avec les mots-clés transport et énergie.",
+        "source_ids": [
+          "p1-0"
+        ],
+        "targets": [
+          "study-2ddf71df418379c2d7fb"
+        ],
+        "aliases": [],
+        "id": "study-db1f042491b007488e7b",
+        "part_id": "part-a19ab31c4e5770a1"
+      }
+    ],
+    "parts": [
+      {
+        "part_id": "part-a19ab31c4e5770a1",
+        "status": "complete",
+        "errors": []
+      }
+    ],
+    "previous_attempt": {
+      "outcome": {
+        "status": "partial",
+        "incomplete": 1,
+        "stage": "study_guide",
+        "cards": {
+          "cards_generated": 0
+        },
+        "calls": 4,
+        "network_requests": 8,
+        "reserved_tokens": 28899
+      },
+      "parts": [
+        {
+          "part_id": "part-a19ab31c4e5770a1",
+          "status": "partial",
+          "errors": [
+            "Lot non publié après une correction : classement_vs_indexation: Redondance : cette entrée répète les informations essentielles déjà contenues dans les deux premiers concepts (définitions et distinction). Conformément aux règles, une seule comparaison suffit si les définitions sont brèves."
+          ]
+        }
+      ]
+    }
+  }
+]

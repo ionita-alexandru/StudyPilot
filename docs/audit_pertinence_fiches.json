@@ -1,0 +1,1500 @@
+{
+  "status": "proposition_non_appliquee",
+  "method": "Lecture manuelle des 116 fiches éditoriales, de leurs sections et des liens sources. Audit de pertinence et d’organisation ; pas une nouvelle certification mathématique ni une relecture des 60 pages PDF. Aucun appel IA externe. Les décisions ne doivent pas être codées en dur dans le générateur.",
+  "courses": [
+    {
+      "course_id": "chapitre-4-reduction-endomorphismes-ing2-2024-2025-bc3e005bd4",
+      "family": "algebre",
+      "current_cards": 36,
+      "proposed_core_cards": 21,
+      "decisions": {
+        "fiche_courte": 21,
+        "fusion": 3,
+        "approfondissement": 2,
+        "exemple": 8,
+        "entrainement": 2
+      },
+      "cards": [
+        {
+          "card_id": "reviewed-algebre-1",
+          "title": "Valeur propre et vecteur propre",
+          "source_pages": [
+            3,
+            4,
+            8
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Valeurs propres, vecteurs propres et spectre",
+          "reason": "Objectif autonome identifiable : Valeur propre et vecteur propre. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-algebre-2",
+          "title": "Trouver les valeurs propres",
+          "source_pages": [
+            4
+          ],
+          "decision": "fusion",
+          "target_card_ids": [
+            "reviewed-algebre-10"
+          ],
+          "proposed_title": null,
+          "reason": "Même objectif de calcul : relier les racines du polynôme caractéristique aux valeurs propres."
+        },
+        {
+          "card_id": "reviewed-algebre-3",
+          "title": "Multiplicité algébrique",
+          "source_pages": [
+            6
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Multiplicité algébrique",
+          "reason": "Objectif autonome identifiable : Multiplicité algébrique. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-algebre-4",
+          "title": "Espace propre",
+          "source_pages": [
+            8
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Espace propre",
+          "reason": "Objectif autonome identifiable : Espace propre. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-algebre-5",
+          "title": "Multiplicité géométrique",
+          "source_pages": [
+            9
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Multiplicité géométrique",
+          "reason": "Objectif autonome identifiable : Multiplicité géométrique. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-algebre-6",
+          "title": "Critères de diagonalisabilité",
+          "source_pages": [
+            10
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Critères de diagonalisabilité",
+          "reason": "Objectif autonome identifiable : Critères de diagonalisabilité. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-algebre-7",
+          "title": "Théorème de Cayley-Hamilton",
+          "source_pages": [
+            7
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Théorème de Cayley-Hamilton",
+          "reason": "Objectif autonome identifiable : Théorème de Cayley-Hamilton. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-algebre-8",
+          "title": "Protocole de diagonalisation",
+          "source_pages": [
+            10,
+            12,
+            13
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Protocole de diagonalisation",
+          "reason": "Objectif autonome identifiable : Protocole de diagonalisation. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-algebre-9",
+          "title": "Spectre d’une matrice et d’un endomorphisme",
+          "source_pages": [
+            3,
+            5
+          ],
+          "decision": "fusion",
+          "target_card_ids": [
+            "reviewed-algebre-1"
+          ],
+          "proposed_title": null,
+          "reason": "Le spectre complète le vocabulaire des valeurs propres ; conserver aussi le lien avec la représentation matricielle."
+        },
+        {
+          "card_id": "reviewed-algebre-10",
+          "title": "Polynôme caractéristique",
+          "source_pages": [
+            5
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Polynôme caractéristique : trouver les valeurs propres",
+          "reason": "Objectif autonome identifiable : Polynôme caractéristique. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-algebre-11",
+          "title": "Trace et déterminant dans le polynôme caractéristique",
+          "source_pages": [
+            5
+          ],
+          "decision": "approfondissement",
+          "target_card_ids": [
+            "reviewed-algebre-10"
+          ],
+          "proposed_title": null,
+          "reason": "Lecture des coefficients et rappel de trace à rattacher au polynôme, avec sa convention de signe."
+        },
+        {
+          "card_id": "reviewed-algebre-12",
+          "title": "Valeur propre nulle : exemple du cours",
+          "source_pages": [
+            4
+          ],
+          "decision": "exemple",
+          "target_card_ids": [
+            "reviewed-algebre-1"
+          ],
+          "proposed_title": null,
+          "reason": "Illustre que la valeur propre peut être nulle ; cette condition reste visible dans la fiche essentielle."
+        },
+        {
+          "card_id": "reviewed-algebre-13",
+          "title": "Évaluer un polynôme en une matrice",
+          "source_pages": [
+            6,
+            7
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Évaluer un polynôme en une matrice",
+          "reason": "Objectif autonome identifiable : Évaluer un polynôme en une matrice. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-algebre-14",
+          "title": "Réduire des puissances avec Cayley-Hamilton",
+          "source_pages": [
+            7
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Réduire des puissances avec Cayley-Hamilton",
+          "reason": "Objectif autonome identifiable : Réduire des puissances avec Cayley-Hamilton. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-algebre-15",
+          "title": "Calculer un espace propre : exemple C",
+          "source_pages": [
+            9
+          ],
+          "decision": "exemple",
+          "target_card_ids": [
+            "reviewed-algebre-4"
+          ],
+          "proposed_title": null,
+          "reason": "Application chiffrée du calcul du noyau, à ouvrir à la demande."
+        },
+        {
+          "card_id": "reviewed-algebre-16",
+          "title": "Polynôme scindé et corps de travail",
+          "source_pages": [
+            10,
+            12,
+            15,
+            16
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Polynôme scindé et corps de travail",
+          "reason": "Objectif autonome identifiable : Polynôme scindé et corps de travail. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-algebre-18",
+          "title": "Diagonalisation de la matrice C",
+          "source_pages": [
+            12,
+            13
+          ],
+          "decision": "exemple",
+          "target_card_ids": [
+            "reviewed-algebre-8"
+          ],
+          "proposed_title": null,
+          "reason": "Résolution particulière de la méthode de diagonalisation, avec matrices volumineuses."
+        },
+        {
+          "card_id": "reviewed-algebre-19",
+          "title": "Exemple d’une matrice non diagonalisable",
+          "source_pages": [
+            14
+          ],
+          "decision": "exemple",
+          "target_card_ids": [
+            "reviewed-algebre-6"
+          ],
+          "proposed_title": null,
+          "reason": "Contre-exemple utile au critère de diagonalisabilité ; le critère reste autonome."
+        },
+        {
+          "card_id": "reviewed-algebre-20",
+          "title": "Trigonalisation",
+          "source_pages": [
+            15
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Trigonalisation",
+          "reason": "Objectif autonome identifiable : Trigonalisation. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-algebre-21",
+          "title": "Matrice nilpotente et indice de nilpotence",
+          "source_pages": [
+            15
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Matrice nilpotente et indice de nilpotence",
+          "reason": "Objectif autonome identifiable : Matrice nilpotente et indice de nilpotence. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-algebre-22",
+          "title": "Matrices de Jordan",
+          "source_pages": [
+            15
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Matrices de Jordan",
+          "reason": "Objectif autonome identifiable : Matrices de Jordan. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-algebre-23",
+          "title": "Protocole de trigonalisation",
+          "source_pages": [
+            16
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Protocole de trigonalisation",
+          "reason": "Objectif autonome identifiable : Protocole de trigonalisation. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-algebre-24",
+          "title": "Chaîne de Jordan : exemple avec deux valeurs propres",
+          "source_pages": [
+            16,
+            17,
+            18
+          ],
+          "decision": "exemple",
+          "target_card_ids": [
+            "reviewed-algebre-23"
+          ],
+          "proposed_title": null,
+          "reason": "Construction détaillée particulière, avec correction du support à conserver dans la ressource."
+        },
+        {
+          "card_id": "reviewed-algebre-25",
+          "title": "Deux méthodes pour compléter une chaîne de Jordan",
+          "source_pages": [
+            17,
+            18
+          ],
+          "decision": "approfondissement",
+          "target_card_ids": [
+            "reviewed-algebre-23"
+          ],
+          "proposed_title": null,
+          "reason": "Deux façons de construire la même chaîne ; préserver les conditions et le contrôle de base."
+        },
+        {
+          "card_id": "reviewed-algebre-26",
+          "title": "Chaîne de Jordan de longueur trois",
+          "source_pages": [
+            19,
+            20
+          ],
+          "decision": "exemple",
+          "target_card_ids": [
+            "reviewed-algebre-23"
+          ],
+          "proposed_title": null,
+          "reason": "Application de longueur trois à conserver dans les exemples de la méthode."
+        },
+        {
+          "card_id": "reviewed-algebre-27",
+          "title": "Puissances de matrices semblables",
+          "source_pages": [
+            21
+          ],
+          "decision": "fusion",
+          "target_card_ids": [
+            "reviewed-algebre-28"
+          ],
+          "proposed_title": null,
+          "reason": "Principe de changement de base partagé ; le relier également au calcul par Jordan."
+        },
+        {
+          "card_id": "reviewed-algebre-28",
+          "title": "Puissances d’une matrice diagonalisable",
+          "source_pages": [
+            21
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Calculer les puissances par changement de base",
+          "reason": "Objectif autonome identifiable : Puissances d’une matrice diagonalisable. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-algebre-29",
+          "title": "Puissances d’une matrice de Jordan",
+          "source_pages": [
+            21,
+            22
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Puissances d’une matrice de Jordan",
+          "reason": "Objectif autonome identifiable : Puissances d’une matrice de Jordan. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-algebre-30",
+          "title": "Exponentielle d’une matrice et commutation",
+          "source_pages": [
+            21
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Exponentielle d’une matrice et commutation",
+          "reason": "Objectif autonome identifiable : Exponentielle d’une matrice et commutation. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-algebre-31",
+          "title": "Exponentielle par diagonalisation",
+          "source_pages": [
+            22
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Exponentielle par diagonalisation",
+          "reason": "Objectif autonome identifiable : Exponentielle par diagonalisation. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-algebre-32",
+          "title": "Exponentielle par forme de Jordan",
+          "source_pages": [
+            22
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Exponentielle par forme de Jordan",
+          "reason": "Objectif autonome identifiable : Exponentielle par forme de Jordan. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-algebre-33",
+          "title": "Puissances : exemple du bloc de Jordan",
+          "source_pages": [
+            22,
+            23
+          ],
+          "decision": "exemple",
+          "target_card_ids": [
+            "reviewed-algebre-29"
+          ],
+          "proposed_title": null,
+          "reason": "Calcul développé du cas nilpotent de degré deux ; trop volumineux pour la consultation initiale."
+        },
+        {
+          "card_id": "reviewed-algebre-34",
+          "title": "Exponentielle : exemple du bloc de Jordan",
+          "source_pages": [
+            23
+          ],
+          "decision": "exemple",
+          "target_card_ids": [
+            "reviewed-algebre-32"
+          ],
+          "proposed_title": null,
+          "reason": "Application numérique du calcul de l’exponentielle par Jordan."
+        },
+        {
+          "card_id": "reviewed-algebre-35",
+          "title": "Suites couplées et puissances de matrices",
+          "source_pages": [
+            23
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Suites couplées et puissances de matrices",
+          "reason": "Objectif autonome identifiable : Suites couplées et puissances de matrices. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-algebre-36",
+          "title": "Exercices du cours : valeurs propres et diagonalisation",
+          "source_pages": [
+            6,
+            11,
+            14
+          ],
+          "decision": "entrainement",
+          "target_card_ids": [
+            "reviewed-algebre-8"
+          ],
+          "proposed_title": null,
+          "reason": "Trois énoncés sans corrigé source : exercices à proposer individuellement, pas une notion à mémoriser."
+        },
+        {
+          "card_id": "reviewed-algebre-37",
+          "title": "Exercice du cours : réduction puis suites",
+          "source_pages": [
+            20,
+            23
+          ],
+          "decision": "entrainement",
+          "target_card_ids": [
+            "reviewed-algebre-23",
+            "reviewed-algebre-35"
+          ],
+          "proposed_title": null,
+          "reason": "Énoncé combinant réduction et suites : conserver les deux liens et signaler l’absence de corrigé source."
+        }
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "family": "css",
+      "current_cards": 59,
+      "proposed_core_cards": 39,
+      "decisions": {
+        "fiche_courte": 39,
+        "fusion": 11,
+        "orientation": 1,
+        "approfondissement": 2,
+        "reference": 1,
+        "exemple": 5
+      },
+      "cards": [
+        {
+          "card_id": "reviewed-css-1",
+          "title": "Styles intégrés",
+          "source_pages": [
+            2
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Intégrer CSS dans une page",
+          "reason": "Objectif autonome identifiable : Styles intégrés. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-css-2",
+          "title": "Styles en ligne",
+          "source_pages": [
+            2
+          ],
+          "decision": "fusion",
+          "target_card_ids": [
+            "reviewed-css-1"
+          ],
+          "proposed_title": null,
+          "reason": "Comparer les trois modes d’intégration dans une fiche courte ; exemples HTML complets à la demande."
+        },
+        {
+          "card_id": "reviewed-css-3",
+          "title": "Feuille de style externe",
+          "source_pages": [
+            3,
+            7
+          ],
+          "decision": "fusion",
+          "target_card_ids": [
+            "reviewed-css-1"
+          ],
+          "proposed_title": null,
+          "reason": "Même choix d’intégration ; conserver le rôle du fichier externe et sa syntaxe minimale."
+        },
+        {
+          "card_id": "reviewed-css-4",
+          "title": "Sélecteur de classe",
+          "source_pages": [
+            5,
+            6
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Sélecteurs de classe et d’identifiant",
+          "reason": "Objectif autonome identifiable : Sélecteur de classe. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-css-5",
+          "title": "Sélecteur d’identifiant",
+          "source_pages": [
+            5,
+            6
+          ],
+          "decision": "fusion",
+          "target_card_ids": [
+            "reviewed-css-4"
+          ],
+          "proposed_title": null,
+          "reason": "Comparer les sélecteurs de classe et d’identifiant en conservant leur différence de réutilisation."
+        },
+        {
+          "card_id": "reviewed-css-6",
+          "title": "Déclarer une couleur",
+          "source_pages": [
+            3
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Déclarer une couleur",
+          "reason": "Objectif autonome identifiable : Déclarer une couleur. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-css-7",
+          "title": "Élément HTML <div>",
+          "source_pages": [
+            6
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Conteneurs HTML : div et span",
+          "reason": "Objectif autonome identifiable : Élément HTML <div>. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-css-8",
+          "title": "Élément HTML <span>",
+          "source_pages": [
+            6
+          ],
+          "decision": "fusion",
+          "target_card_ids": [
+            "reviewed-css-7"
+          ],
+          "proposed_title": null,
+          "reason": "Deux conteneurs génériques à comparer : bloc et contenu en ligne par défaut."
+        },
+        {
+          "card_id": "reviewed-css-9",
+          "title": "Rôle du CSS",
+          "source_pages": [
+            2
+          ],
+          "decision": "orientation",
+          "target_card_ids": [],
+          "proposed_title": null,
+          "reason": "Définition introductive à placer dans la vue d’ensemble et conserver dans la recherche."
+        },
+        {
+          "card_id": "reviewed-css-10",
+          "title": "Syntaxe d’une règle CSS",
+          "source_pages": [
+            2
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Syntaxe d’une règle CSS",
+          "reason": "Objectif autonome identifiable : Syntaxe d’une règle CSS. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-css-11",
+          "title": "Sélecteur d’élément HTML",
+          "source_pages": [
+            4,
+            5
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Sélecteur d’élément HTML",
+          "reason": "Objectif autonome identifiable : Sélecteur d’élément HTML. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-css-12",
+          "title": "Choisir entre classe et identifiant",
+          "source_pages": [
+            6
+          ],
+          "decision": "fusion",
+          "target_card_ids": [
+            "reviewed-css-4"
+          ],
+          "proposed_title": null,
+          "reason": "Répète explicitement les fiches de classe et d’identifiant."
+        },
+        {
+          "card_id": "reviewed-css-13",
+          "title": "Propriétés color et background-color",
+          "source_pages": [
+            2,
+            3
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Propriétés color et background-color",
+          "reason": "Objectif autonome identifiable : Propriétés color et background-color. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-css-14",
+          "title": "Choisir un schéma de couleurs",
+          "source_pages": [
+            3,
+            4
+          ],
+          "decision": "approfondissement",
+          "target_card_ids": [
+            "reviewed-css-37"
+          ],
+          "proposed_title": null,
+          "reason": "Conseils de choix graphique ; ne constitue pas une règle technique autonome à réviser par défaut."
+        },
+        {
+          "card_id": "reviewed-css-15",
+          "title": "Propriété font-size",
+          "source_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Propriété font-size",
+          "reason": "Objectif autonome identifiable : Propriété font-size. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-css-16",
+          "title": "Propriété font-family",
+          "source_pages": [
+            3,
+            4,
+            6,
+            7
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Propriété font-family",
+          "reason": "Objectif autonome identifiable : Propriété font-family. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-css-17",
+          "title": "Propriété font-style",
+          "source_pages": [
+            3,
+            4,
+            5
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Propriété font-style",
+          "reason": "Objectif autonome identifiable : Propriété font-style. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-css-18",
+          "title": "Propriété font-weight",
+          "source_pages": [
+            3,
+            4,
+            6,
+            7
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Propriété font-weight",
+          "reason": "Objectif autonome identifiable : Propriété font-weight. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-css-19",
+          "title": "Propriété text-align",
+          "source_pages": [
+            6,
+            22,
+            24,
+            26
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Propriété text-align",
+          "reason": "Objectif autonome identifiable : Propriété text-align. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-css-20",
+          "title": "Propriété text-decoration",
+          "source_pages": [
+            22,
+            24,
+            25,
+            26
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Propriété text-decoration",
+          "reason": "Objectif autonome identifiable : Propriété text-decoration. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-css-21",
+          "title": "Propriété width",
+          "source_pages": [
+            10,
+            22,
+            23
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Propriété width",
+          "reason": "Objectif autonome identifiable : Propriété width. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-css-22",
+          "title": "Valider une feuille CSS",
+          "source_pages": [
+            7
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Valider une feuille CSS",
+          "reason": "Objectif autonome identifiable : Valider une feuille CSS. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-css-23",
+          "title": "Propriété border",
+          "source_pages": [
+            7,
+            8
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Définir une bordure",
+          "reason": "Objectif autonome identifiable : Propriété border. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-css-24",
+          "title": "Styles de bordure",
+          "source_pages": [
+            7,
+            8
+          ],
+          "decision": "approfondissement",
+          "target_card_ids": [
+            "reviewed-css-23"
+          ],
+          "proposed_title": null,
+          "reason": "Catalogue de styles ; conserver les valeurs et les illustrations dans les détails de border."
+        },
+        {
+          "card_id": "reviewed-css-25",
+          "title": "Bordure d’un seul côté",
+          "source_pages": [
+            8
+          ],
+          "decision": "fusion",
+          "target_card_ids": [
+            "reviewed-css-23"
+          ],
+          "proposed_title": null,
+          "reason": "Variante par côté de la même propriété ; syntaxe ciblée accessible dans la même fiche."
+        },
+        {
+          "card_id": "reviewed-css-26",
+          "title": "Propriété padding",
+          "source_pages": [
+            8,
+            9
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Padding : espace intérieur et valeurs",
+          "reason": "Objectif autonome identifiable : Propriété padding. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-css-27",
+          "title": "Padding par côté",
+          "source_pages": [
+            9
+          ],
+          "decision": "fusion",
+          "target_card_ids": [
+            "reviewed-css-26"
+          ],
+          "proposed_title": null,
+          "reason": "Variantes par côté à rattacher au padding."
+        },
+        {
+          "card_id": "reviewed-css-28",
+          "title": "Padding : raccourci à deux valeurs",
+          "source_pages": [
+            9
+          ],
+          "decision": "fusion",
+          "target_card_ids": [
+            "reviewed-css-26"
+          ],
+          "proposed_title": null,
+          "reason": "Lecture du raccourci à rattacher au padding, sans créer une fiche par nombre de valeurs."
+        },
+        {
+          "card_id": "reviewed-css-29",
+          "title": "Padding : raccourci à quatre valeurs",
+          "source_pages": [
+            9,
+            10
+          ],
+          "decision": "fusion",
+          "target_card_ids": [
+            "reviewed-css-26"
+          ],
+          "proposed_title": null,
+          "reason": "Lecture du raccourci à rattacher au padding ; ordre des côtés accessible directement."
+        },
+        {
+          "card_id": "reviewed-css-30",
+          "title": "Élément image HTML et attributs",
+          "source_pages": [
+            10
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Élément image HTML et attributs",
+          "reason": "Objectif autonome identifiable : Élément image HTML et attributs. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-css-31",
+          "title": "Alignement et espacement des images dans le support",
+          "source_pages": [
+            10,
+            11
+          ],
+          "decision": "reference",
+          "target_card_ids": [
+            "reviewed-css-30"
+          ],
+          "proposed_title": null,
+          "reason": "Compatibilité historique du support : conserver le signalement d’obsolescence, sans enseigner les attributs comme pratiques actuelles."
+        },
+        {
+          "card_id": "reviewed-css-32",
+          "title": "Créer un lien sur une image",
+          "source_pages": [
+            11,
+            12
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Créer un lien sur une image",
+          "reason": "Objectif autonome identifiable : Créer un lien sur une image. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-css-33",
+          "title": "Propriété background-image",
+          "source_pages": [
+            12
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Image de fond et répétition",
+          "reason": "Objectif autonome identifiable : Propriété background-image. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-css-34",
+          "title": "Propriété background-repeat",
+          "source_pages": [
+            12,
+            13
+          ],
+          "decision": "fusion",
+          "target_card_ids": [
+            "reviewed-css-33"
+          ],
+          "proposed_title": null,
+          "reason": "L’image de fond et sa répétition forment ici un objectif cohérent ; valeurs consultables dans la fiche."
+        },
+        {
+          "card_id": "reviewed-css-35",
+          "title": "Favicon",
+          "source_pages": [
+            13
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Favicon",
+          "reason": "Objectif autonome identifiable : Favicon. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-css-36",
+          "title": "Wireframe",
+          "source_pages": [
+            13,
+            14,
+            20,
+            21
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Wireframe",
+          "reason": "Objectif autonome identifiable : Wireframe. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-css-37",
+          "title": "Principes de mise en page",
+          "source_pages": [
+            14,
+            15
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Principes de mise en page",
+          "reason": "Objectif autonome identifiable : Principes de mise en page. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-css-38",
+          "title": "Dispositions Ice, Jello et Liquid",
+          "source_pages": [
+            15,
+            16
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Dispositions Ice, Jello et Liquid",
+          "reason": "Objectif autonome identifiable : Dispositions Ice, Jello et Liquid. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-css-39",
+          "title": "Modèle de boîte",
+          "source_pages": [
+            16
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Modèle de boîte",
+          "reason": "Objectif autonome identifiable : Modèle de boîte. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-css-40",
+          "title": "Propriété margin",
+          "source_pages": [
+            16,
+            17,
+            22,
+            23
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Propriété margin",
+          "reason": "Objectif autonome identifiable : Propriété margin. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-css-41",
+          "title": "Flux normal",
+          "source_pages": [
+            16,
+            20,
+            21
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Flux normal",
+          "reason": "Objectif autonome identifiable : Flux normal. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-css-42",
+          "title": "Positionnement relatif",
+          "source_pages": [
+            16
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Positionnement relatif",
+          "reason": "Objectif autonome identifiable : Positionnement relatif. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-css-43",
+          "title": "Positionnement absolu",
+          "source_pages": [
+            17
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Positionnement absolu",
+          "reason": "Objectif autonome identifiable : Positionnement absolu. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-css-44",
+          "title": "Propriété float",
+          "source_pages": [
+            17,
+            22,
+            23
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Propriété float",
+          "reason": "Objectif autonome identifiable : Propriété float. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-css-45",
+          "title": "Propriété clear",
+          "source_pages": [
+            18,
+            22,
+            23
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Propriété clear",
+          "reason": "Objectif autonome identifiable : Propriété clear. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-css-46",
+          "title": "Propriété overflow et conteneur flottant",
+          "source_pages": [
+            19
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Propriété overflow et conteneur flottant",
+          "reason": "Objectif autonome identifiable : Propriété overflow et conteneur flottant. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-css-47",
+          "title": "Propriété display",
+          "source_pages": [
+            19,
+            22,
+            26
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Propriété display",
+          "reason": "Objectif autonome identifiable : Propriété display. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-css-48",
+          "title": "Propriété z-index",
+          "source_pages": [
+            20
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Propriété z-index",
+          "reason": "Objectif autonome identifiable : Propriété z-index. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-css-49",
+          "title": "Mise en page à deux colonnes",
+          "source_pages": [
+            21,
+            22
+          ],
+          "decision": "exemple",
+          "target_card_ids": [
+            "reviewed-css-44",
+            "reviewed-css-40",
+            "reviewed-css-57"
+          ],
+          "proposed_title": null,
+          "reason": "Application combinée de plusieurs propriétés déjà expliquées ; conserver comme atelier sourcé."
+        },
+        {
+          "card_id": "reviewed-css-50",
+          "title": "Mise en page à trois colonnes",
+          "source_pages": [
+            22,
+            23
+          ],
+          "decision": "exemple",
+          "target_card_ids": [
+            "reviewed-css-44",
+            "reviewed-css-40",
+            "reviewed-css-45"
+          ],
+          "proposed_title": null,
+          "reason": "Variante de mise en page à consulter dans le même ensemble d’applications."
+        },
+        {
+          "card_id": "reviewed-css-51",
+          "title": "Ouvrir un lien dans une nouvelle fenêtre",
+          "source_pages": [
+            24
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Ouvrir un lien dans une nouvelle fenêtre",
+          "reason": "Objectif autonome identifiable : Ouvrir un lien dans une nouvelle fenêtre. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-css-52",
+          "title": "Pseudo-classes des liens",
+          "source_pages": [
+            24,
+            26
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Pseudo-classes des liens",
+          "reason": "Objectif autonome identifiable : Pseudo-classes des liens. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-css-53",
+          "title": "Liens présentés comme des boutons",
+          "source_pages": [
+            24
+          ],
+          "decision": "exemple",
+          "target_card_ids": [
+            "reviewed-css-52"
+          ],
+          "proposed_title": null,
+          "reason": "Assemblage de styles pour un lien ; les propriétés et les états existent déjà ailleurs."
+        },
+        {
+          "card_id": "reviewed-css-54",
+          "title": "Lien vers un fragment de page",
+          "source_pages": [
+            25
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Lien vers un fragment de page",
+          "reason": "Objectif autonome identifiable : Lien vers un fragment de page. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-css-55",
+          "title": "Navigation structurée en liste",
+          "source_pages": [
+            25
+          ],
+          "decision": "exemple",
+          "target_card_ids": [
+            "reviewed-css-58",
+            "reviewed-css-54"
+          ],
+          "proposed_title": null,
+          "reason": "Exemple de navigation en liste ; préserver HTML ul/li et les liens dans la ressource."
+        },
+        {
+          "card_id": "reviewed-css-56",
+          "title": "Navigation horizontale et puces",
+          "source_pages": [
+            26
+          ],
+          "decision": "exemple",
+          "target_card_ids": [
+            "reviewed-css-47",
+            "reviewed-css-58"
+          ],
+          "proposed_title": null,
+          "reason": "Application de display et des marqueurs de liste, pas une nouvelle propriété."
+        },
+        {
+          "card_id": "reviewed-css-57",
+          "title": "Propriété min-width",
+          "source_pages": [
+            22,
+            23
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Propriété min-width",
+          "reason": "Objectif autonome identifiable : Propriété min-width. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-css-58",
+          "title": "Propriété list-style-image",
+          "source_pages": [
+            25
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Choisir les marqueurs de liste",
+          "reason": "Objectif autonome identifiable : Propriété list-style-image. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-css-59",
+          "title": "Propriété list-style-type",
+          "source_pages": [
+            26
+          ],
+          "decision": "fusion",
+          "target_card_ids": [
+            "reviewed-css-58"
+          ],
+          "proposed_title": null,
+          "reason": "Comparer les deux propriétés de marqueurs, sans confondre leur rôle avec display."
+        }
+      ]
+    },
+    {
+      "course_id": "series-de-fourier-ing2-2024-2025-d58a7cc929",
+      "family": "fourier",
+      "current_cards": 21,
+      "proposed_core_cards": 14,
+      "decisions": {
+        "fiche_courte": 14,
+        "fusion": 3,
+        "approfondissement": 3,
+        "entrainement": 1
+      },
+      "cards": [
+        {
+          "card_id": "reviewed-fourier-1",
+          "title": "Série de Fourier et pulsation",
+          "source_pages": [
+            3
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Série de Fourier et pulsation",
+          "reason": "Objectif autonome identifiable : Série de Fourier et pulsation. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-fourier-2",
+          "title": "Convergence normale",
+          "source_pages": [
+            3,
+            4
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Convergence normale",
+          "reason": "Objectif autonome identifiable : Convergence normale. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-fourier-3",
+          "title": "Coefficients trigonométriques et terme constant",
+          "source_pages": [
+            4,
+            5
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Coefficients trigonométriques et terme constant",
+          "reason": "Objectif autonome identifiable : Coefficients trigonométriques et terme constant. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-fourier-4",
+          "title": "Forme complexe",
+          "source_pages": [
+            5
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Forme complexe",
+          "reason": "Objectif autonome identifiable : Forme complexe. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-fourier-5",
+          "title": "Théorème de Dirichlet",
+          "source_pages": [
+            6
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Théorème de Dirichlet",
+          "reason": "Objectif autonome identifiable : Théorème de Dirichlet. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-fourier-6",
+          "title": "Fonction paire",
+          "source_pages": [
+            9
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Exploiter la parité",
+          "reason": "Objectif autonome identifiable : Fonction paire. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-fourier-7",
+          "title": "Fonction impaire",
+          "source_pages": [
+            9
+          ],
+          "decision": "fusion",
+          "target_card_ids": [
+            "reviewed-fourier-6"
+          ],
+          "proposed_title": null,
+          "reason": "Une comparaison paire/impaire facilite le choix des coefficients ; garder les deux cas distincts."
+        },
+        {
+          "card_id": "reviewed-fourier-8",
+          "title": "Dérivation des coefficients",
+          "source_pages": [
+            11
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Dérivation des coefficients",
+          "reason": "Objectif autonome identifiable : Dérivation des coefficients. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-fourier-9",
+          "title": "Intégrer une série normalement convergente",
+          "source_pages": [
+            3
+          ],
+          "decision": "approfondissement",
+          "target_card_ids": [
+            "reviewed-fourier-2",
+            "reviewed-fourier-3"
+          ],
+          "proposed_title": null,
+          "reason": "Justification de l’intégration sur une période ; conserver l’hypothèse de convergence normale."
+        },
+        {
+          "card_id": "reviewed-fourier-10",
+          "title": "Critère de convergence par le lemme d’Abel",
+          "source_pages": [
+            4
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Critère de convergence par le lemme d’Abel",
+          "reason": "Objectif autonome identifiable : Critère de convergence par le lemme d’Abel. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-fourier-12",
+          "title": "Passage des cosinus et sinus aux exponentielles",
+          "source_pages": [
+            5
+          ],
+          "decision": "approfondissement",
+          "target_card_ids": [
+            "reviewed-fourier-4"
+          ],
+          "proposed_title": null,
+          "reason": "Dérivation de la forme complexe par Euler, disponible à la demande."
+        },
+        {
+          "card_id": "reviewed-fourier-13",
+          "title": "Indépendance de l’intervalle d’intégration",
+          "source_pages": [
+            8
+          ],
+          "decision": "fusion",
+          "target_card_ids": [
+            "reviewed-fourier-3"
+          ],
+          "proposed_title": null,
+          "reason": "Choix de l’intervalle d’une période : condition d’usage des coefficients."
+        },
+        {
+          "card_id": "reviewed-fourier-14",
+          "title": "Valeur moyenne et harmoniques",
+          "source_pages": [
+            6
+          ],
+          "decision": "fusion",
+          "target_card_ids": [
+            "reviewed-fourier-1",
+            "reviewed-fourier-3"
+          ],
+          "proposed_title": null,
+          "reason": "Sens des harmoniques et de la moyenne déjà présents ; remarque de convergence à relier aussi à Dirichlet."
+        },
+        {
+          "card_id": "reviewed-fourier-15",
+          "title": "Exemple du cours : fonction en créneau",
+          "source_pages": [
+            6,
+            8,
+            10
+          ],
+          "decision": "entrainement",
+          "target_card_ids": [
+            "reviewed-fourier-3",
+            "reviewed-fourier-5",
+            "reviewed-fourier-16"
+          ],
+          "proposed_title": null,
+          "reason": "Exercice transversal en créneau, avec graphique source mais sans calcul détaillé source."
+        },
+        {
+          "card_id": "reviewed-fourier-16",
+          "title": "Formule de Bessel-Parseval",
+          "source_pages": [
+            10
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Formule de Bessel-Parseval",
+          "reason": "Objectif autonome identifiable : Formule de Bessel-Parseval. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-fourier-17",
+          "title": "Parseval lorsque la fonction est réelle",
+          "source_pages": [
+            10
+          ],
+          "decision": "approfondissement",
+          "target_card_ids": [
+            "reviewed-fourier-16"
+          ],
+          "proposed_title": null,
+          "reason": "Cas réel de Parseval ; condition de réalité à garder attachée à la formule simplifiée."
+        },
+        {
+          "card_id": "reviewed-fourier-18",
+          "title": "Produit scalaire hermitien du cours",
+          "source_pages": [
+            10
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Produit scalaire hermitien du cours",
+          "reason": "Objectif autonome identifiable : Produit scalaire hermitien du cours. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-fourier-19",
+          "title": "Intégration d’une série de Fourier",
+          "source_pages": [
+            11
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Intégration d’une série de Fourier",
+          "reason": "Objectif autonome identifiable : Intégration d’une série de Fourier. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-fourier-20",
+          "title": "Produit de deux séries de Fourier",
+          "source_pages": [
+            11
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Produit de deux séries de Fourier",
+          "reason": "Objectif autonome identifiable : Produit de deux séries de Fourier. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-fourier-21",
+          "title": "Convolution périodique et normalisation",
+          "source_pages": [
+            11
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Convolution périodique et normalisation",
+          "reason": "Objectif autonome identifiable : Convolution périodique et normalisation. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        },
+        {
+          "card_id": "reviewed-fourier-22",
+          "title": "Sommes partielles près d’une discontinuité",
+          "source_pages": [
+            6,
+            8
+          ],
+          "decision": "fiche_courte",
+          "target_card_ids": [],
+          "proposed_title": "Sommes partielles près d’une discontinuité",
+          "reason": "Objectif autonome identifiable : Sommes partielles près d’une discontinuité. Conserver le noyau et les conditions ; déplacer les exemples longs et les justifications dans les ressources."
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "current": 116,
+    "proposed_core": 74
+  }
+}

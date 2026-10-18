@@ -1,0 +1,3049 @@
+[
+  {
+    "concept": {
+      "concept_id": "concept-3e22ca8bdff07e04",
+      "title": "Matrice triangulaire supérieure",
+      "source_anchor": "triangulaire supérieure",
+      "evidence_issue": null,
+      "type": "definition",
+      "primary_part_id": "part-230ff73d8d186434",
+      "related_part_ids": [],
+      "source_pages": [
+        15
+      ],
+      "evidence": [
+        {
+          "page": 15,
+          "excerpt": "dans laquelle sa matrice est triangulaire supérieure."
+        }
+      ],
+      "illustrations": [],
+      "learning_points": [],
+      "card_role": "standalone",
+      "relevance": "active",
+      "relevance_reason": null,
+      "relevance_file_hash": null,
+      "relevance_proof_hash": null
+    },
+    "issue": {
+      "status": "review_pending",
+      "concept_id": "concept-3e22ca8bdff07e04",
+      "reason": "ValueError: ValueError: ValueError: Le manque annoncé ne cite pas un passage réel de la source",
+      "title": "Matrice triangulaire supérieure",
+      "primary_part_id": "part-230ff73d8d186434",
+      "source_pages": [
+        15
+      ],
+      "affected_part_ids": [
+        "part-230ff73d8d186434"
+      ]
+    },
+    "points": [
+      {
+        "title": "Matrice de Jordan J affichée (bloc de taille 2 pour λ=2)",
+        "concept_ids": [
+          "concept-683413836c56b64b",
+          "concept-3e22ca8bdff07e04"
+        ],
+        "kind": "example",
+        "start_line": 5,
+        "end_line": 18,
+        "anchor_line": 5,
+        "ambiguous": false,
+        "quote": "J =\n\n\n\n1\n0\n0\n0\n2\n1\n0\n0\n2\n\n",
+        "source_anchor": "J =",
+        "concept_type": "definition",
+        "page": 17,
+        "point_id": "56ef37c33d405ebdb4fddae7"
+      },
+      {
+        "title": "Calcul de A^k pour une matrice diagonalisable",
+        "concept_ids": [
+          "concept-bed0840c5c84bfaf",
+          "concept-3f288171e2f8470f",
+          "concept-3e22ca8bdff07e04"
+        ],
+        "kind": "steps",
+        "start_line": 10,
+        "end_line": 49,
+        "anchor_line": null,
+        "ambiguous": false,
+        "quote": "1. Si A ∈Mn,n(K) est diagonalisable, soit il existe P ∈Mn,n(K) une matrice carrée inversible\ntelle que D = P −1AP avec\nD =\n\n\n\n\nλ1\n. . .\n(0)\n...\n...\n...\n(0)\n. . .\nλn\n\n\n\ndiagonale et les λi les valeurs propres de A alors\nDk =\n\n\n\n\nλk\n1\n. . .\n(0)\n...\n...\n...\n(0)\n. . .\nλk\nn\n\n\n\net Ak = PDkP −1.\n",
+        "source_anchor": "1. Si A ∈Mn,n(K) est diagonalisable, soit il existe P ∈Mn,n(K) une matrice carrée inversible",
+        "concept_type": "definition",
+        "page": 21,
+        "point_id": "63af96a642b17a8af6046741"
+      },
+      {
+        "title": "Exemple d'endomorphisme de R³ et de sa matrice de Jordan",
+        "concept_ids": [
+          "concept-683413836c56b64b",
+          "concept-47c0a60e7db184ae",
+          "concept-3e22ca8bdff07e04",
+          "concept-9dd807d31a501805"
+        ],
+        "kind": "example",
+        "start_line": 70,
+        "end_line": 103,
+        "anchor_line": null,
+        "ambiguous": false,
+        "quote": "Considérons l’endomorphisme f de R3 dont la matrice dans la base canonique E3 de R3 est la\nmatrice\nA =\n\n\n\n0\n2\n2\n−1\n2\n2\n−1\n1\n3\n\n\n\nP −1AP = J =\n\n\n\n1\n0\n0\n0\n2\n1\n0\n0\n2\n\n\navec P =\n",
+        "source_anchor": "Considérons l’endomorphisme f de R3 dont la matrice dans la base canonique E3 de R3 est la",
+        "concept_type": "definition",
+        "page": 22,
+        "point_id": "70d7f57249e8e2221a15f33b"
+      }
+    ],
+    "review": {
+      "hash": "f6ea4ea8ac5855ffb7f084e9e57bd0244e6d511379702b4724dbe7f108cabf50",
+      "last_error": "ValueError: ValueError: ValueError: Le manque annoncé ne cite pas un passage réel de la source"
+    },
+    "group": {}
+  },
+  {
+    "concept": {
+      "concept_id": "concept-16fdb6c6cce2f9a9",
+      "title": "Base de vecteurs propres",
+      "source_anchor": "base de vecteurs propres",
+      "evidence_issue": null,
+      "type": "definition",
+      "primary_part_id": "part-ca2ac2db58762822",
+      "related_part_ids": [],
+      "source_pages": [
+        10
+      ],
+      "evidence": [
+        {
+          "page": 10,
+          "excerpt": "Si A est diagonalisable, on peut trouver une base de vecteurs propres de la manière suivante : on prend une base Bλi de chaque espace propre Eλi, la réunion de ces bases ∪iBλi forme une base de vecteurs propres de E."
+        }
+      ],
+      "illustrations": [],
+      "learning_points": [],
+      "card_role": "standalone",
+      "relevance": "active",
+      "relevance_reason": null,
+      "relevance_file_hash": null,
+      "relevance_proof_hash": null
+    },
+    "issue": {
+      "concept_id": "concept-16fdb6c6cce2f9a9",
+      "status": "card_incomplete",
+      "reason": "Contenu dépendant conservé, sans fiche autonome justifiée pour le recevoir. La citation se limite à indiquer qu'il faut chercher une base de vecteurs propres pour chaque espace propre, sans fournir de définition claire, d'explication du concept, d'exemple concret ou de procédure de construction. Elle mentionne la notion mais ne la développe pas suffisamment pour constituer un enseignement autonome.",
+      "title": "Base de vecteurs propres",
+      "primary_part_id": "part-ca2ac2db58762822",
+      "source_pages": [
+        10
+      ],
+      "affected_part_ids": [
+        "part-ca2ac2db58762822"
+      ]
+    },
+    "points": [
+      {
+        "title": "Base de vecteurs propres",
+        "concept_ids": [
+          "concept-16fdb6c6cce2f9a9"
+        ],
+        "kind": "mention",
+        "start_line": 14,
+        "end_line": 14,
+        "anchor_line": 14,
+        "ambiguous": false,
+        "quote": "4. On cherche une base Bλ1, . . . , Bλ1 pour chaque espace propre.\n",
+        "source_anchor": "4. On cherche une base Bλ1, . . . , Bλ1 pour chaque espace propre.",
+        "concept_type": "definition",
+        "page": 12,
+        "point_id": "9732332351f6a12d7fe65cae"
+      },
+      {
+        "point_id": "3d622bab7fb998127d58a76e",
+        "page": 12,
+        "quote": "4. On cherche une base Bλ1, . . . , Bλ1 pour chaque espace propre.\np\n",
+        "kind": "alternatives",
+        "title": "Base de vecteurs propres",
+        "source_anchor": "Protocole de diagonalisation d’une matrice",
+        "ambiguous": false,
+        "origin": "source_recovery_v15_1",
+        "source_ref": "u12-1-0"
+      }
+    ],
+    "review": {
+      "hash": "1004be4fc2c8f2a8db17ddcf710902c4af6430fae9a1717b5a3169d15811f775",
+      "assessment": {
+        "disposition": "name_only",
+        "concept_type": "definition",
+        "reason": "The excerpt only mentions a title and a brief statement about seeking a basis of eigenvectors without providing any explanatory or instructional content, thus it contains only a name without substantive information.",
+        "missing_information": [],
+        "excluded_points": {},
+        "point_kinds": {
+          "9732332351f6a12d7fe65cae": "mention"
+        },
+        "exclusion_checks": {},
+        "teaching_check": {
+          "disposition": "name_only",
+          "reason": "The excerpt only mentions a title and a brief statement about seeking a basis of eigenvectors without providing any explanatory or instructional content, thus it contains only a name without substantive information."
+        }
+      },
+      "recovery": {
+        "points": [
+          {
+            "point_id": "3d622bab7fb998127d58a76e",
+            "page": 12,
+            "quote": "4. On cherche une base Bλ1, . . . , Bλ1 pour chaque espace propre.\np\n",
+            "kind": "alternatives",
+            "title": "Base de vecteurs propres",
+            "source_anchor": "Protocole de diagonalisation d’une matrice",
+            "ambiguous": false,
+            "origin": "source_recovery_v15_1",
+            "source_ref": "u12-1-0"
+          }
+        ],
+        "reason": "The protocol for diagonalisation explicitly lists step 4 as 'On cherche une base Bλ1, . . . , Bλ1 pour chaque espace propre.', which directly provides the missing evidence for the notion of a base of eigenvectors.",
+        "scope_checks": [
+          {
+            "point_id": "3d622bab7fb998127d58a76e",
+            "verdict": "about_this_notion",
+            "reason": "L'ajout propose une alternative (une reformulation) du même concept de « Base de vecteurs propres » déjà présent dans la base de connaissances. Il ne présente pas une notion différente, mais renforce la même notion existante."
+          }
+        ],
+        "rejected": [],
+        "searched_sources": [
+          "u1-0-0",
+          "u2-0-0",
+          "u3-0-0",
+          "u3-1-0",
+          "u3-4-0",
+          "u3-5-0",
+          "u4-0-0",
+          "u4-1-0",
+          "u5-0-0",
+          "u5-1-0",
+          "u6-1-0",
+          "u8-1-0",
+          "u8-2-0",
+          "u8-3-0",
+          "u8-4-0",
+          "u9-0-0",
+          "u9-1-0",
+          "u10-0-0",
+          "u10-1-0",
+          "u10-2-0",
+          "u10-3-0",
+          "u10-4-0",
+          "u10-5-0",
+          "u10-6-0",
+          "u11-0-0",
+          "u12-0-0",
+          "u12-1-0",
+          "u13-0-0",
+          "u14-0-0",
+          "u15-0-0",
+          "u15-1-0",
+          "u15-2-0",
+          "u15-3-0",
+          "u16-1-0",
+          "u17-0-0",
+          "u19-0-0",
+          "u20-0-0",
+          "u21-1-0",
+          "u21-2-0"
+        ]
+      },
+      "reassessment": {
+        "disposition": "supporting",
+        "concept_type": "definition",
+        "reason": "La citation se limite à indiquer qu'il faut chercher une base de vecteurs propres pour chaque espace propre, sans fournir de définition claire, d'explication du concept, d'exemple concret ou de procédure de construction. Elle mentionne la notion mais ne la développe pas suffisamment pour constituer un enseignement autonome.",
+        "missing_information": [],
+        "excluded_points": {},
+        "point_kinds": {
+          "9732332351f6a12d7fe65cae": "mention",
+          "3d622bab7fb998127d58a76e": "alternatives"
+        },
+        "exclusion_checks": {},
+        "adequacy_check": {
+          "disposition": "supporting",
+          "reason": "La citation se limite à indiquer qu'il faut chercher une base de vecteurs propres pour chaque espace propre, sans fournir de définition claire, d'explication du concept, d'exemple concret ou de procédure de construction. Elle mentionne la notion mais ne la développe pas suffisamment pour constituer un enseignement autonome.",
+          "blocking_gaps": [],
+          "optional_information": [
+            "Exemple d'obtention d'une base de vecteurs propres pour une matrice donnée.",
+            "Procédure détaillée ou algorithme de construction d'une base de vecteurs propres.",
+            "Illustration avec un espace propre concret (ex. espace propre associé à une valeur propre d'une matrice 2×2)."
+          ]
+        },
+        "proposed_missing_information": [
+          "exemple d'obtention d'une base de vecteurs propres",
+          "procédure détaillée ou algorithme de construction",
+          "illustration avec un espace propre concret"
+        ]
+      }
+    },
+    "group": {
+      "hash": "85e974388da83d9a57909db7725120f97968beee8d2b59e7e87c262f4727fd27",
+      "result": {
+        "relation": "independent",
+        "target_ref": null,
+        "reason": "La notion « Base de vecteurs propres » désigne spécifiquement le choix d’une base dans chaque espace propre, alors qu’aucune des cibles proposées ne traite uniquement de cette notion. Le protocole de diagonalisation (t4) décrit l’ensemble du processus et ne se limite pas à la base des vecteurs propres, les autres cibles portent sur des théorèmes ou définitions différents. Ainsi aucune cible ne correspond, il faut créer une fiche autonome.",
+        "target_id": null
+      }
+    }
+  },
+  {
+    "rejected": [
+      {
+        "schema": "SourceAdequacy",
+        "input_hash": "de0f6676192a5d807447dd519d0ee4e88f8c8871e5598cb2ab50c9178db70f6a",
+        "error": "ValueError: Le manque annoncé ne cite pas un passage réel de la source",
+        "response_excerpt": "{\"disposition\": \"incomplete\", \"reason\": \"L'exemple indique seulement le choix du vecteur v₁=(2,0,1)ᵀ pour λ=1 sans expliquer ni démontrer que ce vecteur satisfait l'équation caractéristique (A‑v₁=λv₁) ni décrire la méthode de calcul utilisée. Cette absence d'explication constitue un manque bloquant parce que le cours ne fournit pas l'information annoncée (justification du vecteur propre).\", \"blocking_gaps\": [{\"description\": \"Absence de justification montrant que (2,0,1)ᵀ est bien un vecteur propre associé à λ=1 (vérification A·v₁=λv₁ ou résolution du système (A‑λI)v=0).\", \"point_ids\": [\"p1\"], \"source_signal\": \"Quote : \\\"Option 1 :\\nOn prend v1 =\\n\\n\\n\\n2\\n0\\n1\\n\\n\\n.\\\" ne contient aucune démonstration ou explication du calcul.\"}], \"optional_information\": []}"
+      },
+      {
+        "schema": "SourceAdequacy",
+        "input_hash": "0f18d3b911b93f8233ec99fe6433807cce7762886be00e9108e1370873d8fe58",
+        "error": "ValueError: Le manque annoncé ne cite pas un passage réel de la source",
+        "response_excerpt": "{\"disposition\": \"incomplete\", \"reason\": \"Le texte fourni ne contient qu'un extrait d'énoncé (« On cherche un vecteur v3 = … tel que {v1, … ») sans le développement complet, la solution ou les explications attendues. Le développement annoncé (conditions sur v₃, justification du choix (1,0,0)ᵀ, calcul de vérification) est absent.\", \"blocking_gaps\": [{\"description\": \"Absence du développement complet du problème : conditions que v₃ doit satisfaire, justification du choix v₃ = (1,0,0)ᵀ et éventuel calcul de vérification.\", \"point_ids\": [\"p1\"], \"source_signal\": \"« On cherche un vecteur v3 =\\n\\n\\n\\nx\\ny\\nz\\n\\n\\nde R3 tel que {v1,\\n… » se termine abruptement sans poursuivre la phrase ni fournir la solution.\"}], \"optional_information\": []}"
+      }
+    ]
+  },
+  {
+    "concept": {
+      "concept_id": "concept-c60d17d1bb838728",
+      "title": "Propriété overflow",
+      "source_anchor": null,
+      "evidence_issue": null,
+      "type": "property",
+      "primary_part_id": "part-20fba21cf9b9c2a7",
+      "related_part_ids": [],
+      "source_pages": [
+        19
+      ],
+      "evidence": [
+        {
+          "page": 19,
+          "excerpt": "• overflow Property\n▪\nIntended to configure the display of elements on a Web page.\n▪\nHowever,  it is useful to “clear” or terminate a float before the end of a container\nelement\n▪\nValues are auto, hidden, and scroll\n=\n.\nSex\nFile\nEdit\nView\nHistory\nDelicious\nBookmarks\nAccessibility\nTools\nHelp\nYellow Lady Slipper"
+        }
+      ],
+      "illustrations": [],
+      "learning_points": [],
+      "card_role": "standalone",
+      "relevance": "active",
+      "relevance_reason": null,
+      "relevance_file_hash": null,
+      "relevance_proof_hash": null
+    },
+    "issue": {
+      "status": "review_pending",
+      "concept_id": "concept-c60d17d1bb838728",
+      "reason": "ValueError: ValueError: ValueError: Le manque annoncé ne cite pas un passage réel de la source",
+      "title": "Propriété overflow",
+      "primary_part_id": "part-20fba21cf9b9c2a7",
+      "source_pages": [
+        19
+      ],
+      "affected_part_ids": [
+        "part-20fba21cf9b9c2a7"
+      ]
+    },
+    "points": [
+      {
+        "title": "Modèle de boîte (The Box Model)",
+        "concept_ids": [
+          "concept-a7d39374736dea5e",
+          "concept-c35f6aad3d4c862b",
+          "concept-1a7f436800190b4b",
+          "concept-c60d17d1bb838728"
+        ],
+        "kind": "explanation",
+        "start_line": 7,
+        "end_line": 19,
+        "anchor_line": 7,
+        "ambiguous": false,
+        "quote": "• The Box Model \n \n▪ \nwhere \n• \ncontent = text & web page elements in the container \n• \npadding = area between the content and the border \n• \nborder = between the padding and the margin \n• \nmargin = determines the empty space between the element and \nadjacent elements \n",
+        "source_anchor": "• The Box Model",
+        "concept_type": "concept",
+        "page": 16,
+        "point_id": "96fa9066702b7c780475dea6"
+      },
+      {
+        "title": "Propriété overflow",
+        "concept_ids": [
+          "concept-c60d17d1bb838728",
+          "concept-b93096f50cc92328"
+        ],
+        "kind": "explanation",
+        "start_line": 1,
+        "end_line": 9,
+        "anchor_line": 1,
+        "ambiguous": false,
+        "quote": "• overflow Property\n▪\nIntended to configure the display of elements on a Web page.\n▪\nHowever,  it is useful to “clear” or terminate a float before the end of a container\nelement\n▪\nValues are auto, hidden, and scroll\n=\n",
+        "source_anchor": "• overflow Property",
+        "concept_type": "property",
+        "page": 19,
+        "point_id": "16a924ca6116072f89f92fd3"
+      },
+      {
+        "title": "Valeurs de la propriété overflow",
+        "concept_ids": [
+          "concept-c60d17d1bb838728"
+        ],
+        "kind": "explanation",
+        "start_line": 8,
+        "end_line": 9,
+        "anchor_line": null,
+        "ambiguous": false,
+        "quote": "Values are auto, hidden, and scroll\n=\n",
+        "source_anchor": "Values are auto, hidden, and scroll",
+        "concept_type": "property",
+        "page": 19,
+        "point_id": "94cd94ad3f563b5ecc60fc2c"
+      },
+      {
+        "title": "Propriété overflow",
+        "concept_ids": [
+          "concept-c60d17d1bb838728"
+        ],
+        "kind": "explanation",
+        "start_line": 4,
+        "end_line": 6,
+        "anchor_line": 4,
+        "ambiguous": false,
+        "quote": "• overflow Property \n▪ \nIntended to configure the display of elements on a Web page.  \n",
+        "source_anchor": "• overflow Property",
+        "concept_type": "property",
+        "page": 19,
+        "point_id": "74ddbec1af4a614b8efb606a"
+      },
+      {
+        "title": "Utilité de overflow pour « clear » un float",
+        "concept_ids": [
+          "concept-c60d17d1bb838728",
+          "concept-b93096f50cc92328"
+        ],
+        "kind": "explanation",
+        "start_line": 8,
+        "end_line": 9,
+        "anchor_line": null,
+        "ambiguous": false,
+        "quote": "However,  it is useful to “clear” or terminate a float before the end of a container \nelement \n",
+        "source_anchor": "However,  it is useful to “clear” or terminate a float before the end of a container",
+        "concept_type": "property",
+        "page": 19,
+        "point_id": "a271a9984bb86bbdacf0ec2e"
+      },
+      {
+        "title": "Valeurs de la propriété overflow",
+        "concept_ids": [
+          "concept-c60d17d1bb838728"
+        ],
+        "kind": "mention",
+        "start_line": 11,
+        "end_line": 11,
+        "anchor_line": null,
+        "ambiguous": false,
+        "quote": "Values are auto, hidden, and scroll \n",
+        "source_anchor": "Values are auto, hidden, and scroll",
+        "concept_type": "property",
+        "page": 19,
+        "point_id": "a889af3c2be09e8385639913"
+      },
+      {
+        "title": "Effet de overflow:auto sur le fond (background)",
+        "concept_ids": [
+          "concept-c60d17d1bb838728",
+          "concept-55957ae80beb83ad"
+        ],
+        "kind": "explanation",
+        "start_line": 37,
+        "end_line": 51,
+        "anchor_line": null,
+        "ambiguous": false,
+        "quote": "The \nbackground \ndoes not \nextend as \nfar as you’d \nexpect. \noverflow: \nauto; was applied \nto the div that \ncontains the image \nand paragraph. Now \nthe background \nextends and the h2 \ntext displays AFTER \nthe floated image. \n",
+        "source_anchor": "The",
+        "concept_type": "property",
+        "page": 19,
+        "point_id": "1bb724a2183dc19ff8e2e2dd"
+      }
+    ],
+    "review": {
+      "hash": "795cc298c12f32794ca819e7d4c3452e154c79af673e0a4e40c073a7401a256f",
+      "last_error": "ValueError: ValueError: ValueError: Le manque annoncé ne cite pas un passage réel de la source"
+    },
+    "group": {}
+  },
+  {
+    "concept": {
+      "concept_id": "concept-0fc9cc4d4fdf776f",
+      "title": "Propriété padding-top",
+      "source_anchor": null,
+      "evidence_issue": null,
+      "type": "property",
+      "primary_part_id": "part-293c3787ad16df16",
+      "related_part_ids": [],
+      "source_pages": [
+        9
+      ],
+      "evidence": [
+        {
+          "page": 9,
+          "excerpt": "padding-top: 10px;"
+        }
+      ],
+      "illustrations": [],
+      "learning_points": [],
+      "card_role": "standalone",
+      "relevance": "active",
+      "relevance_reason": null,
+      "relevance_file_hash": null,
+      "relevance_proof_hash": null
+    },
+    "issue": {
+      "status": "review_pending",
+      "concept_id": "concept-0fc9cc4d4fdf776f",
+      "reason": "ValueError: ValueError: ValueError: Le manque annoncé ne cite pas un passage réel de la source",
+      "title": "Propriété padding-top",
+      "primary_part_id": "part-293c3787ad16df16",
+      "source_pages": [
+        9
+      ],
+      "affected_part_ids": [
+        "part-293c3787ad16df16"
+      ]
+    },
+    "points": [
+      {
+        "title": "Exemple : bordure et padding sur un titre h2",
+        "concept_ids": [
+          "concept-0af07cb3bde33a31",
+          "concept-c35f6aad3d4c862b",
+          "concept-cd5e943a40b508fe",
+          "concept-4fcb87c1ce3e9400",
+          "concept-08bce7a0e84e5955",
+          "concept-0fc9cc4d4fdf776f"
+        ],
+        "kind": "example",
+        "start_line": 39,
+        "end_line": 41,
+        "anchor_line": 39,
+        "ambiguous": false,
+        "quote": "<h2>Heading with Border</h2>\n▪\nh2 { border: 2px solid #ff0000; padding: 5px; }\n",
+        "source_anchor": "<h2>Heading with Border</h2>",
+        "concept_type": "property",
+        "page": 8,
+        "point_id": "4e279789cd42d62b60bdc572"
+      },
+      {
+        "title": "Exemple d'utilisation de padding",
+        "concept_ids": [
+          "concept-c35f6aad3d4c862b",
+          "concept-cd5e943a40b508fe",
+          "concept-4fcb87c1ce3e9400",
+          "concept-08bce7a0e84e5955",
+          "concept-0fc9cc4d4fdf776f"
+        ],
+        "kind": "example",
+        "start_line": 14,
+        "end_line": 18,
+        "anchor_line": 14,
+        "ambiguous": false,
+        "quote": "h2 { border: 2px solid #ff0000;\nbackground-color: #cccccc;\npadding-left: 5px;\npadding-bottom: 10px;\npadding-top: 10px;}\n",
+        "source_anchor": "h2 { border: 2px solid #ff0000;",
+        "concept_type": "property",
+        "page": 9,
+        "point_id": "763d8604f3e5bc1fded78104"
+      },
+      {
+        "title": "Règle #logo – couleur de fond, couleur du texte, taille de police x‑large, bordure inférieure 1 px solide noir, padding 10 px",
+        "concept_ids": [
+          "concept-55957ae80beb83ad",
+          "concept-d288b43791de85ad",
+          "concept-8910996ed48b746d",
+          "concept-3a974aa985954952",
+          "concept-0fc9cc4d4fdf776f"
+        ],
+        "kind": "example",
+        "start_line": 30,
+        "end_line": 32,
+        "anchor_line": 30,
+        "ambiguous": false,
+        "quote": "#logo { background-color :#eeeeee; color: #cc66cc;  \n             font-size :x-large;  border-bottom: 1px solid #000000; \n             padding: 10px; } \n",
+        "source_anchor": "#logo { background-color :#eeeeee; color: #cc66cc;",
+        "concept_type": "property",
+        "page": 22,
+        "point_id": "7cedaeab3da3d5f1df1fa0a3"
+      },
+      {
+        "title": "Règle .content – raccourci padding : 20 px 20 px 0 20 px",
+        "concept_ids": [
+          "concept-0fc9cc4d4fdf776f",
+          "concept-bf160bba094343bc",
+          "concept-077941239288333f"
+        ],
+        "kind": "example",
+        "start_line": 33,
+        "end_line": 33,
+        "anchor_line": 33,
+        "ambiguous": false,
+        "quote": ".content {padding :20px 20px 0 20px;  }  \n",
+        "source_anchor": ".content {padding :20px 20px 0 20px;  }",
+        "concept_type": "property",
+        "page": 22,
+        "point_id": "2356bdf02348ad20914c2cab"
+      }
+    ],
+    "review": {
+      "hash": "49e2c697ec19f01391713f2c5cdb861901e2328958a71b16153686d090068501",
+      "last_error": "ValueError: ValueError: ValueError: Le manque annoncé ne cite pas un passage réel de la source"
+    },
+    "group": {}
+  },
+  {
+    "concept": {
+      "concept_id": "concept-c611786d97f1feb3",
+      "title": "Ouvrir un lien dans une nouvelle fenêtre",
+      "source_anchor": null,
+      "evidence_issue": null,
+      "type": "method",
+      "primary_part_id": "part-2aa810601df98389",
+      "related_part_ids": [],
+      "source_pages": [
+        24
+      ],
+      "evidence": [
+        {
+          "page": 24,
+          "excerpt": "Opening a link in a new browser window\n▪\n<a href=”http://yahoo.com” target=”_blank”>Yahoo! </a>"
+        }
+      ],
+      "illustrations": [],
+      "learning_points": [],
+      "card_role": "standalone",
+      "relevance": "active",
+      "relevance_reason": null,
+      "relevance_file_hash": null,
+      "relevance_proof_hash": null
+    },
+    "issue": {
+      "status": "review_pending",
+      "concept_id": "concept-c611786d97f1feb3",
+      "reason": "ValueError: ValidationError: 1 validation error for ContentAssessment\n  Invalid JSON: trailing characters at line 2 column 1 [type=json_invalid, input_value='{\"disposition\":\"example\"...inds\":{\"p3\":\"example\"}}', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.13/v/json_invalid",
+      "title": "Ouvrir un lien dans une nouvelle fenêtre",
+      "primary_part_id": "part-2aa810601df98389",
+      "source_pages": [
+        24
+      ],
+      "affected_part_ids": [
+        "part-2aa810601df98389"
+      ]
+    },
+    "points": [
+      {
+        "title": "Ouvrir un lien dans une nouvelle fenêtre",
+        "concept_ids": [
+          "concept-c611786d97f1feb3"
+        ],
+        "kind": "example",
+        "start_line": 5,
+        "end_line": 5,
+        "anchor_line": 5,
+        "ambiguous": false,
+        "quote": "<a href=”http://yahoo.com” target=”_blank”>Yahoo! </a>\n",
+        "source_anchor": "<a href=”http://yahoo.com” target=”_blank”>Yahoo! </a>",
+        "concept_type": "method",
+        "page": 24,
+        "point_id": "7409b8363910f9f80b74c7cf"
+      },
+      {
+        "title": "Opening a link in a new browser window",
+        "concept_ids": [
+          "concept-c611786d97f1feb3"
+        ],
+        "kind": "explanation",
+        "start_line": 6,
+        "end_line": 8,
+        "anchor_line": 6,
+        "ambiguous": false,
+        "quote": "Opening a link in a new browser window \n▪ \n<a href=”http://yahoo.com” target=”_blank”>Yahoo! </a> \n",
+        "source_anchor": "Opening a link in a new browser window",
+        "concept_type": "method",
+        "page": 24,
+        "point_id": "3e6eb6169afcf3758f93406d"
+      },
+      {
+        "title": "Example: CSS Buttons",
+        "concept_ids": [
+          "concept-070cbdf08ad12f2c",
+          "concept-c611786d97f1feb3",
+          "concept-66589f4c29f5fa8d"
+        ],
+        "kind": "example",
+        "start_line": 23,
+        "end_line": 58,
+        "anchor_line": 23,
+        "ambiguous": false,
+        "quote": "Example: \n \n<h1>CSS Buttons!</h1> \n<div id=”button”> \n      <a href=”index.html”>Home</a> \n      <a href=”products.html”>Products</a> \n      <a href=”services.html”>Services</a> \n      <a href=”contact.html”>Contact</a> \n      <a href=”about.html”>About</a> \n</div> \n \n<style type=”text/css”> \n#button a { border: 2px inset #cccccc; \n                     padding: 3px 15px; color: #FFFFFF; \n                     background-color: #000066; \n                     font-family: Arial, Helvetica, sans-serif; \n                     font-size: 16px; \n                     font-weight: bold; \n                     text-align: center; \n                     text-decoration: none;  \n } \n#button a:link { color: #FFFFFF; \n} \n#button a:visited { color: #CCCCCC; \n} \n#button a:focus { color: #DDA0DD; \n                                background-color: #000000; \n                                border: 2px outset #000000; \n} \n#button a:hover { color: #66CCFF; \n                                 border: 2px outset #CCCCCC; \n} \n#button a:active { color: #DDA0DD; \n                                 border: 2px outset #000000; \n} \n</style> \n",
+        "source_anchor": "Example:",
+        "concept_type": "concept",
+        "page": 24,
+        "point_id": "e9152273387314ecd514e6d5"
+      }
+    ],
+    "review": {
+      "hash": "66bf5c745a4da272698594561e7f1d5df9c004722015b6eb43c92df5a8fa0cd7",
+      "last_error": "ValueError: ValidationError: 1 validation error for ContentAssessment\n  Invalid JSON: trailing characters at line 2 column 1 [type=json_invalid, input_value='{\"disposition\":\"example\"...inds\":{\"p3\":\"example\"}}', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.13/v/json_invalid"
+    },
+    "group": {}
+  },
+  {
+    "concept": {
+      "concept_id": "concept-e0664e0c66dcaf88",
+      "title": "Propriété text-align",
+      "source_anchor": "text-align",
+      "evidence_issue": null,
+      "type": "property",
+      "primary_part_id": "part-6d5d1b27ea5fdf0f",
+      "related_part_ids": [],
+      "source_pages": [
+        3,
+        6
+      ],
+      "evidence": [
+        {
+          "page": 6,
+          "excerpt": "text-align: center;"
+        }
+      ],
+      "illustrations": [],
+      "learning_points": [],
+      "card_role": "standalone",
+      "relevance": "active",
+      "relevance_reason": null,
+      "relevance_file_hash": null,
+      "relevance_proof_hash": null
+    },
+    "issue": {
+      "concept_id": "concept-e0664e0c66dcaf88",
+      "status": "card_incomplete",
+      "reason": "Contenu dépendant conservé, sans fiche autonome justifiée pour le recevoir. Les citations fournissent principalement des extraits de code CSS où la propriété text-align est utilisée (exemples de styles de footer, de boutons, de navigation) ainsi qu'une simple mention dans une liste de propriétés courantes. Aucun texte n'explique de façon autonome le comportement, les valeurs possibles ou les effets de la propriété text-align, mais les extraits illustrent son emploi dans différents contextes, ce qui constitue un soutien illustratif à la notion.",
+      "title": "Propriété text-align",
+      "primary_part_id": "part-6d5d1b27ea5fdf0f",
+      "source_pages": [
+        3,
+        6
+      ],
+      "affected_part_ids": [
+        "part-6d5d1b27ea5fdf0f"
+      ]
+    },
+    "points": [
+      {
+        "title": "Propriétés de formatage courantes",
+        "concept_ids": [
+          "concept-d288b43791de85ad",
+          "concept-55957ae80beb83ad",
+          "concept-24b5e563cb8bddaf",
+          "concept-8910996ed48b746d",
+          "concept-b9098622aaca2305",
+          "concept-aba3bf87bb1f5b5d",
+          "concept-2a5cad591145bb59",
+          "concept-2e123327804797fb",
+          "concept-e0664e0c66dcaf88",
+          "concept-b79eccdb494d96e5",
+          "concept-44329405f4860b72"
+        ],
+        "kind": "mention",
+        "start_line": 17,
+        "end_line": 39,
+        "anchor_line": 17,
+        "ambiguous": false,
+        "quote": "• Common Formatting CSS Properties:\n•\ncolor\n•\nbackground-color\n•\nfont-family = configures the font typeface of the text\n•\nfont-size = configures the size of the text\n•\nfont-style = configures text to an italic style\n•\nfont-weight = configures the boldness of text\n•\nfont-height\n•\nmargin\n•\ntext-align\n•\ntext-decoration\n•\nwidth\n",
+        "source_anchor": "• Common Formatting CSS Properties:",
+        "concept_type": "property",
+        "page": 3,
+        "point_id": "9bd70756d6e4ec5ff577bc7f"
+      },
+      {
+        "title": "Footer style",
+        "concept_ids": [
+          "concept-e0664e0c66dcaf88",
+          "concept-fc942503cf83f419",
+          "concept-cd5e943a40b508fe"
+        ],
+        "kind": "explanation",
+        "start_line": 65,
+        "end_line": 66,
+        "anchor_line": 65,
+        "ambiguous": false,
+        "quote": "#footer {font-size: xx-small;  text-align: center;  clear: right;\npadding-bottom: 20px; }\n",
+        "source_anchor": "#footer {font-size: xx-small;  text-align: center;  clear: right;",
+        "concept_type": "property",
+        "page": 22,
+        "point_id": "9add53c36d327a7234c8f8ac"
+      },
+      {
+        "title": "Règle #footer – taille de police xx‑small, alignement texte centre, clear right, padding‑bottom 20 px",
+        "concept_ids": [
+          "concept-8910996ed48b746d",
+          "concept-e0664e0c66dcaf88",
+          "concept-fc942503cf83f419",
+          "concept-cd5e943a40b508fe"
+        ],
+        "kind": "example",
+        "start_line": 35,
+        "end_line": 36,
+        "anchor_line": 35,
+        "ambiguous": false,
+        "quote": "#footer {font-size: xx-small;  text-align: center;  clear: right;    \n               padding-bottom: 20px; } \n",
+        "source_anchor": "#footer {font-size: xx-small;  text-align: center;  clear: right;",
+        "concept_type": "property",
+        "page": 22,
+        "point_id": "5d86effc4e2c5a72eafaa82d"
+      },
+      {
+        "title": "Règle de style générale pour les liens du bouton",
+        "concept_ids": [
+          "concept-0af07cb3bde33a31",
+          "concept-c35f6aad3d4c862b",
+          "concept-d288b43791de85ad",
+          "concept-55957ae80beb83ad",
+          "concept-24b5e563cb8bddaf",
+          "concept-8910996ed48b746d",
+          "concept-aba3bf87bb1f5b5d",
+          "concept-e0664e0c66dcaf88",
+          "concept-b79eccdb494d96e5"
+        ],
+        "kind": "explanation",
+        "start_line": 35,
+        "end_line": 42,
+        "anchor_line": 35,
+        "ambiguous": false,
+        "quote": "#button a { border: 2px inset #cccccc; \n                     padding: 3px 15px; color: #FFFFFF; \n                     background-color: #000066; \n                     font-family: Arial, Helvetica, sans-serif; \n                     font-size: 16px; \n                     font-weight: bold; \n                     text-align: center; \n                     text-decoration: none;  \n",
+        "source_anchor": "#button a { border: 2px inset #cccccc;",
+        "concept_type": "property",
+        "page": 24,
+        "point_id": "71c0c1c8222d016e8b169298"
+      },
+      {
+        "title": "Règle CSS pour les liens de navigation avec padding, background-color, color, text-decoration, font-family, text-align",
+        "concept_ids": [
+          "concept-77a62b22c3bd01eb",
+          "concept-2b73a4adb6948be4",
+          "concept-c35f6aad3d4c862b",
+          "concept-55957ae80beb83ad",
+          "concept-d288b43791de85ad",
+          "concept-b79eccdb494d96e5",
+          "concept-24b5e563cb8bddaf",
+          "concept-e0664e0c66dcaf88"
+        ],
+        "kind": "explanation",
+        "start_line": 9,
+        "end_line": 19,
+        "anchor_line": 9,
+        "ambiguous": false,
+        "quote": "div.nav a { padding:5px; \n \nbackground-color:#e8b9e8; \n \ncolor:#000066; \n \ntext-decoration:none; \n \nfont-family:Verdana, Arial, sans-serif; \n \ntext-align:center; } \n",
+        "source_anchor": "div.nav a { padding:5px;",
+        "concept_type": "concept",
+        "page": 26,
+        "point_id": "b4563ccafee82dad43d7c2b3"
+      }
+    ],
+    "review": {
+      "hash": "164a477e7fa35b5741dfe711906aca9c4534153c39f7e0b38067c9b482bc82f1",
+      "candidate_checks": [
+        {
+          "verdict": "other_notion",
+          "reason": "Le passage ne fait qu'énumérer la propriété text-align parmi d'autres sans en expliquer le fonctionnement ni donner d'exemple d'utilisation.",
+          "point_id": "a5e1a5c8e0d35ae8caf01dbc"
+        },
+        {
+          "verdict": "about_this_notion",
+          "reason": "Le code montre l'application concrète de text-align:center dans une classe CSS, illustrant l'usage réel de la notion.",
+          "point_id": "7b5914a192edefb6bccd5ec7"
+        },
+        {
+          "verdict": "about_this_notion",
+          "reason": "Identique au point p2, il fournit un exemple d'utilisation de text-align:center, démontrant la notion.",
+          "point_id": "4f227adc1857dd0bc3c2f71f"
+        },
+        {
+          "verdict": "about_this_notion",
+          "reason": "Le style CSS pour le bouton inclut text-align:center, ce qui constitue une explication par l'exemple de la fonction de la propriété.",
+          "point_id": "ab7913a28b1c470cc2e0bb20"
+        },
+        {
+          "verdict": "about_this_notion",
+          "reason": "Le code de bouton CSS utilise text-align:center, illustrant concrètement la notion dans un contexte pratique.",
+          "point_id": "e9152273387314ecd514e6d5"
+        },
+        {
+          "verdict": "about_this_notion",
+          "reason": "L'exemple de navigation CSS applique text-align:center aux liens, montrant un usage réel de la propriété.",
+          "point_id": "7b3dc4dd9c0bc8c4151c960a"
+        }
+      ],
+      "assessment": {
+        "disposition": "supporting",
+        "concept_type": "property",
+        "reason": "Les citations fournissent principalement des extraits de code CSS où la propriété text-align est utilisée (exemples de styles de footer, de boutons, de navigation) ainsi qu'une simple mention dans une liste de propriétés courantes. Aucun texte n'explique de façon autonome le comportement, les valeurs possibles ou les effets de la propriété text-align, mais les extraits illustrent son emploi dans différents contextes, ce qui constitue un soutien illustratif à la notion.",
+        "missing_information": [],
+        "excluded_points": {},
+        "point_kinds": {
+          "9bd70756d6e4ec5ff577bc7f": "mention",
+          "9add53c36d327a7234c8f8ac": "explanation",
+          "5d86effc4e2c5a72eafaa82d": "example",
+          "71c0c1c8222d016e8b169298": "explanation",
+          "b4563ccafee82dad43d7c2b3": "explanation",
+          "7b5914a192edefb6bccd5ec7": "example",
+          "4f227adc1857dd0bc3c2f71f": "example",
+          "ab7913a28b1c470cc2e0bb20": "example",
+          "e9152273387314ecd514e6d5": "example",
+          "7b3dc4dd9c0bc8c4151c960a": "example"
+        },
+        "exclusion_checks": {},
+        "adequacy_check": {
+          "disposition": "supporting",
+          "reason": "Les citations fournissent principalement des extraits de code CSS où la propriété text-align est utilisée (exemples de styles de footer, de boutons, de navigation) ainsi qu'une simple mention dans une liste de propriétés courantes. Aucun texte n'explique de façon autonome le comportement, les valeurs possibles ou les effets de la propriété text-align, mais les extraits illustrent son emploi dans différents contextes, ce qui constitue un soutien illustratif à la notion.",
+          "blocking_gaps": [],
+          "optional_information": []
+        },
+        "proposed_missing_information": []
+      },
+      "recovery": {
+        "points": [],
+        "reason": "Selected exact lines that mention, explain, or exemplify the CSS text-align property, covering its presence in property lists, rule definitions, and concrete usage examples.",
+        "scope_checks": [
+          {
+            "point_id": "158ae36cb884649f3edaef9d",
+            "verdict": "other_notion",
+            "reason": "L'ajout se limite à une simple mention du nom de la propriété text-align dans une liste de propriétés courantes, sans fournir d'explication, d'exemple ou d'enseignement de la notion. Il ne développe pas la notion annoncée et ne constitue donc pas un apport sur cette notion."
+          },
+          {
+            "point_id": "87c8b3a73aea824cf42b3218",
+            "verdict": "other_notion",
+            "reason": "The added excerpt explains the use of the # notation for IDs in a stylesheet, which pertains to selector syntax rather than teaching the concept or providing an example of the text-align property itself. Therefore it belongs to a different notion."
+          },
+          {
+            "point_id": "e9e18526927d5cd947fdc545",
+            "verdict": "other_notion",
+            "reason": "L’ajout ne fournit pas d’explication, d’exemple détaillé ou d’enseignement sur la propriété text‑align elle‑même ; il ne fait qu’énumérer « Three Column Page Layout », ce qui ne développe pas la notion et ne constitue pas un contenu pertinent pour la notion ciblée."
+          },
+          {
+            "point_id": "65b6aa2fe216b82fa310f69b",
+            "verdict": "other_notion",
+            "reason": "L’ajout ne fournit qu’une ligne de code « text-align:center; » sans explication, définition ou démonstration approfondie de la propriété text-align. Il s’agit simplement d’un extrait d’exemple et ne constitue pas un enseignement de la notion elle‑même, donc il appartient à une autre notion ou à un usage isolé plutôt qu’à une couverture de la notion ciblée."
+          }
+        ],
+        "rejected": [
+          {
+            "point": {
+              "point_id": "158ae36cb884649f3edaef9d",
+              "page": 3,
+              "quote": "text-align\n",
+              "kind": "mention",
+              "title": "Propriété text-align",
+              "source_anchor": "Common Formatting CSS Properties",
+              "ambiguous": false,
+              "origin": "source_recovery_v15_1",
+              "source_ref": "u3-1-0"
+            },
+            "verdict": "other_notion",
+            "reason": "L'ajout se limite à une simple mention du nom de la propriété text-align dans une liste de propriétés courantes, sans fournir d'explication, d'exemple ou d'enseignement de la notion. Il ne développe pas la notion annoncée et ne constitue donc pas un apport sur cette notion."
+          },
+          {
+            "point": {
+              "point_id": "87c8b3a73aea824cf42b3218",
+              "page": 6,
+              "quote": "Use the # notation in the style sheet.\n▪\n",
+              "kind": "explanation",
+              "title": "Propriété text-align",
+              "source_anchor": "Deciding to Configure a class or id",
+              "ambiguous": false,
+              "origin": "source_recovery_v15_1",
+              "source_ref": "u6-0-0"
+            },
+            "verdict": "other_notion",
+            "reason": "The added excerpt explains the use of the # notation for IDs in a stylesheet, which pertains to selector syntax rather than teaching the concept or providing an example of the text-align property itself. Therefore it belongs to a different notion."
+          },
+          {
+            "point": {
+              "point_id": "e9e18526927d5cd947fdc545",
+              "page": 22,
+              "quote": "• Three Column Page Layout\n",
+              "kind": "example",
+              "title": "Propriété text-align",
+              "source_anchor": "Three Column Page Layout",
+              "ambiguous": false,
+              "origin": "source_recovery_v15_1",
+              "source_ref": "u22-2-0"
+            },
+            "verdict": "other_notion",
+            "reason": "L’ajout ne fournit pas d’explication, d’exemple détaillé ou d’enseignement sur la propriété text‑align elle‑même ; il ne fait qu’énumérer « Three Column Page Layout », ce qui ne développe pas la notion et ne constitue pas un contenu pertinent pour la notion ciblée."
+          },
+          {
+            "point": {
+              "point_id": "65b6aa2fe216b82fa310f69b",
+              "page": 26,
+              "quote": "text-align:center; }\n",
+              "kind": "example",
+              "title": "Propriété text-align",
+              "source_anchor": "",
+              "ambiguous": false,
+              "origin": "source_recovery_v15_1",
+              "source_ref": "u26-0-0"
+            },
+            "verdict": "other_notion",
+            "reason": "L’ajout ne fournit qu’une ligne de code « text-align:center; » sans explication, définition ou démonstration approfondie de la propriété text-align. Il s’agit simplement d’un extrait d’exemple et ne constitue pas un enseignement de la notion elle‑même, donc il appartient à une autre notion ou à un usage isolé plutôt qu’à une couverture de la notion ciblée."
+          }
+        ],
+        "searched_sources": [
+          "u1-0-0",
+          "u1-1-0",
+          "u1-2-0",
+          "u2-0-0",
+          "u2-1-0",
+          "u2-2-0",
+          "u2-3-0",
+          "u2-4-0",
+          "u2-5-0",
+          "u3-0-0",
+          "u3-1-0",
+          "u3-2-0",
+          "u3-3-0",
+          "u3-4-0",
+          "u4-0-0",
+          "u4-1-0",
+          "u4-2-0",
+          "u4-3-0",
+          "u4-4-0",
+          "u4-5-0",
+          "u5-0-0",
+          "u5-1-0",
+          "u5-2-0",
+          "u5-3-0",
+          "u5-4-0",
+          "u6-0-0",
+          "u6-1-0",
+          "u6-2-0",
+          "u6-3-0",
+          "u6-4-0",
+          "u7-0-0",
+          "u7-1-0",
+          "u7-2-0",
+          "u7-3-0",
+          "u7-4-0",
+          "u8-0-0",
+          "u8-1-0",
+          "u8-2-0",
+          "u9-0-0",
+          "u9-1-0",
+          "u9-2-0",
+          "u10-0-0",
+          "u10-1-0",
+          "u10-2-0",
+          "u11-0-0",
+          "u11-1-0",
+          "u12-0-0",
+          "u12-1-0",
+          "u12-2-0",
+          "u13-3-0",
+          "u15-1-0",
+          "u15-2-0",
+          "u15-3-0",
+          "u15-4-0",
+          "u21-0-0",
+          "u21-1-0",
+          "u21-2-0",
+          "u22-0-0",
+          "u22-1-0",
+          "u22-2-0",
+          "u23-0-0",
+          "u23-1-0",
+          "u23-2-0",
+          "u23-3-0",
+          "u23-4-0",
+          "u23-5-0",
+          "u24-0-0",
+          "u24-1-0",
+          "u25-0-0",
+          "u25-1-0",
+          "u25-2-0",
+          "u26-0-0"
+        ]
+      }
+    },
+    "group": {
+      "hash": "09dab2fb294130b03cd444b22049fe6d8ba4041f2619b6f23051b7294576de87",
+      "result": {
+        "relation": "independent",
+        "target_ref": null,
+        "reason": "Aucune des fiches cibles ne porte sur la propriété text-align ; aucune cible correspondante n'existe, donc la notion reste autonome.",
+        "target_id": null
+      }
+    }
+  },
+  {
+    "concept": {
+      "concept_id": "concept-dad8853732e3511d",
+      "title": "Validateur CSS",
+      "source_anchor": null,
+      "evidence_issue": null,
+      "type": "remark",
+      "primary_part_id": "part-293c3787ad16df16",
+      "related_part_ids": [],
+      "source_pages": [
+        7
+      ],
+      "evidence": [
+        {
+          "page": 7,
+          "excerpt": "• CSS Validator\n•\nUse the following link to validate your CSS file:"
+        }
+      ],
+      "illustrations": [],
+      "learning_points": [],
+      "card_role": "standalone",
+      "relevance": "active",
+      "relevance_reason": null,
+      "relevance_file_hash": null,
+      "relevance_proof_hash": null
+    },
+    "issue": {
+      "concept_id": "concept-dad8853732e3511d",
+      "status": "card_incomplete",
+      "reason": "Contenu dépendant conservé, sans fiche autonome justifiée pour le recevoir. Les extraits se limitent à mentionner l'existence d'un validateur CSS et à fournir un lien, sans développer la notion, donner un exemple d'utilisation ou expliquer le fonctionnement du validateur.",
+      "title": "Validateur CSS",
+      "primary_part_id": "part-293c3787ad16df16",
+      "source_pages": [
+        7
+      ],
+      "affected_part_ids": [
+        "part-293c3787ad16df16"
+      ]
+    },
+    "points": [
+      {
+        "title": "Validateur CSS",
+        "concept_ids": [
+          "concept-dad8853732e3511d"
+        ],
+        "kind": "mention",
+        "start_line": 31,
+        "end_line": 34,
+        "anchor_line": 31,
+        "ambiguous": false,
+        "quote": "• CSS Validator\n•\nUse the following link to validate your CSS file:\n http://jigsaw.w3.org/css-validator/\n",
+        "source_anchor": "• CSS Validator",
+        "concept_type": "remark",
+        "page": 7,
+        "point_id": "964964b5678f0c8afb21ff86"
+      },
+      {
+        "title": "Validateur CSS",
+        "concept_ids": [
+          "concept-dad8853732e3511d"
+        ],
+        "kind": "explanation",
+        "start_line": 38,
+        "end_line": 41,
+        "anchor_line": 38,
+        "ambiguous": false,
+        "quote": "• CSS Validator \n• \nUse the following link to validate your CSS file: \n http://jigsaw.w3.org/css-validator/ \n",
+        "source_anchor": "• CSS Validator",
+        "concept_type": "remark",
+        "page": 7,
+        "point_id": "47bab0f198b6efbee7e2a03a"
+      },
+      {
+        "point_id": "849e29de78a8a3a843a4d8a2",
+        "page": 7,
+        "quote": "• CSS Validator\n•\nUse the following link to validate your CSS file:",
+        "kind": "explanation",
+        "title": "Validateur CSS",
+        "source_anchor": "CSS Validator",
+        "ambiguous": false,
+        "origin": "source_recovery_v15_1",
+        "source_ref": "u7-2-0"
+      }
+    ],
+    "review": {
+      "hash": "c5fb40be982652360af2e3ef8fe822a0e348f25c8781e35020a44497fdca122d",
+      "assessment": {
+        "disposition": "name_only",
+        "concept_type": "remark",
+        "reason": "The provided points only mention the CSS Validator and give a link without any explanatory or instructional content, making it merely a name/reference without substantive information.",
+        "missing_information": [],
+        "excluded_points": {},
+        "point_kinds": {
+          "964964b5678f0c8afb21ff86": "mention",
+          "47bab0f198b6efbee7e2a03a": "mention"
+        },
+        "exclusion_checks": {},
+        "teaching_check": {
+          "disposition": "name_only",
+          "reason": "The provided points only mention the CSS Validator and give a link without any explanatory or instructional content, making it merely a name/reference without substantive information."
+        }
+      },
+      "recovery": {
+        "points": [
+          {
+            "point_id": "849e29de78a8a3a843a4d8a2",
+            "page": 7,
+            "quote": "• CSS Validator\n•\nUse the following link to validate your CSS file:",
+            "kind": "explanation",
+            "title": "Validateur CSS",
+            "source_anchor": "CSS Validator",
+            "ambiguous": false,
+            "origin": "source_recovery_v15_1",
+            "source_ref": "u7-2-0"
+          }
+        ],
+        "reason": "These lines provide the exact mention, explanation, and URL for the CSS Validator concept as requested.",
+        "scope_checks": [
+          {
+            "point_id": "849e29de78a8a3a843a4d8a2",
+            "verdict": "about_this_notion",
+            "reason": "L'ajout décrit le même concept déjà présent (Validateur CSS) sans introduire de nouvelle notion ou d'exemple distinct. Il se contente de répéter l'explication existante, il s'agit donc d'une référence à la même notion déjà couverte."
+          },
+          {
+            "point_id": "650f78f5ff1f2983ec30c48d",
+            "verdict": "other_notion",
+            "reason": "L’ajout ne présente aucune nouvelle notion ou explication distincte ; il ne fait que répéter le même lien vers le validateur CSS déjà présent dans les références existantes. Ainsi il n’enrichit pas la portée de la notion « Validateur CSS », il appartient donc à une autre notion ou n’ajoute pas de contenu pertinent."
+          }
+        ],
+        "rejected": [
+          {
+            "point": {
+              "point_id": "650f78f5ff1f2983ec30c48d",
+              "page": 7,
+              "quote": " http://jigsaw.w3.org/css-validator/",
+              "kind": "explanation",
+              "title": "Validateur CSS",
+              "source_anchor": "http://jigsaw.w3.org/css-validator/",
+              "ambiguous": false,
+              "origin": "source_recovery_v15_1",
+              "source_ref": "u7-3-0"
+            },
+            "verdict": "other_notion",
+            "reason": "L’ajout ne présente aucune nouvelle notion ou explication distincte ; il ne fait que répéter le même lien vers le validateur CSS déjà présent dans les références existantes. Ainsi il n’enrichit pas la portée de la notion « Validateur CSS », il appartient donc à une autre notion ou n’ajoute pas de contenu pertinent."
+          }
+        ],
+        "searched_sources": [
+          "u1-0-0",
+          "u1-1-0",
+          "u1-2-0",
+          "u2-0-0",
+          "u2-1-0",
+          "u2-2-0",
+          "u2-3-0",
+          "u2-4-0",
+          "u2-5-0",
+          "u3-0-0",
+          "u3-1-0",
+          "u3-2-0",
+          "u3-3-0",
+          "u3-4-0",
+          "u4-0-0",
+          "u4-1-0",
+          "u4-2-0",
+          "u4-3-0",
+          "u4-4-0",
+          "u4-5-0",
+          "u5-0-0",
+          "u5-1-0",
+          "u5-2-0",
+          "u5-3-0",
+          "u5-4-0",
+          "u6-0-0",
+          "u6-1-0",
+          "u6-2-0",
+          "u6-3-0",
+          "u6-4-0",
+          "u7-0-0",
+          "u7-1-0",
+          "u7-2-0",
+          "u7-3-0",
+          "u7-4-0",
+          "u8-0-0",
+          "u8-1-0",
+          "u8-2-0",
+          "u9-0-0",
+          "u9-1-0",
+          "u9-2-0",
+          "u10-0-0",
+          "u10-1-0",
+          "u10-2-0",
+          "u11-0-0",
+          "u11-1-0",
+          "u12-0-0",
+          "u12-1-0",
+          "u12-2-0",
+          "u13-0-0",
+          "u13-1-0",
+          "u13-2-0",
+          "u13-3-0",
+          "u14-0-0",
+          "u15-1-0",
+          "u15-2-0",
+          "u15-3-0",
+          "u15-4-0",
+          "u16-0-0",
+          "u16-1-0",
+          "u17-0-0",
+          "u17-1-0",
+          "u18-0-0",
+          "u18-2-0",
+          "u18-3-0",
+          "u19-3-0",
+          "u20-1-0",
+          "u22-2-0",
+          "u24-1-0",
+          "u25-2-0",
+          "u26-0-0"
+        ]
+      },
+      "reassessment": {
+        "disposition": "supporting",
+        "concept_type": "remark",
+        "reason": "Les extraits se limitent à mentionner l'existence d'un validateur CSS et à fournir un lien, sans développer la notion, donner un exemple d'utilisation ou expliquer le fonctionnement du validateur.",
+        "missing_information": [],
+        "excluded_points": {},
+        "point_kinds": {
+          "964964b5678f0c8afb21ff86": "mention",
+          "47bab0f198b6efbee7e2a03a": "explanation",
+          "849e29de78a8a3a843a4d8a2": "explanation"
+        },
+        "exclusion_checks": {},
+        "adequacy_check": {
+          "disposition": "supporting",
+          "reason": "Les extraits se limitent à mentionner l'existence d'un validateur CSS et à fournir un lien, sans développer la notion, donner un exemple d'utilisation ou expliquer le fonctionnement du validateur.",
+          "blocking_gaps": [],
+          "optional_information": []
+        },
+        "proposed_missing_information": []
+      }
+    },
+    "group": {
+      "hash": "4ee55f019bbd8ec1cea7a9ae141848d1d415aa2c601e3c0a879f5906fef89f5c",
+      "result": {
+        "relation": "independent",
+        "target_ref": null,
+        "reason": "Le concept \"Validateur CSS\" ne correspond à aucune des fiches cibles proposées (t1 à t18). Aucun titre ou contenu des cibles ne traite d'un validateur ou d'un outil de validation CSS, il s'agit donc d'une notion autonome qui ne peut être rattachée à une fiche existante.",
+        "target_id": null
+      }
+    }
+  },
+  {
+    "concept": {
+      "concept_id": "concept-08bce7a0e84e5955",
+      "title": "Propriété padding-right",
+      "source_anchor": null,
+      "evidence_issue": null,
+      "type": "property",
+      "primary_part_id": "part-293c3787ad16df16",
+      "related_part_ids": [],
+      "source_pages": [
+        9
+      ],
+      "evidence": [
+        {
+          "page": 9,
+          "excerpt": "Use CSS to configure padding on one or more sides of an element\n▪\npadding-bottom\n▪\npadding-left\n▪\npadding-right"
+        }
+      ],
+      "illustrations": [],
+      "learning_points": [],
+      "card_role": "standalone",
+      "relevance": "active",
+      "relevance_reason": null,
+      "relevance_file_hash": null,
+      "relevance_proof_hash": null
+    },
+    "issue": {
+      "concept_id": "concept-08bce7a0e84e5955",
+      "status": "card_incomplete",
+      "reason": "Contenu dépendant conservé, sans fiche autonome justifiée pour le recevoir. Les extraits fournis sont des exemples de code CSS montrant l'usage du padding, mais ils ne contiennent pas d'explication autonome du concept de padding‑right ni de démonstration de son effet. Ils restent des fragments dépendants d'un enseignement plus large, ce qui correspond à la catégorie supporting.",
+      "title": "Propriété padding-right",
+      "primary_part_id": "part-293c3787ad16df16",
+      "source_pages": [
+        9
+      ],
+      "affected_part_ids": [
+        "part-293c3787ad16df16"
+      ]
+    },
+    "points": [
+      {
+        "title": "Exemple : bordure et padding sur un titre h2",
+        "concept_ids": [
+          "concept-0af07cb3bde33a31",
+          "concept-c35f6aad3d4c862b",
+          "concept-cd5e943a40b508fe",
+          "concept-4fcb87c1ce3e9400",
+          "concept-08bce7a0e84e5955",
+          "concept-0fc9cc4d4fdf776f"
+        ],
+        "kind": "example",
+        "start_line": 39,
+        "end_line": 41,
+        "anchor_line": 39,
+        "ambiguous": false,
+        "quote": "<h2>Heading with Border</h2>\n▪\nh2 { border: 2px solid #ff0000; padding: 5px; }\n",
+        "source_anchor": "<h2>Heading with Border</h2>",
+        "concept_type": "property",
+        "page": 8,
+        "point_id": "4e279789cd42d62b60bdc572"
+      },
+      {
+        "title": "Exemple d'utilisation de padding",
+        "concept_ids": [
+          "concept-c35f6aad3d4c862b",
+          "concept-cd5e943a40b508fe",
+          "concept-4fcb87c1ce3e9400",
+          "concept-08bce7a0e84e5955",
+          "concept-0fc9cc4d4fdf776f"
+        ],
+        "kind": "example",
+        "start_line": 14,
+        "end_line": 18,
+        "anchor_line": 14,
+        "ambiguous": false,
+        "quote": "h2 { border: 2px solid #ff0000;\nbackground-color: #cccccc;\npadding-left: 5px;\npadding-bottom: 10px;\npadding-top: 10px;}\n",
+        "source_anchor": "h2 { border: 2px solid #ff0000;",
+        "concept_type": "property",
+        "page": 9,
+        "point_id": "763d8604f3e5bc1fded78104"
+      }
+    ],
+    "review": {
+      "hash": "437e270ed0c1608679c0ac16ac460f8df2bf232f4941cebded8f15049f8165d2",
+      "assessment": {
+        "disposition": "supporting",
+        "concept_type": "property",
+        "reason": "Les extraits fournis sont des exemples de code CSS montrant l'usage du padding, mais ils ne contiennent pas d'explication autonome du concept de padding‑right ni de démonstration de son effet. Ils restent des fragments dépendants d'un enseignement plus large, ce qui correspond à la catégorie supporting.",
+        "missing_information": [],
+        "excluded_points": {},
+        "point_kinds": {
+          "4e279789cd42d62b60bdc572": "example",
+          "763d8604f3e5bc1fded78104": "example"
+        },
+        "exclusion_checks": {},
+        "teaching_check": {
+          "disposition": "supporting",
+          "reason": "The provided items are isolated code examples illustrating how to use CSS padding and borders. They do not constitute a self‑contained teaching narrative, but rather serve as supporting snippets that depend on external explanation."
+        },
+        "adequacy_check": {
+          "disposition": "supporting",
+          "reason": "Les extraits fournis sont des exemples de code CSS montrant l'usage du padding, mais ils ne contiennent pas d'explication autonome du concept de padding‑right ni de démonstration de son effet. Ils restent des fragments dépendants d'un enseignement plus large, ce qui correspond à la catégorie supporting.",
+          "blocking_gaps": [],
+          "optional_information": [
+            "Ajouter une explication textuelle du comportement de padding‑right et son impact visuel.",
+            "Fournir un exemple complet incluant la propriété padding‑right et une illustration de son effet."
+          ]
+        },
+        "proposed_missing_information": [
+          "exemple ou explication montrant l'effet de padding-right",
+          "déclaration CSS incluant padding-right"
+        ]
+      },
+      "recovery": {
+        "points": [],
+        "reason": "The source provides a direct mention of the padding-right property, fulfilling the request for evidence of this notion.",
+        "scope_checks": [
+          {
+            "point_id": "82fe8d50744beda9707ab29a",
+            "verdict": "other_notion",
+            "reason": "L'ajout se limite à une simple mention du terme \"padding-right\" sans fournir d'explication, d'exemple ou d'enseignement de la notion. Il ne développe pas la notion annoncée et ne constitue pas un contenu suffisant pour être considéré comme portant sur la même notion que les exemples existants."
+          }
+        ],
+        "rejected": [
+          {
+            "point": {
+              "point_id": "82fe8d50744beda9707ab29a",
+              "page": 9,
+              "quote": "padding-right\n",
+              "kind": "mention",
+              "title": "Propriété padding-right",
+              "source_anchor": "",
+              "ambiguous": false,
+              "origin": "source_recovery_v15_1",
+              "source_ref": "u9-0-0"
+            },
+            "verdict": "other_notion",
+            "reason": "L'ajout se limite à une simple mention du terme \"padding-right\" sans fournir d'explication, d'exemple ou d'enseignement de la notion. Il ne développe pas la notion annoncée et ne constitue pas un contenu suffisant pour être considéré comme portant sur la même notion que les exemples existants."
+          }
+        ],
+        "searched_sources": [
+          "u1-0-0",
+          "u1-1-0",
+          "u1-2-0",
+          "u2-0-0",
+          "u2-1-0",
+          "u2-2-0",
+          "u2-3-0",
+          "u2-4-0",
+          "u2-5-0",
+          "u3-0-0",
+          "u3-1-0",
+          "u3-2-0",
+          "u3-3-0",
+          "u3-4-0",
+          "u4-0-0",
+          "u4-1-0",
+          "u4-2-0",
+          "u4-3-0",
+          "u4-4-0",
+          "u4-5-0",
+          "u5-0-0",
+          "u5-1-0",
+          "u5-2-0",
+          "u5-3-0",
+          "u5-4-0",
+          "u6-0-0",
+          "u6-1-0",
+          "u6-2-0",
+          "u6-3-0",
+          "u6-4-0",
+          "u7-0-0",
+          "u7-1-0",
+          "u7-2-0",
+          "u7-3-0",
+          "u7-4-0",
+          "u8-0-0",
+          "u8-1-0",
+          "u8-2-0",
+          "u9-0-0",
+          "u9-1-0",
+          "u9-2-0",
+          "u10-0-0",
+          "u10-1-0",
+          "u10-2-0",
+          "u11-0-0",
+          "u11-1-0",
+          "u12-0-0",
+          "u12-1-0",
+          "u12-2-0",
+          "u13-0-0",
+          "u13-1-0",
+          "u13-2-0",
+          "u13-3-0",
+          "u14-0-0",
+          "u14-1-0",
+          "u15-0-0",
+          "u15-1-0",
+          "u15-2-0",
+          "u15-3-0",
+          "u15-4-0",
+          "u16-0-0",
+          "u16-1-0",
+          "u16-2-0",
+          "u16-3-0",
+          "u17-0-0",
+          "u17-1-0",
+          "u18-1-0",
+          "u18-2-0",
+          "u18-3-0",
+          "u19-10-0"
+        ]
+      }
+    },
+    "group": {
+      "hash": "3446321ee23826e174100e38d68d0a4be5b01937837273ee244df9bd935f95e5",
+      "result": {
+        "relation": "independent",
+        "target_ref": null,
+        "reason": "Le concept porte sur la sous‑propriété padding‑right, aucune des cibles proposées ne décrit spécifiquement padding‑right ; la cible t2 décrit la propriété globale padding, ce qui constitue une notion différente. Aucun autre titre ne correspond, donc la meilleure organisation est de le classer comme fiche autonome.",
+        "target_id": null
+      }
+    }
+  },
+  {
+    "concept": {
+      "concept_id": "concept-6ecfbcc24b913814",
+      "title": "Propriété list‑style‑type",
+      "source_anchor": null,
+      "evidence_issue": null,
+      "type": "property",
+      "primary_part_id": "part-2aa810601df98389",
+      "related_part_ids": [],
+      "source_pages": [
+        26
+      ],
+      "evidence": [
+        {
+          "page": 26,
+          "excerpt": "list-style-type:none"
+        }
+      ],
+      "illustrations": [],
+      "learning_points": [],
+      "card_role": "standalone",
+      "relevance": "active",
+      "relevance_reason": null,
+      "relevance_file_hash": null,
+      "relevance_proof_hash": null
+    },
+    "issue": {
+      "concept_id": "concept-6ecfbcc24b913814",
+      "status": "card_incomplete",
+      "reason": "Contenu dépendant conservé, sans fiche autonome justifiée pour le recevoir. The provided items are isolated code snippets (CSS examples) that illustrate how to use the list‑style‑type property. They do not constitute a self‑contained teaching narrative but serve as supporting, concrete code content.",
+      "title": "Propriété list‑style‑type",
+      "primary_part_id": "part-2aa810601df98389",
+      "source_pages": [
+        26
+      ],
+      "affected_part_ids": [
+        "part-2aa810601df98389"
+      ]
+    },
+    "points": [
+      {
+        "title": "Exemple de CSS pour listes de navigation",
+        "concept_ids": [
+          "concept-e461bdbdd43ba1da",
+          "concept-c9177a0ddcc431ce",
+          "concept-6ecfbcc24b913814",
+          "concept-66589f4c29f5fa8d"
+        ],
+        "kind": "example",
+        "start_line": 7,
+        "end_line": 14,
+        "anchor_line": 7,
+        "ambiguous": false,
+        "quote": "div.nav li { display:inline;\nlist-style-type:none; }\ndiv.nav a { padding:5px;\nbackground-color:#e8b9e8;\ncolor:#000066;\ntext-decoration:none;\nfont-family:Verdana, Arial, sans-serif;\ntext-align:center; }\n",
+        "source_anchor": "div.nav li { display:inline;",
+        "concept_type": "example",
+        "page": 26,
+        "point_id": "7b3dc4dd9c0bc8c4151c960a"
+      },
+      {
+        "title": "Sélecteur d'élément et de classe avec propriétés display et list-style-type",
+        "concept_ids": [
+          "concept-77a62b22c3bd01eb",
+          "concept-3966eacf39a50e89",
+          "concept-2b73a4adb6948be4",
+          "concept-c122e724dd5fad73",
+          "concept-6ecfbcc24b913814"
+        ],
+        "kind": "explanation",
+        "start_line": 7,
+        "end_line": 8,
+        "anchor_line": 7,
+        "ambiguous": false,
+        "quote": "div.nav li { display:inline; \n          list-style-type:none; } \n",
+        "source_anchor": "div.nav li { display:inline;",
+        "concept_type": "concept",
+        "page": 26,
+        "point_id": "cccb7d70ffbb949d9ee3c876"
+      }
+    ],
+    "review": {
+      "hash": "9196bfa7774e9df8a1ab23c58eca950588abffc6908e1159745ebbe20028e715",
+      "assessment": {
+        "disposition": "supporting",
+        "concept_type": "property",
+        "reason": "The provided items are isolated code snippets (CSS examples) that illustrate how to use the list‑style‑type property. They do not constitute a self‑contained teaching narrative but serve as supporting, concrete code content.",
+        "missing_information": [],
+        "excluded_points": {},
+        "point_kinds": {
+          "7b3dc4dd9c0bc8c4151c960a": "example",
+          "cccb7d70ffbb949d9ee3c876": "example"
+        },
+        "exclusion_checks": {},
+        "teaching_check": {
+          "disposition": "supporting",
+          "reason": "The provided items are isolated code snippets (CSS examples) that illustrate how to use the list‑style‑type property. They do not constitute a self‑contained teaching narrative but serve as supporting, concrete code content."
+        }
+      },
+      "recovery": {
+        "points": [],
+        "reason": "These lines directly show the use of the list-style-type property (set to none) within a CSS rule for navigation lists, providing both an explanation of the property and a concrete example of its application.",
+        "scope_checks": [],
+        "rejected": [],
+        "searched_sources": [
+          "u1-0-0",
+          "u1-1-0",
+          "u1-2-0",
+          "u2-0-0",
+          "u2-1-0",
+          "u2-2-0",
+          "u2-3-0",
+          "u2-4-0",
+          "u2-5-0",
+          "u3-0-0",
+          "u3-1-0",
+          "u3-2-0",
+          "u3-3-0",
+          "u3-4-0",
+          "u4-0-0",
+          "u4-1-0",
+          "u4-2-0",
+          "u4-3-0",
+          "u4-4-0",
+          "u4-5-0",
+          "u5-0-0",
+          "u5-1-0",
+          "u5-2-0",
+          "u5-3-0",
+          "u5-4-0",
+          "u6-0-0",
+          "u6-1-0",
+          "u6-2-0",
+          "u6-3-0",
+          "u6-4-0",
+          "u7-0-0",
+          "u7-1-0",
+          "u7-2-0",
+          "u7-3-0",
+          "u7-4-0",
+          "u8-0-0",
+          "u8-1-0",
+          "u8-2-0",
+          "u9-0-0",
+          "u9-1-0",
+          "u9-2-0",
+          "u10-0-0",
+          "u10-1-0",
+          "u10-2-0",
+          "u11-0-0",
+          "u11-1-0",
+          "u12-0-0",
+          "u12-1-0",
+          "u12-2-0",
+          "u13-0-0",
+          "u13-1-0",
+          "u13-2-0",
+          "u13-3-0",
+          "u15-0-0",
+          "u15-1-0",
+          "u15-2-0",
+          "u15-3-0",
+          "u15-4-0",
+          "u16-0-0",
+          "u16-2-0",
+          "u18-2-0",
+          "u18-3-0",
+          "u19-1-0",
+          "u19-10-0",
+          "u24-1-0",
+          "u25-0-0",
+          "u25-1-0",
+          "u25-2-0",
+          "u26-0-0"
+        ]
+      }
+    },
+    "group": {
+      "hash": "fe2bb0b502a9507b4c81dcbce46afc879734bd8f85e041bedbf8bd7f5789ed98",
+      "result": {
+        "relation": "independent",
+        "target_ref": null,
+        "reason": "Le concept « Propriété list‑style‑type » ne correspond à aucune des cibles proposées (t1‑t18). Aucun autre target ne représente la même notion (list‑style‑type) ni ne fournit un exemple ou un conseil qui développe cette propriété. Ainsi, il doit être considéré comme une fiche autonome.",
+        "target_id": null
+      }
+    }
+  },
+  {
+    "rejected": [
+      {
+        "schema": "SourceAdequacy",
+        "input_hash": "101c9cbee1074ffccb9cc4abda606c9e18ae42c35c91db96597c71934f89818d",
+        "error": "ValueError: Le manque annoncé ne cite pas un passage réel de la source",
+        "response_excerpt": "{\"disposition\": \"incomplete\", \"reason\": \"Le point annonce \\\"Three ways to implement CSS\\\" mais la citation ne décrit que les styles en ligne, laissant les deux autres méthodes non présentées, ce qui rend l'enseignement incomplet par rapport à l'intitulé.\", \"blocking_gaps\": [{\"description\": \"Absence de description des deux autres moyens d'implémenter le CSS (styles internes via la balise <style> et feuilles de style externes via <link>).\", \"point_ids\": [\"p1\"], \"source_signal\": \"« • Three ways to implement CSS\\n• Inline Styles\\n▪\\nConfigured in the body of web page\\n▪\\nUses the style attribute of an HTML tag\\n▪\\nApplies only to the specified element\\n▪\\nExamples: »\"}], \"optional_information\": []}"
+      },
+      {
+        "schema": "SourceAdequacy",
+        "input_hash": "101c9cbee1074ffccb9cc4abda606c9e18ae42c35c91db96597c71934f89818d",
+        "error": "ValueError: Le manque annoncé ne cite pas un passage réel de la source",
+        "response_excerpt": "{\"disposition\": \"incomplete\", \"reason\": \"Le point annonce \\\"Three ways to implement CSS\\\" mais la citation ne décrit que les styles en ligne, laissant les deux autres méthodes non présentées, ce qui rend l'enseignement incomplet par rapport à l'intitulé.\", \"blocking_gaps\": [{\"description\": \"Absence de description du deuxième moyen d'implémenter le CSS (styles internes via la balise <style>) et du troisième moyen (feuilles de style externes via <link>).\", \"point_ids\": [\"p1\"], \"source_signal\": \"\\\"• Three ways to implement CSS\\\\n• Inline Styles\\\\n▪\\\\nConfigured in the body of web page\\\\n▪\\\\nUses the style attribute of an HTML tag\\\\n▪\\\\nApplies only to the specified element\\\\n▪\\\\nExamples:\\\"\"}], \"optional_information\": []}"
+      }
+    ]
+  },
+  {
+    "concept": {
+      "concept_id": "concept-934f220d19538c00",
+      "title": "fonction périodique",
+      "source_anchor": null,
+      "evidence_issue": "preuves limitées à un titre ou à un identifiant ; contenu pédagogique absent",
+      "type": "concept",
+      "primary_part_id": "part-5b652f8a3ca9e98e",
+      "related_part_ids": [],
+      "source_pages": [
+        6
+      ],
+      "evidence": [
+        {
+          "page": 6,
+          "excerpt": "périodique."
+        }
+      ],
+      "illustrations": [],
+      "learning_points": [],
+      "card_role": "standalone",
+      "relevance": "active",
+      "relevance_reason": null,
+      "relevance_file_hash": null,
+      "relevance_proof_hash": null
+    },
+    "issue": {
+      "status": "review_pending",
+      "concept_id": "concept-934f220d19538c00",
+      "reason": "ValueError: ValueError: ValueError: Le manque annoncé ne cite pas un passage réel de la source",
+      "title": "fonction périodique",
+      "primary_part_id": "part-5b652f8a3ca9e98e",
+      "source_pages": [
+        6
+      ],
+      "affected_part_ids": [
+        "part-5b652f8a3ca9e98e"
+      ]
+    },
+    "points": [
+      {
+        "title": "Définition de la développabilité en série de Fourier",
+        "concept_ids": [
+          "concept-cf8a1a06288a992f",
+          "concept-fa2434aad682202c",
+          "concept-934f220d19538c00"
+        ],
+        "kind": "explanation",
+        "start_line": 31,
+        "end_line": 32,
+        "anchor_line": null,
+        "ambiguous": false,
+        "quote": "On dit que f est développable en série de Fourier, les coeﬃcients a0, an, bn et cn sont les coeﬃcients\nde Fourier obtenus dans les paragraphes précédents.\n",
+        "source_anchor": "On dit que f est développable en série de Fourier, les coeﬃcients a0, an, bn et cn sont les coeﬃcients",
+        "concept_type": "method",
+        "page": 6,
+        "point_id": "ef70f85af5a0d7ba41c9f233"
+      },
+      {
+        "title": "Exemple de développement en série de Fourier d’une fonction périodique",
+        "concept_ids": [
+          "concept-fa2434aad682202c",
+          "concept-934f220d19538c00",
+          "concept-6b9aa7b37a0e382e",
+          "concept-a673f01c53bbfe3f",
+          "concept-6caf8d56a5ee7db4"
+        ],
+        "kind": "example",
+        "start_line": 38,
+        "end_line": 50,
+        "anchor_line": null,
+        "ambiguous": false,
+        "quote": "Donnons le développement en série de Fourier de la fonction f, de période 2π\ntelle que\n\n\n\n\n\nf(x) = 0\nsi\n−π ≤x < 0\nf(x) = 1\nsi\n0 ≤x < π",
+        "source_anchor": "Donnons le développement en série de Fourier de la fonction f, de période 2π",
+        "concept_type": "concept",
+        "page": 6,
+        "point_id": "5b6245cf2c2d9d904e612fc1"
+      }
+    ],
+    "review": {
+      "hash": "7486f414963722e96f265ec8293d82fc8a9d00ee239f5c9e70629a5318ca3b2a",
+      "last_error": "ValueError: ValueError: ValueError: Le manque annoncé ne cite pas un passage réel de la source"
+    },
+    "group": {}
+  },
+  {
+    "concept": {
+      "concept_id": "concept-73c7d1b73a8530c9",
+      "title": "Calcul des coefficients de Fourier (Proposition 2.2.1)",
+      "source_anchor": null,
+      "evidence_issue": null,
+      "type": "definition",
+      "primary_part_id": "part-58437fff231ca6fc",
+      "related_part_ids": [],
+      "source_pages": [
+        4
+      ],
+      "evidence": [
+        {
+          "page": 4,
+          "excerpt": "Calcul des coeﬃcients d’une série de Fourier. Proposition 2.2.1 :"
+        }
+      ],
+      "illustrations": [],
+      "learning_points": [],
+      "card_role": "standalone",
+      "relevance": "active",
+      "relevance_reason": null,
+      "relevance_file_hash": null,
+      "relevance_proof_hash": null
+    },
+    "issue": {
+      "status": "review_pending",
+      "concept_id": "concept-73c7d1b73a8530c9",
+      "reason": "ValueError: ValueError: ValueError: Le manque annoncé ne cite pas un passage réel de la source",
+      "title": "Calcul des coefficients de Fourier (Proposition 2.2.1)",
+      "primary_part_id": "part-58437fff231ca6fc",
+      "source_pages": [
+        4
+      ],
+      "affected_part_ids": [
+        "part-58437fff231ca6fc"
+      ]
+    },
+    "points": [
+      {
+        "title": "Proposition 2.2.1 – Calcul des coefficients d’une série de Fourier",
+        "concept_ids": [
+          "concept-73c7d1b73a8530c9",
+          "concept-6b9aa7b37a0e382e"
+        ],
+        "kind": "explanation",
+        "start_line": 40,
+        "end_line": 49,
+        "anchor_line": null,
+        "ambiguous": false,
+        "quote": "Proposition 2.2.1 :\nSi la série de Fourier\nX\n(an cos nωx + bn sin nωx) converge vers\nf(x) = a0 +\n+∞\nX\nn=1\n(an cos nωx + bn sin nωx) périodique de période T = 2π\nω et si f intégrable terme à",
+        "source_anchor": "Proposition 2.2.1 :",
+        "concept_type": "definition",
+        "page": 4,
+        "point_id": "f24b3f2ab87278260ce75c43"
+      },
+      {
+        "title": "Proposition 2.2.1 – Calcul des coefficients d’une série de Fourier",
+        "concept_ids": [
+          "concept-73c7d1b73a8530c9"
+        ],
+        "kind": "mention",
+        "start_line": 42,
+        "end_line": 42,
+        "anchor_line": null,
+        "ambiguous": false,
+        "quote": "Proposition 2.2.1 :\n",
+        "source_anchor": "Proposition 2.2.1 :",
+        "concept_type": "definition",
+        "page": 4,
+        "point_id": "d6ec0f4e11c913d58dfd80b6"
+      },
+      {
+        "point_id": "4f9676012f69b6356d7124a8",
+        "page": 4,
+        "quote": "Si la série de Fourier\n(an cos nωx + bn sin nωx) converge vers\n+∞\n(an cos nωx + bn sin nωx) périodique de période T = 2π\nX\nf(x) = a0 +\nω et si f intégrable terme à\n",
+        "kind": "explanation",
+        "title": "Calcul des coefficients de Fourier (Proposition 2.2.1)",
+        "source_anchor": "Proposition 2.2.1 ",
+        "ambiguous": false,
+        "origin": "source_recovery_v15_1",
+        "source_ref": "u4-1-0"
+      },
+      {
+        "point_id": "6781ec028257d1ce8eabc567",
+        "page": 4,
+        "quote": "+∞\n(an cos nωx + bn sin nωx) périodique de période T = 2π\nX\n",
+        "kind": "condition",
+        "title": "Calcul des coefficients de Fourier (Proposition 2.2.1)",
+        "source_anchor": "Proposition 2.2.1 ",
+        "ambiguous": false,
+        "origin": "source_recovery_v15_1",
+        "source_ref": "u4-1-0"
+      }
+    ],
+    "review": {
+      "hash": "f334b796c4aac6a2945ef21296de6f444ccf9575ea70ab2c57c8649ae5c57677",
+      "assessment": {
+        "disposition": "incomplete",
+        "concept_type": "definition",
+        "reason": "Le texte cité ne contient pas les formules explicites des coefficients de Fourier (a0, an, bn) ni les conditions précises d’intégrabilité et de périodicité, rendant l'enseignement incomplet.",
+        "missing_information": [
+          "Absence des formules des coefficients a0, an et bn qui devraient être présentées dans la proposition.",
+          "Manque des conditions détaillées d’intégrabilité et de périodicité nécessaires pour l’application de la proposition."
+        ],
+        "excluded_points": {},
+        "point_kinds": {
+          "f24b3f2ab87278260ce75c43": "explanation",
+          "d6ec0f4e11c913d58dfd80b6": "mention"
+        },
+        "exclusion_checks": {},
+        "adequacy_check": {
+          "disposition": "incomplete",
+          "reason": "Le texte cité ne contient pas les formules explicites des coefficients de Fourier (a0, an, bn) ni les conditions précises d’intégrabilité et de périodicité, rendant l'enseignement incomplet.",
+          "blocking_gaps": [
+            {
+              "description": "Absence des formules des coefficients a0, an et bn qui devraient être présentées dans la proposition.",
+              "point_ids": [
+                "p1"
+              ],
+              "source_signal": "Proposition 2.2.1 :\nSi la série de Fourier\nX\n(an cos nωx + bn sin nωx) converge vers\nf(x) = a0 +\n+∞\nX\nn=1\n(an cos nωx + bn sin nωx) périodique de période T = 2π\nω et si f intégrable terme à"
+            },
+            {
+              "description": "Manque des conditions détaillées d’intégrabilité et de périodicité nécessaires pour l’application de la proposition.",
+              "point_ids": [
+                "p1"
+              ],
+              "source_signal": "Proposition 2.2.1 :\nSi la série de Fourier\nX\n(an cos nωx + bn sin nωx) converge vers\nf(x) = a0 +\n+∞\nX\nn=1\n(an cos nωx + bn sin nωx) périodique de période T = 2π\nω et si f intégrable terme à"
+            }
+          ],
+          "optional_information": [
+            "Un exemple d'application illustrant le calcul des coefficients aurait permis de compléter l'explication.",
+            "Une démonstration ou un rappel des hypothèses (continuité, dérivabilité) aurait renforcé la compréhension."
+          ]
+        },
+        "proposed_missing_information": [
+          "Formules explicites des coefficients a0, an, bn",
+          "Conditions d'intégrabilité et de périodicité détaillées",
+          "Exemple d'application ou illustration du calcul"
+        ]
+      },
+      "recovery": {
+        "points": [
+          {
+            "point_id": "4f9676012f69b6356d7124a8",
+            "page": 4,
+            "quote": "Si la série de Fourier\n(an cos nωx + bn sin nωx) converge vers\n+∞\n(an cos nωx + bn sin nωx) périodique de période T = 2π\nX\nf(x) = a0 +\nω et si f intégrable terme à\n",
+            "kind": "explanation",
+            "title": "Calcul des coefficients de Fourier (Proposition 2.2.1)",
+            "source_anchor": "Proposition 2.2.1 ",
+            "ambiguous": false,
+            "origin": "source_recovery_v15_1",
+            "source_ref": "u4-1-0"
+          },
+          {
+            "point_id": "6781ec028257d1ce8eabc567",
+            "page": 4,
+            "quote": "+∞\n(an cos nωx + bn sin nωx) périodique de période T = 2π\nX\n",
+            "kind": "condition",
+            "title": "Calcul des coefficients de Fourier (Proposition 2.2.1)",
+            "source_anchor": "Proposition 2.2.1 ",
+            "ambiguous": false,
+            "origin": "source_recovery_v15_1",
+            "source_ref": "u4-1-0"
+          }
+        ],
+        "reason": "Les lignes sélectionnées contiennent la mention de la Proposition 2.2.1, son énoncé explicatif, les conditions de convergence et la forme de la fonction f(x) ainsi que la formule des coefficients, correspondant exactement à la notion recherchée.",
+        "scope_checks": [
+          {
+            "point_id": "4f9676012f69b6356d7124a8",
+            "verdict": "about_this_notion",
+            "reason": "L’ajout reproduit la même proposition 2.2.1 sur le calcul des coefficients de Fourier déjà présente dans les entrées existantes. Il ne présente ni nouvelle notion ni concept distinct, il s’agit simplement d’une redondance du même contenu. Ainsi il relève de la notion déjà couverte."
+          },
+          {
+            "point_id": "6781ec028257d1ce8eabc567",
+            "verdict": "about_this_notion",
+            "reason": "L'ajout décrit une condition supplémentaire (périodicité de la série de Fourier) qui complète la même proposition 2.2.1 déjà référencée. Il développe la même notion de calcul des coefficients de Fourier, sans introduire une notion distincte."
+          },
+          {
+            "point_id": "a63dfe0fe5bb7850425b1f60",
+            "verdict": "other_notion",
+            "reason": "L'ajout ne fournit pas d'enseignement ou d'exemple développant la notion de calcul des coefficients de Fourier ; il ne fait qu'ajouter une formule fragmentaire déjà présente dans la proposition existante, sans apporter de nouvelle explication ou perspective. Ainsi il appartient à une autre notion ou n'étend pas la portée de la notion initiale."
+          }
+        ],
+        "rejected": [
+          {
+            "point": {
+              "point_id": "a63dfe0fe5bb7850425b1f60",
+              "page": 4,
+              "quote": "f(x) = a0 +\nω et si f intégrable terme à\n",
+              "kind": "formula",
+              "title": "Calcul des coefficients de Fourier (Proposition 2.2.1)",
+              "source_anchor": "Proposition 2.2.1 ",
+              "ambiguous": false,
+              "origin": "source_recovery_v15_1",
+              "source_ref": "u4-1-0"
+            },
+            "verdict": "other_notion",
+            "reason": "L'ajout ne fournit pas d'enseignement ou d'exemple développant la notion de calcul des coefficients de Fourier ; il ne fait qu'ajouter une formule fragmentaire déjà présente dans la proposition existante, sans apporter de nouvelle explication ou perspective. Ainsi il appartient à une autre notion ou n'étend pas la portée de la notion initiale."
+          }
+        ],
+        "searched_sources": [
+          "u1-0-0",
+          "u2-0-0",
+          "u3-0-0",
+          "u3-1-0",
+          "u3-2-0",
+          "u3-3-0",
+          "u3-4-0",
+          "u4-0-0",
+          "u4-1-0",
+          "u5-0-0",
+          "u5-1-0",
+          "u6-0-0",
+          "u6-1-0",
+          "u6-2-0",
+          "u6-3-0",
+          "u7-0-0",
+          "u8-0-0",
+          "u8-1-0",
+          "u8-2-0",
+          "u9-0-0",
+          "u9-1-0",
+          "u10-0-0",
+          "u10-1-0",
+          "u11-0-0"
+        ]
+      },
+      "last_error": "ValueError: ValueError: ValueError: Le manque annoncé ne cite pas un passage réel de la source"
+    },
+    "group": {}
+  },
+  {
+    "rejected": [
+      {
+        "schema": "SourceAdequacy",
+        "input_hash": "36c949dbd93956c480788a1e872ecff97e299b01068a027a1017f1b171587713",
+        "error": "ValueError: Le manque annoncé ne cite pas un passage réel de la source",
+        "response_excerpt": "{\"disposition\": \"incomplete\", \"reason\": \"Les citations ne contiennent que des fragments indiquant que la série converge, sans fournir l'énoncé complet, la démonstration, les étapes de preuve ou les explications nécessaires pour que l'exemple soit autonome et suffisant pour l'enseignement.\", \"blocking_gaps\": [{\"description\": \"Absence de démonstration ou d'explication détaillée de la convergence de la série \\\\(\\\\sum_{n\\\\ge1} \\\\sin(nx)/n\\\\). Le texte se limite à la phrase tronquée « La série … converge » sans développer les arguments, les critères de convergence ou les calculs associés.\", \"point_ids\": [\"p1\", \"p2\"], \"source_signal\": \"Quote de p1 : \\\"La série\\\\nX\\\\nn≥1\\\\nsin(nx)\\\\nn\\\\nconverge.\\\" ; Quote de p2 : \\\"sin(nx)\\\\nX\\\\nconverge.\\\"\"}], \"optional_information\": []}"
+      },
+      {
+        "schema": "SourceAdequacy",
+        "input_hash": "51a275354cc6d766dbaed151f8269ad3d6b76ffdbb1be27ea484c1344ae0fabd",
+        "error": "ValueError: Le manque annoncé ne cite pas un passage réel de la source",
+        "response_excerpt": "{\"disposition\": \"incomplete\", \"reason\": \"Les citations ne contiennent que le titre et une phrase très brève indiquant que la série converge, sans fournir la démonstration, les hypothèses, le raisonnement ou un exemple illustratif. Le contenu annoncé (justification de la convergence) est absent.\", \"blocking_gaps\": [{\"description\": \"Absence de démonstration ou justification de la convergence de la série \\\\(\\\\sum_{n\\\\ge1} \\\\sin(nx)/n\\\\).\", \"point_ids\": [\"p1\"], \"source_signal\": \"La citation se limite à \\\"La série X n≥1 sin(nx) n converge.\\\" sans développer le raisonnement.\"}, {\"description\": \"Absence d'exemple numérique, graphique ou code illustrant la convergence.\", \"point_ids\": [\"p2\"], \"source_signal\": \"La citation se limite à \\\"sin(nx) X converge.\\\" sans fournir d'illustration ou de calcul concret.\"}], \"optional_information\": []}"
+      }
+    ]
+  },
+  {
+    "concept": {
+      "concept_id": "concept-03e22a4301ae8a56",
+      "title": "Exemple de diagonalisation",
+      "source_pages": [
+        12
+      ]
+    },
+    "issue": {
+      "status": "review_pending",
+      "concept_id": "concept-03e22a4301ae8a56",
+      "reason": "ValueError: ValueError: ValueError: Le manque annoncé ne cite pas un passage réel de la source",
+      "title": "Exemple de diagonalisation",
+      "primary_part_id": "part-ca2ac2db58762822",
+      "source_pages": [
+        12
+      ],
+      "affected_part_ids": [
+        "part-ca2ac2db58762822"
+      ]
+    },
+    "points": [
+      {
+        "point_id": "3e1b4bef993a6da2caa33aee",
+        "page": 9,
+        "quote": "Le calcul du polynôme caractéristique conduit à :\nPC(λ) = −(λ −1)(λ −2)2,\ndonc les valeurs propres sont 1 et 2.\n",
+        "kind": "example",
+        "title": "Exemple de diagonalisation",
+        "source_anchor": "",
+        "ambiguous": false,
+        "origin": "source_recovery_v15_1",
+        "source_ref": "u9-0-0"
+      },
+      {
+        "point_id": "74a8a244bb35f2144499c34b",
+        "page": 12,
+        "quote": "Considérons la matrice\n\n\n0\n3\n2\n−2\n5\n2\nC =\n\n\n\n\n−3\n2\n0\nLe calcul du polynôme caractéristique conduit à : PC(λ) = −(λ −1)(λ −2)2.\nLes valeurs propres sont donc 1 et 2.",
+        "kind": "example",
+        "title": "Exemple de diagonalisation",
+        "source_anchor": "Protocole de diagonalisation d’une matrice",
+        "ambiguous": false,
+        "origin": "source_recovery_v15_1",
+        "source_ref": "u12-1-0"
+      }
+    ],
+    "review": {
+      "hash": "0f6f9f805154973ce9f6b60aa09993ac24fd2f311bcd82319e027327a565fff7",
+      "assessment": {
+        "disposition": "incomplete",
+        "concept_type": "example",
+        "reason": "Le texte ne fournit que la matrice, le calcul du polynôme caractéristique et les valeurs propres, mais il ne décrit pas les étapes essentielles de la diagonalisation : calcul des vecteurs propres, construction de la matrice de passage P, formation de la matrice diagonale D et vérification de la diagonalisation.",
+        "missing_information": [
+          "Absence des calculs des vecteurs propres associés à chaque valeur propre, de la construction de la matrice de passage P, de la formulation de la matrice diagonale D = P^{-1}CP et de la vérification de la diagonalisation."
+        ],
+        "excluded_points": {},
+        "point_kinds": {
+          "0846765f0764be76f8526fd6": "example"
+        },
+        "exclusion_checks": {},
+        "teaching_check": {
+          "disposition": "developed",
+          "reason": "Le texte fournit un exemple complet de diagonalisation d'une matrice, incluant la matrice, le calcul du polynôme caractéristique et les valeurs propres, ce qui constitue un enseignement autonome sans dépendre d'un autre contenu."
+        },
+        "adequacy_check": {
+          "disposition": "incomplete",
+          "reason": "Le texte ne fournit que la matrice, le calcul du polynôme caractéristique et les valeurs propres, mais il ne décrit pas les étapes essentielles de la diagonalisation : calcul des vecteurs propres, construction de la matrice de passage P, formation de la matrice diagonale D et vérification de la diagonalisation.",
+          "blocking_gaps": [
+            {
+              "description": "Absence des calculs des vecteurs propres associés à chaque valeur propre, de la construction de la matrice de passage P, de la formulation de la matrice diagonale D = P^{-1}CP et de la vérification de la diagonalisation.",
+              "point_ids": [
+                "p1"
+              ],
+              "source_signal": "Exemple 1\nConsidérons la matrice\nC =\n\n\n\n0\n3\n2\n−2\n5\n2\n2\n−3\n0\n\n\n\nLe calcul du polynôme caractéristique conduit à : PC(λ) = −(λ −1)(λ −2)2.\nLes valeurs propres sont donc 1 et 2."
+            }
+          ],
+          "optional_information": []
+        },
+        "proposed_missing_information": [
+          "Calcul des vecteurs propres associés à chaque valeur propre",
+          "Construction de la matrice de passage P",
+          "Formulation de la matrice diagonale D = P^{-1}CP",
+          "Vérification de la diagonalisation"
+        ]
+      },
+      "recovery": {
+        "points": [
+          {
+            "point_id": "3e1b4bef993a6da2caa33aee",
+            "page": 9,
+            "quote": "Le calcul du polynôme caractéristique conduit à :\nPC(λ) = −(λ −1)(λ −2)2,\ndonc les valeurs propres sont 1 et 2.\n",
+            "kind": "example",
+            "title": "Exemple de diagonalisation",
+            "source_anchor": "",
+            "ambiguous": false,
+            "origin": "source_recovery_v15_1",
+            "source_ref": "u9-0-0"
+          },
+          {
+            "point_id": "74a8a244bb35f2144499c34b",
+            "page": 12,
+            "quote": "Considérons la matrice\n\n\n0\n3\n2\n−2\n5\n2\nC =\n\n\n\n\n−3\n2\n0\nLe calcul du polynôme caractéristique conduit à : PC(λ) = −(λ −1)(λ −2)2.\nLes valeurs propres sont donc 1 et 2.",
+            "kind": "example",
+            "title": "Exemple de diagonalisation",
+            "source_anchor": "Protocole de diagonalisation d’une matrice",
+            "ambiguous": false,
+            "origin": "source_recovery_v15_1",
+            "source_ref": "u12-1-0"
+          }
+        ],
+        "reason": "Les lignes sélectionnées contiennent exactement l'exemple de diagonalisation présenté dans le texte, incluant le calcul du polynôme caractéristique de la matrice C, son expression factorisée, et l'identification des valeurs propres 1 et 2, correspondant à la notion demandée.",
+        "scope_checks": [
+          {
+            "point_id": "3e1b4bef993a6da2caa33aee",
+            "verdict": "about_this_notion",
+            "reason": "L'ajout reproduit exactement le même contenu que l'exemple déjà présent (calcul du polynôme caractéristique et valeurs propres) sans introduire de nouvelle notion ou un développement supplémentaire. Il se limite à réaffirmer la même notion déjà couverte, il n'appartient donc pas à une autre notion ni n'est ambigu."
+          },
+          {
+            "point_id": "74a8a244bb35f2144499c34b",
+            "verdict": "about_this_notion",
+            "reason": "L’ajout propose exactement le même exemple de diagonalisation que celui déjà présent, en reprenant la même matrice, le même calcul du polynôme caractéristique et les mêmes valeurs propres. Il ne présente ni nouvelle notion ni concept différent, il se contente de réintroduire le même contenu sous un autre ancrage. Ainsi il relève de la même notion déjà couverte (diagonalisation) et ne constitue pas un ajout appartenant à une autre notion."
+          }
+        ],
+        "rejected": [],
+        "searched_sources": [
+          "u1-0-0",
+          "u2-0-0",
+          "u3-0-0",
+          "u3-1-0",
+          "u3-2-0",
+          "u3-3-0",
+          "u3-4-0",
+          "u3-5-0",
+          "u4-0-0",
+          "u4-1-0",
+          "u5-0-0",
+          "u5-1-0",
+          "u6-0-0",
+          "u6-1-0",
+          "u6-2-0",
+          "u7-0-0",
+          "u7-1-0",
+          "u7-2-0",
+          "u8-0-0",
+          "u8-1-0",
+          "u8-2-0",
+          "u8-3-0",
+          "u8-4-0",
+          "u8-5-0",
+          "u9-0-0",
+          "u9-1-0",
+          "u10-0-0",
+          "u10-1-0",
+          "u10-2-0",
+          "u10-3-0",
+          "u10-4-0",
+          "u10-5-0",
+          "u10-6-0",
+          "u11-0-0",
+          "u12-0-0",
+          "u12-1-0",
+          "u13-0-0",
+          "u14-0-0",
+          "u15-0-0",
+          "u15-1-0",
+          "u15-2-0",
+          "u15-3-0",
+          "u16-0-0",
+          "u16-1-0",
+          "u17-0-0",
+          "u18-0-0",
+          "u21-0-0",
+          "u21-1-0",
+          "u21-3-0"
+        ]
+      },
+      "last_error": "ValueError: ValueError: ValueError: Le manque annoncé ne cite pas un passage réel de la source"
+    },
+    "group": {}
+  },
+  {
+    "concept": {
+      "concept_id": "concept-3a01ce3b43705bbf",
+      "title": "Exemple de calcul d’espace propre pour la matrice C",
+      "source_pages": [
+        9
+      ]
+    },
+    "issue": {
+      "concept_id": "concept-3a01ce3b43705bbf",
+      "status": "source_insufficient",
+      "reason": "Le texte ne fournit pas le développement complet du calcul de l'espace propre E₂ pour la valeur propre 2. Le point p3 s'arrête au milieu du système linéaire (les équations et la résolution sont tronquées) et aucune base explicite de E₂ n'est donnée, ce qui empêche de vérifier que les vecteurs obtenus appartiennent bien au noyau de (C‑2I).",
+      "missing_information": [
+        "Absence du développement complet de la recherche de l'espace propre E₂ (résolution du système (C‑2I)v=0, vecteurs propres, base de E₂)."
+      ],
+      "title": "Exemple de calcul d’espace propre pour la matrice C",
+      "primary_part_id": "part-ca2ac2db58762822",
+      "source_pages": [
+        9
+      ],
+      "affected_part_ids": [
+        "part-ca2ac2db58762822"
+      ]
+    },
+    "points": [
+      {
+        "point_id": "3e1b4bef993a6da2caa33aee",
+        "page": 9,
+        "quote": "Le calcul du polynôme caractéristique conduit à :\nPC(λ) = −(λ −1)(λ −2)2,\ndonc les valeurs propres sont 1 et 2.\n",
+        "kind": "example",
+        "title": "Exemple de calcul d’espace propre pour la matrice C",
+        "source_anchor": "",
+        "ambiguous": false,
+        "origin": "source_recovery_v15_1",
+        "source_ref": "u9-0-0"
+      },
+      {
+        "point_id": "814e0575206cab8c56f93f80",
+        "page": 9,
+        "quote": "Cherchons par Exemple à calculer E2 l’espace propre associé à la valeur propre 2.\n\n\n\n\n\n\n\n\n\n\n0\n3\n2\nx\nx\nx\n\n\n\n\n∈R3/\n−2\n5\n2\ny\ny\ny\n= 2\nE2 =\n",
+        "kind": "example",
+        "title": "Exemple de calcul d’espace propre pour la matrice C",
+        "source_anchor": "",
+        "ambiguous": false,
+        "origin": "source_recovery_v15_1",
+        "source_ref": "u9-0-0"
+      },
+      {
+        "point_id": "31811c51ea2d19536400e7da",
+        "page": 8,
+        "quote": "Déﬁnition. Soit B une base de E et A ∈Mn,n(K) une matrice carrée et λ ∈K une valeur\npropre de A. On appelle espace propre associé à λ l’ensemble suivant :\nEλ = {v ∈E A[v]B = λ[v]B} .",
+        "kind": "explanation",
+        "title": "Exemple de calcul d’espace propre pour la matrice C",
+        "source_anchor": "Définition. Soit B une base de E et A ∈Mn,n(K) une matrice carrée et λ ∈K une valeur",
+        "ambiguous": false,
+        "origin": "source_recovery_v15_1",
+        "source_ref": "u8-4-0"
+      },
+      {
+        "point_id": "947cf6a93673f5678fbc3719",
+        "page": 8,
+        "quote": "Proposition. Soit A ∈Mn,n(K) une matrice carrée et λ ∈K une valeur propre de A. On a :\nEλ = Ker(A −λI).\n",
+        "kind": "explanation",
+        "title": "Exemple de calcul d’espace propre pour la matrice C",
+        "source_anchor": "Proposition. Soit A ∈Mn,n(K) une matrice carrée et λ ∈K une valeur propre de A. On a ",
+        "ambiguous": false,
+        "origin": "source_recovery_v15_1",
+        "source_ref": "u8-5-0"
+      }
+    ],
+    "review": {
+      "hash": "54b964077f29a8e1d33b8a17afdc7086d025129d88c0b8aaa999de42e2028234",
+      "assessment": {
+        "disposition": "supporting",
+        "concept_type": "example",
+        "reason": "Le texte fournit la matrice, le polynôme caractéristique et les valeurs propres, mais il ne développe pas le calcul des vecteurs propres, la description des espaces propres (dimensions, bases) ni la vérification de la multiplicité algébrique versus géométrique, ce qui empêche de le qualifier de développé.",
+        "missing_information": [],
+        "excluded_points": {},
+        "point_kinds": {
+          "002601c914c35b49fdd79038": "example"
+        },
+        "exclusion_checks": {},
+        "teaching_check": {
+          "disposition": "developed",
+          "reason": "Le texte présente un exemple complet de calcul d’espace propre pour une matrice donnée, incluant la matrice, le calcul du polynôme caractéristique et les valeurs propres obtenues, ce qui constitue un enseignement autonome."
+        },
+        "adequacy_check": {
+          "disposition": "supporting",
+          "reason": "Le texte fournit la matrice, le polynôme caractéristique et les valeurs propres, mais il ne développe pas le calcul des vecteurs propres, la description des espaces propres (dimensions, bases) ni la vérification de la multiplicité algébrique versus géométrique, ce qui empêche de le qualifier de développé.",
+          "blocking_gaps": [],
+          "optional_information": [
+            "Ajouter le calcul des vecteurs propres associés à chaque valeur propre.",
+            "Décrire les espaces propres : dimensions, bases explicites.",
+            "Comparer la multiplicité algébrique et géométrique pour chaque valeur propre."
+          ]
+        },
+        "proposed_missing_information": [
+          "Calcul des vecteurs propres associés à chaque valeur propre",
+          "Description des espaces propres (dimensions, bases)",
+          "Vérification de la multiplicité algébrique vs géométrique"
+        ]
+      },
+      "recovery": {
+        "points": [
+          {
+            "point_id": "3e1b4bef993a6da2caa33aee",
+            "page": 9,
+            "quote": "Le calcul du polynôme caractéristique conduit à :\nPC(λ) = −(λ −1)(λ −2)2,\ndonc les valeurs propres sont 1 et 2.\n",
+            "kind": "example",
+            "title": "Exemple de calcul d’espace propre pour la matrice C",
+            "source_anchor": "",
+            "ambiguous": false,
+            "origin": "source_recovery_v15_1",
+            "source_ref": "u9-0-0"
+          },
+          {
+            "point_id": "814e0575206cab8c56f93f80",
+            "page": 9,
+            "quote": "Cherchons par Exemple à calculer E2 l’espace propre associé à la valeur propre 2.\n\n\n\n\n\n\n\n\n\n\n0\n3\n2\nx\nx\nx\n\n\n\n\n∈R3/\n−2\n5\n2\ny\ny\ny\n= 2\nE2 =\n",
+            "kind": "example",
+            "title": "Exemple de calcul d’espace propre pour la matrice C",
+            "source_anchor": "",
+            "ambiguous": false,
+            "origin": "source_recovery_v15_1",
+            "source_ref": "u9-0-0"
+          },
+          {
+            "point_id": "31811c51ea2d19536400e7da",
+            "page": 8,
+            "quote": "Déﬁnition. Soit B une base de E et A ∈Mn,n(K) une matrice carrée et λ ∈K une valeur\npropre de A. On appelle espace propre associé à λ l’ensemble suivant :\nEλ = {v ∈E A[v]B = λ[v]B} .",
+            "kind": "explanation",
+            "title": "Exemple de calcul d’espace propre pour la matrice C",
+            "source_anchor": "Définition. Soit B une base de E et A ∈Mn,n(K) une matrice carrée et λ ∈K une valeur",
+            "ambiguous": false,
+            "origin": "source_recovery_v15_1",
+            "source_ref": "u8-4-0"
+          },
+          {
+            "point_id": "947cf6a93673f5678fbc3719",
+            "page": 8,
+            "quote": "Proposition. Soit A ∈Mn,n(K) une matrice carrée et λ ∈K une valeur propre de A. On a :\nEλ = Ker(A −λI).\n",
+            "kind": "explanation",
+            "title": "Exemple de calcul d’espace propre pour la matrice C",
+            "source_anchor": "Proposition. Soit A ∈Mn,n(K) une matrice carrée et λ ∈K une valeur propre de A. On a ",
+            "ambiguous": false,
+            "origin": "source_recovery_v15_1",
+            "source_ref": "u8-5-0"
+          }
+        ],
+        "reason": "Selected the exact lines that provide the example of computing the eigenspace E2 for matrix C, the definition of an eigenspace, and the proposition linking an eigenspace to a kernel, which together constitute the missing evidence for the concept.",
+        "scope_checks": [
+          {
+            "point_id": "3e1b4bef993a6da2caa33aee",
+            "verdict": "about_this_notion",
+            "reason": "L’ajout ne fait qu’introduire à nouveau le même exemple de calcul d’espace propre déjà présent dans la base de connaissances. Il ne présente aucune nouvelle notion, ni un concept différent, ni une extension d’une autre notion. Ainsi, il se situe dans le même champ que l’exemple existant et ne constitue pas une autre notion."
+          },
+          {
+            "point_id": "814e0575206cab8c56f93f80",
+            "verdict": "about_this_notion",
+            "reason": "L’ajout propose un exemple supplémentaire qui développe la même notion que l’entrée existante : le calcul de l’espace propre associé à une valeur propre (ici λ=2) pour la même matrice C. Il ne présente pas une notion différente, ni une ambiguïté quant à la notion concernée. Ainsi il s’agit d’un complément direct à la notion déjà couverte."
+          },
+          {
+            "point_id": "31811c51ea2d19536400e7da",
+            "verdict": "about_this_notion",
+            "reason": "L’ajout fournit la définition de l’espace propre, qui est exactement la notion étudiée dans l’exemple existant de calcul d’espace propre pour la matrice C. Il complète directement le même concept sans introduire une notion différente."
+          },
+          {
+            "point_id": "947cf6a93673f5678fbc3719",
+            "verdict": "about_this_notion",
+            "reason": "L’ajout fournit la définition fondamentale d’un espace propre (Eλ = Ker(A‑λI)), qui est exactement la notion utilisée dans l’exemple existant de calcul d’espace propre pour la matrice C. Il ne s’agit pas d’une notion différente, mais d’un éclaircissement de la même notion que l’exemple illustre."
+          }
+        ],
+        "rejected": [],
+        "searched_sources": [
+          "u2-0-0",
+          "u3-0-0",
+          "u3-1-0",
+          "u3-2-0",
+          "u3-3-0",
+          "u3-4-0",
+          "u3-5-0",
+          "u4-0-0",
+          "u4-1-0",
+          "u5-0-0",
+          "u5-1-0",
+          "u6-0-0",
+          "u6-1-0",
+          "u6-2-0",
+          "u8-0-0",
+          "u8-1-0",
+          "u8-2-0",
+          "u8-3-0",
+          "u8-4-0",
+          "u8-5-0",
+          "u9-0-0",
+          "u9-1-0",
+          "u10-0-0",
+          "u10-1-0",
+          "u10-2-0",
+          "u10-3-0",
+          "u10-4-0",
+          "u10-5-0",
+          "u10-6-0",
+          "u12-1-0",
+          "u13-0-0",
+          "u14-0-0",
+          "u15-2-0",
+          "u16-1-0",
+          "u19-0-0",
+          "u20-0-0",
+          "u21-2-0",
+          "u21-3-0",
+          "u22-0-0",
+          "u22-1-0"
+        ]
+      },
+      "reassessment": {
+        "disposition": "incomplete",
+        "concept_type": "example",
+        "reason": "Le texte ne fournit pas le développement complet du calcul de l'espace propre E₂ pour la valeur propre 2. Le point p3 s'arrête au milieu du système linéaire (les équations et la résolution sont tronquées) et aucune base explicite de E₂ n'est donnée, ce qui empêche de vérifier que les vecteurs obtenus appartiennent bien au noyau de (C‑2I).",
+        "missing_information": [
+          "Absence du développement complet de la recherche de l'espace propre E₂ (résolution du système (C‑2I)v=0, vecteurs propres, base de E₂)."
+        ],
+        "excluded_points": {},
+        "point_kinds": {
+          "002601c914c35b49fdd79038": "example",
+          "3e1b4bef993a6da2caa33aee": "example",
+          "814e0575206cab8c56f93f80": "example",
+          "31811c51ea2d19536400e7da": "explanation",
+          "947cf6a93673f5678fbc3719": "explanation"
+        },
+        "exclusion_checks": {},
+        "adequacy_check": {
+          "disposition": "incomplete",
+          "reason": "Le texte ne fournit pas le développement complet du calcul de l'espace propre E₂ pour la valeur propre 2. Le point p3 s'arrête au milieu du système linéaire (les équations et la résolution sont tronquées) et aucune base explicite de E₂ n'est donnée, ce qui empêche de vérifier que les vecteurs obtenus appartiennent bien au noyau de (C‑2I).",
+          "blocking_gaps": [
+            {
+              "description": "Absence du développement complet de la recherche de l'espace propre E₂ (résolution du système (C‑2I)v=0, vecteurs propres, base de E₂).",
+              "point_ids": [
+                "p3"
+              ],
+              "source_signal": "Cherchons par Exemple à calculer E2 l’espace propre associé à la valeur propre 2.\n\n\n\n\n\n\n\n\n\n\n0\n3\n2\nx\nx\nx\n\n\n\n\n∈R3/\n−2\n5\n2\ny\ny\ny\n= 2\nE2 =\n"
+            }
+          ],
+          "optional_information": [
+            "Définition de l'espace propre (p4).",
+            "Proposition Eλ = Ker(A‑λI) (p5).",
+            "Polynôme caractéristique et valeurs propres (p1, p2)."
+          ]
+        },
+        "proposed_missing_information": [
+          "Développement complet de la recherche de l'espace propre E2 (résolution du système, vecteurs propres)",
+          "Présentation explicite de la base de E2",
+          "Vérification que les vecteurs obtenus sont bien dans le noyau de (C‑2I)"
+        ]
+      }
+    },
+    "group": {}
+  },
+  {
+    "concept": {
+      "concept_id": "concept-84811486134d7a0c",
+      "title": "Illustration de la matrice C",
+      "source_pages": [
+        12
+      ]
+    },
+    "issue": {
+      "concept_id": "concept-84811486134d7a0c",
+      "status": "card_incomplete",
+      "reason": "Contenu dépendant conservé, sans fiche autonome justifiée pour le recevoir. Les points fournis se limitent à afficher la matrice C sous différentes formes sans fournir d'explication, de calcul ou d'interprétation. Ils constituent un support visuel isolé, utile comme illustration mais ne constituent pas un enseignement autonome complet.",
+      "title": "Illustration de la matrice C",
+      "primary_part_id": "part-ca2ac2db58762822",
+      "source_pages": [
+        12
+      ],
+      "affected_part_ids": [
+        "part-ca2ac2db58762822"
+      ]
+    },
+    "points": [
+      {
+        "point_id": "cb06df6187bd81e499419ec6",
+        "page": 9,
+        "quote": "Considérons la matrice\n\n\n0\n3\n2\n−2\n5\n2\nC =\n\n\n\n\n−3\n2\n0\nLe calcul du polynôme caractéristique conduit à :\n",
+        "kind": "illustration",
+        "title": "Illustration de la matrice C",
+        "source_anchor": "",
+        "ambiguous": false,
+        "origin": "source_recovery_v15_1",
+        "source_ref": "u9-0-0"
+      },
+      {
+        "point_id": "7e8eca3070166345e5d89845",
+        "page": 12,
+        "quote": "Considérons la matrice\n\n\n0\n3\n2\n−2\n5\n2\nC =\n\n",
+        "kind": "illustration",
+        "title": "Illustration de la matrice C",
+        "source_anchor": "Protocole de diagonalisation d’une matrice",
+        "ambiguous": false,
+        "origin": "source_recovery_v15_1",
+        "source_ref": "u12-1-0"
+      }
+    ],
+    "review": {
+      "hash": "b93f245824cea1836ac2d7e1dc782728008ec9c487b340f40d1b3d4f93f8e97d",
+      "assessment": {
+        "disposition": "name_only",
+        "concept_type": "concept",
+        "reason": "Le point ne contient qu'une illustration de la matrice C avec son titre, sans explication, démonstration ou développement autonome. Il se limite à fournir un nom et une représentation visuelle, ce qui correspond à la catégorie name_only.",
+        "missing_information": [],
+        "excluded_points": {},
+        "point_kinds": {
+          "1a78027b02a67557c8c4c9c2": "mention"
+        },
+        "exclusion_checks": {},
+        "teaching_check": {
+          "disposition": "name_only",
+          "reason": "Le point ne contient qu'une illustration de la matrice C avec son titre, sans explication, démonstration ou développement autonome. Il se limite à fournir un nom et une représentation visuelle, ce qui correspond à la catégorie name_only."
+        },
+        "adequacy_check": {
+          "disposition": "name_only",
+          "reason": "Le point ne contient qu'une illustration de la matrice C avec son titre, sans explication, démonstration ou développement autonome. Il se limite à fournir un nom et une représentation visuelle, ce qui correspond à la catégorie name_only.",
+          "blocking_gaps": [],
+          "optional_information": []
+        },
+        "proposed_missing_information": [
+          "Explication du rôle ou de l'utilité de la matrice C dans le contexte",
+          "Exemple d'application ou de calcul utilisant cette matrice"
+        ]
+      },
+      "recovery": {
+        "points": [
+          {
+            "point_id": "cb06df6187bd81e499419ec6",
+            "page": 9,
+            "quote": "Considérons la matrice\n\n\n0\n3\n2\n−2\n5\n2\nC =\n\n\n\n\n−3\n2\n0\nLe calcul du polynôme caractéristique conduit à :\n",
+            "kind": "illustration",
+            "title": "Illustration de la matrice C",
+            "source_anchor": "",
+            "ambiguous": false,
+            "origin": "source_recovery_v15_1",
+            "source_ref": "u9-0-0"
+          },
+          {
+            "point_id": "7e8eca3070166345e5d89845",
+            "page": 12,
+            "quote": "Considérons la matrice\n\n\n0\n3\n2\n−2\n5\n2\nC =\n\n",
+            "kind": "illustration",
+            "title": "Illustration de la matrice C",
+            "source_anchor": "Protocole de diagonalisation d’une matrice",
+            "ambiguous": false,
+            "origin": "source_recovery_v15_1",
+            "source_ref": "u12-1-0"
+          }
+        ],
+        "reason": "These lines contain the exact representation of the matrix C used as an illustration in the document, matching the requested concept without adding or modifying any content.",
+        "scope_checks": [
+          {
+            "point_id": "cb06df6187bd81e499419ec6",
+            "verdict": "about_this_notion",
+            "reason": "L'ajout propose une illustration supplémentaire de la même matrice C déjà présente dans le document. Il ne présente pas une nouvelle notion, mais renforce la même notion existante en fournissant une représentation graphique supplémentaire du même concept."
+          },
+          {
+            "point_id": "7e8eca3070166345e5d89845",
+            "verdict": "about_this_notion",
+            "reason": "L'ajout ne présente aucune nouvelle notion ou concept, il ne fait que reformuler ou répéter l'illustration existante de la matrice C. Il ne développe pas de notion supplémentaire et ne se rattache donc pas à une autre notion."
+          }
+        ],
+        "rejected": [],
+        "searched_sources": [
+          "u1-0-0",
+          "u2-0-0",
+          "u3-0-0",
+          "u3-1-0",
+          "u3-2-0",
+          "u3-4-0",
+          "u3-5-0",
+          "u4-0-0",
+          "u4-1-0",
+          "u5-0-0",
+          "u5-1-0",
+          "u6-1-0",
+          "u6-2-0",
+          "u8-3-0",
+          "u8-4-0",
+          "u8-5-0",
+          "u9-0-0",
+          "u9-1-0",
+          "u10-2-0",
+          "u10-3-0",
+          "u10-4-0",
+          "u10-5-0",
+          "u10-6-0",
+          "u11-0-0",
+          "u12-0-0",
+          "u12-1-0",
+          "u13-0-0",
+          "u14-0-0",
+          "u15-0-0",
+          "u15-1-0",
+          "u15-2-0",
+          "u15-3-0",
+          "u16-1-0",
+          "u17-0-0",
+          "u19-0-0",
+          "u21-2-0",
+          "u21-3-0",
+          "u22-1-0"
+        ]
+      },
+      "reassessment": {
+        "disposition": "supporting",
+        "concept_type": "example",
+        "reason": "Les points fournis se limitent à afficher la matrice C sous différentes formes sans fournir d'explication, de calcul ou d'interprétation. Ils constituent un support visuel isolé, utile comme illustration mais ne constituent pas un enseignement autonome complet.",
+        "missing_information": [],
+        "excluded_points": {},
+        "point_kinds": {
+          "1a78027b02a67557c8c4c9c2": "illustration",
+          "cb06df6187bd81e499419ec6": "illustration",
+          "7e8eca3070166345e5d89845": "illustration"
+        },
+        "exclusion_checks": {},
+        "adequacy_check": {
+          "disposition": "supporting",
+          "reason": "Les points fournis se limitent à afficher la matrice C sous différentes formes sans fournir d'explication, de calcul ou d'interprétation. Ils constituent un support visuel isolé, utile comme illustration mais ne constituent pas un enseignement autonome complet.",
+          "blocking_gaps": [],
+          "optional_information": [
+            "Ajouter une explication du rôle ou de l'intérêt de la matrice C dans le cours.",
+            "Fournir le calcul du polynôme caractéristique de C et son interprétation.",
+            "Présenter un exemple d'application ou d'interprétation de la matrice C."
+          ]
+        },
+        "proposed_missing_information": [
+          "Explication du rôle ou de l'intérêt de la matrice C",
+          "Calcul du polynôme caractéristique ou d'autres propriétés associées",
+          "Exemple d'application ou d'interprétation de la matrice"
+        ]
+      }
+    },
+    "group": {
+      "hash": "d2412a725de41f3a60064605c448ed12f17c4aae7e25fc3509b7865e2bcef783",
+      "result": {
+        "relation": "independent",
+        "target_ref": null,
+        "reason": "Les points décrivent uniquement une illustration de la matrice C et ne correspondent à aucune des cibles proposées (t1‑t18). Aucun autre élément ne partage la même notion, il s'agit donc d'une fiche autonome.",
+        "target_id": null
+      }
+    }
+  },
+  {
+    "concept": {
+      "concept_id": "concept-c3e90d1a5fa5f9d5",
+      "title": "Choix de v₃ = (1,0,0)ᵀ comme vecteur de la base canonique",
+      "source_pages": [
+        17
+      ]
+    },
+    "issue": {
+      "concept_id": "concept-c3e90d1a5fa5f9d5",
+      "status": "source_insufficient",
+      "reason": "Le texte fourni ne comporte qu'un extrait d'énoncé (« On cherche un vecteur v3 = … tel que {v1, … ») sans la suite indiquant les conditions que v₃ doit satisfaire, sans justification du choix v₃ = (1,0,0)ᵀ et sans le calcul ou la vérification montrant que ce vecteur complète la base. Le développement annoncé est donc absent.",
+      "missing_information": [
+        "Absence de la suite de l'énoncé précisant les conditions que v₃ doit satisfaire, de la justification du choix v₃ = (1,0,0)ᵀ et du calcul ou de la vérification montrant que ce vecteur complète la base canonique."
+      ],
+      "title": "Choix de v₃ = (1,0,0)ᵀ comme vecteur de la base canonique",
+      "primary_part_id": "part-230ff73d8d186434",
+      "source_pages": [
+        17
+      ],
+      "affected_part_ids": [
+        "part-230ff73d8d186434"
+      ]
+    },
+    "points": [],
+    "review": {
+      "hash": "20d9d39e404e30093a3a32bddbef51f7a237d9b8964414f564dfc060e8f7909b",
+      "assessment": {
+        "disposition": "incomplete",
+        "concept_type": "example",
+        "reason": "Le texte fourni ne comporte qu'un extrait d'énoncé (« On cherche un vecteur v3 = … tel que {v1, … ») sans la suite indiquant les conditions que v₃ doit satisfaire, sans justification du choix v₃ = (1,0,0)ᵀ et sans le calcul ou la vérification montrant que ce vecteur complète la base. Le développement annoncé est donc absent.",
+        "missing_information": [
+          "Absence de la suite de l'énoncé précisant les conditions que v₃ doit satisfaire, de la justification du choix v₃ = (1,0,0)ᵀ et du calcul ou de la vérification montrant que ce vecteur complète la base canonique."
+        ],
+        "excluded_points": {},
+        "point_kinds": {
+          "ff78ce66d6d91194db76fbe1": "example"
+        },
+        "exclusion_checks": {},
+        "teaching_check": {
+          "disposition": "incomplete",
+          "reason": "Le texte fourni ne contient qu'un extrait d'énoncé (« On cherche un vecteur v3 = … tel que {v1, … ») sans le développement complet, la solution ou les explications. Il s'agit donc d'un développement annoncé dont l'énoncé est partiel, ce qui correspond à la catégorie \"incomplete\"."
+        },
+        "adequacy_check": {
+          "disposition": "incomplete",
+          "reason": "Le texte fourni ne comporte qu'un extrait d'énoncé (« On cherche un vecteur v3 = … tel que {v1, … ») sans la suite indiquant les conditions que v₃ doit satisfaire, sans justification du choix v₃ = (1,0,0)ᵀ et sans le calcul ou la vérification montrant que ce vecteur complète la base. Le développement annoncé est donc absent.",
+          "blocking_gaps": [
+            {
+              "description": "Absence de la suite de l'énoncé précisant les conditions que v₃ doit satisfaire, de la justification du choix v₃ = (1,0,0)ᵀ et du calcul ou de la vérification montrant que ce vecteur complète la base canonique.",
+              "point_ids": [
+                "p1"
+              ],
+              "source_signal": "On cherche un vecteur v3 =\n\n\n\nx\ny\nz\n\n\nde R3 tel que {v1,\n"
+            }
+          ],
+          "optional_information": []
+        },
+        "proposed_missing_information": [
+          "Continuation de la phrase indiquant les conditions que v₃ doit satisfaire",
+          "Justification du choix v₃ = (1,0,0)ᵀ",
+          "Éventuel calcul ou vérification montrant que ce vecteur complète la base"
+        ]
+      },
+      "recovery": {
+        "points": [],
+        "reason": "Aucune des sources fournies ne contient la ligne exacte indiquant le choix du vecteur v₃ = (1,0,0)ᵀ comme vecteur de la base canonique. Les passages mentionnent la recherche d'un vecteur v₃ et donnent des formes génériques avec des variables, mais aucun texte ne spécifie explicitement le vecteur (1,0,0)ᵀ. Par conséquent, aucune sélection ne peut être faite.",
+        "scope_checks": [],
+        "rejected": [],
+        "searched_sources": [
+          "u1-0-0",
+          "u2-0-0",
+          "u3-0-0",
+          "u3-1-0",
+          "u3-2-0",
+          "u3-3-0",
+          "u3-4-0",
+          "u3-5-0",
+          "u4-0-0",
+          "u4-1-0",
+          "u5-0-0",
+          "u5-1-0",
+          "u6-0-0",
+          "u6-1-0",
+          "u6-2-0",
+          "u7-0-0",
+          "u8-0-0",
+          "u8-1-0",
+          "u8-2-0",
+          "u8-3-0",
+          "u8-4-0",
+          "u9-0-0",
+          "u10-0-0",
+          "u10-1-0",
+          "u10-2-0",
+          "u10-3-0",
+          "u10-4-0",
+          "u10-6-0",
+          "u11-0-0",
+          "u12-1-0",
+          "u13-0-0",
+          "u14-0-0",
+          "u15-0-0",
+          "u15-1-0",
+          "u15-3-0",
+          "u16-0-0",
+          "u16-1-0",
+          "u17-0-0",
+          "u18-0-0",
+          "u19-0-0",
+          "u20-0-0",
+          "u21-0-0",
+          "u21-1-0",
+          "u22-1-0"
+        ]
+      }
+    },
+    "group": {}
+  },
+  {
+    "concept": {
+      "concept_id": "concept-5685bb411382495e",
+      "title": "Three ways to implement CSS",
+      "source_pages": [
+        2
+      ]
+    },
+    "issue": {
+      "status": "review_pending",
+      "concept_id": "concept-5685bb411382495e",
+      "reason": "ValueError: ValueError: ValueError: Le manque annoncé ne cite pas un passage réel de la source",
+      "title": "Three ways to implement CSS",
+      "primary_part_id": "part-6d5d1b27ea5fdf0f",
+      "source_pages": [
+        2
+      ],
+      "affected_part_ids": [
+        "part-6d5d1b27ea5fdf0f"
+      ]
+    },
+    "points": [],
+    "review": {
+      "hash": "aae731b0c7be45400e00f1c1116981499aad38e39cc950db84a1d56a880ee917",
+      "last_error": "ValueError: ValueError: ValueError: Le manque annoncé ne cite pas un passage réel de la source"
+    },
+    "group": {}
+  },
+  {
+    "concept": {
+      "concept_id": "concept-d033df16ff4098f0",
+      "title": "Exemple de convergence d’une série de Fourier : \\(\\sum_{n\\ge1} \\sin(nx)/n\\) converge",
+      "source_pages": [
+        4
+      ]
+    },
+    "issue": {
+      "concept_id": "concept-d033df16ff4098f0",
+      "status": "source_insufficient",
+      "reason": "Le texte annonce la convergence de la série de Fourier \\(\\sum_{n\\ge1}\\sin(nx)/n\\) mais ne fournit ni démonstration, ni justification, ni exemple numérique ou graphique illustrant cette convergence.",
+      "missing_information": [
+        "Absence de démonstration ou de justification de la convergence annoncée de la série de Fourier."
+      ],
+      "title": "Exemple de convergence d’une série de Fourier : \\(\\sum_{n\\ge1} \\sin(nx)/n\\) converge",
+      "primary_part_id": "part-58437fff231ca6fc",
+      "source_pages": [
+        4
+      ],
+      "affected_part_ids": [
+        "part-58437fff231ca6fc"
+      ]
+    },
+    "points": [
+      {
+        "point_id": "35e51673531cdbcc560913d8",
+        "page": 4,
+        "quote": "sin(nx)\nX\nconverge.\n",
+        "kind": "example",
+        "title": "Exemple de convergence d’une série de Fourier : \\(\\sum_{n\\ge1} \\sin(nx)/n\\) converge",
+        "source_anchor": "",
+        "ambiguous": false,
+        "origin": "source_recovery_v15_1",
+        "source_ref": "u4-0-0"
+      }
+    ],
+    "review": {
+      "hash": "e0120ddc7fef993e2c4e9581b9c7a0a907e228280243f7ac21d91699fcda8bc2",
+      "assessment": {
+        "disposition": "incomplete",
+        "concept_type": "example",
+        "reason": "Le point indique seulement que la série converge sans fournir la démonstration, l'explication du comportement ou un exemple numérique, ce qui constitue une lacune bloquante pour un cours.",
+        "missing_information": [
+          "Absence de justification de la convergence de la série de Fourier présentée.",
+          "Manque d'explication du comportement de la série (ex. décroissance des termes, lien avec la fonction associée).",
+          "Absence d'exemple numérique ou graphique illustrant la convergence."
+        ],
+        "excluded_points": {},
+        "point_kinds": {
+          "5fca40736f680a8ba794facf": "example"
+        },
+        "exclusion_checks": {},
+        "teaching_check": {
+          "disposition": "developed",
+          "reason": "Le point fournit un exemple complet d’une série de Fourier avec une déclaration de convergence, incluant le titre et la citation explicite du résultat, ce qui constitue un développement autonome."
+        },
+        "adequacy_check": {
+          "disposition": "incomplete",
+          "reason": "Le point indique seulement que la série converge sans fournir la démonstration, l'explication du comportement ou un exemple numérique, ce qui constitue une lacune bloquante pour un cours.",
+          "blocking_gaps": [
+            {
+              "description": "Absence de justification de la convergence de la série de Fourier présentée.",
+              "point_ids": [
+                "p1"
+              ],
+              "source_signal": "La série\nX\nn≥1\nsin(nx)\nn\nconverge."
+            },
+            {
+              "description": "Manque d'explication du comportement de la série (ex. décroissance des termes, lien avec la fonction associée).",
+              "point_ids": [
+                "p1"
+              ],
+              "source_signal": "La série\nX\nn≥1\nsin(nx)\nn\nconverge."
+            },
+            {
+              "description": "Absence d'exemple numérique ou graphique illustrant la convergence.",
+              "point_ids": [
+                "p1"
+              ],
+              "source_signal": "La série\nX\nn≥1\nsin(nx)\nn\nconverge."
+            }
+          ],
+          "optional_information": []
+        },
+        "proposed_missing_information": [
+          "démonstration ou justification de la convergence",
+          "explication du comportement de la série",
+          "exemple numérique ou graphique"
+        ]
+      },
+      "recovery": {
+        "points": [
+          {
+            "point_id": "35e51673531cdbcc560913d8",
+            "page": 4,
+            "quote": "sin(nx)\nX\nconverge.\n",
+            "kind": "example",
+            "title": "Exemple de convergence d’une série de Fourier : \\(\\sum_{n\\ge1} \\sin(nx)/n\\) converge",
+            "source_anchor": "",
+            "ambiguous": false,
+            "origin": "source_recovery_v15_1",
+            "source_ref": "u4-0-0"
+          }
+        ],
+        "reason": "Les lignes sélectionnées contiennent l'énoncé explicite que la série \\(\\sum_{n\\ge1}\\sin(nx)\\) converge, ce qui constitue la preuve manquante recherchée pour le concept d'exemple de convergence d’une série de Fourier.",
+        "scope_checks": [
+          {
+            "point_id": "35e51673531cdbcc560913d8",
+            "verdict": "about_this_notion",
+            "reason": "L’ajout reproduit exactement le même exemple de convergence de la série de Fourier déjà présent dans la base. Il ne présente ni nouvelle notion, ni extension à une autre notion, ni ambiguïté. Ainsi il se situe dans le même champ conceptuel que l’entrée existante."
+          }
+        ],
+        "rejected": [],
+        "searched_sources": [
+          "u1-0-0",
+          "u2-0-0",
+          "u3-0-0",
+          "u3-1-0",
+          "u3-2-0",
+          "u3-3-0",
+          "u3-4-0",
+          "u4-0-0",
+          "u4-1-0",
+          "u5-0-0",
+          "u5-1-0",
+          "u6-0-0",
+          "u6-1-0",
+          "u6-2-0",
+          "u6-3-0",
+          "u7-0-0",
+          "u8-0-0",
+          "u8-1-0",
+          "u8-2-0",
+          "u9-0-0",
+          "u9-1-0",
+          "u10-0-0",
+          "u10-1-0",
+          "u11-0-0"
+        ]
+      },
+      "reassessment": {
+        "disposition": "incomplete",
+        "concept_type": "example",
+        "reason": "Le texte annonce la convergence de la série de Fourier \\(\\sum_{n\\ge1}\\sin(nx)/n\\) mais ne fournit ni démonstration, ni justification, ni exemple numérique ou graphique illustrant cette convergence.",
+        "missing_information": [
+          "Absence de démonstration ou de justification de la convergence annoncée de la série de Fourier."
+        ],
+        "excluded_points": {},
+        "point_kinds": {
+          "5fca40736f680a8ba794facf": "example",
+          "35e51673531cdbcc560913d8": "example"
+        },
+        "exclusion_checks": {},
+        "teaching_check": {
+          "disposition": "name_only",
+          "reason": "Les citations fournissent uniquement le titre et une mention très brève de la convergence sans développer la démonstration, le code ou les détails explicatifs. Elles ne contiennent pas d'information suffisante pour être considérées comme un développement autonome ou un contenu réel dépendant."
+        },
+        "adequacy_check": {
+          "disposition": "incomplete",
+          "reason": "Le texte annonce la convergence de la série de Fourier \\(\\sum_{n\\ge1}\\sin(nx)/n\\) mais ne fournit ni démonstration, ni justification, ni exemple numérique ou graphique illustrant cette convergence.",
+          "blocking_gaps": [
+            {
+              "description": "Absence de démonstration ou de justification de la convergence annoncée de la série de Fourier.",
+              "point_ids": [
+                "p1",
+                "p2"
+              ],
+              "source_signal": "La série\nX\nn≥1\nsin(nx)\nn\nconverge."
+            }
+          ],
+          "optional_information": []
+        },
+        "proposed_missing_information": [
+          "démonstration ou justification de la convergence",
+          "exemple numérique ou graphique illustrant la convergence"
+        ]
+      }
+    },
+    "group": {}
+  }
+]

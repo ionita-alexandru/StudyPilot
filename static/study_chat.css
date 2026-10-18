@@ -1,0 +1,27 @@
+.tutor{padding:20px;background:var(--panel,#111a2a);border:1px solid #29354a;border-radius:16px;min-width:0}.tutor h3{margin:0 0 8px}.tutor-subject{font-size:13px;color:#9caecc}.tutor-messages{max-height:440px;overflow:auto;overscroll-behavior:contain}.tutor-message{padding:16px 0;border-bottom:1px solid #29354a;line-height:1.6;overflow-wrap:anywhere}.tutor-message>strong{font-size:12px;color:#9caecc}.tutor-body p{margin:8px 0}.tutor-body h3{font-size:15px;margin-top:14px}.tutor-body ul,.tutor-body ol{padding-left:22px}.tutor-body pre{overflow:auto;padding:14px;background:#080f1d;border-radius:8px;white-space:pre}.tutor-body .sp-formula{overflow-x:auto;padding:8px 0}.tutor form{display:grid;gap:9px;margin-top:14px}.tutor textarea{box-sizing:border-box;width:100%;resize:vertical;background:#0b1220;border:1px solid #42506a;border-radius:9px;color:inherit;font:inherit;padding:10px}.tutor button,.study-actions button{padding:9px 12px;border:1px solid #4a5875;border-radius:9px;background:#1a2941;color:#e6ecff;cursor:pointer}.tutor button:disabled{opacity:.5;cursor:wait}.tutor [data-chat-error]{color:#ffb9b9;font-size:13px}.tutor-followups,.study-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.study-actions button:first-child{border-color:#8a7bf5}.tutor-followups button{font-size:12px}.study-resources{margin:20px 0;border:1px solid #29354a;border-radius:12px;padding:14px}.study-resources summary{cursor:pointer}.resource-list{display:grid;gap:8px;margin-top:12px}.resource-list button{text-align:left;padding:10px;border:1px solid #35415b;background:transparent;color:inherit;border-radius:8px;cursor:pointer}.source-fold{margin-top:16px}.source-fold summary{cursor:pointer;margin:12px}.modal-layout .source-side{min-width:0}.tutor-message small a{color:#9eb8ff}#sp-chat-messages.tutor-messages{max-height:none}#chat .tutor{border:0;background:transparent;padding:0}#chat .tutor textarea{min-height:64px}
+
+.tutor-followups[hidden]{display:none}
+
+.tutor-body hr{border:0;border-top:1px solid #29354a;margin:16px 0}
+
+/* Le chat défile dans sa colonne ; une réponse ne déplace pas toute la fiche. */
+.tutor-messages{overflow-x:hidden}.tutor-body{min-width:0;max-width:100%}
+.tutor-body .sp-formula{max-width:100%;overflow-x:auto}
+.tutor-body mjx-container{max-width:100%}
+body:has(#detail[open]){overflow:hidden}
+#detail[open]{display:flex;flex-direction:column;height:90vh;overflow:hidden}
+#detail .modal-top{flex:none}
+#detail-content{min-height:0;overflow:auto;flex:1}
+#detail .modal-layout{height:100%;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
+#detail .modal-content{max-height:none;min-width:0;overflow:auto}
+#detail .source-side{overflow:auto}
+#detail .tutor-messages{max-height:32vh}
+@media(max-width:720px){
+ #detail .modal-layout{height:auto;display:block}
+ #detail .modal-content,#detail .source-side{overflow:visible}
+ #detail .tutor{padding:14px}
+}
+
+/* Exercice persistant : distinguer question et tentative sans masquer le cours. */
+.tutor-exercise{border:1px solid #304565;border-radius:12px;padding:12px;margin:12px 0;color:#d9e5f5;background:#101c30}
+.tutor-exercise[hidden]{display:none}.tutor-exercise details{max-height:240px;overflow:auto}.tutor-exercise select{background:#101c30;color:#e7edf6;border:1px solid #405776;border-radius:8px;padding:7px;max-width:100%}.tutor-reset{background:none;border:0;color:#a8b8d1;text-decoration:underline;font-size:12px;padding:8px 0;cursor:pointer}.tutor-exercise label{font-size:13px}.tutor-exercise summary{cursor:pointer}.tutor-exercise mjx-container{max-width:100%;overflow-x:auto;overflow-y:hidden}.sp-revision-chat-panel .tutor{height:auto}.sp-revision-chat-panel .tutor-messages{max-height:45vh}

@@ -1,0 +1,23 @@
+[
+  {
+    "course": "Chapitre 4 Réduction endomorphismes ING2 2024-2025",
+    "core": 21,
+    "max_prose_words": 68,
+    "mean_prose_words": 43.0,
+    "sources": 36
+  },
+  {
+    "course": "Cours de CSS",
+    "core": 39,
+    "max_prose_words": 60,
+    "mean_prose_words": 37.6,
+    "sources": 59
+  },
+  {
+    "course": "Séries de Fourier ING2 2024-2025",
+    "core": 14,
+    "max_prose_words": 70,
+    "mean_prose_words": 50.9,
+    "sources": 21
+  }
+]

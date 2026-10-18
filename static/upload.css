@@ -1,0 +1,25 @@
+.upload-page { width: min(720px, 92%); margin: 40px auto 72px; }
+.upload-card { background: var(--white); border: 1px solid var(--border); border-radius: 20px; padding: clamp(24px, 5vw, 40px); box-shadow: 0 10px 30px rgba(23,59,108,.06); }
+.upload-eyebrow { color: var(--pink); font-size: .82rem; text-transform: uppercase; font-weight: 800; letter-spacing: .09em; }
+.upload-card h1 { color: var(--blue-dark); font-size: clamp(1.7rem, 4vw, 2.4rem); margin: 8px 0 12px; }
+.upload-intro, .upload-help, .upload-note { color: var(--text-muted); line-height: 1.7; }
+.upload-intro { margin-bottom: 25px; }
+.upload-dropzone { display: flex; align-items: center; flex-direction: column; gap: 9px; padding: 30px 16px; border: 2px dashed #a8c5e4; background: var(--blue-light); border-radius: 16px; text-align: center; color: var(--blue-dark); cursor: pointer; }
+.upload-dropzone:hover, .upload-dropzone:focus-within { border-color: var(--blue); }
+.upload-dropzone-icon { display: grid; place-items: center; width: 42px; height: 42px; background: white; border-radius: 14px; font-size: 1.8rem; line-height: 1; }
+.upload-dropzone input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+#selected-filename { color: var(--text-muted); font-size: .91rem; overflow-wrap: anywhere; }
+.upload-help { margin: 13px 0 20px; font-size: .88rem; }
+.upload-submit { border: 0; border-radius: 11px; padding: 13px 20px; width: 100%; background: var(--blue-dark); color: white; font: inherit; font-weight: 700; cursor: pointer; }
+.upload-submit:hover:not(:disabled) { background: var(--blue); }
+.upload-submit:disabled { opacity: .65; cursor: wait; }
+.upload-progress { display: flex; gap: 14px; align-items: center; padding: 16px; margin-top: 22px; border-radius: 14px; background: #edf7ff; color: var(--blue-dark); }
+.upload-progress[hidden], .upload-error[hidden] { display: none; }
+.upload-progress p { color: var(--text-muted); margin-top: 4px; font-size: .9rem; }
+.upload-spinner { width: 26px; height: 26px; border: 3px solid #c4dced; border-top-color: var(--blue); border-radius: 50%; animation: upload-rotation .8s linear infinite; flex: none; }
+@keyframes upload-rotation { to { transform: rotate(360deg); } }
+.upload-error { margin-top: 16px; color: #aa2855; padding: 12px; border-radius: 10px; background: #fff0f4; }
+.upload-note { font-size: .88rem; margin-top: 20px; }
+
+.header-links { display:flex; align-items:center; gap:20px; }
+@media(max-width:440px){.header-links{gap:12px}.header-links a{font-size:.85rem}}

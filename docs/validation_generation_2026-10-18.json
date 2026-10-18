@@ -1,0 +1,175 @@
+{
+  "status": "passed",
+  "seconds": 49.1,
+  "calls": 4,
+  "draft": {
+    "entries": [
+      {
+        "key": "passe_compose_formation",
+        "title": "Formation du passé composé",
+        "role": "core",
+        "kind": "rule",
+        "objective": "Savoir construire le passé composé d'un verbe.",
+        "body": "Le passé composé exprime une action achevée. Il se construit en conjuguant l'auxiliaire `avoir` ou `être` au présent, puis en ajoutant le participe passé du verbe.",
+        "source_ids": [
+          "grammaire-1"
+        ],
+        "targets": [],
+        "aliases": [
+          "construction passé composé"
+        ],
+        "prerequisites": [
+          "présent de l'indicatif",
+          "participe passé"
+        ],
+        "symbols": [],
+        "conditions": ""
+      },
+      {
+        "key": "passe_compose_accord",
+        "title": "Accord du participe passé au passé composé",
+        "role": "core",
+        "kind": "rule",
+        "objective": "Appliquer les règles d'accord du participe passé selon l'auxiliaire utilisé.",
+        "body": "L'accord dépend de l'auxiliaire : avec `être`, le participe passé s'accorde en genre et en nombre avec le sujet. Avec `avoir`, il s'accorde avec le complément d'objet direct (COD) uniquement si celui-ci est placé avant le verbe.",
+        "source_ids": [
+          "grammaire-1"
+        ],
+        "targets": [],
+        "aliases": [
+          "accord participe passé"
+        ],
+        "prerequisites": [
+          "sujet",
+          "complément d'objet direct"
+        ],
+        "symbols": [],
+        "conditions": ""
+      },
+      {
+        "key": "passe_compose_examples",
+        "title": "Exemples d'accord au passé composé",
+        "role": "example",
+        "kind": "concept",
+        "objective": "Illustrer les règles d'accord avec l'auxiliaire être et avoir.",
+        "body": "Accord avec être : \"Elles sont arrivées\". Accord avec avoir (COD placé avant) : \"Les lettres que j'ai écrites\".",
+        "source_ids": [
+          "grammaire-1"
+        ],
+        "targets": [
+          "passe_compose_accord"
+        ],
+        "aliases": [],
+        "prerequisites": [],
+        "symbols": [],
+        "conditions": ""
+      }
+    ],
+    "coverage": [
+      {
+        "source_id": "grammaire-1",
+        "entry_keys": [
+          "passe_compose_formation",
+          "passe_compose_accord",
+          "passe_compose_examples"
+        ],
+        "reason": "La source contient la définition, la méthode de formation, les règles d'accord et des exemples illustratifs."
+      }
+    ]
+  },
+  "review": {
+    "entries": [
+      {
+        "key": "passe_compose_formation",
+        "supported": true,
+        "essential_complete": true,
+        "useful_role": true,
+        "issues": []
+      },
+      {
+        "key": "passe_compose_accord",
+        "supported": true,
+        "essential_complete": true,
+        "useful_role": true,
+        "issues": []
+      },
+      {
+        "key": "passe_compose_examples",
+        "supported": true,
+        "essential_complete": true,
+        "useful_role": true,
+        "issues": []
+      }
+    ],
+    "coverage_complete": true,
+    "coverage_issues": []
+  },
+  "previous_evaluation": {
+    "status": "failed",
+    "seconds": 41.8,
+    "calls": 2,
+    "error": "Lot non publié après une correction : 1 validation error for Draft\nentries.1.kind\n  Input should be 'definition', 'concept', 'property', 'theorem', 'formula', 'method' or 'syntax' [type=literal_error, input_value='rule', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.13/v/literal_error"
+  },
+  "objective_review": {
+    "status": "passed",
+    "calls": 1,
+    "seconds": 10.5,
+    "review": {
+      "entries": [
+        {
+          "key": "passe_compose_formation",
+          "supported": true,
+          "essential_complete": true,
+          "useful_role": true,
+          "issues": []
+        },
+        {
+          "key": "passe_compose_accord",
+          "supported": true,
+          "essential_complete": true,
+          "useful_role": true,
+          "issues": []
+        },
+        {
+          "key": "passe_compose_examples",
+          "supported": true,
+          "essential_complete": true,
+          "useful_role": true,
+          "issues": []
+        }
+      ],
+      "coverage_complete": true,
+      "coverage_issues": [],
+      "objectives": [
+        {
+          "objective": "Savoir construire le passé composé d'un verbe.",
+          "source_ids": [
+            "grammaire-1"
+          ],
+          "entry_keys": [
+            "passe_compose_formation"
+          ]
+        },
+        {
+          "objective": "Appliquer les règles d'accord du participe passé selon l'auxiliaire utilisé.",
+          "source_ids": [
+            "grammaire-1"
+          ],
+          "entry_keys": [
+            "passe_compose_accord",
+            "passe_compose_examples"
+          ]
+        },
+        {
+          "objective": "Identifier l'auxiliaire et le COD pour déterminer l'accord.",
+          "source_ids": [
+            "grammaire-1"
+          ],
+          "entry_keys": [
+            "passe_compose_accord"
+          ]
+        }
+      ]
+    }
+  }
+}

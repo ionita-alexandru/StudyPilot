@@ -1,0 +1,457 @@
+<!doctype html>
+
+<html lang="fr">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>
+    StudyPilot
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="{{ url_for(
+      'static',
+      filename='workspace.css'
+    ) }}"
+  >
+
+<script src="{{ url_for('static', filename='entrance.js') }}"></script>
+<script src="{{ url_for('static', filename='study_progress.js') }}"></script>
+</head>
+
+
+<body class="sp-home-body"><header class="sp-mobile-nav"><a href="/"><img src="/static/logo.svg" width="28" height="28" alt="">StudyPilot</a><nav><a href="/presentation">Fiches</a><a href="/revision">Réviser</a><a href="/upload">Ajouter</a></nav></header>
+
+
+<div class="sp-home-app">
+
+  <!-- =========================
+       SIDEBAR
+  ========================== -->
+
+  <aside class="sp-home-sidebar">
+
+
+    <a
+      class="sp-brand"
+      href="{{ url_for('index') }}"
+    >
+
+      <span class="sp-brand-logo"><img src="/static/logo.svg" width="36" height="36" alt=""></span>
+
+
+      <span class="sp-brand-text">
+
+        <strong>
+          StudyPilot
+        </strong>
+
+        <small>
+          Apprendre. Comprendre. Avancer.
+        </small>
+
+      </span>
+
+    </a>
+
+
+
+    <button
+      id="sp-new-chat"
+      class="sp-home-new-chat"
+      type="button"
+    >
+
+      <span>
+        ＋
+      </span>
+
+      Nouvelle discussion
+
+    </button>
+
+
+
+    <nav class="sp-home-nav">
+
+      <a
+        href="{{ url_for('index') }}"
+        class="active"
+      >
+        <span>◌</span>
+        Discussion
+      </a>
+
+      <a href="{{ url_for('revision_page') }}">
+        
+         <span>◉</span>
+         Révisions
+       </a>
+
+      <a href="{{ url_for('presentation') }}" title="Parcourir les fiches de vos cours"><span aria-hidden="true">▦</span> Vue des fiches</a>
+
+      <button
+        id="sp-upload-trigger"
+        type="button"
+      >
+        <span>＋</span>
+        Ajouter un PDF
+      </button>
+
+    </nav>
+
+
+
+    <section class="sp-home-courses">
+
+
+      <div class="sp-sidebar-title">
+
+        <span>
+          Mes cours
+        </span>
+
+
+        <button
+          id="sp-upload-trigger-small"
+          type="button"
+          aria-label="Ajouter un PDF"
+        >
+          ＋
+        </button>
+
+      </div>
+
+
+      <div class="sp-course-list">
+
+
+        {% for item in courses %}
+
+          <a
+            href="{{ url_for(
+              'course',
+              course_id=item.course_id
+            ) }}"
+            class="sp-course-link"
+          >
+
+            <span class="sp-course-dot">
+            </span>
+
+
+            <span>
+              {{ item.title }}
+            </span>
+
+          </a>
+
+        {% endfor %}
+
+
+      </div>
+
+    </section>
+
+
+
+    <div class="sp-home-sidebar-footer">
+
+      <div class="sp-home-user">
+
+        <span class="sp-home-user-avatar">
+          AI
+        </span>
+
+
+        <div>
+
+          <strong>
+            Alexandru
+          </strong>
+
+          <small>
+            StudyPilot
+          </small>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </aside>
+
+
+
+  <!-- =========================
+       ZONE PRINCIPALE
+  ========================== -->
+
+<main class="sp-home-main">
+
+  <div class="sp-home-atmosphere" aria-hidden="true">
+
+  <div class="sp-ambient sp-ambient-blue"></div>
+
+  <div class="sp-ambient sp-ambient-violet"></div>
+
+  <div class="sp-ambient sp-ambient-lamp"></div>
+
+  <div class="sp-ambient sp-ambient-plant-left"></div>
+
+  <div class="sp-ambient sp-ambient-plant-right"></div>
+
+</div>
+
+
+    <section class="sp-home-center">
+
+
+
+<div class="home-hero">
+
+  <div class="home-hero-text">
+
+    <h1 class="home-hero-title">
+      Sur quoi veux-tu avancer&nbsp;?
+    </h1>
+
+    <p class="home-hero-subtitle">
+      Pose une question, envoie un document ou choisis un point de départ.
+    </p>
+
+  </div>
+
+</div>
+
+      {% if courses %}
+
+
+      <form
+        id="sp-home-chat-form"
+        class="sp-home-composer"
+      >
+
+
+        <textarea
+          id="sp-home-question"
+          maxlength="1000"
+          rows="1"
+          placeholder="Demander à StudyPilot…"
+          required
+        ></textarea>
+
+
+
+        <div class="sp-home-composer-bottom">
+
+
+          <div class="sp-home-composer-left">
+
+
+            <button
+              id="sp-home-upload-button"
+              type="button"
+              class="sp-home-icon-button"
+              title="Ajouter un PDF"
+            >
+              ＋
+            </button>
+
+
+
+            <label
+              class="sp-home-course-selector"
+            >
+
+              <span>
+                Cours
+              </span>
+
+
+              <select
+                id="sp-home-course"
+              >
+
+                {% for item in courses %}
+
+                  <option
+                    value="{{ item.course_id }}"
+                  >
+                    {{ item.title }}
+                  </option>
+
+                {% endfor %}
+
+              </select>
+
+            </label>
+
+          </div>
+
+
+
+          <button
+            class="sp-home-send"
+            type="submit"
+            aria-label="Envoyer"
+          >
+            ↑
+          </button>
+
+        </div>
+
+      </form>
+      <a id="home-course-path" class="sp-course-path" href="#">Voir le parcours du cours →</a>
+
+
+      <p
+        id="sp-home-error"
+        class="sp-home-error"
+      >
+      </p>
+
+
+
+      <div class="sp-home-suggestions"><button type="button" data-home-mode="discover">Découvrir</button><button type="button" data-home-mode="deepen">Approfondir</button><button type="button" data-home-mode="revise">Réviser</button></div>
+
+
+      {% else %}
+
+
+        <div class="sp-home-empty">
+
+          <h2>
+            Ajoute ton premier cours
+          </h2>
+
+
+          <p>
+            StudyPilot analysera ton PDF
+            avant de créer ton espace de travail.
+          </p>
+
+
+          <button
+            id="sp-empty-upload"
+            type="button"
+          >
+            Ajouter un PDF
+          </button>
+
+        </div>
+
+
+      {% endif %}
+
+
+
+      <div class="sp-home-course-strip">
+
+        {% for item in courses %}
+
+          <a
+            href="{{ url_for(
+              'course',
+              course_id=item.course_id
+            ) }}"
+          >
+
+            <span class="sp-home-course-icon">
+              ▤
+            </span>
+
+
+            <span>
+
+              <strong>
+                {{ item.title }}
+              </strong>
+
+              <small>
+                Ouvrir le cours
+              </small>
+
+            </span>
+
+
+            <b>
+              →
+            </b>
+
+          </a>
+
+        {% endfor %}
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         UPLOAD RÉEL
+    ========================== -->
+
+
+    <input
+      id="sp-pdf-input"
+      type="file"
+      accept=".pdf,application/pdf"
+      hidden
+    >
+
+
+    <div
+      id="sp-upload-status"
+      class="sp-upload-status"
+      hidden
+    >
+
+      <div class="sp-upload-spinner">
+      </div>
+
+
+      <div>
+
+        <strong>
+          Analyse du PDF…
+        </strong>
+
+        <p id="sp-upload-status-text">
+          Préparation du cours.
+        </p>
+
+      </div>
+
+    </div>
+
+
+  </main>
+
+
+</div>
+
+
+
+<script
+  src="{{ url_for(
+    'static',
+    filename='home.js'
+  ) }}"
+  defer>
+</script>
+
+
+<script>const choice=document.querySelector('.sp-home-course-selector select'),path=document.querySelector('#home-course-path');if(choice&&path){const update=()=>{path.href=choice.value?'/course/'+encodeURIComponent(choice.value):'/upload';};choice.addEventListener('change',update);update();}</script></body>
+
+</html>

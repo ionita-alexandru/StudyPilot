@@ -1,0 +1,1265 @@
+{
+  "date": "2026-10-16",
+  "method": "Lecture éditoriale des fiches, extraction et inspection des 60 pages PDF ; contrôle des formules et du rendu séparé.",
+  "cards": [
+    {
+      "course_id": "chapitre-4-reduction-endomorphismes-ing2-2024-2025-bc3e005bd4",
+      "card_id": "reviewed-algebre-17",
+      "title": "Construire une base de vecteurs propres",
+      "decision": "fusionnée",
+      "reason": "Doublon du protocole de diagonalisation ; méthode et ordre des colonnes conservés dans la fiche 8, critère dans la fiche 6.",
+      "source_pages": [
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "course_id": "chapitre-4-reduction-endomorphismes-ing2-2024-2025-bc3e005bd4",
+      "card_id": "reviewed-algebre-1",
+      "title": "Valeur propre et vecteur propre",
+      "decision": "révisée",
+      "reason": "Cadre et distinction entre endomorphisme et matrice explicités.",
+      "source_pages": [
+        3,
+        4,
+        8
+      ]
+    },
+    {
+      "course_id": "chapitre-4-reduction-endomorphismes-ing2-2024-2025-bc3e005bd4",
+      "card_id": "reviewed-algebre-2",
+      "title": "Trouver les valeurs propres",
+      "decision": "conservée",
+      "reason": "Contenu pertinent : rôle/énoncé, exemple et portée confrontés aux pages sources ; pas de modification nécessaire.",
+      "source_pages": [
+        4
+      ]
+    },
+    {
+      "course_id": "chapitre-4-reduction-endomorphismes-ing2-2024-2025-bc3e005bd4",
+      "card_id": "reviewed-algebre-3",
+      "title": "Multiplicité algébrique",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        6
+      ]
+    },
+    {
+      "course_id": "chapitre-4-reduction-endomorphismes-ing2-2024-2025-bc3e005bd4",
+      "card_id": "reviewed-algebre-4",
+      "title": "Espace propre",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        8
+      ]
+    },
+    {
+      "course_id": "chapitre-4-reduction-endomorphismes-ing2-2024-2025-bc3e005bd4",
+      "card_id": "reviewed-algebre-5",
+      "title": "Multiplicité géométrique",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        9
+      ]
+    },
+    {
+      "course_id": "chapitre-4-reduction-endomorphismes-ing2-2024-2025-bc3e005bd4",
+      "card_id": "reviewed-algebre-6",
+      "title": "Critères de diagonalisabilité",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        10
+      ]
+    },
+    {
+      "course_id": "chapitre-4-reduction-endomorphismes-ing2-2024-2025-bc3e005bd4",
+      "card_id": "reviewed-algebre-7",
+      "title": "Théorème de Cayley-Hamilton",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        7
+      ]
+    },
+    {
+      "course_id": "chapitre-4-reduction-endomorphismes-ing2-2024-2025-bc3e005bd4",
+      "card_id": "reviewed-algebre-8",
+      "title": "Protocole de diagonalisation",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "course_id": "chapitre-4-reduction-endomorphismes-ing2-2024-2025-bc3e005bd4",
+      "card_id": "reviewed-algebre-9",
+      "title": "Spectre d’une matrice et d’un endomorphisme",
+      "decision": "conservée",
+      "reason": "Contenu pertinent : rôle/énoncé, exemple et portée confrontés aux pages sources ; pas de modification nécessaire.",
+      "source_pages": [
+        3,
+        5
+      ]
+    },
+    {
+      "course_id": "chapitre-4-reduction-endomorphismes-ing2-2024-2025-bc3e005bd4",
+      "card_id": "reviewed-algebre-10",
+      "title": "Polynôme caractéristique",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        5
+      ]
+    },
+    {
+      "course_id": "chapitre-4-reduction-endomorphismes-ing2-2024-2025-bc3e005bd4",
+      "card_id": "reviewed-algebre-11",
+      "title": "Trace et déterminant dans le polynôme caractéristique",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        5
+      ]
+    },
+    {
+      "course_id": "chapitre-4-reduction-endomorphismes-ing2-2024-2025-bc3e005bd4",
+      "card_id": "reviewed-algebre-12",
+      "title": "Valeur propre nulle : exemple du cours",
+      "decision": "révisée",
+      "reason": "Contenu pertinent : rôle/énoncé, exemple et portée confrontés aux pages sources ; pas de modification nécessaire.",
+      "source_pages": [
+        4
+      ]
+    },
+    {
+      "course_id": "chapitre-4-reduction-endomorphismes-ing2-2024-2025-bc3e005bd4",
+      "card_id": "reviewed-algebre-13",
+      "title": "Évaluer un polynôme en une matrice",
+      "decision": "conservée",
+      "reason": "Contenu pertinent : rôle/énoncé, exemple et portée confrontés aux pages sources ; pas de modification nécessaire.",
+      "source_pages": [
+        6,
+        7
+      ]
+    },
+    {
+      "course_id": "chapitre-4-reduction-endomorphismes-ing2-2024-2025-bc3e005bd4",
+      "card_id": "reviewed-algebre-14",
+      "title": "Réduire des puissances avec Cayley-Hamilton",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        7
+      ]
+    },
+    {
+      "course_id": "chapitre-4-reduction-endomorphismes-ing2-2024-2025-bc3e005bd4",
+      "card_id": "reviewed-algebre-15",
+      "title": "Calculer un espace propre : exemple C",
+      "decision": "révisée",
+      "reason": "Contenu pertinent : rôle/énoncé, exemple et portée confrontés aux pages sources ; pas de modification nécessaire.",
+      "source_pages": [
+        9
+      ]
+    },
+    {
+      "course_id": "chapitre-4-reduction-endomorphismes-ing2-2024-2025-bc3e005bd4",
+      "card_id": "reviewed-algebre-16",
+      "title": "Polynôme scindé et corps de travail",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        10,
+        12,
+        15,
+        16
+      ]
+    },
+    {
+      "course_id": "chapitre-4-reduction-endomorphismes-ing2-2024-2025-bc3e005bd4",
+      "card_id": "reviewed-algebre-18",
+      "title": "Diagonalisation de la matrice C",
+      "decision": "révisée",
+      "reason": "Contenu pertinent : rôle/énoncé, exemple et portée confrontés aux pages sources ; pas de modification nécessaire.",
+      "source_pages": [
+        12,
+        13
+      ]
+    },
+    {
+      "course_id": "chapitre-4-reduction-endomorphismes-ing2-2024-2025-bc3e005bd4",
+      "card_id": "reviewed-algebre-19",
+      "title": "Exemple d’une matrice non diagonalisable",
+      "decision": "révisée",
+      "reason": "Contenu pertinent : rôle/énoncé, exemple et portée confrontés aux pages sources ; pas de modification nécessaire.",
+      "source_pages": [
+        14
+      ]
+    },
+    {
+      "course_id": "chapitre-4-reduction-endomorphismes-ing2-2024-2025-bc3e005bd4",
+      "card_id": "reviewed-algebre-20",
+      "title": "Trigonalisation",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        15
+      ]
+    },
+    {
+      "course_id": "chapitre-4-reduction-endomorphismes-ing2-2024-2025-bc3e005bd4",
+      "card_id": "reviewed-algebre-21",
+      "title": "Matrice nilpotente et indice de nilpotence",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        15
+      ]
+    },
+    {
+      "course_id": "chapitre-4-reduction-endomorphismes-ing2-2024-2025-bc3e005bd4",
+      "card_id": "reviewed-algebre-22",
+      "title": "Matrices de Jordan",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        15
+      ]
+    },
+    {
+      "course_id": "chapitre-4-reduction-endomorphismes-ing2-2024-2025-bc3e005bd4",
+      "card_id": "reviewed-algebre-23",
+      "title": "Protocole de trigonalisation",
+      "decision": "conservée",
+      "reason": "Contenu pertinent : rôle/énoncé, exemple et portée confrontés aux pages sources ; pas de modification nécessaire.",
+      "source_pages": [
+        16
+      ]
+    },
+    {
+      "course_id": "chapitre-4-reduction-endomorphismes-ing2-2024-2025-bc3e005bd4",
+      "card_id": "reviewed-algebre-24",
+      "title": "Chaîne de Jordan : exemple avec deux valeurs propres",
+      "decision": "révisée",
+      "reason": "Contenu pertinent : rôle/énoncé, exemple et portée confrontés aux pages sources ; pas de modification nécessaire.",
+      "source_pages": [
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "course_id": "chapitre-4-reduction-endomorphismes-ing2-2024-2025-bc3e005bd4",
+      "card_id": "reviewed-algebre-25",
+      "title": "Deux méthodes pour compléter une chaîne de Jordan",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        17,
+        18
+      ]
+    },
+    {
+      "course_id": "chapitre-4-reduction-endomorphismes-ing2-2024-2025-bc3e005bd4",
+      "card_id": "reviewed-algebre-26",
+      "title": "Chaîne de Jordan de longueur trois",
+      "decision": "révisée",
+      "reason": "Contenu pertinent : rôle/énoncé, exemple et portée confrontés aux pages sources ; pas de modification nécessaire.",
+      "source_pages": [
+        19,
+        20
+      ]
+    },
+    {
+      "course_id": "chapitre-4-reduction-endomorphismes-ing2-2024-2025-bc3e005bd4",
+      "card_id": "reviewed-algebre-27",
+      "title": "Puissances de matrices semblables",
+      "decision": "conservée",
+      "reason": "Contenu pertinent : rôle/énoncé, exemple et portée confrontés aux pages sources ; pas de modification nécessaire.",
+      "source_pages": [
+        21
+      ]
+    },
+    {
+      "course_id": "chapitre-4-reduction-endomorphismes-ing2-2024-2025-bc3e005bd4",
+      "card_id": "reviewed-algebre-28",
+      "title": "Puissances d’une matrice diagonalisable",
+      "decision": "conservée",
+      "reason": "Contenu pertinent : rôle/énoncé, exemple et portée confrontés aux pages sources ; pas de modification nécessaire.",
+      "source_pages": [
+        21
+      ]
+    },
+    {
+      "course_id": "chapitre-4-reduction-endomorphismes-ing2-2024-2025-bc3e005bd4",
+      "card_id": "reviewed-algebre-29",
+      "title": "Puissances d’une matrice de Jordan",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        21,
+        22
+      ]
+    },
+    {
+      "course_id": "chapitre-4-reduction-endomorphismes-ing2-2024-2025-bc3e005bd4",
+      "card_id": "reviewed-algebre-30",
+      "title": "Exponentielle d’une matrice et commutation",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        21
+      ]
+    },
+    {
+      "course_id": "chapitre-4-reduction-endomorphismes-ing2-2024-2025-bc3e005bd4",
+      "card_id": "reviewed-algebre-31",
+      "title": "Exponentielle par diagonalisation",
+      "decision": "conservée",
+      "reason": "Contenu pertinent : rôle/énoncé, exemple et portée confrontés aux pages sources ; pas de modification nécessaire.",
+      "source_pages": [
+        22
+      ]
+    },
+    {
+      "course_id": "chapitre-4-reduction-endomorphismes-ing2-2024-2025-bc3e005bd4",
+      "card_id": "reviewed-algebre-32",
+      "title": "Exponentielle par forme de Jordan",
+      "decision": "conservée",
+      "reason": "Contenu pertinent : rôle/énoncé, exemple et portée confrontés aux pages sources ; pas de modification nécessaire.",
+      "source_pages": [
+        22
+      ]
+    },
+    {
+      "course_id": "chapitre-4-reduction-endomorphismes-ing2-2024-2025-bc3e005bd4",
+      "card_id": "reviewed-algebre-33",
+      "title": "Puissances : exemple du bloc de Jordan",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        22,
+        23
+      ]
+    },
+    {
+      "course_id": "chapitre-4-reduction-endomorphismes-ing2-2024-2025-bc3e005bd4",
+      "card_id": "reviewed-algebre-34",
+      "title": "Exponentielle : exemple du bloc de Jordan",
+      "decision": "conservée",
+      "reason": "Contenu pertinent : rôle/énoncé, exemple et portée confrontés aux pages sources ; pas de modification nécessaire.",
+      "source_pages": [
+        23
+      ]
+    },
+    {
+      "course_id": "chapitre-4-reduction-endomorphismes-ing2-2024-2025-bc3e005bd4",
+      "card_id": "reviewed-algebre-35",
+      "title": "Suites couplées et puissances de matrices",
+      "decision": "conservée",
+      "reason": "Contenu pertinent : rôle/énoncé, exemple et portée confrontés aux pages sources ; pas de modification nécessaire.",
+      "source_pages": [
+        23
+      ]
+    },
+    {
+      "course_id": "chapitre-4-reduction-endomorphismes-ing2-2024-2025-bc3e005bd4",
+      "card_id": "reviewed-algebre-36",
+      "title": "Exercices du cours : valeurs propres et diagonalisation",
+      "decision": "conservée",
+      "reason": "Contenu pertinent : rôle/énoncé, exemple et portée confrontés aux pages sources ; pas de modification nécessaire.",
+      "source_pages": [
+        6,
+        11,
+        14
+      ]
+    },
+    {
+      "course_id": "chapitre-4-reduction-endomorphismes-ing2-2024-2025-bc3e005bd4",
+      "card_id": "reviewed-algebre-37",
+      "title": "Exercice du cours : réduction puis suites",
+      "decision": "conservée",
+      "reason": "Contenu pertinent : rôle/énoncé, exemple et portée confrontés aux pages sources ; pas de modification nécessaire.",
+      "source_pages": [
+        20,
+        23
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-1",
+      "title": "Styles intégrés",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        2
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-2",
+      "title": "Styles en ligne",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        2
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-3",
+      "title": "Feuille de style externe",
+      "decision": "révisée",
+      "reason": "Code CSS étiqueté correctement, distinct du lien HTML.",
+      "source_pages": [
+        3,
+        7
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-4",
+      "title": "Sélecteur de classe",
+      "decision": "révisée",
+      "reason": "Séparation du code CSS et HTML ; rôle de la notion conservé.",
+      "source_pages": [
+        5,
+        6
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-5",
+      "title": "Sélecteur d’identifiant",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        5,
+        6
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-6",
+      "title": "Déclarer une couleur",
+      "decision": "révisée",
+      "reason": "Déclarations de couleur correctement présentées comme du CSS.",
+      "source_pages": [
+        3
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-7",
+      "title": "Élément HTML <div>",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        6
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-8",
+      "title": "Élément HTML <span>",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        6
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-9",
+      "title": "Rôle du CSS",
+      "decision": "conservée",
+      "reason": "Contenu pertinent : rôle/énoncé, exemple et portée confrontés aux pages sources ; pas de modification nécessaire.",
+      "source_pages": [
+        2
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-10",
+      "title": "Syntaxe d’une règle CSS",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        2
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-11",
+      "title": "Sélecteur d’élément HTML",
+      "decision": "conservée",
+      "reason": "Contenu pertinent : rôle/énoncé, exemple et portée confrontés aux pages sources ; pas de modification nécessaire.",
+      "source_pages": [
+        4,
+        5
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-12",
+      "title": "Choisir entre classe et identifiant",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        6
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-13",
+      "title": "Propriétés color et background-color",
+      "decision": "conservée",
+      "reason": "Contenu pertinent : rôle/énoncé, exemple et portée confrontés aux pages sources ; pas de modification nécessaire.",
+      "source_pages": [
+        2,
+        3
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-14",
+      "title": "Choisir un schéma de couleurs",
+      "decision": "conservée",
+      "reason": "Contenu pertinent : rôle/énoncé, exemple et portée confrontés aux pages sources ; pas de modification nécessaire.",
+      "source_pages": [
+        3,
+        4
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-15",
+      "title": "Propriété font-size",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-16",
+      "title": "Propriété font-family",
+      "decision": "conservée",
+      "reason": "Contenu pertinent : rôle/énoncé, exemple et portée confrontés aux pages sources ; pas de modification nécessaire.",
+      "source_pages": [
+        3,
+        4,
+        6,
+        7
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-17",
+      "title": "Propriété font-style",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-18",
+      "title": "Propriété font-weight",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        3,
+        4,
+        6,
+        7
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-19",
+      "title": "Propriété text-align",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        6,
+        22,
+        24,
+        26
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-20",
+      "title": "Propriété text-decoration",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        22,
+        24,
+        25,
+        26
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-21",
+      "title": "Propriété width",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        10,
+        22,
+        23
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-22",
+      "title": "Valider une feuille CSS",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        7
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-23",
+      "title": "Propriété border",
+      "decision": "conservée",
+      "reason": "Contenu pertinent : rôle/énoncé, exemple et portée confrontés aux pages sources ; pas de modification nécessaire.",
+      "source_pages": [
+        7,
+        8
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-24",
+      "title": "Styles de bordure",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        7,
+        8
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-25",
+      "title": "Bordure d’un seul côté",
+      "decision": "conservée",
+      "reason": "Contenu pertinent : rôle/énoncé, exemple et portée confrontés aux pages sources ; pas de modification nécessaire.",
+      "source_pages": [
+        8
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-26",
+      "title": "Propriété padding",
+      "decision": "conservée",
+      "reason": "Contenu pertinent : rôle/énoncé, exemple et portée confrontés aux pages sources ; pas de modification nécessaire.",
+      "source_pages": [
+        8,
+        9
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-27",
+      "title": "Padding par côté",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        9
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-28",
+      "title": "Padding : raccourci à deux valeurs",
+      "decision": "conservée",
+      "reason": "Contenu pertinent : rôle/énoncé, exemple et portée confrontés aux pages sources ; pas de modification nécessaire.",
+      "source_pages": [
+        9
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-29",
+      "title": "Padding : raccourci à quatre valeurs",
+      "decision": "conservée",
+      "reason": "Contenu pertinent : rôle/énoncé, exemple et portée confrontés aux pages sources ; pas de modification nécessaire.",
+      "source_pages": [
+        9,
+        10
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-30",
+      "title": "Élément image HTML et attributs",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        10
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-31",
+      "title": "Alignement et espacement des images dans le support",
+      "decision": "révisée",
+      "reason": "Exemples historiques conservés et signalés ; complément actuel distingué du PDF.",
+      "source_pages": [
+        10,
+        11
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-32",
+      "title": "Créer un lien sur une image",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        11,
+        12
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-33",
+      "title": "Propriété background-image",
+      "decision": "conservée",
+      "reason": "Contenu pertinent : rôle/énoncé, exemple et portée confrontés aux pages sources ; pas de modification nécessaire.",
+      "source_pages": [
+        12
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-34",
+      "title": "Propriété background-repeat",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        12,
+        13
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-35",
+      "title": "Favicon",
+      "decision": "conservée",
+      "reason": "Contenu pertinent : rôle/énoncé, exemple et portée confrontés aux pages sources ; pas de modification nécessaire.",
+      "source_pages": [
+        13
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-36",
+      "title": "Wireframe",
+      "decision": "conservée",
+      "reason": "Contenu pertinent : rôle/énoncé, exemple et portée confrontés aux pages sources ; pas de modification nécessaire.",
+      "source_pages": [
+        13,
+        14,
+        20,
+        21
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-37",
+      "title": "Principes de mise en page",
+      "decision": "conservée",
+      "reason": "Contenu pertinent : rôle/énoncé, exemple et portée confrontés aux pages sources ; pas de modification nécessaire.",
+      "source_pages": [
+        14,
+        15
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-38",
+      "title": "Dispositions Ice, Jello et Liquid",
+      "decision": "conservée",
+      "reason": "Contenu pertinent : rôle/énoncé, exemple et portée confrontés aux pages sources ; pas de modification nécessaire.",
+      "source_pages": [
+        15,
+        16
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-39",
+      "title": "Modèle de boîte",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        16
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-40",
+      "title": "Propriété margin",
+      "decision": "conservée",
+      "reason": "Contenu pertinent : rôle/énoncé, exemple et portée confrontés aux pages sources ; pas de modification nécessaire.",
+      "source_pages": [
+        16,
+        17,
+        22,
+        23
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-41",
+      "title": "Flux normal",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        16,
+        20,
+        21
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-42",
+      "title": "Positionnement relatif",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        16
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-43",
+      "title": "Positionnement absolu",
+      "decision": "révisée",
+      "reason": "Exemple rendu réutilisable ; sortie du flux et repère explicités sans attribuer le complément au PDF.",
+      "source_pages": [
+        17
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-44",
+      "title": "Propriété float",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        17,
+        22,
+        23
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-45",
+      "title": "Propriété clear",
+      "decision": "conservée",
+      "reason": "Contenu pertinent : rôle/énoncé, exemple et portée confrontés aux pages sources ; pas de modification nécessaire.",
+      "source_pages": [
+        18,
+        22,
+        23
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-46",
+      "title": "Propriété overflow et conteneur flottant",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        19
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-47",
+      "title": "Propriété display",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        19,
+        22,
+        26
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-48",
+      "title": "Propriété z-index",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        20
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-49",
+      "title": "Mise en page à deux colonnes",
+      "decision": "conservée",
+      "reason": "Contenu pertinent : rôle/énoncé, exemple et portée confrontés aux pages sources ; pas de modification nécessaire.",
+      "source_pages": [
+        21,
+        22
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-50",
+      "title": "Mise en page à trois colonnes",
+      "decision": "conservée",
+      "reason": "Contenu pertinent : rôle/énoncé, exemple et portée confrontés aux pages sources ; pas de modification nécessaire.",
+      "source_pages": [
+        22,
+        23
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-51",
+      "title": "Ouvrir un lien dans une nouvelle fenêtre",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        24
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-52",
+      "title": "Pseudo-classes des liens",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        24,
+        26
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-53",
+      "title": "Liens présentés comme des boutons",
+      "decision": "conservée",
+      "reason": "Contenu pertinent : rôle/énoncé, exemple et portée confrontés aux pages sources ; pas de modification nécessaire.",
+      "source_pages": [
+        24
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-54",
+      "title": "Lien vers un fragment de page",
+      "decision": "conservée",
+      "reason": "Contenu pertinent : rôle/énoncé, exemple et portée confrontés aux pages sources ; pas de modification nécessaire.",
+      "source_pages": [
+        25
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-55",
+      "title": "Navigation structurée en liste",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        25
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-56",
+      "title": "Navigation horizontale et puces",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        26
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-57",
+      "title": "Propriété min-width",
+      "decision": "ajoutée",
+      "reason": "Notion du support rendue identifiable dans une fiche dédiée.",
+      "source_pages": [
+        22,
+        23
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-58",
+      "title": "Propriété list-style-image",
+      "decision": "ajoutée",
+      "reason": "Notion du support rendue identifiable dans une fiche dédiée.",
+      "source_pages": [
+        25
+      ]
+    },
+    {
+      "course_id": "cours-de-css-db7e58791b",
+      "card_id": "reviewed-css-59",
+      "title": "Propriété list-style-type",
+      "decision": "ajoutée",
+      "reason": "Notion du support rendue identifiable dans une fiche dédiée.",
+      "source_pages": [
+        26
+      ]
+    },
+    {
+      "course_id": "series-de-fourier-ing2-2024-2025-d58a7cc929",
+      "card_id": "reviewed-fourier-11",
+      "title": "Convention du terme constant",
+      "decision": "fusionnée",
+      "reason": "Convention déjà expliquée dans la fiche 3 ; regroupée pour éviter une répétition intégrale.",
+      "source_pages": [
+        4,
+        5
+      ]
+    },
+    {
+      "course_id": "series-de-fourier-ing2-2024-2025-d58a7cc929",
+      "card_id": "reviewed-fourier-1",
+      "title": "Série de Fourier et pulsation",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        3
+      ]
+    },
+    {
+      "course_id": "series-de-fourier-ing2-2024-2025-d58a7cc929",
+      "card_id": "reviewed-fourier-2",
+      "title": "Convergence normale",
+      "decision": "conservée",
+      "reason": "Contenu pertinent : rôle/énoncé, exemple et portée confrontés aux pages sources ; pas de modification nécessaire.",
+      "source_pages": [
+        3,
+        4
+      ]
+    },
+    {
+      "course_id": "series-de-fourier-ing2-2024-2025-d58a7cc929",
+      "card_id": "reviewed-fourier-3",
+      "title": "Coefficients trigonométriques et terme constant",
+      "decision": "révisée",
+      "reason": "Terminologie précisée : ces coefficients ne sont pas forcément réels si la fonction est complexe ; convention du terme constant regroupée ici.",
+      "source_pages": [
+        4,
+        5
+      ]
+    },
+    {
+      "course_id": "series-de-fourier-ing2-2024-2025-d58a7cc929",
+      "card_id": "reviewed-fourier-4",
+      "title": "Forme complexe",
+      "decision": "conservée",
+      "reason": "Contenu pertinent : rôle/énoncé, exemple et portée confrontés aux pages sources ; pas de modification nécessaire.",
+      "source_pages": [
+        5
+      ]
+    },
+    {
+      "course_id": "series-de-fourier-ing2-2024-2025-d58a7cc929",
+      "card_id": "reviewed-fourier-5",
+      "title": "Théorème de Dirichlet",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        6
+      ]
+    },
+    {
+      "course_id": "series-de-fourier-ing2-2024-2025-d58a7cc929",
+      "card_id": "reviewed-fourier-6",
+      "title": "Fonction paire",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        9
+      ]
+    },
+    {
+      "course_id": "series-de-fourier-ing2-2024-2025-d58a7cc929",
+      "card_id": "reviewed-fourier-7",
+      "title": "Fonction impaire",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        9
+      ]
+    },
+    {
+      "course_id": "series-de-fourier-ing2-2024-2025-d58a7cc929",
+      "card_id": "reviewed-fourier-8",
+      "title": "Dérivation des coefficients",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        11
+      ]
+    },
+    {
+      "course_id": "series-de-fourier-ing2-2024-2025-d58a7cc929",
+      "card_id": "reviewed-fourier-9",
+      "title": "Intégrer une série normalement convergente",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        3
+      ]
+    },
+    {
+      "course_id": "series-de-fourier-ing2-2024-2025-d58a7cc929",
+      "card_id": "reviewed-fourier-10",
+      "title": "Critère de convergence par le lemme d’Abel",
+      "decision": "conservée",
+      "reason": "Contenu pertinent : rôle/énoncé, exemple et portée confrontés aux pages sources ; pas de modification nécessaire.",
+      "source_pages": [
+        4
+      ]
+    },
+    {
+      "course_id": "series-de-fourier-ing2-2024-2025-d58a7cc929",
+      "card_id": "reviewed-fourier-12",
+      "title": "Passage des cosinus et sinus aux exponentielles",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        5
+      ]
+    },
+    {
+      "course_id": "series-de-fourier-ing2-2024-2025-d58a7cc929",
+      "card_id": "reviewed-fourier-13",
+      "title": "Indépendance de l’intervalle d’intégration",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        8
+      ]
+    },
+    {
+      "course_id": "series-de-fourier-ing2-2024-2025-d58a7cc929",
+      "card_id": "reviewed-fourier-14",
+      "title": "Valeur moyenne et harmoniques",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        6
+      ]
+    },
+    {
+      "course_id": "series-de-fourier-ing2-2024-2025-d58a7cc929",
+      "card_id": "reviewed-fourier-15",
+      "title": "Exemple du cours : fonction en créneau",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        6,
+        8,
+        10
+      ]
+    },
+    {
+      "course_id": "series-de-fourier-ing2-2024-2025-d58a7cc929",
+      "card_id": "reviewed-fourier-16",
+      "title": "Formule de Bessel-Parseval",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        10
+      ]
+    },
+    {
+      "course_id": "series-de-fourier-ing2-2024-2025-d58a7cc929",
+      "card_id": "reviewed-fourier-17",
+      "title": "Parseval lorsque la fonction est réelle",
+      "decision": "conservée",
+      "reason": "Contenu pertinent : rôle/énoncé, exemple et portée confrontés aux pages sources ; pas de modification nécessaire.",
+      "source_pages": [
+        10
+      ]
+    },
+    {
+      "course_id": "series-de-fourier-ing2-2024-2025-d58a7cc929",
+      "card_id": "reviewed-fourier-18",
+      "title": "Produit scalaire hermitien du cours",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        10
+      ]
+    },
+    {
+      "course_id": "series-de-fourier-ing2-2024-2025-d58a7cc929",
+      "card_id": "reviewed-fourier-19",
+      "title": "Intégration d’une série de Fourier",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        11
+      ]
+    },
+    {
+      "course_id": "series-de-fourier-ing2-2024-2025-d58a7cc929",
+      "card_id": "reviewed-fourier-20",
+      "title": "Produit de deux séries de Fourier",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        11
+      ]
+    },
+    {
+      "course_id": "series-de-fourier-ing2-2024-2025-d58a7cc929",
+      "card_id": "reviewed-fourier-21",
+      "title": "Convolution périodique et normalisation",
+      "decision": "révisée",
+      "reason": "Précision des hypothèses, du rôle ou de la notation.",
+      "source_pages": [
+        11
+      ]
+    },
+    {
+      "course_id": "series-de-fourier-ing2-2024-2025-d58a7cc929",
+      "card_id": "reviewed-fourier-22",
+      "title": "Sommes partielles près d’une discontinuité",
+      "decision": "ajoutée",
+      "reason": "Notion du support rendue identifiable dans une fiche dédiée.",
+      "source_pages": [
+        6,
+        8
+      ]
+    }
+  ]
+}

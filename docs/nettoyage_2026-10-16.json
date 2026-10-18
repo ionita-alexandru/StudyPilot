@@ -1,0 +1,182 @@
+﻿[
+    {
+        "source":  "C:\\StudyPilotProject\\StudyPilot\\appliquer_correctif_v15_6.py",
+        "archive":  "C:\\StudyPilotProject\\StudyPilot_Archives\\nettoyage_20261016\\archives\\appliquer_correctif_v15_6.py",
+        "files":  1,
+        "bytes":  951443
+    },
+    {
+        "source":  "C:\\StudyPilotProject\\StudyPilot\\appliquer_fiches_v15_6_3.py",
+        "archive":  "C:\\StudyPilotProject\\StudyPilot_Archives\\nettoyage_20261016\\archives\\appliquer_fiches_v15_6_3.py",
+        "files":  1,
+        "bytes":  67620
+    },
+    {
+        "source":  "C:\\StudyPilotProject\\StudyPilot\\appliquer_finition_v15_6_2.py",
+        "archive":  "C:\\StudyPilotProject\\StudyPilot_Archives\\nettoyage_20261016\\archives\\appliquer_finition_v15_6_2.py",
+        "files":  1,
+        "bytes":  67055
+    },
+    {
+        "source":  "C:\\StudyPilotProject\\StudyPilot\\appliquer_gemma_v15_4.py",
+        "archive":  "C:\\StudyPilotProject\\StudyPilot_Archives\\nettoyage_20261016\\archives\\appliquer_gemma_v15_4.py",
+        "files":  1,
+        "bytes":  150270
+    },
+    {
+        "source":  "C:\\StudyPilotProject\\StudyPilot\\appliquer_gemma_v15_4_2.py",
+        "archive":  "C:\\StudyPilotProject\\StudyPilot_Archives\\nettoyage_20261016\\archives\\appliquer_gemma_v15_4_2.py",
+        "files":  1,
+        "bytes":  62429
+    },
+    {
+        "source":  "C:\\StudyPilotProject\\StudyPilot\\appliquer_gemma_v15_4_3.py",
+        "archive":  "C:\\StudyPilotProject\\StudyPilot_Archives\\nettoyage_20261016\\archives\\appliquer_gemma_v15_4_3.py",
+        "files":  1,
+        "bytes":  38468
+    },
+    {
+        "source":  "C:\\StudyPilotProject\\StudyPilot\\appliquer_reprise_gemma_v15_4_1.py",
+        "archive":  "C:\\StudyPilotProject\\StudyPilot_Archives\\nettoyage_20261016\\archives\\appliquer_reprise_gemma_v15_4_1.py",
+        "files":  1,
+        "bytes":  19479
+    },
+    {
+        "source":  "C:\\StudyPilotProject\\StudyPilot\\bilan-v15_6-20261012-195450-692033.json",
+        "archive":  "C:\\StudyPilotProject\\StudyPilot_Archives\\nettoyage_20261016\\archives\\bilan-v15_6-20261012-195450-692033.json",
+        "files":  1,
+        "bytes":  833
+    },
+    {
+        "source":  "C:\\StudyPilotProject\\StudyPilot\\bilan-v15_6-20261012-234904-127865.json",
+        "archive":  "C:\\StudyPilotProject\\StudyPilot_Archives\\nettoyage_20261016\\archives\\bilan-v15_6-20261012-234904-127865.json",
+        "files":  1,
+        "bytes":  833
+    },
+    {
+        "source":  "C:\\StudyPilotProject\\StudyPilot\\diagnostic-v15_4-20261012-234904-127865.zip",
+        "archive":  "C:\\StudyPilotProject\\StudyPilot_Archives\\nettoyage_20261016\\archives\\diagnostic-v15_4-20261012-234904-127865.zip",
+        "files":  1,
+        "bytes":  208385
+    },
+    {
+        "source":  "C:\\StudyPilotProject\\StudyPilot\\INSTALLATION_GEMMA_V15_4.md",
+        "archive":  "C:\\StudyPilotProject\\StudyPilot_Archives\\nettoyage_20261016\\archives\\INSTALLATION_GEMMA_V15_4.md",
+        "files":  1,
+        "bytes":  7875
+    },
+    {
+        "source":  "C:\\StudyPilotProject\\StudyPilot\\INSTALLATION_V15_6_2.md",
+        "archive":  "C:\\StudyPilotProject\\StudyPilot_Archives\\nettoyage_20261016\\archives\\INSTALLATION_V15_6_2.md",
+        "files":  1,
+        "bytes":  3240
+    },
+    {
+        "source":  "C:\\StudyPilotProject\\StudyPilot\\INSTALLATION_V15_6_3.md",
+        "archive":  "C:\\StudyPilotProject\\StudyPilot_Archives\\nettoyage_20261016\\archives\\INSTALLATION_V15_6_3.md",
+        "files":  1,
+        "bytes":  3980
+    },
+    {
+        "source":  "C:\\StudyPilotProject\\StudyPilot\\REPRISE_V15_4_1.md",
+        "archive":  "C:\\StudyPilotProject\\StudyPilot_Archives\\nettoyage_20261016\\archives\\REPRISE_V15_4_1.md",
+        "files":  1,
+        "bytes":  4909
+    },
+    {
+        "source":  "C:\\StudyPilotProject\\StudyPilot\\resultats-v15_6-20261012-234904-127865.txt",
+        "archive":  "C:\\StudyPilotProject\\StudyPilot_Archives\\nettoyage_20261016\\archives\\resultats-v15_6-20261012-234904-127865.txt",
+        "files":  1,
+        "bytes":  12205
+    },
+    {
+        "source":  "C:\\StudyPilotProject\\StudyPilot\\tests_cibles.txt",
+        "archive":  "C:\\StudyPilotProject\\StudyPilot_Archives\\nettoyage_20261016\\archives\\tests_cibles.txt",
+        "files":  1,
+        "bytes":  834
+    },
+    {
+        "source":  "C:\\StudyPilotProject\\StudyPilot\\tests_complets.txt",
+        "archive":  "C:\\StudyPilotProject\\StudyPilot_Archives\\nettoyage_20261016\\archives\\tests_complets.txt",
+        "files":  1,
+        "bytes":  5015
+    },
+    {
+        "source":  "C:\\StudyPilotProject\\StudyPilot\\tests_installateur.txt",
+        "archive":  "C:\\StudyPilotProject\\StudyPilot_Archives\\nettoyage_20261016\\archives\\tests_installateur.txt",
+        "files":  1,
+        "bytes":  654
+    },
+    {
+        "source":  "C:\\StudyPilotProject\\StudyPilot\\verification_tests.txt",
+        "archive":  "C:\\StudyPilotProject\\StudyPilot_Archives\\nettoyage_20261016\\archives\\verification_tests.txt",
+        "files":  1,
+        "bytes":  6071
+    },
+    {
+        "source":  "C:\\StudyPilotProject\\StudyPilot\\validation",
+        "archive":  "C:\\StudyPilotProject\\StudyPilot_Archives\\nettoyage_20261016\\archives\\validation",
+        "files":  8,
+        "bytes":  126463
+    },
+    {
+        "source":  "C:\\StudyPilotProject\\StudyPilot\\verification",
+        "archive":  "C:\\StudyPilotProject\\StudyPilot_Archives\\nettoyage_20261016\\archives\\verification",
+        "files":  51,
+        "bytes":  576285
+    },
+    {
+        "source":  "C:\\StudyPilotProject\\StudyPilot\\_backups",
+        "archive":  "C:\\StudyPilotProject\\StudyPilot_Archives\\nettoyage_20261016\\archives\\_backups",
+        "files":  234,
+        "bytes":  4060417
+    },
+    {
+        "source":  "C:\\StudyPilotProject\\StudyPilot\\reprendre_cours_v15_2.py",
+        "archive":  "C:\\StudyPilotProject\\StudyPilot_Archives\\nettoyage_20261016\\archives\\reprendre_cours_v15_2.py",
+        "files":  1,
+        "bytes":  3848
+    },
+    {
+        "source":  "C:\\StudyPilotProject\\StudyPilot\\lancer_studypilot_presentation.py",
+        "archive":  "C:\\StudyPilotProject\\StudyPilot_Archives\\nettoyage_20261016\\archives\\lancer_studypilot_presentation.py",
+        "files":  1,
+        "bytes":  900
+    },
+    {
+        "source":  "C:\\StudyPilotProject\\StudyPilot\\src\\pdf\\reader.py",
+        "archive":  "C:\\StudyPilotProject\\StudyPilot_Archives\\nettoyage_20261016\\archives\\src\\pdf\\reader.py",
+        "files":  1,
+        "bytes":  2703
+    },
+    {
+        "source":  "C:\\StudyPilotProject\\StudyPilot\\static\\study.css",
+        "archive":  "C:\\StudyPilotProject\\StudyPilot_Archives\\nettoyage_20261016\\archives\\static\\study.css",
+        "files":  1,
+        "bytes":  4627
+    },
+    {
+        "source":  "C:\\StudyPilotProject\\StudyPilot\\static\\presentation-theme.css",
+        "archive":  "C:\\StudyPilotProject\\StudyPilot_Archives\\nettoyage_20261016\\archives\\static\\presentation-theme.css",
+        "files":  1,
+        "bytes":  2351
+    },
+    {
+        "source":  "C:\\StudyPilotProject\\StudyPilot\\data\\courses\\chapitre-4-reduction-endomorphismes-ing2-2024-2025-bc3e005bd4\\_backups",
+        "archive":  "C:\\StudyPilotProject\\StudyPilot_Archives\\nettoyage_20261016\\archives\\data\\courses\\chapitre-4-reduction-endomorphismes-ing2-2024-2025-bc3e005bd4\\_backups",
+        "files":  62,
+        "bytes":  7932049
+    },
+    {
+        "source":  "C:\\StudyPilotProject\\StudyPilot\\data\\courses\\cours-de-css-db7e58791b\\_backups",
+        "archive":  "C:\\StudyPilotProject\\StudyPilot_Archives\\nettoyage_20261016\\archives\\data\\courses\\cours-de-css-db7e58791b\\_backups",
+        "files":  28,
+        "bytes":  8781193
+    },
+    {
+        "source":  "C:\\StudyPilotProject\\StudyPilot\\data\\courses\\series-de-fourier-ing2-2024-2025-d58a7cc929\\_backups",
+        "archive":  "C:\\StudyPilotProject\\StudyPilot_Archives\\nettoyage_20261016\\archives\\data\\courses\\series-de-fourier-ing2-2024-2025-d58a7cc929\\_backups",
+        "files":  27,
+        "bytes":  1719875
+    }
+]

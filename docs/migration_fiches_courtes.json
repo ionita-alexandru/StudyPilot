@@ -1,0 +1,467 @@
+[
+  {
+    "course_id": "chapitre-4-reduction-endomorphismes-ing2-2024-2025-bc3e005bd4",
+    "revision": "35a0705f16bbafce9c74713657b90664e6a67f22e1e49b2ee50a390a8822fc8b",
+    "core_count": 21,
+    "cores": [
+      {
+        "id": "study-bfb7b07c6a77065ab5c3",
+        "old_id": "reviewed-algebre-1",
+        "title": "Valeurs propres, vecteurs propres et spectre",
+        "body": "Une valeur propre \\(\\lambda\\) est un facteur par lequel \\(A\\) multiplie un vecteur non nul :\n\\[Av=\\lambda v,\\qquad v\\ne0.\\]\n\\(v\\) est un vecteur propre associé à \\(\\lambda\\). La valeur propre peut être nulle. Le **spectre** est l’ensemble des valeurs propres ; il ne dépend pas de la base choisie pour représenter l’endomorphisme."
+      },
+      {
+        "id": "study-862a8304c4f6de5cc19c",
+        "old_id": "reviewed-algebre-3",
+        "title": "Multiplicité algébrique",
+        "body": "La multiplicité algébrique de \\(\\lambda\\) est l’exposant du facteur \\((X-\\lambda)\\) dans le polynôme caractéristique factorisé.\n\nCette multiplicité se lit dans le polynôme. La multiplicité géométrique se calcule par la dimension de l’espace propre."
+      },
+      {
+        "id": "study-f75a502bbf364d0d5526",
+        "old_id": "reviewed-algebre-4",
+        "title": "Espace propre",
+        "body": "L’espace propre associé à \\(\\lambda\\) rassemble les solutions de :\n\\[(A-\\lambda I)v=0,\\qquad E_\\lambda=\\ker(A-\\lambda I).\\]\nPour le calculer, résoudre ce système homogène puis extraire une base des solutions. Il contient le vecteur nul ; seuls ses vecteurs **non nuls** sont des vecteurs propres."
+      },
+      {
+        "id": "study-7e4f07234939b9d6a1b8",
+        "old_id": "reviewed-algebre-5",
+        "title": "Multiplicité géométrique",
+        "body": "\\[\\text{Multiplicité géométrique de }\\lambda=\\dim(E_\\lambda)\\]\n\nElle est le nombre de vecteurs d’une base de \\(E_\\lambda\\). Elle se calcule en résolvant le système, tandis que la multiplicité algébrique se lit dans le polynôme caractéristique.\n\nLe cours utilise les dimensions des espaces propres pour vérifier la diagonalisabilité et construire une base de vecteurs propres."
+      },
+      {
+        "id": "study-5330f498fe884f40fc04",
+        "old_id": "reviewed-algebre-6",
+        "title": "Critères de diagonalisabilité",
+        "body": "Une matrice \\(A\\in M_n(K)\\) est diagonalisable sur \\(K\\) si elle possède une base de vecteurs propres.\n\\[A\\text{ diagonalisable}\\iff\\sum_{\\lambda\\in\\operatorname{sp}(A)}\\dim E_\\lambda=n.\\]\nSi son polynôme caractéristique est scindé sur \\(K\\), cela revient à vérifier, pour chaque valeur propre, l’égalité des multiplicités géométrique et algébrique. En particulier, \\(n\\) valeurs propres distinctes suffisent."
+      },
+      {
+        "id": "study-0ab6c3139d5ce56bd77f",
+        "old_id": "reviewed-algebre-7",
+        "title": "Théorème de Cayley-Hamilton",
+        "body": "Pour toute matrice carrée \\(A\\), son polynôme caractéristique s’annule lorsqu’on y remplace la variable par \\(A\\) :\\[P^A(A)=0_{n\\times n}.\\]\n\nÉvaluer le polynôme en A signifie remplacer les puissances de X par les puissances de A, et le terme constant par un multiple de I."
+      },
+      {
+        "id": "study-db77d8cabe8100e8b647",
+        "old_id": "reviewed-algebre-8",
+        "title": "Protocole de diagonalisation",
+        "body": "1. Trouver les valeurs propres de \\(A\\).\n2. Calculer une base de chaque espace propre.\n3. Vérifier que leurs dimensions totalisent \\(n\\).\n4. Former \\(P\\) avec les vecteurs propres en colonnes et \\(D\\) avec les valeurs propres dans le **même ordre**.\n\\[A=PDP^{-1}.\\]\nVérifier que \\(P\\) est inversible et que \\(AP=PD\\). Si les dimensions ne totalisent pas \\(n\\), la matrice n’est pas diagonalisable sur le corps choisi."
+      },
+      {
+        "id": "study-7b4c50e823b4a755edb0",
+        "old_id": "reviewed-algebre-10",
+        "title": "Polynôme caractéristique : trouver les valeurs propres",
+        "body": "Le polynôme caractéristique permet de trouver les valeurs propres d’une matrice carrée \\(A\\) de taille \\(n\\) :\n\\[P^A(X)=\\det(A-XI).\\]\nSes racines dans le corps de travail \\(K\\) sont les valeurs propres. On résout donc \\(P^A(\\lambda)=0\\).\nAvec cette convention, le terme constant est \\(\\det A\\), le coefficient dominant \\((-1)^n\\). La lecture des autres coefficients est disponible dans les détails."
+      },
+      {
+        "id": "study-c8747c6a9f731fd3ee85",
+        "old_id": "reviewed-algebre-13",
+        "title": "Évaluer un polynôme en une matrice",
+        "body": "À une constante on associe un multiple de I, et à \\(X^k\\) la matrice \\(A^k\\). Ainsi \\[P(X)=\\sum_{k=0}^m a_kX^k\\quad\\Longrightarrow\\quad P(A)=a_0I+\\sum_{k=1}^m a_kA^k.\\]"
+      },
+      {
+        "id": "study-068a5bc9b297be95166b",
+        "old_id": "reviewed-algebre-14",
+        "title": "Réduire des puissances avec Cayley-Hamilton",
+        "body": "Cayley-Hamilton donne une relation entre les puissances de \\(A\\) : son polynôme caractéristique annule \\(A\\).\nIsoler la puissance la plus élevée dans cette relation, puis multiplier par \\(A\\) et remplacer successivement pour calculer les puissances suivantes.\nLe terme constant du polynôme multiplie la matrice identité \\(I\\), et non un nombre seul. Cette méthode évite de recalculer chaque puissance par des produits matriciels complets."
+      },
+      {
+        "id": "study-846ca91fb2bc41068f1c",
+        "old_id": "reviewed-algebre-16",
+        "title": "Polynôme scindé et corps de travail",
+        "body": "Un polynôme non nul est scindé sur \\(K\\) s’il est produit de facteurs de degré 1 dans \\(K\\) :\\[P(X)=c\\prod_{i=1}^{p}(X-\\lambda_i)^{m_i},\\qquad c\\ne0,\\quad\\lambda_i\\in K.\\]Les \\(m_i\\) sont les multiplicités des racines.\n\nUn polynôme caractéristique scindé permet la trigonalisation. Pour diagonaliser, il faut aussi que chaque espace propre ait la dimension de la multiplicité algébrique correspondante."
+      },
+      {
+        "id": "study-e74d3921a6c6624c324a",
+        "old_id": "reviewed-algebre-20",
+        "title": "Trigonalisation",
+        "body": "Un endomorphisme est trigonalisable s’il existe une base dans laquelle sa matrice est triangulaire supérieure.\n\nSur \\(K\\), une matrice est trigonalisable si et seulement si son polynôme caractéristique est scindé. Le cours construit une forme de Jordan, cas particulier de forme triangulaire.\n\nLa forme triangulaire peut garder des coefficients non nuls au-dessus de la diagonale. La diagonalisation exige une base constituée uniquement de vecteurs propres."
+      },
+      {
+        "id": "study-49e046336e401eaffef2",
+        "old_id": "reviewed-algebre-21",
+        "title": "Matrice nilpotente et indice de nilpotence",
+        "body": "Une matrice \\(N\\) est nilpotente si une puissance entière positive est nulle. Son indice est le plus petit entier \\(p\\geq1\\) tel que\\[N^p=0,\\qquad N^{p-1}\\ne0.\\]La matrice nulle a l’indice 1 ; pour une matrice non nulle, \\(p\\geq2\\)."
+      },
+      {
+        "id": "study-6ff36b785cff4a3edae5",
+        "old_id": "reviewed-algebre-22",
+        "title": "Matrices de Jordan",
+        "body": "Une forme de Jordan se décompose en \\(J=D+N\\), avec \\(D\\) diagonale et \\(N\\) nilpotente. Les seules entrées éventuellement non nulles de \\(N\\) sont des 1 sur la surdiagonale, reliant des positions de même valeur propre. Ainsi \\(DN=ND\\).\n\nLes 1 relient les vecteurs d’une même chaîne associée à une même valeur propre ; D et N doivent commuter pour les calculs qui suivent."
+      },
+      {
+        "id": "study-87608d2edee15cdf95c1",
+        "old_id": "reviewed-algebre-23",
+        "title": "Protocole de trigonalisation",
+        "body": "Le polynôme caractéristique doit être scindé sur le corps de travail. Calculer les espaces propres ; si leurs bases ne suffisent pas, les compléter par des chaînes de vecteurs généralisés :\n\\[(A-\\lambda I)v_{j+1}=v_j.\\]\nUne chaîne commence par un vecteur propre non nul. Choisir des chaînes donnant une base, former \\(P\\) avec leurs vecteurs et vérifier \\(AP=PJ\\), avec \\(J\\) sous forme de Jordan. Les choix concrets de chaînes sont détaillés dans les exemples."
+      },
+      {
+        "id": "study-cc4efe63f7ccc2e06747",
+        "old_id": "reviewed-algebre-28",
+        "title": "Calculer les puissances par changement de base",
+        "body": "Un changement de base transporte les puissances : si \\(B=P^{-1}AP\\) avec \\(P\\) inversible,\n\\[A^k=PB^kP^{-1}\\quad(k\\in\\mathbb N).\\]\nSi \\(B=D\\) est diagonale, élever seulement ses coefficients diagonaux à la puissance \\(k\\). Les matrices \\(P\\) et \\(P^{-1}\\) restent inchangées. Pour \\(k=0\\), le résultat est \\(I\\)."
+      },
+      {
+        "id": "study-09a3b86725ae0e3a8764",
+        "old_id": "reviewed-algebre-29",
+        "title": "Puissances d’une matrice de Jordan",
+        "body": "Écrire \\(J=D+N\\) avec \\(DN=ND\\) et N nilpotente.\n\nPour \\(k\\in\\mathbb N\\) et \\(N^p=0\\) :\\[J^k=\\sum_{j=0}^{\\min(k,p-1)}\\binom{k}{j}D^{k-j}N^j.\\]\\[\\binom{k}{j}=\\frac{k!}{j!(k-j)!},\\qquad A^k=PJ^kP^{-1}.\\]\n\nLes puissances de N deviennent nulles à partir de son indice de nilpotence. Ne pas appliquer ce binôme matriciel si D et N ne commutent pas."
+      },
+      {
+        "id": "study-3d8b3bd14f852ad7569a",
+        "old_id": "reviewed-algebre-30",
+        "title": "Exponentielle d’une matrice et commutation",
+        "body": "Pour une matrice carrée réelle ou complexe :\\[e^A=\\sum_{k=0}^{\\infty}\\frac{A^k}{k!}.\\]Cette série converge ; son terme initial est la matrice identité \\(I\\).\n\nSi \\(AB=BA\\), alors \\[e^{A+B}=e^Ae^B.\\] L’égalité n’est pas donnée sans la condition de commutation."
+      },
+      {
+        "id": "study-9d7d97a81049cfd25487",
+        "old_id": "reviewed-algebre-31",
+        "title": "Exponentielle par diagonalisation",
+        "body": "Si \\(A=PDP^{-1}\\), alors \\[e^D=\\operatorname{diag}(e^{\\lambda_1},\\ldots,e^{\\lambda_n}),\\qquad e^A=Pe^DP^{-1}.\\]\n\nL’exponentielle se calcule sur les coefficients diagonaux de D avant le changement de base. Le cours indique son intérêt pour les systèmes linéaires à coefficients constants."
+      },
+      {
+        "id": "study-0736e8f0f541f950a869",
+        "old_id": "reviewed-algebre-32",
+        "title": "Exponentielle par forme de Jordan",
+        "body": "\\(J=D+N\\), \\(DN=ND\\), et N est nilpotente d’indice p.\n\n\\[e^N=\\sum_{k=0}^{p-1}\\frac{N^k}{k!},\\qquad e^J=e^De^N,\\qquad e^A=Pe^JP^{-1}.\\]\n\nLa série de l’exponentielle de N se termine parce que toutes les puissances à partir de p sont nulles."
+      },
+      {
+        "id": "study-0ff6b65e5bc9db5c3c55",
+        "old_id": "reviewed-algebre-35",
+        "title": "Suites couplées et puissances de matrices",
+        "body": "Pour des suites couplées par des relations linéaires à coefficients constants, regrouper les termes dans un vecteur \\(U_k\\) :\n\\[U_{k+1}=AU_k\\quad\\Longrightarrow\\quad U_k=A^kU_0.\\]\n\\(A\\) contient les coefficients des relations ; \\(U_0\\) contient les conditions initiales. Calculer \\(A^k\\) par diagonalisation ou Jordan, puis multiplier par \\(U_0\\). Les composantes du résultat donnent chacune des suites."
+      }
+    ]
+  },
+  {
+    "course_id": "cours-de-css-db7e58791b",
+    "revision": "25ba9e066771a03d89a53d7d71f0d494bd308551d79bec8eaa6c510c2c1c920d",
+    "core_count": 39,
+    "cores": [
+      {
+        "id": "study-669b5d5252227cd994be",
+        "old_id": "reviewed-css-1",
+        "title": "Intégrer CSS dans une page",
+        "body": "Trois façons d’appliquer CSS :\n- **En ligne** : `style=\"color: red;\"` dans un élément, pour cet élément.\n- **Intégré** : un bloc `<style>` dans `<head>`, pour la page.\n- **Externe** : un fichier `.css`, partageable entre plusieurs pages.\n```html\n<link rel=\"stylesheet\" href=\"site.css\">\n```\nUn fichier CSS contient les règles, sans balises HTML."
+      },
+      {
+        "id": "study-a79c0925f8423320d415",
+        "old_id": "reviewed-css-4",
+        "title": "Sélecteurs de classe et d’identifiant",
+        "body": "Une **classe** peut être réutilisée sur plusieurs éléments ; un **identifiant** doit être unique dans la page.\n```css\n.new { color: #FF0000; }\n#new2 { color: #FF0000; }\n```\n`.new` cible `class=\"new\"` ; `#new2` cible `id=\"new2\"`. Choisir selon le rôle des éléments, sans multiplier les identifiants pour un style partagé."
+      },
+      {
+        "id": "study-5f829306d8547a10b590",
+        "old_id": "reviewed-css-6",
+        "title": "Déclarer une couleur",
+        "body": "```css\ncolor: red;\ncolor: #FF0000;\ncolor: rgb(255, 0, 0);\n```\n\nDans #RRGGBB, les trois paires représentent respectivement le rouge, le vert et le bleu. #FF0000 est rouge ; #00FF00 est vert ; #0000FF est bleu.\n\n```css\n#000000  /* noir */\n#FFFFFF  /* blanc */\n#CCCCCC  /* gris */\n```"
+      },
+      {
+        "id": "study-7f3ad86a165fe60a70ed",
+        "old_id": "reviewed-css-7",
+        "title": "Conteneurs HTML : div et span",
+        "body": "`<div>` et `<span>` regroupent du contenu pour lui appliquer une structure ou un style.\n- `<div>` est affiché en **bloc** par défaut.\n- `<span>` reste **dans la ligne**, par exemple pour cibler quelques mots.\nLeur affichage peut être modifié par CSS. Les classes permettent de sélectionner ces conteneurs."
+      },
+      {
+        "id": "study-3f32165bd4d339dfe70b",
+        "old_id": "reviewed-css-10",
+        "title": "Syntaxe d’une règle CSS",
+        "body": "Une règle associe un **sélecteur** à des déclarations `propriété: valeur;` entre accolades.\n```css\nbody { color: blue; }\n```\n`body` sélectionne l’élément ; `color` est la propriété ; `blue` est sa valeur. Un bloc peut contenir plusieurs déclarations, séparées par des points-virgules."
+      },
+      {
+        "id": "study-3373c709ec413a837a7c",
+        "old_id": "reviewed-css-11",
+        "title": "Sélecteur d’élément HTML",
+        "body": "Un sélecteur d’élément applique la règle aux éléments portant cette balise. Dans le cours, body, h1 et h2 reçoivent chacun leur règle."
+      },
+      {
+        "id": "study-844bc2a011a64ae63482",
+        "old_id": "reviewed-css-13",
+        "title": "Propriétés color et background-color",
+        "body": "`color` règle la couleur du texte ; `background-color` celle du fond de l’élément.\n```css\nbody { background-color: #E6E6FA; color: #191970; }\n```\nIci, le texte est bleu foncé sur fond lavande. Les deux propriétés ont des rôles indépendants."
+      },
+      {
+        "id": "study-fc0b72b76032fbbe1add",
+        "old_id": "reviewed-css-15",
+        "title": "Propriété font-size",
+        "body": "font-size configure la taille du texte. Le tableau du support présente des mots-clés, des valeurs en em, px et pt, et des pourcentages.\n\n`em` et les pourcentages sont relatifs à la taille de police de référence ; `px` est une unité CSS. Le tableau du PDF suppose une taille de référence : 1 em ne vaut pas toujours 16 px."
+      },
+      {
+        "id": "study-a6f67e3c6815269ad47a",
+        "old_id": "reviewed-css-16",
+        "title": "Propriété font-family",
+        "body": "`font-family` propose les familles de police par ordre de préférence. Terminer par une famille générique permet un repli.\n```css\nfont-family: Arial, sans-serif;\n```\nLes familles génériques du cours sont `serif`, `sans-serif`, `monospace`, `cursive` et `fantasy`. Le navigateur utilise une police disponible correspondant à la liste."
+      },
+      {
+        "id": "study-5ab2666ae6f950036cbc",
+        "old_id": "reviewed-css-17",
+        "title": "Propriété font-style",
+        "body": "`font-style` règle le style de la police ; `italic` demande l’italique.\n```css\nfont-style: italic;\n```\nCela ne change pas sa graisse, qui dépend de `font-weight`."
+      },
+      {
+        "id": "study-84e4a75c35cd02be99a5",
+        "old_id": "reviewed-css-18",
+        "title": "Propriété font-weight",
+        "body": "`font-weight` règle la graisse des caractères. `bold` demande une graisse plus forte ; la famille de police reste définie par `font-family`."
+      },
+      {
+        "id": "study-b05dde401d4f7cfd2534",
+        "old_id": "reviewed-css-19",
+        "title": "Propriété text-align",
+        "body": "`text-align` aligne le contenu en ligne à l’intérieur de son bloc.\n```css\ntext-align: center;\n```\nCette déclaration centre le texte dans sa zone. Elle **ne centre pas le bloc lui-même** dans la page."
+      },
+      {
+        "id": "study-b4dd45d8cc15197ee8c1",
+        "old_id": "reviewed-css-20",
+        "title": "Propriété text-decoration",
+        "body": "`text-decoration: none` retire la décoration du texte. Dans les exemples, elle enlève le soulignement des liens de navigation."
+      },
+      {
+        "id": "study-0b85f9b459b6363ad474",
+        "old_id": "reviewed-css-21",
+        "title": "Propriété width",
+        "body": "`width` définit la largeur du contenu dans le modèle `content-box` utilisé par le cours.\n```css\nwidth: 250px;\n```\nLe padding et les bordures s’ajoutent à cette largeur. Les marges restent à l’extérieur. Ne pas confondre la largeur du contenu avec la largeur totale occupée."
+      },
+      {
+        "id": "study-97f74b7ac47a9e988926",
+        "old_id": "reviewed-css-22",
+        "title": "Valider une feuille CSS",
+        "body": "Le support propose le validateur CSS du W3C pour contrôler la feuille de style externe.\n\nLe validateur est accessible sur https://jigsaw.w3.org/css-validator/ ; on peut y soumettre une feuille CSS pour rechercher des erreurs de syntaxe.\n\nLa validation de syntaxe complète la lecture des règles ; elle ne remplace pas l’observation du rendu."
+      },
+      {
+        "id": "study-b26741a39ff85e642408",
+        "old_id": "reviewed-css-23",
+        "title": "Définir une bordure",
+        "body": "`border` définit la largeur, le style et la couleur de la bordure :\n```css\nh2 { border: 2px solid #ff0000; }\n```\nIci, une ligne rouge pleine de 2 px entoure le titre. `border-bottom` applique une bordure uniquement en bas ; `border-top`, `border-right` et `border-left` ciblent les autres côtés. Le catalogue des styles est disponible dans les détails."
+      },
+      {
+        "id": "study-ae388e9022bc5f0495b8",
+        "old_id": "reviewed-css-26",
+        "title": "Padding : espace intérieur et valeurs",
+        "body": "Le **padding** est l’espace intérieur entre le contenu et sa bordure.\n```css\npadding: 20px 10px;\n```\nDeux valeurs : **haut/bas**, puis **gauche/droite**.\nQuatre valeurs : **haut, droite, bas, gauche**.\nUne valeur s’applique aux quatre côtés. Les propriétés `padding-top`, `padding-right`, `padding-bottom` et `padding-left` règlent un seul côté. L’espace extérieur relève de `margin`."
+      },
+      {
+        "id": "study-8ca0a84f71e77a9b8cf9",
+        "old_id": "reviewed-css-30",
+        "title": "Élément image HTML et attributs",
+        "body": "`img` insère une image ; `src` désigne son fichier et `alt` fournit un texte de remplacement décrivant son contenu ou sa fonction. Ici, `width` et `height` indiquent des dimensions en pixels."
+      },
+      {
+        "id": "study-4b403d7d7662d4f74bee",
+        "old_id": "reviewed-css-32",
+        "title": "Créer un lien sur une image",
+        "body": "Pour rendre une image cliquable, placer l’élément `<img>` à l’intérieur du lien `<a>` :\n```html\n<a href=\"index.html\"><img src=\"home.gif\" alt=\"Home\"></a>\n```\nLe lien indique la destination ; l’image fournit son contenu visible et son texte alternatif."
+      },
+      {
+        "id": "study-65f09f4bdf9f3a7b59f6",
+        "old_id": "reviewed-css-33",
+        "title": "Image de fond et répétition",
+        "body": "`background-image` choisit l’image de fond ; `background-repeat` contrôle sa répétition.\n```css\nbackground-image: url(background1.gif);\n```\nL’image se répète par défaut. `repeat` répète dans les deux directions, `repeat-x` horizontalement, `repeat-y` verticalement et `no-repeat` désactive la répétition. Ce sont des alternatives selon l’effet recherché."
+      },
+      {
+        "id": "study-5d0ecd09bb1e2f474bfa",
+        "old_id": "reviewed-css-35",
+        "title": "Favicon",
+        "body": "Une favicon est une image carrée associée à une page. Le support la montre dans l’onglet et la barre d’adresse, et cite aussi les favoris."
+      },
+      {
+        "id": "study-d3d3476e2558a090fc16",
+        "old_id": "reviewed-css-36",
+        "title": "Wireframe",
+        "body": "Un wireframe est une esquisse de la structure d’une page. Il situe notamment le logo, la navigation, le contenu et le pied de page avant le détail graphique.\n\nLe support représente les zones par des rectangles : wrapper encadre l’ensemble ; les autres blocs précisent les emplacements du logo, de la navigation, du contenu et du footer."
+      },
+      {
+        "id": "study-4a5844b490fc49bc33bc",
+        "old_id": "reviewed-css-37",
+        "title": "Principes de mise en page",
+        "body": "Placer les informations importantes dans la partie visible sans défilement, laisser des espaces libres et organiser une mise en page lisible."
+      },
+      {
+        "id": "study-0cf99c513fac4b4def92",
+        "old_id": "reviewed-css-38",
+        "title": "Dispositions Ice, Jello et Liquid",
+        "body": "Le support distingue trois organisations de page :\n- **Ice** : largeur fixe, généralement alignée à gauche.\n- **Jello** : contenu centré, de largeur fixe ou proportionnelle, par exemple 80 %.\n- **Liquid** : disposition qui s’étend pour remplir la fenêtre.\nCe sont des alternatives de conception, pas trois étapes de construction."
+      },
+      {
+        "id": "study-65e57dc14158f1dcd236",
+        "old_id": "reviewed-css-39",
+        "title": "Modèle de boîte",
+        "body": "De l’intérieur vers l’extérieur : le contenu, le padding (espace intérieur), la bordure, puis la marge (espace extérieur). Ces quatre zones forment le modèle de boîte.\n\nAvec le modèle `content-box`, la largeur totale hors marges vaut : largeur du contenu + paddings gauche/droite + bordures gauche/droite. La propriété `width` ne comprend pas ces ajouts."
+      },
+      {
+        "id": "study-065ea3b92589f80ade4d",
+        "old_id": "reviewed-css-40",
+        "title": "Propriété margin",
+        "body": "`margin` règle l’espace **extérieur** autour d’un élément, au-delà de sa bordure.\n```css\nmargin: 10px;\n```\nCette déclaration réserve 10 px autour de la boîte. Une propriété comme `margin-left` règle un seul côté. Ne pas la confondre avec `padding`, qui agit à l’intérieur."
+      },
+      {
+        "id": "study-b2a2ac02d88b147b8c5a",
+        "old_id": "reviewed-css-41",
+        "title": "Flux normal",
+        "body": "Dans le flux normal, les blocs se placent généralement les uns sous les autres et le contenu en ligne se répartit dans les lignes, en suivant l’ordre du document."
+      },
+      {
+        "id": "study-5d21e869aabd2e6ea0dc",
+        "old_id": "reviewed-css-42",
+        "title": "Positionnement relatif",
+        "body": "`position: relative` décale un élément depuis sa position normale :\n```css\nposition: relative;\nleft: 30px;\n```\nIci, l’élément se déplace de 30 px vers la droite. **Sa place initiale reste réservée** dans le flux : le déplacement ne repousse pas les voisins."
+      },
+      {
+        "id": "study-decd506e120b809b9e8a",
+        "old_id": "reviewed-css-43",
+        "title": "Positionnement absolu",
+        "body": "`position: absolute` retire l’élément du flux normal : les voisins ne réservent plus sa place.\n`left` et `top` règlent ses décalages par rapport à son bloc de référence. Dans le cas usuel, ce repère est l’ancêtre positionné le plus proche, sinon le bloc initial. Ce n’est donc pas toujours la fenêtre. Les longueurs non nulles doivent préciser leur unité."
+      },
+      {
+        "id": "study-13e64a521bc75b33dd88",
+        "old_id": "reviewed-css-44",
+        "title": "Propriété float",
+        "body": "`float: left` ou `float: right` place une boîte sur un côté et permet au texte de l’habiller sur l’autre.\n```css\nfloat: right;\n```\nLe cours l’utilise pour les images et les colonnes. `margin` ajoute l’espace extérieur ; `clear` empêche un élément suivant de se placer à côté du flottant."
+      },
+      {
+        "id": "study-c98b85f3e3a514cca749",
+        "old_id": "reviewed-css-45",
+        "title": "Propriété clear",
+        "body": "clear sert à empêcher le placement à côté d’éléments flottants du côté indiqué. Le support présente left, right et both."
+      },
+      {
+        "id": "study-f5c51d1c58be3a864e16",
+        "old_id": "reviewed-css-46",
+        "title": "Propriété overflow et conteneur flottant",
+        "body": "`overflow` règle le débordement : `auto` permet le défilement si nécessaire, `scroll` crée une zone défilante et `hidden` masque la partie qui dépasse.\n\nLe cours emploie ici overflow pour que le conteneur englobe son contenu flottant. Ce n’est pas la même propriété que clear."
+      },
+      {
+        "id": "study-7d923ee8625a1ecd5a9d",
+        "old_id": "reviewed-css-47",
+        "title": "Propriété display",
+        "body": "`display: none` retire la boîte de l’affichage et de la mise en page ; `block` crée une boîte de bloc ; `inline` l’insère dans la ligne de texte."
+      },
+      {
+        "id": "study-f88e3ce8998e0c380388",
+        "old_id": "reviewed-css-48",
+        "title": "Propriété z-index",
+        "body": "z-index modifie l’ordre de superposition des éléments qui occupent une même zone.\n\nDans un même contexte d’empilement, une valeur plus grande place la boîte devant une valeur plus faible. Ce nombre ne classe pas globalement tous les éléments de la page. La valeur initiale est `auto`, contrairement au « 0 » indiqué par le PDF."
+      },
+      {
+        "id": "study-a699074dc7c275527191",
+        "old_id": "reviewed-css-51",
+        "title": "Ouvrir un lien dans une nouvelle fenêtre",
+        "body": "`target=\"_blank\"` demande un nouveau contexte de navigation : généralement un onglet, parfois une fenêtre selon le navigateur. L’attribut appartient au lien `<a>`."
+      },
+      {
+        "id": "study-33f090f23c3b1a87ddf0",
+        "old_id": "reviewed-css-52",
+        "title": "Pseudo-classes des liens",
+        "body": "link correspond au lien non visité ; visited au lien visité ; focus au lien ayant le focus ; hover au passage du pointeur ; active au moment de l’activation.\n\nCes pseudo-classes ciblent des états du lien, pas des étapes. Plusieurs états peuvent coexister ; à spécificité égale, l’ordre des règles peut donc modifier le rendu."
+      },
+      {
+        "id": "study-eec30681ef98417c10b7",
+        "old_id": "reviewed-css-54",
+        "title": "Lien vers un fragment de page",
+        "body": "Pour viser un endroit de la même page, donner un identifiant à la cible et utiliser `#` dans le lien :\n```html\n<div id=\"top\">...</div>\n<a href=\"#top\">back to top</a>\n```\nLa valeur après `#` doit correspondre à l’identifiant de la cible."
+      },
+      {
+        "id": "study-81cf854e4f93e312cccc",
+        "old_id": "reviewed-css-57",
+        "title": "Propriété min-width",
+        "body": "`min-width` impose une largeur minimale à une boîte.\n```css\nwidth: 100%;\nmin-width: 800px;\n```\nLe conteneur suit la largeur disponible, mais garde au moins 800 px. Sur un écran plus étroit, ce minimum peut provoquer un débordement horizontal."
+      },
+      {
+        "id": "study-cf0d9a9ff2bfb76ff8b0",
+        "old_id": "reviewed-css-58",
+        "title": "Choisir les marqueurs de liste",
+        "body": "Les marqueurs des listes peuvent être un type de puce ou une image :\n```css\nlist-style-type: none;\nlist-style-image: url(arrow.gif);\n```\n`list-style-type: none` supprime les puces ; `list-style-image` choisit une image comme marqueur. Ces déclarations sont des usages distincts, pas des étapes à cumuler. La disposition des éléments dépend notamment de `display`."
+      }
+    ]
+  },
+  {
+    "course_id": "series-de-fourier-ing2-2024-2025-d58a7cc929",
+    "revision": "b52fad7c3d51d0eeeec17b32ef2d1ed751e374037a0d0b9266113329e5ffb24f",
+    "core_count": 14,
+    "cores": [
+      {
+        "id": "study-863daa6bcda34313cd20",
+        "old_id": "reviewed-fourier-1",
+        "title": "Série de Fourier et pulsation",
+        "body": "Une série de Fourier décompose une fonction en une valeur moyenne \\(a_0\\) et des oscillations appelées **harmoniques** :\n\\[a_0+\\sum_{n\\ge1}\\bigl(a_n\\cos(n\\omega x)+b_n\\sin(n\\omega x)\\bigr).\\]\n\\(\\omega>0\\) est la pulsation ; la période commune est \\(T=2\\pi/\\omega\\). L’harmonique de rang \\(n\\) a la pulsation \\(n\\omega\\). La somme représente la fonction sous les conditions de convergence du cours."
+      },
+      {
+        "id": "study-3b701a1d610c331e3ed6",
+        "old_id": "reviewed-fourier-2",
+        "title": "Convergence normale",
+        "body": "\\[\\sum_{n\\geq1}|a_n|<\\infty\\quad\\text{et}\\quad\\sum_{n\\geq1}|b_n|<\\infty\\]\\[|u_n(x)|\\leq|a_n|+|b_n|\\]\n\nSous ces conditions, la série converge normalement sur ℝ. Sa somme est continue et l’intégration terme à terme est permise."
+      },
+      {
+        "id": "study-6945bfc5cb1e1aa63c4f",
+        "old_id": "reviewed-fourier-3",
+        "title": "Coefficients trigonométriques et terme constant",
+        "body": "Pour une fonction de période \\(T=2\\pi/\\omega\\), développable et intégrable terme à terme dans le cadre du cours :\n\\[a_0=\\frac1T\\int_\\alpha^{\\alpha+T}f(x)\\,dx,\\]\n\\[a_n=\\frac2T\\int_\\alpha^{\\alpha+T}f(x)\\cos(n\\omega x)\\,dx,\\quad b_n=\\frac2T\\int_\\alpha^{\\alpha+T}f(x)\\sin(n\\omega x)\\,dx.\\]\nLes deux dernières formules valent pour \\(n\\ge1\\). Choisir n’importe quel intervalle d’une période. **Convention :** le terme constant de la série est \\(a_0\\), et non \\(a_0/2\\)."
+      },
+      {
+        "id": "study-e553aa45d5b9539a547f",
+        "old_id": "reviewed-fourier-4",
+        "title": "Forme complexe",
+        "body": "\\[f(x)=\\sum_{n\\in\\mathbb Z}c_ne^{in\\omega x}\\]\\[c_n=\\frac1T\\int_{\\alpha}^{\\alpha+T}f(x)e^{-in\\omega x}\\,dx\\]\n\n\\[c_n=\\frac{a_n-ib_n}{2},\\qquad c_{-n}=\\frac{a_n+ib_n}{2}\\quad(n\\geq1)\\]\\[c_0=a_0\\]\n\nLa relation avec le facteur 1/2 concerne les indices positifs et négatifs. Le coefficient constant vérifie séparément c₀ = a₀."
+      },
+      {
+        "id": "study-f3b6353344713f27cc98",
+        "old_id": "reviewed-fourier-5",
+        "title": "Théorème de Dirichlet",
+        "body": "Si \\(f\\) est \\(T\\)-périodique et \\(C^1\\) par morceaux sur une période, ses sommes partielles symétriques de Fourier \\(S_N\\) vérifient :\n\\[S_N(x)\\longrightarrow\\frac{f(x^+)+f(x^-)}2.\\]\n\\(f(x^+)\\) et \\(f(x^-)\\) sont les limites à droite et à gauche. Au point de continuité, la limite vaut \\(f(x)\\). Au point de saut, elle vaut la moyenne des deux limites, pas nécessairement la valeur assignée à \\(f(x)\\)."
+      },
+      {
+        "id": "study-1dd76ccac60545c1e4ea",
+        "old_id": "reviewed-fourier-6",
+        "title": "Exploiter la parité",
+        "body": "La parité simplifie les coefficients sur une période centrée, avec la convention du terme constant \\(a_0\\).\n- **Fonction paire** : \\(b_n=0\\), seuls la moyenne et les cosinus restent.\n- **Fonction impaire** : \\(a_0=a_n=0\\), seuls les sinus restent.\nPour \\(n\\ge1\\), les coefficients non nuls se calculent sur \\([0,T/2]\\) : facteur \\(4/T\\) pour \\(a_n\\) ou \\(b_n\\), facteur \\(2/T\\) pour \\(a_0\\) dans le cas pair. Les intégrandes restent ceux des formules générales."
+      },
+      {
+        "id": "study-4c99d329560e21bcad4f",
+        "old_id": "reviewed-fourier-8",
+        "title": "Dérivation des coefficients",
+        "body": "Le cours suppose \\(f\\) continue, dérivable et \\(T\\)-périodique, avec \\(f^{\\prime}\\) continue par morceaux ; leurs séries de Fourier sont développables dans le cadre annoncé.\n\nPour tout \\(n\\in\\mathbb Z\\), une intégration par parties donne\\[c_n(f^{\\prime})=in\\omega c_n(f).\\]En particulier, \\(c_0(f^{\\prime})=0\\).\n\nLa série dérivée terme à terme a donc les coefficients de la série de \\(f^{\\prime}\\). Son identification point par point à \\(f^{\\prime}\\) exige les hypothèses de convergence ; on ne dérive pas une série quelconque sans les vérifier."
+      },
+      {
+        "id": "study-2e7df0760d56600ba147",
+        "old_id": "reviewed-fourier-10",
+        "title": "Critère de convergence par le lemme d’Abel",
+        "body": "Les suites \\((a_n)\\) et \\((b_n)\\) sont réelles, positives et décroissent vers zéro.\n\nLa série converge pour \\[x\\notin\\left\\{\\frac{2k\\pi}{\\omega}:k\\in\\mathbb Z\\right\\}.\\] La somme est continue entre deux points consécutifs de cet ensemble.\n\nLe support applique le lemme d’Abel : les sommes partielles de \\(e^{in\\omega x}\\), obtenues par une série géométrique, sont bornées en ces points."
+      },
+      {
+        "id": "study-01810b3f48705513c1f0",
+        "old_id": "reviewed-fourier-16",
+        "title": "Formule de Bessel-Parseval",
+        "body": "Pour une fonction \\(T\\)-périodique, notamment \\(C^1\\) par morceaux, Parseval relie l’énergie moyenne aux coefficients :\n\\[\\frac1T\\int_0^T|f(x)|^2\\,dx=\\sum_{n\\in\\mathbb Z}|c_n|^2=|a_0|^2+\\frac12\\sum_{n\\ge1}(|a_n|^2+|b_n|^2).\\]\nLe cours utilise le terme constant \\(a_0\\). Pour une fonction complexe, garder les **modules au carré**. La simplification utilisant seulement les indices complexes positifs demande que \\(f\\) soit réelle."
+      },
+      {
+        "id": "study-f4bca8b2694d41517775",
+        "old_id": "reviewed-fourier-18",
+        "title": "Produit scalaire hermitien du cours",
+        "body": "Pour des fonctions \\(T\\)-périodiques, le cours utilise :\n\\[(f\\mid g)=\\frac1T\\int_0^T f(x)\\overline{g(x)}\\,dx.\\]\nLa barre conjugue \\(g\\). Pour \\(g=f\\), l’intégrande devient \\(|f(x)|^2\\), réel positif ou nul. C’est un produit scalaire sur les fonctions continues, ou sur les fonctions continues par morceaux **identifiées lorsqu’elles sont égales presque partout** : changer une valeur isolée ne change pas l’intégrale."
+      },
+      {
+        "id": "study-76cdf0d65c010c5f0502",
+        "old_id": "reviewed-fourier-19",
+        "title": "Intégration d’une série de Fourier",
+        "body": "f est développable en série de Fourier et son coefficient moyen est nul : \\[c_0=\\frac1T\\int_0^T f(x)\\,dx=0.\\]\n\nPour \\(g(x)=\\int_0^x f(t)\\,dt\\), la moyenne nulle de \\(f\\) assure que \\(g\\) est périodique. Son développement est\\[g(x)=\\alpha_0+\\sum_{n\\ne0}\\frac{c_n}{in\\omega}e^{in\\omega x}.\\]\\[\\alpha_0=\\frac1T\\int_0^Tg(x)\\,dx.\\]\n\nL’indice zéro est exclu de la division par inω. Le support écrit une somme sur tous les entiers, mais ce terme ne doit pas être divisé par zéro."
+      },
+      {
+        "id": "study-5b6e1c6cf8fa98f99c16",
+        "old_id": "reviewed-fourier-20",
+        "title": "Produit de deux séries de Fourier",
+        "body": "Le cours présente la règle du produit pour deux développements de même période \\(T\\). Une condition suffisante pour multiplier et regrouper sans ambiguïté est la convergence absolue des deux séries de coefficients :\\[\\sum_{n\\in\\mathbb Z}|\\alpha_n|<\\infty,\\qquad\\sum_{n\\in\\mathbb Z}|\\beta_n|<\\infty.\\]Cette précision complète les hypothèses peu détaillées du support.\n\n\\[(fg)(x)=\\sum_{n\\in\\mathbb Z}\\gamma_ne^{in\\omega x}.\\]\\[\\gamma_n=\\sum_{p\\in\\mathbb Z}\\alpha_p\\beta_{n-p}.\\]\n\nPour obtenir le rang \\(n\\), on réunit tous les couples d’indices dont la somme vaut \\(n\\). Il s’agit d’une convolution des coefficients, et non du produit \\(\\alpha_n\\beta_n\\)."
+      },
+      {
+        "id": "study-eb108580991e2f019cec",
+        "old_id": "reviewed-fourier-21",
+        "title": "Convolution périodique et normalisation",
+        "body": "Pour des fonctions \\(T\\)-périodiques, par exemple continues par morceaux, le support définit\\[(f*g)(x)=\\int_0^T f(t)g(x-t)\\,dt.\\]Le changement de variable, en utilisant la périodicité, donne \\(f*g=g*f\\).\n\nAvec cette intégrale non normalisée et les coefficients définis avec 1/T, \\[c_n(f*g)=T\\alpha_n\\beta_n.\\] Pour la convolution normalisée par 1/T, les coefficients valent \\(\\alpha_n\\beta_n\\).\n\nLe PDF donne αₙβₙ tout en écrivant l’intégrale sans 1/T. La fiche distingue les deux conventions pour éviter de perdre le facteur T."
+      },
+      {
+        "id": "study-0096caf42df3f770f58b",
+        "old_id": "reviewed-fourier-22",
+        "title": "Sommes partielles près d’une discontinuité",
+        "body": "La somme partielle ne conserve qu’un nombre fini d’harmoniques :\\[S_N(x)=a_0+\\sum_{n=1}^{N}\\bigl(a_n\\cos(n\\omega x)+b_n\\sin(n\\omega x)\\bigr).\\]\n\nLa page 8 montre des approximations de la fonction en créneau avec un nombre croissant de termes. Les plateaux se précisent tandis que des oscillations subsistent près des sauts.\n\nSous Dirichlet, au point du saut la limite vaut \\(\\tfrac12(f(x^+)+f(x^-))\\), pas forcément la valeur assignée à \\(f(x)\\). Une approximation visuellement proche n’est pas une égalité pour un nombre fini de termes."
+      }
+    ]
+  }
+]

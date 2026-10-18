@@ -1,0 +1,30 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Données locales StudyPilot (cours, PDF, conversations, OCR, quotas et caches)
+data/**
+!data/**/
+!data/**/.gitkeep
+
+# Secrets et configuration personnelle
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*.json
+secrets*.json
+
+# Fichiers temporaires
+*.tmp
+*.log

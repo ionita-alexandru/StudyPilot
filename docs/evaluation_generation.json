@@ -1,0 +1,172 @@
+{
+  "date": "2026-10-16",
+  "provider": "gemma",
+  "model": "gemma-4-26b-a4b-it",
+  "corpus": "5 documents synthétiques nouveaux d’une page, aucun corrigé ni fiche éditoriale fourni au générateur",
+  "manual_card_edits": false,
+  "cases": [
+    {
+      "case": "illustre",
+      "current_published_cards": 1,
+      "preserved_drafts": 0,
+      "current_part_states": [
+        "complete"
+      ],
+      "last_attempt": "ready",
+      "last_attempt_error": null,
+      "last_attempt_stop_reason": null,
+      "log_report": "C:\\StudyPilotProject\\StudyPilot_Archives\\automatisation_20261016\\evaluation_illustration_reprise.json",
+      "review": "Contenu et schéma conservés ; titre trop étroit pour une fiche couvrant le cycle entier.",
+      "card_titles": [
+        "Distinction entre réception et envoi"
+      ],
+      "issues": []
+    },
+    {
+      "case": "mathematique",
+      "current_published_cards": 1,
+      "preserved_drafts": 0,
+      "current_part_states": [
+        "complete"
+      ],
+      "last_attempt": "ready",
+      "last_attempt_error": null,
+      "last_attempt_stop_reason": null,
+      "log_report": "C:\\StudyPilotProject\\StudyPilot_Archives\\automatisation_20261016\\evaluation_math_controle.json",
+      "review": "Définition, raison, terme initial, récurrence, terme général et exemple restitués ; rendu des formules vérifié dans le navigateur.",
+      "card_titles": [
+        "Suite géométrique"
+      ],
+      "issues": []
+    },
+    {
+      "case": "programmation",
+      "current_published_cards": 3,
+      "preserved_drafts": 0,
+      "current_part_states": [
+        "complete"
+      ],
+      "last_attempt": "interrupted",
+      "last_attempt_error": "GemmaTransientError",
+      "last_attempt_stop_reason": "provider",
+      "log_report": "C:\\StudyPilotProject\\StudyPilot_Archives\\automatisation_20261016\\evaluation_code_recentre.json",
+      "review": "Code et explications fidèles, mais fortes répétitions entre les fiches Fonction et Paramètre. Consignes de centrage renforcées ; essai de nouvelle rédaction interrompu par HTTP 500, anciennes fiches conservées.",
+      "card_titles": [
+        "Remarque sur print et return",
+        "Paramètre",
+        "Fonction"
+      ],
+      "issues": []
+    },
+    {
+      "case": "redactionnel",
+      "current_published_cards": 0,
+      "preserved_drafts": 3,
+      "current_part_states": [
+        "partial"
+      ],
+      "last_attempt": "partial",
+      "last_attempt_error": null,
+      "last_attempt_stop_reason": null,
+      "log_report": "C:\\StudyPilotProject\\StudyPilot_Archives\\automatisation_20261016\\evaluation_texte_verifie.json",
+      "review": "Trois brouillons précédemment obtenus sont conservés. La dernière sélection source a été interrompue par HTTP 500 ; le cours reste partiel sans publier ces brouillons.",
+      "card_titles": [],
+      "issues": [
+        {
+          "status": "review_pending",
+          "page": 1,
+          "chunk_id": "p1-s0-0",
+          "reason": "Gemma : HTTP 500 (INTERNAL) lors de generateContent. Erreur serveur persistante après 3 tentatives. Diagnostic local : data/_ai/gemma_failures.json.",
+          "affected_part_ids": [
+            "part-a19ab31c4e5770a1"
+          ]
+        },
+        {
+          "status": "review_pending",
+          "concept_id": "concept-31327bd794108482",
+          "reason": "Lecture source à reprendre avant de décider de la pertinence.",
+          "title": "Classement",
+          "primary_part_id": "part-a19ab31c4e5770a1",
+          "source_pages": [
+            1
+          ],
+          "affected_part_ids": [
+            "part-a19ab31c4e5770a1"
+          ]
+        },
+        {
+          "status": "review_pending",
+          "concept_id": "concept-13f75522ddfd009e",
+          "reason": "Lecture source à reprendre avant de décider de la pertinence.",
+          "title": "Classement chronologique",
+          "primary_part_id": "part-a19ab31c4e5770a1",
+          "source_pages": [
+            1
+          ],
+          "affected_part_ids": [
+            "part-a19ab31c4e5770a1"
+          ]
+        },
+        {
+          "status": "review_pending",
+          "concept_id": "concept-058e950cb2a58ac3",
+          "reason": "Lecture source à reprendre avant de décider de la pertinence.",
+          "title": "Indexation",
+          "primary_part_id": "part-a19ab31c4e5770a1",
+          "source_pages": [
+            1
+          ],
+          "affected_part_ids": [
+            "part-a19ab31c4e5770a1"
+          ]
+        },
+        {
+          "status": "review_pending",
+          "concept_id": "concept-063919d64be63734",
+          "reason": "Lecture source à reprendre avant de décider de la pertinence.",
+          "title": "Relation entre classement et indexation",
+          "primary_part_id": "part-a19ab31c4e5770a1",
+          "source_pages": [
+            1
+          ],
+          "affected_part_ids": [
+            "part-a19ab31c4e5770a1"
+          ]
+        },
+        {
+          "status": "review_pending",
+          "concept_id": "concept-272e8019900fd171",
+          "reason": "Lecture source à reprendre avant de décider de la pertinence.",
+          "title": "Mots-clés",
+          "primary_part_id": "part-a19ab31c4e5770a1",
+          "source_pages": [
+            1
+          ],
+          "affected_part_ids": [
+            "part-a19ab31c4e5770a1"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "scan",
+      "current_published_cards": 2,
+      "preserved_drafts": 0,
+      "current_part_states": [
+        "complete"
+      ],
+      "last_attempt": "ready",
+      "last_attempt_error": null,
+      "last_attempt_stop_reason": null,
+      "log_report": "C:\\StudyPilotProject\\StudyPilot_Archives\\automatisation_20261016\\evaluation_maths_scan.json",
+      "review": "Observation et mesure distinguées avec les exemples et la nécessité de l’unité. Réussite sur un scan propre, pas une preuve pour les scans dégradés.",
+      "card_titles": [
+        "Communication d'une mesure",
+        "Observation"
+      ],
+      "issues": []
+    }
+  ],
+  "universal_reliability_demonstrated": false,
+  "conclusion": "Le moteur commun a progressé et quatre supports ont atteint un état technique complet après plusieurs reprises. La qualité reste inégale : les états techniques ne certifient pas la pertinence des titres ni l’absence de redondance. Un support reste partiel. Les erreurs HTTP 500 répétées et le nombre d’appels empêchent de valider un usage automatique fiable sur tout cours."
+}
