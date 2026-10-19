@@ -36,11 +36,21 @@ class GuideTests(unittest.TestCase):
                 data=deepcopy(DRAFT); mutate(data)
                 with self.assertRaises(ValueError): validate_draft(data,SOURCES)
         self.assertEqual(validate_draft(DRAFT,SOURCES).entries[0].source_ids,['s1'])
+        missing_destination = deepcopy(DRAFT)
+        missing_destination['coverage'][0]['entry_keys'] = []
+        with self.assertRaisesRegex(ValueError, 's1.*function'):
+            validate_draft(missing_destination, SOURCES)
         grammar=deepcopy(DRAFT);grammar['entries'][0]['kind']='rule'
         self.assertEqual(validate_draft(grammar,SOURCES).entries[0].kind,'rule')
         technical=deepcopy(DRAFT);technical['entries'][0].update(kind='distinction',targets=['function'])
         normalized=validate_draft(technical,SOURCES).entries[0]
         self.assertEqual((normalized.kind,normalized.targets,normalized.body),('concept',[],DRAFT['entries'][0]['body']))
+        linked = deepcopy(DRAFT)
+        linked['entries'].append(dict(key='other', title='Autre notion', role='core',
+                                     objective='Relier deux notions', body='Un autre enseignement.',
+                                     source_ids=['s1'], prerequisites=['function']))
+        linked['coverage'][0]['entry_keys'].append('other')
+        self.assertEqual(validate_draft(linked, SOURCES).entries[1].prerequisites, ['Fonction'])
 
     def test_semantic_failure_gets_only_one_correction(self):
         rejected=deepcopy(REVIEW);rejected['entries'][0].update(essential_complete=False,issues=['Condition manquante'])
@@ -52,17 +62,30 @@ class GuideTests(unittest.TestCase):
         correction=json.loads(call.call_args_list[2].kwargs['messages'][-1]['content'])
         self.assertEqual(correction['previous_proposal'],DRAFT)
         self.assertIn('Condition manquante',correction['corrections'][0])
+        malformed = ValueError('entries.0.kind : valeur non autorisée')
+        malformed.response_text = '{"entries":[{"kind":"exercise"}]}'
+        with patch.object(generation, 'chat_json', side_effect=[malformed, DRAFT, REVIEW]) as call:
+            generation.generate_batch(SOURCES)
+        retry = call.call_args_list[1].kwargs['messages']
+        self.assertIn('CORRECTION', retry[0]['content'])
+        self.assertEqual(json.loads(retry[-1]['content'])['previous_proposal'], malformed.response_text)
+        self.assertIn('valeur non autorisée', json.loads(retry[-1]['content'])['corrections'][0])
         with patch.object(generation,'chat_json') as call:
             with self.assertRaises(generation.AIUsageLimitError):
                 generation.generate_batch(SOURCES,budget=generation.Budget(max_calls=0))
             call.assert_not_called()
 
     def test_import_checkpoint_reuses_ocr_and_validated_batches(self):
+        from src.courses.study_guide import entry_card
+        draft = deepcopy(DRAFT)
+        draft['entries'][0].update(conditions='Le résultat doit rester strictement positif.',
+                                  symbols=[dict(name=r'\(x\)', meaning='valeur donnée en entrée'),
+                                           dict(name=r'A \cap B',meaning='intersection de deux événements')])
         with tempfile.TemporaryDirectory() as folder:
             root=Path(folder); repo=SimpleNamespace(paths=lambda _:SimpleNamespace(root=root))
             write_json_atomic(root/'document_sources.json',dict(file_hash=COURSE['file_hash'],sources=SOURCES))
             with patch.object(service,'load_course',return_value=COURSE),patch.object(service,'load_course_plan',return_value=PLAN), \
-                 patch.object(service,'_repository',return_value=repo),patch.object(generation,'chat_json',side_effect=[DRAFT,REVIEW]) as call, \
+                 patch.object(service,'_repository',return_value=repo),patch.object(generation,'chat_json',side_effect=[draft,REVIEW]) as call, \
                  patch('src.courses.planner.extract_document',side_effect=AssertionError('OCR relancé')):
                 from src.courses.pipeline import process_course
                 first=process_course('cours-test')
@@ -72,6 +95,13 @@ class GuideTests(unittest.TestCase):
                 self.assertEqual(second['calls'],0);self.assertEqual(call.call_count,2)
                 self.assertEqual(before,(root/'study_guide.json').read_bytes())
                 self.assertEqual(service.load_part_cards(COURSE,'p1')[0]['sections'][0]['content'],DRAFT['entries'][0]['body'])
+                published = load_guide(COURSE, PLAN)
+                card = entry_card(published['entries'][0], published)
+                self.assertIn('strictement positif', card['content_html'])
+                self.assertIn('valeur donnée en entrée', card['content_html'])
+                self.assertIn(r'\(A \cap B\)', card['content_html'])
+                repeated = dict(published['entries'][0], conditions='Une fonction renvoie un résultat avec `return`.')
+                self.assertEqual(len(entry_card(repeated, published)['sections']), 2)
                 changed=deepcopy(PLAN);changed['parts'][0]['title']='Autre version'
                 self.assertIsNone(load_guide(COURSE,changed))
 

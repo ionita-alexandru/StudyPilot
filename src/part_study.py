@@ -11,6 +11,7 @@ import pymupdf
 from src.ai.client import chat
 from src.config import STUDY_MODEL
 from src.study_checks import INSTRUCTIONS as CHECK_INSTRUCTIONS
+from src.courses.study_guide import entry_sections
 from src.pdf.search import extract_main_concept, extract_words, split_into_chunks
 
 
@@ -614,6 +615,10 @@ def answer_part_question(
                     "Chaque passage indique son document. Attribue les références au bon document. "
                     "Un complément n'élargit pas automatiquement le programme obligatoire. "
                     "Si deux documents se contredisent, explicite le désaccord au lieu de les fusionner. "
+                    "Distingue ce qui est établi, contredit et impossible à vérifier : une information absente "
+                    "ne prouve pas qu'une affirmation est fausse ou qu'une source est non fiable. "
+                    "Pour une enquête, une association observée ne suffit pas à établir une causalité "
+                    "ou la représentativité ; précise quelle information manque pour conclure. "
                     "Réponds toujours en français et directement à la question. "
                     "Explique comme un bon professeur particulier : simplement, "
                     "précisément et progressivement. Utilise plusieurs petits "
@@ -666,7 +671,9 @@ def answer_part_question(
                     f"COURS OUVERT : {course_title}\n\n"
                     + ("PLAN DU COURS (orientation, pas une citation PDF) :\n" + course_outline[:9000] + "\n\n" if course_overview else "")
                     + f"PARTIE ACTIVE : {(part or {}).get('title', '')}\n\n"
-                    + (f"FICHE OU EXERCICE ACTIF : {active_card['title']}\n{active_card['body']}\n\n" if active_card else '')
+                    + (f"FICHE OU EXERCICE ACTIF : {active_card['title']}\n"
+                       + '\n\n'.join(s['title'] + '\n' + s['content'] for s in entry_sections(active_card))
+                       + '\n\n' if active_card else '')
                     + (f"PROFIL DÉCLARÉ, À PRENDRE COMME UN REPÈRE ET NON COMME UNE MAÎTRISE VÉRIFIÉE : {active_card.get('learner_profile')}\n\n" if active_card and active_card.get('learner_profile') else '')
                     + f"ACTION DEMANDÉE : {intent}\n\n"
                     + (f"EXERCICE EN COURS (énoncé immuable) : {exercise['statement']}\n\n" if exercise else '')

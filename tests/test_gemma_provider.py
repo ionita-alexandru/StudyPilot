@@ -74,10 +74,11 @@ class GemmaTests(unittest.TestCase):
         network.assert_not_called()
 
     def test_http_errors_stop_pipeline_without_exposing_secrets(self):
-        for code in (400,401,403,429,503):
-            with self.subTest(code=code),patch.dict('os.environ',{'GEMINI_API_KEY':'secret-value'}),patch.object(gemma,'_send',side_effect=HTTPError('url',code,'secret-value',{},io.BytesIO(b'secret-value'))),patch.object(gemma,'_record_failure'),patch.object(gemma.time,'sleep'),self.assertRaises(client.AIUsageLimitError) as caught:
-                gemma._post(MODEL,'generateContent',{})
+        for model, code in [(MODEL, c) for c in (400,401,403,429,503)] + [('gemini-3.8-flash',429)]:
+            with self.subTest(model=model,code=code),patch.dict('os.environ',{'GEMINI_API_KEY':'secret-value'}),patch.object(gemma,'_send',side_effect=HTTPError('url',code,'secret-value',{},io.BytesIO(b'secret-value'))),patch.object(gemma,'_record_failure'),patch.object(gemma.time,'sleep'),self.assertRaises(client.AIUsageLimitError) as caught:
+                gemma._post(model,'generateContent',{})
             self.assertNotIn('secret-value',str(caught.exception))
+            self.assertIn('Gemini' if model.startswith('gemini-') else 'Gemma', str(caught.exception))
 
     def test_network_error_not_converted_into_bad_source(self):
         with patch.dict('os.environ',{'GEMINI_API_KEY':'secret'}),patch.object(gemma,'_send',side_effect=URLError('secret')),self.assertRaises(client.AIUsageLimitError) as caught:

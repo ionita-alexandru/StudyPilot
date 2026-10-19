@@ -74,7 +74,9 @@ class LearningTutorTests(unittest.TestCase):
 
     def test_learning_sources_are_inspectable_without_claiming_full_coverage(self):
         from src.learning_view import learning_view
-        guide=dict(revision='v1',sources=SOURCES+[dict(id='s2',page=1,text='Autre passage')],entries=[dict(id='f1',role='core',part_id='p1',title='Fonction',body='Une fonction.',objective='Comprendre la fonction',source_ids=['s1'])],parts=[dict(part_id='p1',status='partial')],decisions=[dict(card_id='s1',reason='Décision éditoriale ancienne.')])
+        guide=dict(revision='v1',sources=[dict(SOURCES[0],has_visual_content=True),dict(id='s2',page=1,text='Autre passage')],entries=[dict(id='f1',role='core',part_id='p1',title='Fonction',body='Une fonction.',objective='Comprendre la fonction',source_ids=['s1'])],parts=[dict(part_id='p1',status='partial')],decisions=[dict(card_id='s1',reason='Décision éditoriale ancienne.')])
         with patch('src.learning_view.load_guide',return_value=guide):
             view=learning_view(COURSE,PLAN)
             self.assertTrue(view['incomplete']);self.assertEqual(view['coverage'][1]['status'],'À vérifier')
+            self.assertTrue(view['has_unverified_visuals'])
+            self.assertEqual(view['coverage'][0]['status'],'Texte rattaché · visuel à vérifier')

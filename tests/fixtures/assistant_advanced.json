@@ -1,0 +1,40 @@
+{
+  "cases": [
+    {
+      "id": "diagonalisation_counterexample",
+      "expected": "Refuser la diagonalisabilité : valeur propre 2 double, espace propre de dimension 1 ; expliquer la condition manquante.",
+      "prompt": "Source du cours : une matrice de taille n est diagonalisable si et seulement si elle admet une base de n vecteurs propres. Pour une valeur propre lambda, son espace propre est le noyau de A-lambda I. Exercice : A=((2,1),(0,2)). L’élève affirme : le polynôme caractéristique est (X-2)^2, il est scindé, donc A est diagonalisable. Vérifie sa conclusion et justifie par un calcul très court. Distingue ce qu’il a juste et la condition qu’il oublie. En français, 180 mots maximum.",
+      "required": ["2", "1"], "forbidden": []
+    },
+    {
+      "id": "python_mutable_default",
+      "expected": "Prévoir [1] puis [1,2], identifier la liste partagée entre appels et proposer None avec une liste créée dans la fonction, sans prétendre exécuter le code.",
+      "prompt": "Source : en Python une valeur d’argument par défaut est évaluée une fois lors de la définition de la fonction. Code :\ndef ajouter(x, valeurs=[]):\n    valeurs.append(x)\n    return valeurs\nprint(ajouter(1))\nprint(ajouter(2))\nL’élève attend [1] puis [2]. Sans prétendre avoir exécuté le code, explique ce qui sera affiché et propose la correction minimale qui conserve la possibilité de fournir une liste explicitement. Maximum 180 mots, code compris.",
+      "required": ["none", "append"], "forbidden": ["j’ai exécuté", "j'ai exécuté"]
+    },
+    {
+      "id": "conflicting_sources",
+      "expected": "Distinguer observation, opinion et causalité ; signaler le désaccord des effectifs et refuser d’en déduire la représentativité sans informations sur les enquêtes.",
+      "prompt": "Corpus fictif : document Cours, page 1 : un témoignage rapporte un point de vue ; une corrélation ne prouve pas à elle seule une causalité. Document A, page 2 : une enquête auprès de 40 personnes volontaires observe une association entre lecture et résultats ; son auteur attribue cette association à la lecture. Document B, page 3 : l’enquête compterait 400 participants ; la méthode d’échantillonnage et la date ne sont pas précisées. Question de l’élève : on peut donc affirmer que lire améliore les notes et que cette enquête représente tous les élèves ? Réponds à partir du corpus en distinguant fait rapporté, interprétation, contradiction et information manquante. Références document/page exactes, 180 mots maximum.",
+      "required": ["40", "400"], "forbidden": []
+    }
+  ],
+  "guide": {
+    "id": "probability_mini_course",
+    "expected": [
+      "Définir et calculer une probabilité conditionnelle en conservant P(B)>0.",
+      "Caractériser l’indépendance et la distinguer de l’incompatibilité pour des événements de probabilité non nulle.",
+      "Donner la formule de Bayes avec ses conditions et les symboles compréhensibles.",
+      "Conserver l’exercice comme ressource, sans corrigé inventé ni fiche essentielle répétitive.",
+      "Rattacher le rappel à la notion existante et signaler la figure non transcrite sans l’inventer."
+    ],
+    "sources": [
+      {"id":"p1-0", "page":1, "text":"Probabilité conditionnelle. Soient A et B deux événements d’un même espace probabilisé. Si P(B)>0, P(A|B)=P(A∩B)/P(B). P(A|B) désigne la probabilité de A sachant que B est réalisé ; P(A∩B) celle de leur réalisation simultanée."},
+      {"id":"p2-0", "page":2, "text":"Indépendance. Deux événements A et B sont indépendants lorsque P(A∩B)=P(A)P(B). Cette définition s’applique aussi à un événement de probabilité nulle. Si P(B)>0, elle équivaut à P(A|B)=P(A). Ne pas confondre avec l’incompatibilité : A∩B est alors vide. Si P(A)>0 et P(B)>0, deux événements incompatibles ne sont pas indépendants."},
+      {"id":"p3-0", "page":3, "text":"Formule de Bayes. Pour P(A)>0 et P(B)>0, P(A|B)=P(B|A)P(A)/P(B). Elle inverse le conditionnement : on passe d’une probabilité de B sachant A à celle de A sachant B. Les événements sont ceux du même espace probabilisé."},
+      {"id":"p4-0", "page":4, "text":"Exercice sans correction. On donne P(A)=0,4, P(B)=0,5 et P(A∩B)=0,1. Calculer P(A|B), puis décider si A et B sont indépendants. Aucun corrigé n’est fourni."},
+      {"id":"p5-0", "page":5, "text":"Rappel : P(A|B)=P(A∩B)/P(B) lorsque P(B)>0. Ce rappel reprend la page 1."},
+      {"id":"p6-0", "page":6, "has_visual_content":true, "text":"Figure : arbre de probabilités. Les branches, étiquettes et probabilités de l’image ne sont pas transcrites dans cet extrait."}
+    ]
+  }
+}

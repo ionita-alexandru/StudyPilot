@@ -61,9 +61,13 @@ class PartStudyTests(unittest.TestCase):
             message = Message()
 
         with patch("src.part_study.chat", return_value=Response()) as fake_chat:
-            answer = answer_part_question("C'est quoi Flexbox ?", [], "qwen2.5:3b")
+            answer = answer_part_question("C'est quoi Flexbox ?", [], "qwen2.5:3b", active_card=dict(
+                title='Flexbox', body='Un mode de disposition.', conditions='Le conteneur utilise `display: flex`.',
+                symbols=[dict(name='gap', meaning='espace entre les éléments')]))
         self.assertEqual(answer, "Complément StudyPilot : réponse.")
         self.assertIn("Aucun extrait", fake_chat.call_args.kwargs["messages"][1]["content"])
+        self.assertIn('display: flex', fake_chat.call_args.kwargs['messages'][1]['content'])
+        self.assertIn('espace entre les éléments', fake_chat.call_args.kwargs['messages'][1]['content'])
 
     def test_bilingual_expansion_when_no_literal_match(self):
         document = pymupdf.open()

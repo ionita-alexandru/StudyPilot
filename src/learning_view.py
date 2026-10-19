@@ -1,6 +1,7 @@
 """Parcours lisible et traçabilité du guide publié, sans nouvel appel IA."""
 from src.course_documents import combined_guide as load_guide
 from src.courses.card_presentation import render_text
+from src.courses.study_guide import symbol_name
 
 
 def learning_view(course, plan):
@@ -38,13 +39,18 @@ def learning_view(course, plan):
             matches = [i for i in names.get(name.strip().casefold(), []) if i != e['id']]
             links.append(dict(title=name, id=matches[0] if len(matches)==1 else None))
         result.append(dict(e, html=render_text(e['body']), part_number=part['number'], part_title=e.get('document_title',part['title']),
+            symbols=[dict(s,name=symbol_name(s['name'])) for s in e.get('symbols',[])],
             prerequisites_view=links, sources=[sources[i] for i in e['source_ids'] if i in sources],
             resources=[dict(r,html=render_text(r['body'])) for r in entries if e['id'] in r.get('targets', []) and r.get('document_role')!='correction'],
             feedback=[r for r in reports if r.get('card_id')==e['id']]))
     coverage = []
     for sid,s in sources.items():
         destinations = [e for e in entries if sid in e['source_ids']]
+        status = 'Rattaché' if destinations else 'Écarté avec motif' if sid in decisions else 'À vérifier'
+        if s.get('has_visual_content'):
+            status = 'Texte rattaché · visuel à vérifier' if destinations else 'Visuel à vérifier'
         coverage.append(dict(s, destinations=destinations, reason=decisions.get(sid,{}).get('reason',''),
-            status='Rattaché' if destinations else 'Écarté avec motif' if sid in decisions else 'À vérifier'))
+            status=status))
     return dict(entries=result, coverage=coverage, objectives=guide.get('objectives',[]), states=states, revision=guide.get('revision'),
-                origin=guide.get('origin'), incomplete=not guide or any(p.get('status')!='complete' for p in guide.get('parts', [])))
+                origin=guide.get('origin'), has_unverified_visuals=any(s.get('has_visual_content') for s in sources.values()),
+                incomplete=not guide or any(p.get('status')!='complete' for p in guide.get('parts', [])))

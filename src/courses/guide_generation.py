@@ -24,16 +24,22 @@ Exercices, exemples chiffrés, preuves, catalogues de variantes et détails ne d
 Choisis role example/exercise/detail/reference/orientation pour ces contenus et targets vers les keys des fiches concernées.
 Une ressource sans cible pertinente peut rester sans targets ; elle reste consultable. Pas de quota de fiches.
 Pour CHAQUE role=core, targets=[] obligatoirement. Les prérequis ne sont pas des targets.
+role décrit la place du contenu ; kind sa nature pédagogique. example et exercise sont des roles, jamais des kind.
+kind doit être definition, concept, rule, property, theorem, formula, method ou syntax, même pour une ressource.
+coverage est une liste à la racine de la réponse, jamais un champ d'une entrée.
 Pour une ressource, targets contient seulement les keys de core de ce lot ou les id existants.
 Les existing sont des fiches déjà publiées : évite de refaire leurs objectifs ; rattache les compléments à leur id.
 Le titre doit couvrir exactement le noyau, pas être le nom d'un détail. aliases garde les noms utiles à la recherche.
 Pour core : idée expliquée directement, formule/syntaxe seulement si utile, symboles et conditions indispensables.
 prerequisites contient les noms précis des notions nécessaires, sans imposer un cours complet avant chaque fiche.
+Utilise leurs titres lisibles, pas leurs keys techniques, pour les prérequis.
 symbols définit les symboles non triviaux utilisés, conditions rappelle seulement les restrictions nécessaires.
 Ces champs complètent le noyau ; ne répète pas le même texte. Le noyau reste compréhensible seul.
 Une propriété ne remplace pas la définition : définir d'abord ce que signifie la notion.
 Si une page contient des schémas, images ou tableaux non transcrits, signale dans coverage.reason ce qui n'est pas
 interprétable. N'invente pas le contenu des éléments visuels. Une extraction textuelle n'en garantit pas la compréhension.
+La seule mention d'une figure non transcrite ne suffit pas à en enseigner le contenu : indique cette limite,
+sans inventer une explication de la figure sous forme de ressource.
 40 à 90 mots de prose environ, maximum 110. Pas d'introduction générique, pas d'exemple long ni rubriques répétitives.
 Utilise des mots simples. Évite « impérativement », « strictement », « multidimensionnalité » et les formulations
 abstraites si la source dit simplement quoi faire. N'affirme pas que des documents sont déplacés si la source dit classés.
@@ -92,6 +98,8 @@ des fiches proposées). Pour chacune, cite source_ids et entry_keys qui l'enseig
 objectif. Si une capacité essentielle n'a pas de destination suffisante, coverage_complete=false et explique l'omission
 dans coverage_issues. N'invente pas d'objectif absent des sources. Si aucun enseignement, objectives=[].
 Ne certifie pas une formule illisible. Retourne exactement un verdict par key. Les issues expliquent les problèmes réels.
+Une figure annoncée mais non transcrite ne permet pas de certifier sa description ni un objectif tiré de son contenu.
+Même une description générique plausible est un ajout extérieur si le passage ne l'établit pas : signale-le dans issues.
 Les précisions facultatives ne sont pas des omissions essentielles. Aucun enrichissement extérieur exigé.''',
         dict(sources=sources, existing=existing, draft=draft.model_dump(mode='json')), model))
     by_key = {v.key: v for v in result.entries}
@@ -149,7 +157,7 @@ def generate_batch(sources, existing=(), *, model=STUDY_MODEL, budget=None, migr
                 '\nCORRECTION : répare previous_proposal selon corrections. Conserve le contenu valide. '
                 'Si une fiche est redondante, supprime-la ou fusionne les noyaux concernés ; '
                 'ne la reformule pas à côté des mêmes définitions. Mets à jour coverage et targets.'
-                if previous_proposal else ''),
+                if errors else ''),
                 dict(payload, corrections=errors, previous_proposal=previous_proposal), model)
             previous_proposal = proposal
             draft = validate_draft(proposal, sources, [e['id'] for e in existing])
@@ -166,6 +174,10 @@ def generate_batch(sources, existing=(), *, model=STUDY_MODEL, budget=None, migr
             raise
         except ValueError as error:
             errors = [str(error)[:4000]]
+            if previous_proposal is None:
+                # Un rejet de schéma intervient avant l'affectation de proposal.
+                # Transmettre le diagnostic et l'extrait rejeté, sans relâcher le contrat.
+                previous_proposal = getattr(error, 'response_text', None)
     raise ValueError('Lot non publié après une correction : ' + errors[0])
 
 

@@ -125,6 +125,8 @@ confirme l’accès à la génération, sans gain de qualité démontré sur les
 simples comparés ; Gemma reste donc le choix par défaut. Le script manuel
 `evaluer_assistants.py` permet de reproduire ce contrôle avec un projet gratuit
 confirmé. Il n’est jamais lancé par la suite de tests.
+La [campagne approfondie](docs/ESSAI_IA_APPROFONDI_2026-10-20.md) détaille aussi les
+réussites et échecs du véritable générateur, ainsi que les corrections qui en découlent.
 
 Pour les commandes de diagnostic et de génération exécutées directement, définir
 aussi le fournisseur et le modèle dans le même terminal :

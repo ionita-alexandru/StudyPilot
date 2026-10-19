@@ -79,6 +79,15 @@ l’utilisateur, un [essai sur trois cas fictifs](ESSAI_IA_2026-10-20.md) a réu
 chaque moteur. Le paramètre de réflexion de Gemini a été corrigé. Aucun gain de
 qualité n’est démontré sur cet échantillon ; le moteur actif est conservé. La
 génération réelle de compléments avec Gemini reste à évaluer.
+La [campagne approfondie](ESSAI_IA_APPROFONDI_2026-10-20.md) valide ensuite la
+rédaction/relecture Gemini d’un mini-cours fictif déjà extrait. Elle relève des
+échecs de contrat et une validation trop permissive d’une description de figure
+avec Gemma. Cela ne valide pas l’import complet d’un PDF ni tous les domaines.
+
+Les conditions et notations d’une fiche sont aussi conservées dans les chapitres,
+la révision et le contexte du chat. Les clés de prérequis reconnues dans un lot sont
+converties vers les titres. Une source avec visuels reste signalée « visuel à vérifier »
+dans la couverture, même si son texte a une destination.
 
 Configuration une fois ces points vérifiés : `STUDYPILOT_AI_PROVIDER=gemini`,
 `STUDYPILOT_MODEL=gemini-3.8-flash`, clé dans `GEMINI_API_KEY`, puis redémarrage.

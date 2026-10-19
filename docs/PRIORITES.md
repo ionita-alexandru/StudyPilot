@@ -82,6 +82,9 @@ Sources officielles consultées les 19 et 20 octobre 2026. Un
 [essai limité sur trois cas fictifs](ESSAI_IA_2026-10-20.md) a été réalisé après
 déclaration du forfait gratuit par l’utilisateur ; aucune supériorité de Gemini
 n’est démontrée. Gemma reste le moteur par défaut.
+La [campagne approfondie](ESSAI_IA_APPROFONDI_2026-10-20.md) montre un résultat plus
+favorable à Gemini pour le contrat de fiches sur un mini-cours, sans prouver une
+supériorité générale ; Gemma a été plus rapide sur les questions de cette campagne.
 
 | Piste | Intérêt à tester | Limite ou inconnue |
 | --- | --- | --- |

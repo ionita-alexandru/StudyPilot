@@ -1,5 +1,28 @@
 # Historique des changements
 
+## 2026-10-20 — Comparaison approfondie et repères conservés
+
+- Campagne manuelle : trois questions plus exigeantes et le véritable générateur
+  de fiches sur un mini-cours fictif, rapports locaux et budgets explicites.
+- Contrat de rédaction clarifié ; l’unique correction reçoit le diagnostic et
+  l’extrait de réponse rejeté même après un échec du schéma. Erreurs de couverture
+  localisées à la source concernée ; contrôles de publication conservés.
+- Prérequis exprimés par leurs clés convertis vers les titres des fiches du lot.
+  Conditions et notations conservées dans les chapitres, les révisions et le chat.
+- Avertissement visible dans la couverture pour les visuels à vérifier ; consignes
+  du chat et de la relecture renforcées sur les affirmations non établies et les figures.
+- Messages HTTP du transport commun attribués au bon fournisseur.
+
+Gemini réussit le lot structuré initial ; Gemma est plus rapide sur les questions
+de cette campagne, mais échoue sur le contrat puis la couverture. Sa correction
+ciblée passe les contrôles automatiques tout en conservant une réserve de fond
+relevée à la lecture humaine. Le moteur actif est conservé. La dernière consigne
+de relecture des figures n’a pas été réévaluée par appel réel.
+
+Détails et mesures : `docs/ESSAI_IA_APPROFONDI_2026-10-20.md`. 123 tests Python
+et 8 tests JavaScript réussis, sans augmentation de leur nombre ni appel réel dans
+la suite courante. Aucun document personnel envoyé pour cette campagne.
+
 ## 2026-10-20 — Compatibilité Gemini et essai limité des assistants
 
 - Paramètre de réflexion LOW pour Gemini Flash : MINIMAL causait un rejet HTTP 400.

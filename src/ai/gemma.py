@@ -146,6 +146,7 @@ def _record_failure(model, method, payload, code, status, attempt, tokens):
 
 
 def _post(model, method, payload, *, retry_tokens=None):
+    provider = 'Gemini' if model.startswith('gemini-') else 'Gemma'
     key = os.environ.get('GEMINI_API_KEY', '').strip()
     if key and any(ord(c) < 33 or ord(c) > 126 for c in key):
         raise GemmaServiceError('GEMINI_API_KEY contient des espaces ou caractères incompatibles : recopier uniquement la clé depuis AI Studio.')
@@ -166,26 +167,26 @@ def _post(model, method, payload, *, retry_tokens=None):
             error.close()
             _record_failure(model, method, payload, code, status, attempt, retry_tokens)
             if code == 429:
-                raise AIUsageLimitError('Gemma : HTTP 429, quota ou capacité atteint. '
+                raise AIUsageLimitError(f'{provider} : HTTP 429, quota ou capacité atteint. '
                     'Passe interrompue sans relance ; checkpoints conservés.') from None
             if code in {500, 502, 503, 504} and attempt < 3:
                 delay = 2 ** attempt + random.uniform(0, 1)
-                print(f'Gemma : HTTP {code} ({status}), relance {attempt}/2 de {method} '
+                print(f'{provider} : HTTP {code} ({status}), relance {attempt}/2 de {method} '
                     f'après {delay:.1f} s ; même modèle et mêmes sources.', flush=True)
                 time.sleep(delay)
                 if method == 'generateContent':
                     if not isinstance(retry_tokens, int) or retry_tokens <= 0:
-                        raise GemmaServiceError('Gemma : relance impossible sans comptage de jetons. Arrêt prudent.') from None
+                        raise GemmaServiceError(f'{provider} : relance impossible sans comptage de jetons. Arrêt prudent.') from None
                     _reserve(retry_tokens)
                 continue
             detail = ('Erreur serveur persistante après 3 tentatives.' if code in {500,502,503,504}
                 else 'Requête ou accès refusé, sans relance.')
             error_type = GemmaTransientError if code in {500, 502, 503, 504} else GemmaServiceError
-            raise error_type(f'Gemma : HTTP {code} ({status}) lors de {method}. '
+            raise error_type(f'{provider} : HTTP {code} ({status}) lors de {method}. '
                 + detail + ' Diagnostic local : data/_ai/gemma_failures.json.') from None
         except (URLError, TimeoutError, OSError):
             # La génération peut avoir été exécutée avant une coupure réseau.
-            raise GemmaTransientError('Gemma : connexion indisponible ou délai dépassé. Contrôle différable ; étapes sauvegardées conservées.') from None
+            raise GemmaTransientError(f'{provider} : connexion indisponible ou délai dépassé. Contrôle différable ; étapes sauvegardées conservées.') from None
 
 
 @contextmanager
