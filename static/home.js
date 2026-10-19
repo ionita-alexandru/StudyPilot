@@ -94,10 +94,9 @@ document.addEventListener(
 
 
     document.querySelectorAll('[data-home-mode]').forEach(button=>button.addEventListener('click',()=>{
-      const id=course?.value;if(!id)return;
-      if(button.dataset.homeMode==='discover')window.location.href='/course/'+encodeURIComponent(id)+'/discover';
-      else if(button.dataset.homeMode==='revise')window.location.href='/revision?course_id='+encodeURIComponent(id);
-      else {question.placeholder='Quelle notion souhaites-tu approfondir ?';question.focus();}
+      const id=course?.value;
+      if(!id){error.textContent="Choisis d’abord un cours.";return;}
+      window.location.href='/course/'+encodeURIComponent(id)+'#'+button.dataset.homeMode;
     }));
 
     /*

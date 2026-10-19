@@ -28,7 +28,7 @@
 </head>
 
 
-<body class="sp-home-body"><header class="sp-mobile-nav"><a href="/"><img src="/static/logo.svg" width="28" height="28" alt="">StudyPilot</a><nav><a href="/presentation">Fiches</a><a href="/revision">Réviser</a><a href="/upload">Ajouter</a></nav></header>
+<body class="sp-home-body"><header class="sp-mobile-nav"><a href="/"><img src="/static/logo.svg" width="28" height="28" alt="">StudyPilot</a><nav><a href="/">Mes cours</a><a href="/upload">Ajouter un cours</a></nav></header>
 
 
 <div class="sp-home-app">
@@ -87,16 +87,8 @@
         class="active"
       >
         <span>◌</span>
-        Discussion
+        Mes cours
       </a>
-
-      <a href="{{ url_for('revision_page') }}">
-        
-         <span>◉</span>
-         Révisions
-       </a>
-
-      <a href="{{ url_for('presentation') }}" title="Parcourir les fiches de vos cours"><span aria-hidden="true">▦</span> Vue des fiches</a>
 
       <button
         id="sp-upload-trigger"
@@ -322,7 +314,7 @@
 
 
 
-      <div class="sp-home-suggestions"><button type="button" data-home-mode="discover">Découvrir</button><button type="button" data-home-mode="deepen">Approfondir</button><button type="button" data-home-mode="revise">Réviser</button></div>
+      <div class="sp-home-suggestions"><button type="button" data-home-mode="apprendre">Apprendre</button><button type="button" data-home-mode="documents">Mes documents</button><button type="button" data-home-mode="progression">Ma progression</button></div>
 
 
       {% else %}

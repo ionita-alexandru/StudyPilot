@@ -13,7 +13,7 @@ un chat plus lisible et pertinent, une IA sans paiement d’API, un guidage adap
 un mode express, un menu moins intimidant, une interactivité utile et des compléments
 de cours. Les commits doivent décrire uniquement les changements réellement faits.
 
-Constats dans le code, sans nouveau test visuel à cette étape :
+Constats avant le premier lot d'interface (conservés pour expliquer les priorités) :
 
 - `templates/course.html` propose Découvrir, Approfondir et Réviser, puis toutes les
   notions par partie. Approfondir ouvre la première partie du cours.
@@ -193,7 +193,16 @@ proposition. L’effet sur l’envie de réviser devra être vérifié en usage.
 
 ## Livraison
 
+Premier lot réalisé le 19 octobre 2026 : navigation du cours Apprendre / Mes documents /
+Ma progression, catalogue repliable avec recherche, reprise de la dernière notion,
+assistant sur la page du cours et agrandissement du chat sur les écrans existants.
+L'ancien moteur de révision de la galerie de fiches a été retiré ; son entrée ouvre
+la session commune. Les anciennes URL et la consultation des sources restent disponibles.
+Le dépôt GitHub est public à la demande de l'utilisateur. Voir `CHANGELOG.md` pour
+les vérifications et les limites de ce lot. Le choix de moteur IA, le guidage
+adaptatif, Express et les compléments multi-documents restent à réaliser.
+
 Changements cohérents et limités, vérifications adaptées, commit descriptif et push
 vérifié. Une proposition documentée reste une proposition. Ne pas inventer résultat
 de benchmark ou de test, matériel, identité ou affiliation. Demander les informations
-nécessaires lorsqu’elles manquent. Ce cadrage ne modifie pas encore l’application.
+nécessaires lorsqu’elles manquent. Les propositions restantes ne décrivent pas des fonctions livrées.

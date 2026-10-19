@@ -165,7 +165,11 @@ class AppNavigationTests(
             response=self.client.get('/course/cours-test-1234567890')
             self.assertEqual(response.status_code,200)
             text=response.get_data(as_text=True)
-            self.assertIn('Je pars des bases',text)
+            self.assertIn('data-course-panel',text)
+            for label in ('Apprendre', 'Mes documents', 'Ma progression'):
+                self.assertIn(label,text)
+            self.assertIn('id="course-tutor"',text)
+            self.assertIn('id="notions"',text)
             self.assertIn('Vérifier la couverture',text)
             question=self.client.get('/course/cours-test-1234567890?q=Pourquoi')
             self.assertEqual(question.status_code,302)

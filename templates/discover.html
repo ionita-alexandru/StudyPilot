@@ -1,6 +1,6 @@
-{% extends 'learning_base.html' %}{% block title %}Découvrir · {{ course.title }}{% endblock %}
+{% extends 'learning_base.html' %}{% block title %}Apprendre · {{ course.title }}{% endblock %}
 {% block content %}{% if entry %}
-<p class="eyebrow">DÉCOUVRIR · NOTION {{ position+1 }} / {{ learning.entries|length }}</p><p class="muted">{{ entry.part_title }}</p><h1>{{ entry.title }}</h1>{% if entry.objective!=entry.title %}<p class="learning-objective">Objectif : {{ entry.objective }}</p>{% endif %}
+<p class="eyebrow">APPRENDRE · NOTION {{ position+1 }} / {{ learning.entries|length }}</p><p class="muted">{{ entry.part_title }}</p><h1>{{ entry.title }}</h1>{% if entry.objective!=entry.title %}<p class="learning-objective">Objectif : {{ entry.objective }}</p>{% endif %}
 {% if entry.feedback %}<details class="learning-panel"><summary>{{ entry.feedback|length }} signalement(s) à examiner sur cette version</summary>{% for report in entry.feedback %}<p>{{ report.comment }}</p>{% endfor %}</details>{% endif %}<div class="discover-layout"><article>
 {% if entry.prerequisites_view %}<details class="learning-panel"><summary>Avant de commencer · les prérequis</summary><ul>{% for p in entry.prerequisites_view %}<li>{% if p.id %}<a href="{{ url_for('discover',course_id=course.course_id,card=p.id) }}">{{ p.title }}</a>{% else %}<button class="text-button" data-prerequisite="{{ p.title }}">Comprendre : {{ p.title }}</button>{% endif %}</li>{% endfor %}</ul><small>Les explications complémentaires sont proposées à la demande.</small></details>{% endif %}
 <section class="learning-panel core-card"><span class="eyebrow">{{ entry.kind|card_type_label }}</span><h2>L’essentiel</h2>{{ entry.html|safe }}

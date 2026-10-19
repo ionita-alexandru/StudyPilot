@@ -2,6 +2,30 @@
 // Le serveur rend le Markdown après échappement ; aucune sortie IA brute en HTML.
 window.StudyChat = {
   mount(root, context) {
+    root = root.querySelector('.tutor') || root;
+    const toolbar = document.createElement('div'); toolbar.className = 'tutor-toolbar';
+    const expand = document.createElement('button'); expand.type = 'button';
+    expand.textContent = 'Agrandir le chat'; expand.setAttribute('aria-expanded', 'false');
+    toolbar.append(expand); root.prepend(toolbar);
+    let expanded = null;
+    expand.onclick = () => {
+      if (expanded) {expanded.close(); return;}
+      const slot = document.createComment('emplacement du chat');
+      const scroll = messages.scrollTop;
+      root.before(slot);
+      const dialog = document.createElement('dialog'); dialog.className = 'tutor-dialog';
+      dialog.setAttribute('aria-label', 'Assistant pédagogique agrandi');
+      document.body.append(dialog); dialog.append(root); root.classList.add('tutor-expanded-root');
+      expanded = dialog; expand.textContent = 'Réduire le chat'; expand.setAttribute('aria-expanded', 'true');
+      dialog.addEventListener('close', () => {
+        const position = messages.scrollTop;
+        slot.replaceWith(root); root.classList.remove('tutor-expanded-root');
+        dialog.remove(); expanded = null;
+        expand.textContent = 'Agrandir le chat'; expand.setAttribute('aria-expanded', 'false');
+        messages.scrollTop = position; expand.focus({preventScroll:true});
+      }, {once:true});
+      dialog.showModal(); messages.scrollTop = scroll; input.focus({preventScroll:true});
+    };
     let conversationId = null;
     let cardId = context.cardId || null;
     let busy = false;
@@ -40,8 +64,10 @@ window.StudyChat = {
         box.append(refs);
       }
       messages.append(box);
-      if (window.MathJax?.typesetPromise) window.MathJax.startup.promise.then(() => window.MathJax.typesetPromise([box])).then(() => {messages.scrollTop = messages.scrollHeight;}).catch(() => {});
-      messages.scrollTop = messages.scrollHeight;
+      // Lire le début de la nouvelle réponse, pas seulement sa conclusion.
+      const reveal = () => {messages.scrollTop += box.getBoundingClientRect().top - messages.getBoundingClientRect().top;};
+      if (window.MathJax?.typesetPromise) window.MathJax.startup.promise.then(() => window.MathJax.typesetPromise([box])).then(reveal).catch(() => {});
+      reveal();
     }
     function showExercise(value) {
       exercise=value; controls.hidden=!value;

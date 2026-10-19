@@ -1,6 +1,6 @@
 # StudyPilot
 
-Dépôt privé : [ionita-alexandru/StudyPilot](https://github.com/ionita-alexandru/StudyPilot).
+Dépôt public : [ionita-alexandru/StudyPilot](https://github.com/ionita-alexandru/StudyPilot).
 Les sources, ressources de l'interface et tests sont versionnés. Les PDF importés,
 cours générés, conversations, caches et clés API restent locaux : un nouveau clone
 démarre sans cours. Les chiffres et captures des bilans décrivent l'installation
@@ -9,6 +9,10 @@ de développement, pas des cours fournis avec le dépôt.
 Chaque modification terminée et vérifiée fait l'objet d'un commit et d'un push.
 Les [consignes de livraison](AGENTS.md) et les [priorités](docs/PRIORITES.md)
 précisent ce fonctionnement ; aucune synchronisation en arrière-plan n'est installée.
+
+Le parcours du cours regroupe **Apprendre**, **Mes documents** et **Ma progression**.
+Le catalogue se déplie à la demande ; le chat peut être agrandi sans perdre la
+discussion ni le brouillon. Les anciennes adresses restent accessibles.
 
 Le [bilan du parcours pédagogique du 18 octobre](docs/PARCOURS_PEDAGOGIQUE_2026-10-18.md) décrit les exercices persistants, les corrections contrôlées, la progression commune et le parcours Découvrir.
 

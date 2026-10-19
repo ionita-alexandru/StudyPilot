@@ -5,7 +5,7 @@
 L'utilisateur a demandé le 19 octobre 2026 de publier le projet sur son GitHub
 et de mettre le dépôt à jour après chaque modification terminée.
 
-- Dépôt : https://github.com/ionita-alexandru/StudyPilot (privé).
+- Dépôt : https://github.com/ionita-alexandru/StudyPilot (public, à la demande de l'utilisateur le 19 octobre 2026).
 - Après un changement cohérent terminé : vérifier le diff, exécuter les contrôles
   utiles au changement, créer un commit descriptif puis pousser vers `origin`.
 - Vérifier que le commit distant correspond au commit livré. Annoncer clairement
