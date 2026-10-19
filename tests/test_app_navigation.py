@@ -1,6 +1,7 @@
 """Tests de navigation de l'interface moderne StudyPilot."""
 
 import importlib.util
+import re
 import unittest
 from unittest.mock import patch
 
@@ -237,6 +238,27 @@ class AppNavigationTests(
             "plan-preview",
             text,
         )
+
+
+    def test_revision_selects_requested_course_and_handles_empty_library(self):
+        other = dict(COURSE, course_id='second-course', title='Second cours test')
+        cases = [
+            ([COURSE, other], 'second-course', 'second-course'),
+            ([COURSE, other], 'unknown-course', COURSE['course_id']),
+            ([], 'unknown-course', None),
+        ]
+        for courses, requested, expected in cases:
+            with self.subTest(courses=len(courses), requested=requested):
+                with patch.object(webapp.course_service, 'list_courses', return_value=courses):
+                    response = self.client.get('/revision', query_string={'course_id': requested})
+                self.assertEqual(response.status_code, 200)
+                text = response.get_data(as_text=True)
+                selected = re.findall(r'<option\s+value="([^"]+)"\s+selected', text)
+                self.assertEqual(selected, [expected] if expected else [])
+                if expected:
+                    self.assertIn(f'/course/{expected}#documents', text)
+                else:
+                    self.assertIn('Ajoute un cours pour préparer une session.', text)
 
 
 if __name__ == "__main__":

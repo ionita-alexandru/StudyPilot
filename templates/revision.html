@@ -1,233 +1,63 @@
-<!doctype html>
-
-<html lang="fr">
-
-<head>
-
-  <meta charset="utf-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1"
-  >
-
-  <title>Révision · StudyPilot</title>
-
-  <link
-    rel="stylesheet"
-    href="{{ url_for('static', filename='workspace.css') }}"
-  >
-
-
-  <script>
-    window.MathJax = {
-      tex: {
-        inlineMath: [
-          ['\\(', '\\)'],
-          ['$', '$']
-        ],
-        displayMath: [
-          ['\\[', '\\]'],
-          ['$$', '$$']
-        ]
-      },
-      chtml: {
-        scale: 1,
-        fontURL: "/static/vendor/mathjax/output/chtml/fonts/woff-v2"
-      }
-    };
-  </script>
-
-  <script
-    async
-    id="MathJax-script"
-    src="{{ url_for('static', filename='vendor/mathjax/tex-chtml.js') }}">
-  </script>
-
-<script src="{{ url_for('static', filename='entrance.js') }}"></script>
-<script src="{{ url_for('static', filename='study_progress.js') }}"></script>
-<link rel="stylesheet" href="{{ url_for('static', filename='study_chat.css') }}"><script src="{{ url_for('static', filename='study_chat.js') }}"></script>
-</head>
-
-
-<body class="sp-revision-body"><header class="sp-mobile-nav"><a href="/"><img src="/static/logo.svg" width="28" height="28" alt="">StudyPilot</a><nav><a href="/presentation">Fiches</a><a href="/revision">Réviser</a><a href="/upload">Ajouter</a></nav></header>
-
-
-<div class="sp-revision-app">
-
-
-  <!-- SIDEBAR -->
-
-  <aside class="sp-home-sidebar">
-
-    <a
-      class="sp-brand"
-      href="{{ url_for('index') }}"
-    >
-
-      <span class="sp-brand-logo"><img src="/static/logo.svg" width="36" height="36" alt=""></span>
-
-      <span class="sp-brand-text">
-
-        <strong>
-          StudyPilot
-        </strong>
-
-        <small>
-          Apprendre. Comprendre. Avancer.
-        </small>
-
-      </span>
-
-    </a>
-
-
-    <nav class="sp-home-nav">
-
-      <a href="{{ url_for('index') }}">
-        <span>◌</span>
-        Discussion
-      </a>
-
-      <a
-        href="{{ url_for('revision_page') }}"
-        class="active"
-      >
-        <span>◉</span>
-        Révisions
-      </a>
-
-    </nav>
-
-
-    <section class="sp-home-courses">
-
-      <div class="sp-sidebar-title">
-        Mes cours
-      </div>
-
-      <div class="sp-course-list">
-
-        {% for item in courses %}
-
-          <a
-            href="{{ url_for(
-              'course',
-              course_id=item.course_id
-            ) }}"
-            class="sp-course-link"
-          >
-
-            <span class="sp-course-dot"></span>
-
-            <span>
-              {{ item.title }}
-            </span>
-
-          </a>
-
-        {% endfor %}
-
-      </div>
-
-    </section>
-
-  </aside>
-
-
-
-  <!-- MAIN -->
-
-  <main class="sp-revision-main">
-
-
-    <!-- CONFIGURATION -->
+{% extends 'learning_base.html' %}
+{% block title %}Révision{% endblock %}
+{% block body_class %}revision-workspace{% endblock %}
+{% block styles %}<link rel="stylesheet" href="/static/study_sessions.css">{% endblock %}
+{% block content %}
+{% if not courses %}<p class="notice">Ajoute un cours pour préparer une session. <a href="{{ url_for('upload_page') }}">Ajouter un cours</a></p>{% endif %}
 
     <section
       id="revision-setup"
       class="sp-revision-setup"
     >
-
       <div class="sp-revision-heading">
-
         <span class="sp-revision-kicker">
           MODE RÉVISION
         </span>
-
         <h1>
           Prépare ta session
         </h1>
-
         <p>
           Choisis ce que tu veux travailler
           et pendant combien de temps.
         </p>
-
       </div>
-
-
       <div class="sp-revision-config">
-
-
         <div class="sp-config-block">
-
           <label for="revision-course">
             Cours
           </label>
-
           <select id="revision-course">
-
             {% for item in courses %}
-
-              <option value="{{ item.course_id }}">
+              <option value="{{ item.course_id }}" {% if course and item.course_id == course.course_id %}selected{% endif %}>
                 {{ item.title }}
               </option>
-
             {% endfor %}
-
           </select>
-
         </div>
-
-
-
         <div class="sp-config-block">
-
           <label for="revision-part">
             Contenu
           </label>
-
           <select id="revision-part">
-
             <option value="">
               Tout le cours
             </option>
-
           </select>
-
         </div>
-
-
-
         <div class="sp-config-block">
-
           <label>
             Temps de travail
           </label>
-
           <div class="sp-duration-options">
-
             <button type="button" data-duration="20">
               20 min
             </button>
-
             <button
               type="button"
               data-duration="30"
             >
               30 min
             </button>
-
             <button
               type="button"
               data-duration="45"
@@ -235,55 +65,37 @@
             >
               45 min
             </button>
-
             <button type="button" data-duration="60">
               1 h
             </button>
-
             <button type="button" data-duration="90">
               1 h 30
             </button>
-
           </div>
-
-
           <div class="sp-custom-duration">
-
             <input
               id="revision-custom-duration"
               type="number"
               min="5"
               max="240"
               placeholder="Durée personnalisée"
+              aria-label="Durée personnalisée en minutes"
             >
-
             <span>
               min
             </span>
-
           </div>
-
         </div>
-
-
-
         <div class="sp-config-block">
-
           <div class="sp-config-title-row">
-
             <label>
               Pomodoro
             </label>
-
             <span class="sp-optional">
               Optionnel
             </span>
-
           </div>
-
-
           <div class="sp-pomodoro-options">
-
             <button
               type="button"
               data-pomodoro="off"
@@ -292,8 +104,6 @@
               <strong>Libre</strong>
               <small>Sans pause imposée</small>
             </button>
-
-
             <button
               type="button"
               data-pomodoro="25"
@@ -301,8 +111,6 @@
               <strong>25 / 5</strong>
               <small>25 min focus · 5 min pause</small>
             </button>
-
-
             <button
               type="button"
               data-pomodoro="50"
@@ -310,20 +118,12 @@
               <strong>50 / 10</strong>
               <small>50 min focus · 10 min pause</small>
             </button>
-
           </div>
-
         </div>
-
-
-
         <p
           id="revision-setup-error"
-          class="sp-revision-error"
+          class="sp-revision-error" role="alert"
         ></p>
-
-
-
         <button
           id="revision-start"
           class="sp-revision-start"
@@ -332,284 +132,181 @@
           Commencer la session
           <span>→</span>
         </button>
-
-
         <p
           id="revision-card-info"
           class="sp-revision-card-info"
         ></p>
-
       </div>
-
     </section>
-
-
-
-    <!-- SESSION -->
 
 <section
   id="revision-session"
   class="sp-revision-session"
   hidden
 >
-
   <header class="sp-session-header">
-
     <div>
-
       <small id="session-course-name">
       </small>
-
       <strong id="session-part-name">
       </strong>
-
     </div>
-
-
     <div class="sp-session-header-actions">
-
       <button
         id="session-pause"
         type="button"
       >
         Pause
       </button>
-
       <button
         id="session-end"
         type="button"
       >
         Terminer
       </button>
-
     </div>
-
   </header>
-
-
   <div class="sp-revision-workspace">
 
-
-    <!-- =========================
-         RÉVISION
-    ========================== -->
-
     <div class="sp-revision-study-pane">
-
-
       <div class="sp-session-progress">
-
         <div class="sp-session-phase">
-
           <span
             id="session-phase-label"
             class="focus"
           >
             Focus
           </span>
-
           <strong id="session-phase-time">
             45:00
           </strong>
-
         </div>
-
-
         <div class="sp-session-work-left">
-
           Travail restant
-
           <strong id="session-work-time">
             45:00
           </strong>
-
         </div>
-
       </div>
-
-
       <div class="sp-session-bar">
-
         <span id="session-progress-bar">
         </span>
-
       </div>
-
-
-
       <article class="sp-revision-card">
-
-
         <div class="sp-revision-card-top">
-
           <div>
-
             <small id="revision-card-part">
             </small>
-
             <span id="revision-card-type" class="sp-card-type"></span>
             <h2 id="revision-card-title">
             </h2>
-
           </div>
-
-
           <span id="revision-card-counter">
           </span>
-
         </div>
-
-
-
         <div
           id="revision-card-hidden"
           class="sp-revision-card-hidden"
         >
-
           <p>
             Essaie d'abord de te rappeler
             ce que tu sais sur cette notion.
           </p>
-
           <button
             id="revision-reveal"
             type="button"
           >
             Afficher la fiche
           </button>
-
         </div>
-
-
-
         <div
           id="revision-card-content"
           class="sp-revision-card-content"
           hidden
         >
         </div>
-
-
+        <div class="study-actions"><button type="button" data-revision-action="example">Un exemple</button><button type="button" data-revision-action="explain">Approfondir</button><button type="button" data-revision-action="exercise">M’entraîner</button></div>
 
         <div
           id="revision-rating"
           class="sp-revision-rating"
           hidden
         >
-
           <p>
             Comment tu te sens sur cette notion ?
           </p>
-
-
           <div>
-
             <button
               type="button"
               data-rating="review"
             >
               À revoir
             </button>
-
             <button
               type="button"
               data-rating="almost"
             >
               Presque
             </button>
-
             <button
               type="button"
               data-rating="mastered"
             >
               Compris · autoévaluation
             </button>
-
           </div>
-
         </div>
-
       </article>
-
     </div>
 
-
-
-    <!-- =========================
-         CHAT PERSISTANT
-    ========================== -->
-
-    <aside class="sp-revision-chat-panel" aria-label="Assistant de révision"></aside>
-
-
   </div>
-
 </section>
-
-
-
-    <!-- FIN -->
 
     <section
       id="revision-summary"
       class="sp-revision-summary"
       hidden
     >
-
       <span class="sp-revision-kicker">
         SESSION TERMINÉE
       </span>
-
       <h1>
         Bien joué.
       </h1>
-
-
       <div class="sp-summary-grid">
-
         <div>
           <strong id="summary-time">
             0 min
           </strong>
-
           <span>
             de travail
           </span>
         </div>
-
         <div>
           <strong id="summary-seen">
             0
           </strong>
-
           <span>
             fiches vues
           </span>
         </div>
-
         <div>
           <strong id="summary-mastered">
             0
           </strong>
-
           <span>
             comprises (déclarées)
           </span>
         </div>
-
         <div>
           <strong id="summary-review">
             0
           </strong>
-
           <span>
             à revoir
           </span>
         </div>
-
       </div>
-
-
       <button
         id="summary-restart"
         class="sp-revision-start"
@@ -617,25 +314,7 @@
       >
         Nouvelle session
       </button>
-
     </section>
-
-
-  </main>
-
-</div>
-
-
-<script
-  src="{{ url_for(
-    'static',
-    filename='revision.js'
-  ) }}"
-  defer>
-</script>
-
-
-<script src="{{ url_for('static', filename='cards.js') }}" defer></script>
-</body>
-
-</html>
+{% endblock %}
+{% block assistant %}<aside class="learning-dock sp-revision-chat-panel" aria-label="Assistant de révision" hidden></aside>{% endblock %}
+{% block scripts %}<script src="/static/revision.js" defer></script><script src="/static/cards.js" defer></script>{% endblock %}

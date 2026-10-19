@@ -1,5 +1,27 @@
 # Historique des changements
 
+## 2026-10-19 — Cadre commun pour les chapitres et les révisions
+
+- Migration des discussions par chapitre et des sessions de révision vers le même
+  menu et la même barre de discussion fixe que les fiches d'apprentissage.
+- Aperçu, fiches, plan et PDF regroupés dans un panneau repliable du chapitre.
+  Les raccourcis préparent la question sans lancer un appel IA automatiquement.
+- Réglages et minuteur de session restylés ; actions d'explication placées près de
+  la fiche. Le chat est masqué pendant la préparation et après la fin de session.
+- Menu synchronisé avec le cours choisi. Démarrage désactivé tant que les fiches
+  ne sont pas chargées ; réponses périmées ignorées lors d'un changement de cours.
+- Réinitialisation du contexte de discussion en cas de changement de cours, même
+  si deux cours partagent un identifiant de notion. Libellé Pause remis au début.
+- Suppression du balisage des anciens menus et formulaires devenus redondants.
+
+Vérifications : 118 tests Python et 6 tests JavaScript réussis ; un test de navigation
+ajouté pour le cours demandé, le repli sur le premier cours et une bibliothèque vide.
+Contrôles navigateur à 1280 × 900 et 390 × 844 : sélection du cours, fiche de session,
+pause, accès aux actions, plein écran avec brouillon conservé, menu mobile, aperçu
+et plan du chapitre. Aucun appel de génération IA réalisé pour ces contrôles.
+Les sessions de contrôle ont été mises en pause puis quittées sans enregistrer de bilan.
+
+
 ## 2026-10-19 — Assistant permanent et espace de cours
 
 - Barre de saisie fixe dans le parcours, les fiches, Mes documents et Ma progression.

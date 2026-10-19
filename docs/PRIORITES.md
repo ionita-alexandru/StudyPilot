@@ -213,3 +213,9 @@ sur le parcours et les fiches, historique repliable, formulaire commun plus comp
 menu latéral sobre avec tiroir mobile et lecture centrale. Les références visuelles
 fournies ont guidé l'espacement et les accents lumineux ; leurs images ne sont pas
 intégrées au produit. Le moteur IA et les fonctions planifiées ne changent pas.
+
+
+Troisième lot d'interface réalisé le 19 octobre 2026 : cadre commun étendu aux
+chapitres et aux sessions de révision, avec chat fixe et menu lié au cours choisi.
+Le contexte du chapitre reste consultable dans un panneau repliable. Ce lot ne
+modifie pas la logique pédagogique du minuteur ni les critères de génération.

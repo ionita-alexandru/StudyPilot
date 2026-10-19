@@ -30,6 +30,8 @@ document.addEventListener(
       document.querySelector("#revision-custom-duration");
 
     let courseData = null;
+    let courseRequest = 0;
+    const chatDock = document.querySelector('.sp-revision-chat-panel');
 
     let cards = [];
 
@@ -91,6 +93,12 @@ document.addEventListener(
     }
 
     async function loadCourse() {
+      const request = ++courseRequest;
+      courseData = null; cards = []; startButton.disabled = true;
+      partSelect.replaceChildren(new Option('Tout le cours', ''));
+      document.dispatchEvent(new CustomEvent('learning-course', {detail:{
+        courseId:courseSelect.value, title:courseSelect.selectedOptions[0]?.textContent.trim() || ''
+      }}));
 
       const courseId =
         courseSelect.value;
@@ -126,6 +134,7 @@ document.addEventListener(
 
         }
 
+        if (request !== courseRequest) return;
         courseData = data;
 
         partSelect.innerHTML =
@@ -151,6 +160,7 @@ document.addEventListener(
       }
 
       catch (error) {
+        if (request !== courseRequest) return;
 
         courseData = null;
 
@@ -185,6 +195,7 @@ document.addEventListener(
             )
           : [...courseData.cards];
 
+      startButton.disabled = !cards.length;
       cardInfo.textContent =
         `${cards.length} fiche${
           cards.length > 1 ? "s" : ""
@@ -317,6 +328,10 @@ document.addEventListener(
     );
 
     function startSession() {
+      if (sharedTutor?.isBusy()) {
+        errorBox.textContent = 'Attends la fin de la réponse avant de démarrer une nouvelle session.';
+        return;
+      }
 
       if (!courseData) {
 
@@ -375,6 +390,8 @@ document.addEventListener(
       summary.hidden = true;
 
       session.hidden = false;
+      chatDock.hidden = false;
+      document.querySelector('#session-pause').textContent = 'Pause';
 
       document.querySelector(
         "#session-course-name"
@@ -390,8 +407,6 @@ document.addEventListener(
         "#session-part-name"
       ).textContent =
         selectedOption.textContent;
-
-      resetRevisionChat();
 
       showCard();
 
@@ -775,12 +790,12 @@ document.addEventListener(
     function escapeHtml(value) {const span=document.createElement('span');span.textContent=value;return span.innerHTML;}
     function resetRevisionChat() {
       const card=getCurrentCard(); if(!card)return;
-      const ctx={courseId:courseData.course.course_id,partNumber:card.part_number,pdfUrl:courseData.course.pdf_url,cardId:card.card_id};
+      const ctx={docked:true,courseId:courseData.course.course_id,partNumber:card.part_number,pdfUrl:courseData.course.pdf_url,cardId:card.card_id};
       if(!sharedTutor){
         const panel=document.querySelector('.sp-revision-chat-panel');
-        panel.innerHTML=StudyChat.markup()+'<div class="study-actions"><button data-revision-action="example">Un exemple</button><button data-revision-action="explain">Approfondir</button><button data-revision-action="exercise">M’entraîner</button></div>';
+        panel.innerHTML=StudyChat.markup();
         sharedTutor=StudyChat.mount(panel,ctx);
-        panel.querySelectorAll('[data-revision-action]').forEach(b=>b.onclick=()=>{const c=getCurrentCard();sharedTutor.select(c.card_id,c.title,b.dataset.revisionAction,{partNumber:c.part_number});});
+        document.querySelectorAll('[data-revision-action]').forEach(b=>b.onclick=()=>{const c=getCurrentCard();sharedTutor.select(c.card_id,c.title,b.dataset.revisionAction,{partNumber:c.part_number});sharedTutor.reveal();});
       }
       sharedTutor.select(card.card_id,card.title,null,ctx);
     }
@@ -868,6 +883,7 @@ document.addEventListener(
       );
 
       session.hidden = true;
+      chatDock.hidden = true;
 
       summary.hidden = false;
 

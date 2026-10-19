@@ -6,6 +6,18 @@
   const main = document.querySelector('.learning-main');
   const dock = document.querySelector('.learning-dock');
   const mobile = matchMedia('(max-width: 760px)');
+  if (document.body.classList.contains('revision-workspace')) {
+    sidebar.querySelectorAll('[aria-current]').forEach(link => link.removeAttribute('aria-current'));
+    sidebar.querySelector('[data-course-session]').setAttribute('aria-current', 'page');
+  }
+  document.addEventListener('learning-course', ({detail}) => {
+    const path = `/course/${encodeURIComponent(detail.courseId)}`;
+    document.querySelector('[data-course-title]').textContent = detail.title;
+    document.querySelectorAll('.sidebar-course, [data-course-navigation], [data-course-notions], [data-course-session]').forEach(el => el.hidden = !detail.courseId);
+    sidebar.querySelectorAll('[data-course-nav]').forEach(link => link.href = `${path}#${link.dataset.courseNav}`);
+    document.querySelector('[data-course-notions]').href = `${path}#notions`;
+    sidebar.querySelector('[data-course-session]').href = `/revision?course_id=${encodeURIComponent(detail.courseId)}`;
+  });
   let open = !mobile.matches;
   function update() {
     sidebar.hidden = !open;
@@ -25,7 +37,7 @@
     if (!open || !mobile.matches) return;
     if (event.key === 'Escape') {event.preventDefault(); close();}
     if (event.key === 'Tab') {
-      const targets = [toggle, ...sidebar.querySelectorAll('a')];
+      const targets = [toggle, ...[...sidebar.querySelectorAll('a')].filter(link => link.getClientRects().length)];
       const index = targets.indexOf(document.activeElement);
       if (event.shiftKey && index <= 0) {event.preventDefault(); targets.at(-1).focus();}
       else if (!event.shiftKey && (index === targets.length - 1 || index === -1)) {event.preventDefault(); toggle.focus();}

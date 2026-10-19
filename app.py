@@ -423,9 +423,12 @@ def revision_data():
 
 @app.get("/revision")
 def revision_page():
+    courses = course_service.list_courses()
+    selected = next((c for c in courses if c['course_id'] == request.args.get('course_id')), None)
     return render_template(
         "revision.html",
-        courses=course_service.list_courses(),
+        courses=courses,
+        course=selected or (courses[0] if courses else None),
     )
 
 

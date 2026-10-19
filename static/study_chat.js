@@ -170,8 +170,9 @@ window.StudyChat = {
     reset.onclick=()=>{if(busy)return;generation++;conversationId=null;pendingMessage=null;messages.replaceChildren();showExercise(null);try{localStorage.removeItem(key());}catch{}error.textContent='';};
     return {ask, reveal, isBusy:()=>busy, async select(id, title, intent, nextContext) {
       if (busy) {error.textContent='Attends la fin de la réponse avant de changer de notion.';return false;}
+      const changedCourse = nextContext?.courseId && nextContext.courseId !== context.courseId;
       if(nextContext)Object.assign(context,nextContext);
-      if ((id || 'course') !== anchor) {generation++;cardId = id || null;anchor=cardId || 'course'; conversationId = null; pendingMessage = null; messages.replaceChildren();showExercise(null);ready=restore();}
+      if (changedCourse || (id || 'course') !== anchor) {generation++;cardId = id || null;anchor=cardId || 'course'; conversationId = null; pendingMessage = null; messages.replaceChildren();showExercise(null);ready=restore();}
       if (subject) subject.textContent = title || 'Le cours';
       await ready; if (intent) await ask(intent, prompts[intent]); return true;
     }};

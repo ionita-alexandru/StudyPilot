@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
       );
 
       tab.setAttribute(
-        "aria-selected",
+        "aria-pressed",
         active ? "true" : "false"
       );
     }
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
         input.value =
           shortcut.dataset.prompt || "";
 
-        input.focus();
+        input.focus({preventScroll:true});
       }
     );
   }
