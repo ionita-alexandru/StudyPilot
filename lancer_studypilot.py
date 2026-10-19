@@ -1,13 +1,15 @@
 """Démarrer StudyPilot : vraie application, vrai chat IA, import et révision."""
 import os
 os.environ.setdefault('STUDYPILOT_AI_PROVIDER','gemma')
-os.environ.setdefault('STUDYPILOT_MODEL','gemma-4-26b-a4b-it')
+os.environ.setdefault('STUDYPILOT_MODEL','gemini-3.8-flash' if os.environ['STUDYPILOT_AI_PROVIDER']=='gemini' else 'gemma-4-26b-a4b-it')
 os.environ.pop('STUDYPILOT_PRESENTATION',None)
 import argparse,threading,webbrowser
 from app import app
 if __name__=='__main__':
     from src.upload_service import restore_jobs
     restore_jobs()
+    from src.course_documents import recover
+    recover()
     parser=argparse.ArgumentParser();parser.add_argument('--port',type=int,default=5000);parser.add_argument('--no-browser',action='store_true');args=parser.parse_args()
     print(f'StudyPilot : http://127.0.0.1:{args.port}\nChat IA : '+os.environ['STUDYPILOT_MODEL'])
     if not os.getenv('GEMINI_API_KEY','').strip():print('Clé API absente : fiches consultables ; le chat et la génération nécessitent GEMINI_API_KEY.')

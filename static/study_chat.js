@@ -88,7 +88,7 @@ window.StudyChat = {
       discover: 'Je découvre cette notion. Explique ses prérequis puis son idée, sans supposer que j’ai lu le cours.',
       exercise: 'Propose un exercice simple sur cette notion, sans donner la solution.',
       hint: 'Donne-moi un indice pour cet exercice.', solution: 'Explique la solution de cet exercice.'};
-    function bubble(author, text, html, pages) {
+    function bubble(author, text, html, pages, references) {
       const box = document.createElement('article'); box.className = 'tutor-message';
       const label = document.createElement('strong'); label.textContent = author;
       const body = document.createElement('div'); body.className = 'tutor-body';
@@ -103,6 +103,15 @@ window.StudyChat = {
         box.append(refs);
       }
       messages.append(box);
+      if (references?.length) {
+        const refs=document.createElement('small');refs.textContent='Compléments consultés : ';
+        const seen=new Set();
+        for(const ref of references){
+          if(typeof ref.url!=='string'||!ref.url.startsWith('/course/')||seen.has(ref.url))continue;
+          seen.add(ref.url);const link=document.createElement('a');link.href=ref.url;link.target='_blank';link.rel='noopener';link.textContent=`${ref.title} · p. ${ref.page} `;refs.append(link);
+        }
+        box.append(refs);
+      }
       if (discussionToggle && messages.hidden) {
         discussionToggle.textContent = `Discussion · ${messages.children.length} messages`;
         pendingMessage = box;
@@ -129,7 +138,7 @@ window.StudyChat = {
         if(!response.ok)throw Error('La discussion précédente ne peut pas être chargée. Rouvre cette fiche pour réessayer.');
         const result=await response.json(); if(token!==generation)return;
         conversationId=result.conversation_id; cardId=result.active_card_id || cardId;
-        for(const m of result.history)bubble(m.role==='user'?'Toi':'StudyPilot · discussion reprise',m.content,m.html);
+        for(const m of result.history)bubble(m.role==='user'?'Toi':'StudyPilot · discussion reprise',m.content,m.html,null,m.references);
         showExercise(result.exercise); if(subject&&result.active_title)subject.textContent=result.active_title;
       }catch(e){if(token===generation)error.textContent=e.message;}
     }
@@ -147,14 +156,14 @@ window.StudyChat = {
       try {
         const response = await fetch('/api/part-chat', {method:'POST', headers:{'Content-Type':'application/json'},
           body:JSON.stringify({course_id:context.courseId, part_number:String(context.partNumber),
-            card_id:cardId, conversation_id:conversationId, contextual:true, intent, question})});
+            card_id:cardId, conversation_id:conversationId, contextual:true, intent, question,learner:context.learner})});
         const result = await response.json(); if (!response.ok) throw Error(result.error || 'Réponse indisponible.');
         conversationId = result.conversation_id;
         cardId = result.active_card_id || cardId;
         try{localStorage.setItem(key(),conversationId);}catch{}
         showExercise(result.exercise); if(intent==='exercise')mode.value='assess';
         const label=result.source==='saved_resource'?'Exemple du cours':result.assessment?.basis==='local_calculation'?'StudyPilot · calcul vérifié localement':result.assessment?.basis==='input_format'?'StudyPilot · résultat à préciser':result.assessment?'StudyPilot · évaluation IA':result.source==='exercise_hint'||result.source==='exercise_solution'?'StudyPilot · exercice conservé':'StudyPilot · réponse générée';
-        bubble(label, result.answer, result.answer_html, result.pages);
+        bubble(label, result.answer, result.answer_html, result.pages,result.references);
         if(result.assessment&&cardId)window.StudyProgress?.assess(context.courseId,cardId,result.assessment,result.exercise?.id);
         if (subject && result.active_title) subject.textContent = result.active_title;
       } catch (e) { error.textContent = e.message; input.value = question; }

@@ -251,7 +251,8 @@ def part_chat():
         try:
             result = tutor_answer(course_data, plan, selected, clean_question,
                 card_id=payload.get('card_id'), conversation_id=payload.get('conversation_id'),
-                intent=payload.get('intent', 'question'), model=model)
+                intent=payload.get('intent', 'question'), model=model,
+                learner={k:str(v)[:600] for k,v in (payload.get('learner') or {}).items() if k in {'level','goal','notes'}} if isinstance(payload.get('learner'),dict) else None)
             return jsonify(result)
         except ValueError as error:
             return jsonify(error=str(error)), 400
@@ -331,7 +332,7 @@ def card_illustration(course_id, card_id, index):
 
 @app.errorhandler(RequestEntityTooLarge)
 def handle_file_too_large(error):
-    if request.path == "/api/upload":
+    if request.path == "/api/upload" or (request.path.startswith('/api/course/') and request.path.endswith('/documents')):
         return jsonify({"error": "Le PDF dépasse la limite de 20 Mo."}), 413
     return "Fichier trop volumineux.", 413
 
@@ -430,6 +431,68 @@ def revision_page():
         courses=courses,
         course=selected or (courses[0] if courses else None),
     )
+
+
+@app.route('/api/course/<course_id>/documents', methods=['GET','POST'])
+def course_documents(course_id):
+    from src import course_documents as documents
+    try:
+        course_service.load_course(course_id)
+        if request.method == 'GET':
+            return jsonify(documents.listing(course_id))
+        incoming=request.files.get('pdf')
+        if incoming is None or not incoming.filename:
+            return jsonify(error='Sélectionne un PDF.'),400
+        item=documents.enqueue(course_id,incoming.stream,incoming.filename,request.form.get('role','course'),request.form.get('scope','optional'))
+        return jsonify(document=item),202
+    except (ValueError,UploadError) as error:
+        return jsonify(error=str(error)),400
+    except (StorageError,FileNotFoundError):
+        return jsonify(error='Cours introuvable.'),404
+
+
+@app.route('/api/course/<course_id>/document/<identifier>', methods=['PATCH','POST'])
+def change_course_document(course_id,identifier):
+    from src import course_documents as documents
+    try:
+        course_service.load_course(course_id)
+        if request.method == 'POST':
+            documents.resume(course_id,identifier)
+            return jsonify(status='queued'),202
+        payload=request.get_json(silent=True) or {}
+        if not isinstance(payload,dict):
+            return jsonify(error='Paramètres invalides.'),400
+        return jsonify(document=documents.change(course_id,identifier,payload.get('role'),payload.get('scope')))
+    except ValueError as error:
+        return jsonify(error=str(error)),400
+    except (StorageError,FileNotFoundError):
+        return jsonify(error='Document introuvable.'),404
+
+
+@app.get('/course/<course_id>/document/<identifier>/pdf')
+def complement_pdf(course_id,identifier):
+    from src.course_documents import load
+    try:
+        course_service.load_course(course_id)
+        document=load(course_id,identifier)
+        if Path(document['filename']).name != document['filename']:
+            raise ValueError('Nom de fichier invalide.')
+        return send_from_directory(COURSE_PDF_DIR,document['filename'],mimetype='application/pdf')
+    except (ValueError,StorageError,FileNotFoundError):
+        return 'Document introuvable.',404
+
+
+@app.get('/course/<course_id>/document/<identifier>')
+def complement_page(course_id,identifier):
+    from src.course_documents import load, public
+    try:
+        course,plan=_load_course_and_plan(course_id)
+        document=load(course_id,identifier)
+        return render_template('document.html',course=course,document=public(document),
+            part_number=plan['parts'][0]['number'],main_pdf=url_for('course_pdf',filename=course['source_filename']),
+            entries=[dict(e,html=render_text(e['body'])) for e in document.get('entries',[])])
+    except (ValueError,StorageError,FileNotFoundError):
+        return 'Document introuvable.',404
 
 
 @app.get('/presentation')

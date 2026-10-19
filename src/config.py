@@ -18,7 +18,7 @@ PLAN_DIR = DATA_DIR / "plans"
 AI_PROVIDER = os.getenv("STUDYPILOT_AI_PROVIDER", "ollama").strip().lower()
 STUDY_MODEL = os.getenv(
     "STUDYPILOT_MODEL",
-    "gemma-4-31b-it" if AI_PROVIDER == "gemma" else "gpt-oss:120b-cloud",
+    "gemma-4-31b-it" if AI_PROVIDER == "gemma" else "gemini-3.8-flash" if AI_PROVIDER == "gemini" else "gpt-oss:120b-cloud",
 )
 
 # Réglages communs des appels IA.

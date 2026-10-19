@@ -23,6 +23,16 @@ class Contract(BaseModel):
     ok: bool
 
 class GemmaTests(unittest.TestCase):
+    def test_gemini_dispatch_keeps_model_and_rejects_unlisted_models_before_network(self):
+        from src.ai.gemini import gemini_chat
+        with patch.object(client,'AI_PROVIDER','gemini'), patch.object(gemma,'_post',side_effect=[{'totalTokens':20},answer()]) as post, patch.object(gemma,'_reserve'):
+            result=client.chat_json(model='gemini-3.8-flash',response_model=Contract,messages=[dict(role='user',content='Source de test')])
+        self.assertEqual(result,{'ok':True})
+        self.assertTrue(all(call.args[0]=='gemini-3.8-flash' for call in post.call_args_list))
+        with patch.object(gemma,'_post') as post,self.assertRaises(client.AIUnavailableError):
+            gemini_chat(model='gemini-4-argon',messages=[dict(role='user',content='test')])
+        post.assert_not_called()
+
     def test_dispatch_contract_and_model_without_ollama(self):
         responses = [{'totalTokens': 200}, answer()]
         with patch.object(client, 'AI_PROVIDER', 'gemma'), patch.object(gemma, '_post', side_effect=responses) as post, patch.object(gemma, '_reserve') as reserve, patch.object(client, '_ollama_chat') as ollama:

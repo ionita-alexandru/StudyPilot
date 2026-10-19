@@ -7,7 +7,8 @@ import threading
 import time
 import uuid
 
-from src.courses.study_guide import load_guide, digest, resource_view, sources_from_document
+from src.courses.study_guide import digest, resource_view, sources_from_document
+from src.course_documents import combined_guide as load_guide
 from src.courses.card_presentation import render_text
 from src.storage.repository import read_json, write_json_atomic, StorageError
 
@@ -52,10 +53,14 @@ def conversation(course, plan, conversation_id=None, card_id=None):
             raise ValueError('Cette conversation appartient à un autre cours.')
         if state and state['busy']:
             raise RuntimeError('Une réponse est déjà en cours dans cette conversation.')
+        base_version=(guide or {}).get('base_revision',version)
+        if state and state['version'] != version and state.get('base_version',state['version']) == base_version:
+            state['version']=version
         if state is None or state['version'] != version:
             state = dict(id=identifier, course_id=course['course_id'], version=version, card_id=None,
                          history=[], exercise=None, busy=False, updated=now)
             _SESSIONS[identifier] = state
+        state['base_version']=base_version
         if len(_SESSIONS) > 200:
             for key in sorted(_SESSIONS, key=lambda k: _SESSIONS[k]['updated']):
                 if key != identifier and not _SESSIONS[key]['busy']:
@@ -100,7 +105,7 @@ def terms(text):
     return set(re.findall(r'[\w-]{3,}', _normalized(text))) - stop
 
 
-def context_for(course, plan, part, question, state, guide, *, allow_switch=True):
+def context_for(course, plan, part, question, state, guide, *, allow_switch=True, allow_corrections=False):
     entries = guide['entries'] if guide else []
     active = next((e for e in entries if e['id'] == state.get('card_id')), None)
     if state.get('card_id') and active is None:
@@ -113,6 +118,7 @@ def context_for(course, plan, part, question, state, guide, *, allow_switch=True
         active = dict(id=card['card_id'], title=card['title'], part_id=card['primary_part_id'],
                       role='core', body='\n\n'.join(s['content'] for s in card['sections']), source_ids=[])
     sources = guide['sources'] if guide else document_sources(course)
+    sources=[s for s in sources if allow_corrections or s.get('document_role')!='correction']
     if guide and guide.get('origin') == 'editorial_review':
         # Les anciennes fiches apportent un contexte relu, mais le chat peut aussi
         # consulter le document original, y compris les passages hors des fiches.
@@ -120,7 +126,7 @@ def context_for(course, plan, part, question, state, guide, *, allow_switch=True
     query = terms(question)
     # Un nom de notion explicite peut remplacer la sélection ; les pronoms seuls la conservent.
     candidates = [(len(query & terms(e['title'] + ' ' + ' '.join(e.get('aliases', [])))), e)
-                  for e in entries if e['role'] == 'core']
+                  for e in entries if e['role'] == 'core' and (allow_corrections or e.get('document_role')!='correction')]
     candidates.sort(key=lambda pair: -pair[0])
     current_score = len(query & terms(active['title'] + ' ' + ' '.join(active.get('aliases', [])))) if active else 0
     if (allow_switch and candidates and candidates[0][0] > current_score and candidates[0][0] > 0
@@ -143,12 +149,15 @@ def context_for(course, plan, part, question, state, guide, *, allow_switch=True
         - (1 if part['page_start'] <= s['page'] <= part['page_end'] else 0), s['page']))
     contexts, size = [], 0
     for source in ranked:
+        if source.get('document_id') and sum(bool(c.get('document_id')) for c in contexts)>=2:
+            continue
         if source['id'] not in linked and not (query & terms(source['text'])):
             continue
         if size + len(source['text']) > 10500:
             continue
         contexts.append(dict(source_id=source['id'], page=source['page'], content=source['text'],
-                             origin=source.get('origin', 'pdf'), source_pages=source.get('pages', [source['page']])))
+                             origin=source.get('origin', 'pdf'), source_pages=source.get('pages', [source['page']]),
+                             **{k:source[k] for k in ('document_id','document_title','document_role','pdf_url') if k in source}))
         size += len(source['text'])
         if len(contexts) >= 7:
             break
@@ -158,28 +167,31 @@ def context_for(course, plan, part, question, state, guide, *, allow_switch=True
 def saved_example(active, guide):
     if not active or not guide:
         return None
-    entry = next((e for e in guide['entries'] if e['role'] == 'example' and active['id'] in e.get('targets', [])), None)
+    entry = next((e for e in guide['entries'] if e['role'] == 'example' and e.get('document_role')!='correction' and active['id'] in e.get('targets', [])), None)
     if not entry:
         return None
     resource = resource_view(entry, guide)
-    return dict(answer='### ' + entry['title'] + '\n\n' + entry['body'], pages=resource['pages'],
+    return dict(answer='### ' + entry['title'] + '\n\n' + entry['body'], pages=[] if entry.get('document_id') else resource['pages'],
+                references=[dict(title=entry['document_title'],page=p,url=entry['pdf_url']+'#page='+str(p)) for p in resource['pages']] if entry.get('document_id') else [],
                 source='saved_resource', resource_id=entry['id'])
 
 
-def answer(course, plan, part, question, *, card_id=None, conversation_id=None, intent='question', model):
+def answer(course, plan, part, question, *, card_id=None, conversation_id=None, intent='question', model, learner=None):
     from src.part_study import answer_part_question, build_course_outline_context
     if intent not in INTENTS:
         raise ValueError('Action de discussion inconnue.')
     with conversation(course, plan, conversation_id, card_id) as (state, guide):
         active, actual_part, contexts = context_for(course, plan, part, question, state, guide,
-            allow_switch=not state.get('exercise') and intent not in {'hint', 'solution', 'assess'})
+            allow_switch=not state.get('exercise') and intent not in {'hint', 'solution', 'assess'},
+            allow_corrections=intent=='solution' or (intent=='question' and bool(re.search(r'corrig[ée]|correction',question,re.I))))
         cached = saved_example(active, guide) if intent == 'example' else None
+        teaching_active=dict(active,learner_profile=learner) if active and learner else active
         if intent in {'exercise', 'hint', 'solution', 'assess'}:
             from src.learning_tutor import exercise_action
             from src.ai.workload import interactive
             with interactive():
-                result = exercise_action(state, active, contexts, intent, question, model)
-            result['pages'] = sorted({p for c in contexts for p in c['source_pages']})
+                result = exercise_action(state, teaching_active, contexts, intent, question, model)
+            result['pages'] = sorted({p for c in contexts if not c.get('document_id') for p in c['source_pages']})
         elif cached:
             result = cached
         else:
@@ -187,12 +199,14 @@ def answer(course, plan, part, question, *, card_id=None, conversation_id=None, 
             with interactive():
                 response = answer_part_question(question, contexts, model, course_title=course['title'], part=actual_part,
                     course_outline=build_course_outline_context(plan), history=state['history'], course_overview=True,
-                    active_card=active, intent=intent, exercise=public_exercise(state.get('exercise')))
-            result = dict(answer=response, pages=sorted({p for c in contexts for p in c['source_pages']}), source='model')
+                    active_card=teaching_active, intent=intent, exercise=public_exercise(state.get('exercise')))
+            result = dict(answer=response, pages=sorted({p for c in contexts if not c.get('document_id') for p in c['source_pages']}), source='model')
+        result['references']=result.get('references') or [dict(title=c['document_title'],page=p,url=c['pdf_url']+'#page='+str(p))
+            for c in contexts if c.get('document_id') for p in c['source_pages']]
         from src.study_checks import verify_response
         result['answer'], checks = verify_response(result['answer'])
         state['history'] = (state['history'] + [dict(role='user', content=question),
-                                              dict(role='assistant', content=result['answer'])])[-8:]
+                                              dict(role='assistant', content=result['answer'],references=result['references'])])[-8:]
         return result | dict(answer_html=render_text(result['answer']), conversation_id=state['id'],
                              active_card_id=state['card_id'], active_title=active['title'] if active else None,
                              version=state['version'], scope='course_context', checks=checks,

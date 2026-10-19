@@ -1,0 +1,12 @@
+{% extends 'learning_base.html' %}
+{% block title %}{{ document.title }}{% endblock %}
+{% block content %}
+<p class="eyebrow">MES DOCUMENTS · {{ document.role_label }}</p><h1>{{ document.title }}</h1>
+<p class="muted">{{ document.scope_label }} · {{ document.page_count }} pages · {{ document.entry_count }} contenus préparés</p>
+<p><a href="{{ url_for('course',course_id=course.course_id) }}#documents">← Mes documents</a> · <a href="{{ document.pdf_url }}" target="_blank" rel="noopener">Ouvrir le PDF ↗</a></p>
+{% if document.status!='ready' %}<p class="notice">Préparation {{ document.status }}. {{ document.error or 'Les lots terminés sont consultables ; le reste est à reprendre depuis Mes documents.' }}</p>{% endif %}
+{% if document.role=='correction' %}<p class="notice">Ce document contient des corrigés. Ouvre les contenus seulement après avoir essayé.</p>{% endif %}
+{% for e in entries %}<details class="learning-panel"><summary>{{ e.title }} <small>· {{ e.kind|card_type_label }}</small></summary>{{ e.html|safe }}<div class="study-actions"><button type="button" data-document-entry="{{ e.id }}" data-title="{{ e.title }}">En discuter avec StudyPilot</button></div></details>{% else %}<p>Les contenus sont en préparation. Le PDF original reste disponible.</p>{% endfor %}
+{% endblock %}
+{% block assistant %}<aside id="document-tutor" class="learning-dock" aria-label="Assistant du document" data-course="{{ course.course_id }}" data-part="{{ part_number }}" data-pdf="{{ main_pdf }}" data-title="{{ document.title }}"></aside>{% endblock %}
+{% block scripts %}<script src="/static/document_chat.js" defer></script>{% endblock %}

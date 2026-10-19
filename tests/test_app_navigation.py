@@ -253,7 +253,8 @@ class AppNavigationTests(
                     response = self.client.get('/revision', query_string={'course_id': requested})
                 self.assertEqual(response.status_code, 200)
                 text = response.get_data(as_text=True)
-                selected = re.findall(r'<option\s+value="([^"]+)"\s+selected', text)
+                course_options = re.search(r'<select id="revision-course">(.*?)</select>',text,re.S).group(1)
+                selected = re.findall(r'<option\s+value="([^"]+)"\s+selected', course_options)
                 self.assertEqual(selected, [expected] if expected else [])
                 if expected:
                     self.assertIn(f'/course/{expected}#documents', text)

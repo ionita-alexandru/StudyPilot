@@ -76,8 +76,12 @@ def chat(
         return gemma_chat(messages=messages, model=model or STUDY_MODEL,
                           format=format, options=merged_options,
                           think=AI_THINK if think is None else think)
+    if AI_PROVIDER == 'gemini':
+        from src.ai.gemini import gemini_chat
+        return gemini_chat(messages=messages,model=model or STUDY_MODEL,format=format,options=merged_options,
+                           think=AI_THINK if think is None else think)
     if AI_PROVIDER != "ollama":
-        raise AIUnavailableError("STUDYPILOT_AI_PROVIDER doit être ollama ou gemma.")
+        raise AIUnavailableError("STUDYPILOT_AI_PROVIDER doit être ollama, gemma ou gemini.")
 
     kwargs: dict[str, Any] = {
         "model": model or STUDY_MODEL,

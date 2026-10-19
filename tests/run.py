@@ -20,7 +20,7 @@ CORE = {
     'test_gemma_provider', 'test_gemma_sdk',
     'test_generation_contracts', 'test_part_study', 'test_pdf_structure',
     'test_presentation_quality', 'test_quota_stop',
-    'test_storage_atomic', 'test_upload_service',
+    'test_storage_atomic', 'test_upload_service', 'test_course_documents',
 }
 
 

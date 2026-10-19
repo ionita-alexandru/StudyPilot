@@ -14,6 +14,11 @@ Le parcours du cours regroupe **Apprendre**, **Mes documents** et **Ma progressi
 Le catalogue se déplie à la demande ; le chat peut être agrandi sans perdre la
 discussion ni le brouillon. Les anciennes adresses restent accessibles.
 
+La session propose désormais **Guidé**, **Express** et **Libre**, un programme
+compatible avec le temps disponible, le rappel sans regarder et la reprise en pause.
+**Mes documents** permet d’ajouter un PDF complémentaire avec son rôle et son périmètre.
+Le [guide d’utilisation et les limites](docs/GUIDAGE_ET_COMPLEMENTS.md) détaille ce lot.
+
 Le [bilan du parcours pédagogique du 18 octobre](docs/PARCOURS_PEDAGOGIQUE_2026-10-18.md) décrit les exercices persistants, les corrections contrôlées, la progression commune et le parcours Découvrir.
 
 La [relecture et le nettoyage du 16 octobre 2026](docs/RELECTURE_ET_NETTOYAGE.md) détaillent les corrections des fiches, les vérifications et les archives récupérables.
@@ -37,7 +42,7 @@ le parcours commun aux futurs PDF, les vérifications et les limites observées.
 - Les pages physiques du PDF sont conservées dans les sources.
 - Aucun quota arbitraire de parties, notions ou fiches.
 - Les données actives d'un cours sont regroupées par `course_id`.
-- Les appels Gemma et Ollama passent par un client IA unique.
+- Les appels Gemma, Gemini et Ollama passent par un client IA unique.
 - Les objets persistants sont versionnés avec `schema_version`.
 - Une étape du pipeline peut être testée et relancée sans recalculer tout le projet.
 

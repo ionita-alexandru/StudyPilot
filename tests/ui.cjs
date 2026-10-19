@@ -101,3 +101,21 @@ test('shared progress migrates both screens and distinguishes assistance from se
   assert.equal(progress.get('a').assessment.exerciseId,'ex1');
   progress.clear(['a']);assert.equal(progress.get('b').status,'review');
 });
+
+
+const planner = require('../static/study_plan.js');
+test('guided plans keep prerequisites first and never exceed the announced budget', () => {
+  const cards=[{card_id:'apply',title:'Application',prerequisite_ids:['base']},{card_id:'base',title:'Base'}];
+  for(const seconds of [300,600,1800,3600,10800]) for(const level of ['new','some','solid']) {
+    const plan=planner.build(cards,{seconds,level,mode:'express',pomodoro:'25'});
+    assert.ok(plan.activitySeconds+plan.breakSeconds+plan.reviewSeconds+plan.spareSeconds<=seconds);
+    const ids=plan.items.map(c=>c.card_id);if(ids.includes('apply'))assert.ok(ids.indexOf('base')<ids.indexOf('apply'));
+  }
+  const plan=planner.build(cards,{seconds:600,level:'new'});assert.equal(plan.items.length,0);assert.equal(plan.omitted.length,2);
+});
+test('deadline keeps running during pause and long background intervals preserve focus and breaks', () => {
+  const clock={deadline:100000,remaining:100,last:0,paused:true};assert.equal(planner.remaining(clock,25000),75);
+  assert.equal(planner.remaining({...clock,deadline:null},25000),100);
+  const phase=planner.advance('focus',1500,3600,1500,300);
+  assert.equal(phase.worked,3000);assert.equal(phase.phase,'focus');assert.equal(phase.left,1500);
+});

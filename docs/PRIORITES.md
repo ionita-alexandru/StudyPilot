@@ -1,8 +1,8 @@
 # Organisation et priorités StudyPilot
 
 Cadrage révisé le 19 octobre 2026. La navigation a été **validée par l’utilisateur**,
-avec un assistant central et une interface interactive et légère. Les modalités
-Express et compléments restent des propositions, pas des fonctionnalités livrées.
+avec un assistant central et une interface interactive et légère. Une première version du guidage, d’Express et des compléments PDF est maintenant disponible.
+Le détail des fonctions livrées et de leurs limites figure dans `GUIDAGE_ET_COMPLEMENTS.md`.
 L’état précédent est décrit dans
 `PARCOURS_PEDAGOGIQUE_2026-10-18.md`.
 
@@ -219,3 +219,12 @@ Troisième lot d'interface réalisé le 19 octobre 2026 : cadre commun étendu a
 chapitres et aux sessions de révision, avec chat fixe et menu lié au cours choisi.
 Le contexte du chapitre reste consultable dans un panneau repliable. Ce lot ne
 modifie pas la logique pédagogique du minuteur ni les critères de génération.
+
+
+Quatrième lot réalisé le 19 octobre 2026 : programmes locaux guidés et Express,
+niveau/objectif/temps, repères déclaratifs facultatifs, rappel actif, adaptation du
+budget, reprise d’une session et compléments PDF avec sources distinctes. Le modèle
+d’IA ne calcule pas les durées : le planificateur local les contrôle. L’adaptateur
+Gemini est préparé ; l’activation et une comparaison réelle attendent confirmation
+du forfait gratuit du projet Google. Voir `GUIDAGE_ET_COMPLEMENTS.md` pour les
+contrôles effectués, les fonctions exactes et les limites qui restent à traiter.

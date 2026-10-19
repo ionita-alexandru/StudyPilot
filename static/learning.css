@@ -65,3 +65,6 @@ mjx-container[display=true]{max-width:100%;overflow-x:auto;overflow-y:hidden}
  h1{font-size:29px}.next-step h2{font-size:24px}.course-secondary{gap:12px}.progress-overview{grid-template-columns:1fr;gap:0}.progress-overview article{margin:6px 0;flex-direction:row;align-items:center;gap:20px}
  .core-card{font-size:16px}.sidebar-footer{padding-top:24px}
 }
+
+#complement-form{display:grid;gap:16px}#complement-form label{display:grid;gap:8px;font-size:14px}.document-fields{display:grid;grid-template-columns:1fr 1fr;gap:14px}#complement-form input[type=file]{padding:12px;border:1px dashed #48536a;border-radius:10px;max-width:100%;width:100%;color:var(--muted)}.document-caption{font-size:12px}.document-row{padding:20px 0;border-top:1px solid var(--line);margin-top:16px}.document-row h4{font-size:16px;margin:0}.document-row p{font-size:13px}.document-row .study-actions{margin:12px 0;font-size:13px}.document-row details{margin-top:14px;font-size:12px}.document-row select{margin:8px 8px 8px 0}.document-row button{font-size:12px}#complement-status{font-size:13px;color:var(--accent)}
+@media(max-width:760px){.document-fields{grid-template-columns:1fr}}

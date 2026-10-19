@@ -10,6 +10,7 @@
       class="sp-revision-setup"
     >
       <div class="sp-revision-heading">
+        <div id="session-resume" class="learning-panel" hidden><p id="session-resume-text"></p><button type="button" id="session-resume-button">Reprendre ma session</button><button type="button" id="session-discard-button">Préparer une nouvelle session</button></div>
         <span class="sp-revision-kicker">
           MODE RÉVISION
         </span>
@@ -44,10 +45,17 @@
             </option>
           </select>
         </div>
+        <div class="sp-config-block plan-options">
+          <label for="revision-mode">Mon parcours</label>
+          <select id="revision-mode"><option value="guided">Guidé · avancer à mon rythme</option><option value="express">Express · prioriser l’essentiel</option><option value="free">Libre · choisir mes fiches</option></select>
+          <div class="plan-fields"><label>Mon niveau<select id="revision-level"><option value="new">Je découvre le cours</option><option value="some" selected>J’ai quelques bases</option><option value="solid">Je veux consolider</option></select></label><label>Mon objectif<select id="revision-goal"><option value="understand">Comprendre les idées</option><option value="practice">Savoir appliquer</option><option value="consolidate">Retenir et me vérifier</option></select></label></div>
+          <details class="plan-details"><summary>Quelques repères pour mieux me guider · facultatif</summary><div id="revision-diagnostic"></div><label>Une difficulté ou une priorité ?<textarea id="revision-notes" rows="2" maxlength="600" placeholder="Une notion qui me bloque, ce que je prépare…"></textarea></label><small>Ces repères sont déclaratifs ; ils ne remplacent pas un exercice.</small></details>
+        </div>
         <div class="sp-config-block">
-          <label>
-            Temps de travail
-          </label>
+          <label for="revision-clock">Mon temps disponible</label>
+          <select id="revision-clock"><option value="duration">Une durée · pause suspend le compteur</option><option value="deadline">Une heure limite · elle continue pendant les pauses</option></select>
+          <label id="deadline-field" hidden>Terminer avant<input type="datetime-local" id="revision-deadline"></label>
+          <p class="muted plan-caption">Pauses prévues et bilan compris. Les durées des activités sont des estimations.</p>
           <div class="sp-duration-options">
             <button type="button" data-duration="20">
               20 min
@@ -77,7 +85,7 @@
               id="revision-custom-duration"
               type="number"
               min="5"
-              max="240"
+              max="480"
               placeholder="Durée personnalisée"
               aria-label="Durée personnalisée en minutes"
             >
@@ -129,7 +137,7 @@
           class="sp-revision-start"
           type="button"
         >
-          Commencer la session
+          Préparer mon parcours
           <span>→</span>
         </button>
         <p
@@ -137,6 +145,7 @@
           class="sp-revision-card-info"
         ></p>
       </div>
+      <section id="revision-plan" class="learning-panel" hidden aria-labelledby="plan-title"><p class="eyebrow">TON POINT DE DÉPART</p><h2 id="plan-title">Un programme à ta mesure</h2><p id="plan-description"></p><ol id="plan-items" class="plan-items"></ol><details id="plan-more" hidden><summary>La suite du programme</summary><ol id="plan-rest" class="plan-items" start="4"></ol></details><details><summary>Voir ce qui reste à travailler</summary><ul id="plan-omitted"></ul></details><p id="plan-warning" class="muted"></p><button id="revision-launch" class="learning-primary" type="button">C’est parti →</button></section>
     </section>
 
 <section
@@ -166,6 +175,7 @@
       </button>
     </div>
   </header>
+  <div class="session-guidance"><p id="session-guidance" role="status"></p><small id="session-step"></small><div class="study-actions"><button type="button" id="session-recall">Me rappeler sans regarder</button><button type="button" id="session-skip">Passer pour l’instant</button><button type="button" id="session-replan">Ajuster le temps restant</button></div><div id="session-adjust" hidden><label>Minutes disponibles désormais<input id="session-new-minutes" type="number" min="5" max="480" value="30"></label><button id="session-apply-time" type="button">Recalculer la suite</button><p class="muted">En heure limite, cela fixe une nouvelle échéance à partir de maintenant.</p></div></div>
   <div class="sp-revision-workspace">
 
     <div class="sp-revision-study-pane">
@@ -182,7 +192,7 @@
           </strong>
         </div>
         <div class="sp-session-work-left">
-          Travail restant
+          Temps restant
           <strong id="session-work-time">
             45:00
           </strong>
@@ -227,6 +237,7 @@
         </div>
         <div class="study-actions"><button type="button" data-revision-action="example">Un exemple</button><button type="button" data-revision-action="explain">Approfondir</button><button type="button" data-revision-action="exercise">M’entraîner</button></div>
 
+        <label id="recall-field" class="recall-field" hidden>Ce que je retiens, sans regarder<textarea id="revision-recall" rows="3" maxlength="1200" placeholder="Écris l’idée, les conditions ou les étapes…"></textarea><small>Ton rappel est privé à cette session ; demande au chat de le vérifier si tu le souhaites.</small><button type="button" id="revision-check-recall">Faire vérifier mon rappel</button></label>
         <div
           id="revision-rating"
           class="sp-revision-rating"
@@ -270,9 +281,7 @@
       <span class="sp-revision-kicker">
         SESSION TERMINÉE
       </span>
-      <h1>
-        Bien joué.
-      </h1>
+      <h1>Ton point d’étape</h1><p id="summary-description"></p><p id="summary-next"></p><details><summary>Les notions laissées pour plus tard</summary><ul id="summary-omitted"></ul></details>
       <div class="sp-summary-grid">
         <div>
           <strong id="summary-time">
@@ -317,4 +326,4 @@
     </section>
 {% endblock %}
 {% block assistant %}<aside class="learning-dock sp-revision-chat-panel" aria-label="Assistant de révision" hidden></aside>{% endblock %}
-{% block scripts %}<script src="/static/revision.js" defer></script><script src="/static/cards.js" defer></script>{% endblock %}
+{% block scripts %}<script src="/static/study_plan.js" defer></script><script src="/static/revision.js" defer></script><script src="/static/cards.js" defer></script>{% endblock %}

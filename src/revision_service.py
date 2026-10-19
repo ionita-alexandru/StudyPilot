@@ -108,13 +108,35 @@ def revision_course_data(
             cards.append(data)
 
 
+    from src.course_documents import combined_guide
+    from src.courses.study_guide import entry_card
+    combined = combined_guide(course, plan)
+    if combined:
+        for entry in combined['entries']:
+            if entry['role'] != 'core' or entry.get('optional') or not entry.get('document_id'):
+                continue
+            part = next((p for p in selected_parts if p['id'] == entry['part_id']), None)
+            if not part:
+                continue
+            card = entry_card(entry, combined)
+            cards.append(dict(card, part_number=str(part['number']),part_title=entry.get('document_title',part['title']),pdf_url=entry['pdf_url']))
     if not cards:
         raise ValueError(
             "Aucune fiche validée disponible. Le traitement pédagogique du cours doit être terminé ou repris."
         )
 
 
+    from src.learning_view import learning_view
+    learning = learning_view(course, plan)
+    metadata = {e['id']: e for e in learning['entries']}
+    order = {e['id']:index for index,e in enumerate(learning['entries'])}
+    cards.sort(key=lambda c:order.get(c['card_id'],len(order)))
+    for card in cards:
+        entry = metadata.get(card['card_id'], {})
+        card['objective'] = entry.get('objective', card['title'])
+        card['prerequisite_ids'] = [p['id'] for p in entry.get('prerequisites_view', []) if p.get('id')]
     return {
+        'revision': learning.get('revision'),
         "course": {
             "course_id": course["course_id"],
             "title": course["title"],

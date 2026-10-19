@@ -590,7 +590,7 @@ def answer_part_question(
 
     excerpts = "\n\n".join(
         (
-            f"[PAGE PHYSIQUE {context['page']}] "
+            f"[DOCUMENT {context.get('document_title',course_title)} · {context.get('document_role','cours principal')} · PAGE PHYSIQUE {context['page']}] "
             + ("[FICHE RELUE liée au PDF, pas une citation littérale] " if context.get('origin') == 'editorial_review' else '')
             +
             f"{context['content']}"
@@ -611,6 +611,9 @@ def answer_part_question(
                 "role": "system",
                 "content": (
                     "Tu es StudyPilot, assistant pédagogique. "
+                    "Chaque passage indique son document. Attribue les références au bon document. "
+                    "Un complément n'élargit pas automatiquement le programme obligatoire. "
+                    "Si deux documents se contredisent, explicite le désaccord au lieu de les fusionner. "
                     "Réponds toujours en français et directement à la question. "
                     "Explique comme un bon professeur particulier : simplement, "
                     "précisément et progressivement. Utilise plusieurs petits "
@@ -664,6 +667,7 @@ def answer_part_question(
                     + ("PLAN DU COURS (orientation, pas une citation PDF) :\n" + course_outline[:9000] + "\n\n" if course_overview else "")
                     + f"PARTIE ACTIVE : {(part or {}).get('title', '')}\n\n"
                     + (f"FICHE OU EXERCICE ACTIF : {active_card['title']}\n{active_card['body']}\n\n" if active_card else '')
+                    + (f"PROFIL DÉCLARÉ, À PRENDRE COMME UN REPÈRE ET NON COMME UNE MAÎTRISE VÉRIFIÉE : {active_card.get('learner_profile')}\n\n" if active_card and active_card.get('learner_profile') else '')
                     + f"ACTION DEMANDÉE : {intent}\n\n"
                     + (f"EXERCICE EN COURS (énoncé immuable) : {exercise['statement']}\n\n" if exercise else '')
                     +

@@ -281,8 +281,10 @@ def _parts(message):
     return parts or [{'text': ''}]
 
 
-def gemma_chat(*, messages, model, format=None, options=None, think=None):
-    if model not in MODELS:
+def gemma_chat(*, messages, model, format=None, options=None, think=None, _allowed_models=None):
+    if model not in (_allowed_models if _allowed_models is not None else MODELS):
+        if _allowed_models is not None:
+            raise GemmaServiceError('Modèle Gemini non autorisé : utilise le modèle Flash configuré, sans repli automatique.')
         raise GemmaServiceError('Le fournisseur gemma attend gemma-4-31b-it ou gemma-4-26b-a4b-it. '
             'Ne pas conserver un identifiant de modèle Ollama dans STUDYPILOT_MODEL.')
     contents = []; instructions = []

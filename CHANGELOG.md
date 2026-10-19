@@ -1,5 +1,30 @@
 # Historique des changements
 
+## 2026-10-19 — Guidage, Express et compléments PDF
+
+- Programme guidé ou Express depuis le niveau déclaré, l’objectif, les prérequis
+  identifiés, la progression et le temps disponible. Proposition avant démarrage,
+  activités retenues et notions reportées explicites.
+- Budget incluant pauses prévues et bilan ; distinction durée/heure limite,
+  compteur fondé sur l’heure réelle, rappel actif, passage d’une notion,
+  ajustement du temps et reprise d’une session conservée dans le navigateur.
+- Ajout de compléments PDF au même cours : rôle, périmètre, file unique,
+  lots contrôlés, checkpoints et reprise bornée. Les doublons sont refusés.
+- Ressources et références document/page distinctes dans les fiches et le chat ;
+  corrigés exclus du contexte ordinaire. Nouveaux noyaux obligatoires regroupés
+  par document. Les compléments facultatifs ne gonflent pas le programme.
+- Alignement de l’ordre des sessions sur le parcours, conservation de l’exercice
+  après un ajout documentaire, et transmission des repères déclarés au tutorat.
+- Adaptateur Gemini Flash préparé ; moteur actif conservé, sans bascule ni essai
+  réel avant confirmation du forfait Google associé à la clé.
+
+Vérifications : 123 tests Python, 8 tests JavaScript réussis ; parcours Express,
+pause, rappel, reprise, ajustement et formulaire des documents contrôlés dans le
+navigateur, dont un affichage à 390 × 844. Tests de compléments avec PDF synthétiques
+et génération simulée. Aucun benchmark d’un nouveau modèle ni qualité de génération
+sur complément réel revendiqué. Détails : `docs/GUIDAGE_ET_COMPLEMENTS.md`.
+
+
 ## 2026-10-19 — Cadre commun pour les chapitres et les révisions
 
 - Migration des discussions par chapitre et des sessions de révision vers le même
