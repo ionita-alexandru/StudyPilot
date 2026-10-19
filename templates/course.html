@@ -18,7 +18,7 @@
 {% set state=learning.states.get(part.id,{}) %}{% for issue in state.get('errors',[])+state.get('warnings',[]) %}<p class="notice">{{ issue }}</p>{% endfor %}
 <ul class="notion-list">{% for e in learning.entries if e.part_id==part.id %}<li data-notion="{{ e.id }}" data-search="{{ part.title }} {{ e.title }} {{ e.objective }} {{ e.aliases|default([])|join(' ') }}"><a href="{{ url_for('discover',course_id=course.course_id,card=e.id) }}">{{ e.title }}</a><small data-progress-id="{{ e.id }}"></small></li>{% else %}<li>Aucune notion publiée dans ce chapitre.</li>{% endfor %}</ul>
 <a class="chapter-question" href="{{ url_for('part',course_id=course.course_id,part_number=part.number) }}">Poser une question sur ce chapitre →</a></details>{% endfor %}
-</details></div><aside class="learning-panel course-tutor" id="course-tutor" data-part="{{ plan.parts[0].number }}" data-pdf="{{ pdf_url }}" data-title="{{ course.title }}"></aside></div>
+</details></div></div>
 </section>
 <section id="documents" data-course-panel aria-labelledby="documents-title">
 <h2 id="documents-title">Mes documents</h2><p class="muted">Retrouve le support et les passages utilisés pour préparer les notions.</p>
@@ -37,4 +37,5 @@
 <ul class="notion-list learning-panel" id="progress-list"></ul>
 </section></div>
 {% endblock %}
+{% block assistant %}<aside class="learning-dock" id="course-tutor" aria-label="Assistant du cours" data-part="{{ plan.parts[0].number }}" data-pdf="{{ pdf_url }}" data-title="{{ course.title }}"></aside>{% endblock %}
 {% block scripts %}<script defer src="/static/course_workspace.js"></script>{% endblock %}

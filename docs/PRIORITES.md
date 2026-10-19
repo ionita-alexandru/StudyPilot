@@ -206,3 +206,10 @@ Changements cohérents et limités, vérifications adaptées, commit descriptif 
 vérifié. Une proposition documentée reste une proposition. Ne pas inventer résultat
 de benchmark ou de test, matériel, identité ou affiliation. Demander les informations
 nécessaires lorsqu’elles manquent. Les propositions restantes ne décrivent pas des fonctions livrées.
+
+
+Deuxième lot d'interface réalisé le 19 octobre 2026 : barre de discussion permanente
+sur le parcours et les fiches, historique repliable, formulaire commun plus compact,
+menu latéral sobre avec tiroir mobile et lecture centrale. Les références visuelles
+fournies ont guidé l'espacement et les accents lumineux ; leurs images ne sont pas
+intégrées au produit. Le moteur IA et les fonctions planifiées ne changent pas.

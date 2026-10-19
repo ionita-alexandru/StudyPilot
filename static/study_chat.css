@@ -48,3 +48,48 @@ body:has(.tutor-dialog[open]){overflow:hidden}
 .tutor-dialog a{color:#aaccff}
 .tutor-toolbar button:focus-visible{outline:2px solid #c4b0ff;outline-offset:3px}
 @media(max-width:600px){.tutor-dialog{width:100vw;height:100dvh;max-height:100dvh;margin:0;border:0;border-radius:0}.tutor-dialog .tutor-expanded-root{padding:12px 14px}.tutor-dialog .tutor-followups{margin-top:8px}.tutor-dialog .tutor-message{padding:12px 0}.tutor-dialog .sp-chat-meta{display:none}}
+
+/* Formulaire commun, inspiré de l'accueil : contexte lisible et envoi compact. */
+.tutor-composer .chat-input-label{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.tutor-composer form.chat-composer{display:block;margin:12px 0 0;padding:12px 16px;border:1px solid #65557f;border-radius:20px;background:linear-gradient(115deg,#25233f 0%,#191f31 60%,#332332 100%)}
+.tutor-composer form.chat-composer:focus-within{border-color:#b2a0dc;box-shadow:0 0 0 2px #ac91df12}
+.tutor-composer .chat-composer textarea{min-height:52px;max-height:120px;resize:vertical;padding:3px 2px;border:0;background:transparent;box-shadow:none;outline:none;font-size:15px;line-height:1.6}
+.tutor-composer .chat-composer textarea::placeholder{color:#a2abc1}
+.composer-footer{display:flex;align-items:center;gap:10px;margin-top:5px;min-width:0}
+.composer-context{display:flex;gap:8px;align-items:center;min-width:0;flex:1}
+.composer-context .tutor-subject{margin:0;font-size:11px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#b5c1d6}
+.context-dot{width:6px;height:6px;border-radius:50%;background:#b8b9f0;flex-shrink:0}
+.composer-footer [data-chat-status]{font-size:11px;color:#c6bddf}
+.tutor-composer .composer-footer button{display:grid;place-items:center;width:40px;height:40px;min-width:40px;padding:0;border:0;border-radius:13px;background:linear-gradient(135deg,#f1ad96,#d18fb6);color:#231b2b;font:24px/1 system-ui}
+.tutor-composer .composer-footer button:hover{filter:brightness(1.1)}
+.tutor-composer [data-chat-error]:empty{display:none}
+.tutor-docked{display:flex;flex-direction:column;max-height:75dvh;padding:0;border:0;background:transparent;border-radius:20px;min-height:0}
+.tutor-docked>h3{display:none}
+.tutor-docked .tutor-toolbar{flex:none;justify-content:space-between;gap:10px;margin:0;padding:0 8px}
+.tutor-docked .tutor-toolbar button{font-size:12px;min-height:32px;padding:5px 8px;border:0;background:#0e131e;color:#b7c3d8}
+.tutor-docked .tutor-toolbar button:hover{background:#252b3d}
+.tutor-docked [data-chat-messages]{min-height:0;max-height:none;flex:1;padding:0 20px;scrollbar-gutter:stable}
+.tutor-docked .chat-composer{flex:none}
+.tutor-docked .tutor-reset{order:2;align-self:flex-start;margin:2px 16px 0;background:none;border:0;padding:4px;font-size:11px;text-decoration:none}
+.tutor-docked [data-chat-error]{margin:6px 16px 0;max-height:15dvh;overflow:auto;flex:none}
+.tutor-docked .tutor-exercise{flex:none;margin:6px 16px 0;max-height:22dvh;overflow:auto;padding:8px 12px;font-size:13px}
+.tutor-docked .tutor-exercise .tutor-followups{display:inline-flex;margin:6px 12px 6px 0}
+.tutor-docked .tutor-exercise details{max-height:14dvh}
+.tutor-docked:not(.tutor-discussion-open) .tutor-exercise{padding:4px 12px;border:0;background:#101622}
+.tutor-docked:not(.tutor-discussion-open) .tutor-exercise details,.tutor-docked:not(.tutor-discussion-open) .tutor-exercise .tutor-followups{display:none}
+.tutor-docked.tutor-discussion-open{padding:10px 8px 8px;background:#101622;border:1px solid #384158;box-shadow:0 -16px 60px #0005}
+.tutor-docked.tutor-discussion-open .tutor-toolbar button{background:transparent}
+.tutor-docked .tutor-messages:empty::before{content:'Un exemple, une explication, un exercice : on avance ensemble.';display:block;padding:28px 0;color:#a1aec5;font-size:14px}
+.tutor-docked.tutor-discussion-open .tutor-messages:not(:empty){min-height:100px;height:38dvh}
+.tutor-dialog .tutor-docked>h3{display:block;font-size:18px}
+.tutor-dialog .tutor-docked{max-height:none}
+.tutor-dialog .tutor-discussion-toggle{display:none}
+.tutor-dialog .tutor-docked .tutor-messages:not(:empty){height:auto}
+@media(max-width:600px){
+ .tutor-composer form.chat-composer{border-radius:17px;padding:10px 12px}
+ .tutor-composer .chat-composer textarea{font-size:16px;min-height:48px;max-height:90px}
+ .tutor-docked{max-height:74dvh}.tutor-docked .tutor-toolbar{padding:0 2px}
+ .tutor-docked [data-chat-messages]{padding:0 10px}
+ .tutor-docked .tutor-exercise{margin:4px 4px 0}
+ .tutor-docked .composer-footer [data-chat-status]{max-width:85px;line-height:1.3}
+}

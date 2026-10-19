@@ -1,5 +1,29 @@
 # Historique des changements
 
+## 2026-10-19 — Assistant permanent et espace de cours
+
+- Barre de saisie fixe dans le parcours, les fiches, Mes documents et Ma progression.
+  Son contexte indique le cours ou la notion active ; la discussion se déplie au-dessus.
+- Formulaire commun plus compact, avec accents bleu-violet et rose, bouton d'envoi
+  accessible et état d'attente distinct. Le plein écran reste disponible.
+- Menu latéral repliable : retour aux cours, Apprendre, Mes documents, Ma progression.
+  Sur petit écran, fermeture avec Échap et navigation clavier contenue dans le menu.
+- Lecture sur une colonne, surfaces plus sobres et lumière statique discrète.
+- Hauteur réservée sous le contenu pour garder les dernières actions accessibles.
+  Choix question/réponse d'exercice conservé visible même avec la discussion repliée.
+
+Vérifications : 117 tests Python et 6 tests JavaScript existants réussis ; syntaxe
+JavaScript contrôlée. Vérifications dans le navigateur à 1280 × 900 et 390 × 844 :
+formules, discussion enregistrée, accès au bas de la fiche, menu mobile, maintien du
+brouillon entre les trois rubriques et au retour du plein écran. Compatibilité du
+formulaire commun vérifiée dans une session de révision, mise en pause sans bilan.
+Aucun appel de génération IA utilisé pour ces vérifications visuelles.
+
+Le menu et la barre fixe concernent l'espace du cours et les fiches d'apprentissage.
+Les écrans historiques de galerie, de chapitre et de session ne sont pas migrés
+vers cette nouvelle disposition dans ce lot. Les brouillons ne sont pas persistés
+entre deux chargements de page.
+
 ## 2026-10-19 — Navigation et confort du chat
 
 - Regroupement du parcours d'un cours dans Apprendre, Mes documents et Ma progression.

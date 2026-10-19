@@ -7,9 +7,9 @@
   const links = notions.map(item => item.querySelector('a'));
   const tutorHost = document.querySelector('#course-tutor');
   tutorHost.innerHTML = StudyChat.markup();
-  StudyChat.mount(tutorHost, {courseId, partNumber:tutorHost.dataset.part, pdfUrl:tutorHost.dataset.pdf});
+  const tutor = StudyChat.mount(tutorHost, {docked:true, courseId, partNumber:tutorHost.dataset.part, pdfUrl:tutorHost.dataset.pdf});
   tutorHost.querySelector('[data-chat-subject]').textContent = tutorHost.dataset.title;
-  document.querySelector('#open-course-chat').onclick = () => tutorHost.querySelector('.tutor-toolbar button').click();
+  document.querySelector('#open-course-chat').onclick = () => tutor.reveal();
 
   function refreshProgress() {
     workspace.querySelectorAll('[data-progress-id]').forEach(el => el.textContent = StudyProgress.label(el.dataset.progressId));
