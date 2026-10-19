@@ -6,4 +6,9 @@ MODELS = {'gemini-3.8-flash'}
 
 
 def gemini_chat(*, messages, model, format=None, options=None, think=None):
-    return gemma_chat(messages=messages,model=model,format=format,options=options,think=think,_allowed_models=MODELS)
+    # Flash refuse MINIMAL, utilisé par défaut pour Gemma sur le transport commun.
+    return gemma_chat(
+        messages=messages, model=model, format=format, options=options, think=think,
+        _allowed_models=MODELS,
+        _thinking_level='high' if think in (True, 'high') else 'low',
+    )

@@ -70,13 +70,15 @@ il ne prétend pas établir une nouvelle structure pédagogique parfaite.
 
 ## Moteur IA
 
-Gemma reste le moteur actif de cette installation. Un adaptateur Gemini Flash est
-préparé avec le transport Google commun et une liste explicite de modèle autorisé.
+Gemma reste le moteur actif de cette installation. Un adaptateur Gemini Flash utilise
+le transport Google commun et une liste explicite de modèle autorisé.
 Il ne bascule pas automatiquement de fournisseur et n’active pas la facturation.
 Google publie une offre gratuite pour [Gemini 3.8 Flash](https://ai.google.dev/gemini-api/docs/pricing),
-avec des limites propres au projet. L’éligibilité du projet associé à la clé et la
-facturation doivent être confirmées avant un essai réel. Aucun gain de qualité,
-quota disponible ou résultat comparatif Gemini/Gemma n’a été mesuré dans ce lot.
+avec des limites propres au projet. Après déclaration du forfait gratuit par
+l’utilisateur, un [essai sur trois cas fictifs](ESSAI_IA_2026-10-20.md) a réussi avec
+chaque moteur. Le paramètre de réflexion de Gemini a été corrigé. Aucun gain de
+qualité n’est démontré sur cet échantillon ; le moteur actif est conservé. La
+génération réelle de compléments avec Gemini reste à évaluer.
 
 Configuration une fois ces points vérifiés : `STUDYPILOT_AI_PROVIDER=gemini`,
 `STUDYPILOT_MODEL=gemini-3.8-flash`, clé dans `GEMINI_API_KEY`, puis redémarrage.
@@ -96,7 +98,8 @@ Contrôles navigateur : programme Express débutant de 30 minutes, début par le
 lancement, pause, rappel, reprise après rechargement, passage à 20 minutes, et formulaire
 de complément sur petit écran. La séparation des sources et les routes des PDF sont
 vérifiées avec des documents synthétiques et une génération simulée dans les tests.
-Aucun nouveau modèle ni génération de complément réel n’a été évalué pour sa qualité.
+La qualité de génération d’un complément réel n’a pas été évaluée dans ces contrôles.
+L’essai limité des modèles, réalisé ensuite, est décrit séparément ci-dessus.
 
 Le guidage reste fondé sur des règles locales et les métadonnées publiées. Un document
 peut contenir une figure ou une formule insuffisamment transcrite ; consulter l’original

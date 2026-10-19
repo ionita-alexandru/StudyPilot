@@ -29,6 +29,7 @@ class GemmaTests(unittest.TestCase):
             result=client.chat_json(model='gemini-3.8-flash',response_model=Contract,messages=[dict(role='user',content='Source de test')])
         self.assertEqual(result,{'ok':True})
         self.assertTrue(all(call.args[0]=='gemini-3.8-flash' for call in post.call_args_list))
+        self.assertEqual(post.call_args_list[-1].args[2]['generationConfig']['thinkingConfig']['thinkingLevel'],'low')
         with patch.object(gemma,'_post') as post,self.assertRaises(client.AIUnavailableError):
             gemini_chat(model='gemini-4-argon',messages=[dict(role='user',content='test')])
         post.assert_not_called()
@@ -46,6 +47,7 @@ class GemmaTests(unittest.TestCase):
         self.assertEqual(counted['systemInstruction'], generated['systemInstruction'])
         self.assertEqual(json.dumps(counted).count('SCH'), 1)
         self.assertEqual(generated['generationConfig']['maxOutputTokens'], 4000)
+        self.assertEqual(generated['generationConfig']['thinkingConfig']['thinkingLevel'], 'minimal')
         self.assertNotIn('responseMimeType', generated['generationConfig'])
 
     def test_schema_invalid_response_still_rejected(self):

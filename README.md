@@ -120,6 +120,12 @@ L'application est accessible sur `http://127.0.0.1:5000`. Sans clé, les fiches
 existantes restent consultables ; le chat et la génération nécessitent l'API.
 Le lanceur utilise `gemma-4-26b-a4b-it`, sauf configuration explicite différente.
 
+Gemini Flash est disponible en option. L’[essai limité du 20 octobre](docs/ESSAI_IA_2026-10-20.md)
+confirme l’accès à la génération, sans gain de qualité démontré sur les trois cas
+simples comparés ; Gemma reste donc le choix par défaut. Le script manuel
+`evaluer_assistants.py` permet de reproduire ce contrôle avec un projet gratuit
+confirmé. Il n’est jamais lancé par la suite de tests.
+
 Pour les commandes de diagnostic et de génération exécutées directement, définir
 aussi le fournisseur et le modèle dans le même terminal :
 

@@ -281,7 +281,7 @@ def _parts(message):
     return parts or [{'text': ''}]
 
 
-def gemma_chat(*, messages, model, format=None, options=None, think=None, _allowed_models=None):
+def gemma_chat(*, messages, model, format=None, options=None, think=None, _allowed_models=None, _thinking_level=None):
     if model not in (_allowed_models if _allowed_models is not None else MODELS):
         if _allowed_models is not None:
             raise GemmaServiceError('Modèle Gemini non autorisé : utilise le modèle Flash configuré, sans repli automatique.')
@@ -316,7 +316,7 @@ def gemma_chat(*, messages, model, format=None, options=None, think=None, _allow
     opts = options or {}
     payload['generationConfig'] = {'temperature': opts.get('temperature', 0.1),
         'maxOutputTokens': opts.get('num_predict', 5000),
-        'thinkingConfig': {'thinkingLevel': 'high' if think in (True, 'high') else 'minimal'}}
+        'thinkingConfig': {'thinkingLevel': _thinking_level or ('high' if think in (True, 'high') else 'minimal')}}
     response = _post(model, 'generateContent', payload, retry_tokens=count)
     candidates = response.get('candidates') or []
     if not candidates:

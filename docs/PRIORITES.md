@@ -1,6 +1,6 @@
 # Organisation et priorités StudyPilot
 
-Cadrage révisé le 19 octobre 2026. La navigation a été **validée par l’utilisateur**,
+Cadrage révisé le 20 octobre 2026. La navigation a été **validée par l’utilisateur**,
 avec un assistant central et une interface interactive et légère. Une première version du guidage, d’Express et des compléments PDF est maintenant disponible.
 Le détail des fonctions livrées et de leurs limites figure dans `GUIDAGE_ET_COMPLEMENTS.md`.
 L’état précédent est décrit dans
@@ -78,12 +78,15 @@ sans renvoyer tout le PDF à chaque message. Un meilleur modèle ne remplace pas
 
 ## IA sans paiement d’API : pistes à comparer
 
-Sources officielles consultées le 19 octobre 2026 ; aucun essai comparatif réalisé ici.
+Sources officielles consultées les 19 et 20 octobre 2026. Un
+[essai limité sur trois cas fictifs](ESSAI_IA_2026-10-20.md) a été réalisé après
+déclaration du forfait gratuit par l’utilisateur ; aucune supériorité de Gemini
+n’est démontrée. Gemma reste le moteur par défaut.
 
 | Piste | Intérêt à tester | Limite ou inconnue |
 | --- | --- | --- |
 | Ollama sur l’autre PC | Calcul local utilisable depuis ce PC, même sur un autre réseau | RTX 3060 Ti et 16 Go de RAM déclarés ; qualité et latence non mesurées. Adoption conditionnée à un gain réel. |
-| Gemini Flash gratuit | Alternative hébergée au Gemma actuel | Éligibilité et quotas actifs du compte à vérifier ; adaptation nécessaire. |
+| Gemini Flash gratuit | Accès à la génération confirmé, adaptateur corrigé | Trois cas simples réussis, sans gain de qualité démontré ; quotas actifs à consulter dans AI Studio. |
 | Groq gratuit | Autre candidat hébergé pour le chat | Limites par compte et modèle ; gain non mesuré dans StudyPilot. |
 
 [Ollama permet une écoute réseau via OLLAMA_HOST](https://docs.ollama.com/faq).
@@ -225,6 +228,7 @@ Quatrième lot réalisé le 19 octobre 2026 : programmes locaux guidés et Expre
 niveau/objectif/temps, repères déclaratifs facultatifs, rappel actif, adaptation du
 budget, reprise d’une session et compléments PDF avec sources distinctes. Le modèle
 d’IA ne calcule pas les durées : le planificateur local les contrôle. L’adaptateur
-Gemini est préparé ; l’activation et une comparaison réelle attendent confirmation
-du forfait gratuit du projet Google. Voir `GUIDAGE_ET_COMPLEMENTS.md` pour les
+Gemini est disponible en option ; un essai borné a confirmé l’accès après correction
+du paramètre de réflexion, sans justifier de changement du moteur actif. Voir
+`ESSAI_IA_2026-10-20.md` et `GUIDAGE_ET_COMPLEMENTS.md` pour les
 contrôles effectués, les fonctions exactes et les limites qui restent à traiter.

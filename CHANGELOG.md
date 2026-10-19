@@ -1,5 +1,24 @@
 # Historique des changements
 
+## 2026-10-20 — Compatibilité Gemini et essai limité des assistants
+
+- Paramètre de réflexion LOW pour Gemini Flash : MINIMAL causait un rejet HTTP 400.
+  Le réglage MINIMAL de Gemma est conservé et les deux réglages sont vérifiés dans
+  les tests existants, sans ajouter de test redondant ni d’appel IA à la suite.
+- Script d’évaluation manuelle bornée sur trois questions fictives par fournisseur,
+  confirmation du forfait gratuit requise, rapports locaux exclus de Git.
+- Six réponses relues : calcul, application Python et information absente d’une
+  source réussis par les deux modèles. Sur cet essai uniquement, moyennes de
+  3,67 s pour Gemma et 11,22 s pour Gemini ; aucune supériorité générale établie.
+  Le moteur actif reste Gemma. Aucun changement de facturation.
+
+Protocole, trois rejets de paramètre avant correction et limites des mesures :
+`docs/ESSAI_IA_2026-10-20.md`. La génération réelle de fiches avec Gemini et
+la qualité sur des documents complexes restent à évaluer.
+
+Vérifications : 123 tests Python et 8 tests JavaScript réussis ; les 16 tests du
+transport Google ont aussi été relancés après les assertions de compatibilité.
+
 ## 2026-10-19 — Guidage, Express et compléments PDF
 
 - Programme guidé ou Express depuis le niveau déclaré, l’objectif, les prérequis
