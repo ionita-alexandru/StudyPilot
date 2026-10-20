@@ -1,0 +1,23 @@
+{
+  "purpose": "Exercice synthétique de revue, sans appel de génération ni document personnel. Aucun de ces candidats n'est une sortie observée du logiciel.",
+  "cases": [
+    {
+      "id": "suite",
+      "objective": "Expliquer la formule d'une somme géométrique et ses conditions",
+      "source": {"document": "Mini-cours synthétique", "page": 1, "text": "Pour q différent de 1, la somme 1 + q + ... + q^n vaut (1 - q^(n+1)) / (1 - q). Pour q = 1, elle vaut n + 1. On suppose n entier naturel."},
+      "candidate": "Pour tout réel q, 1 + q + ... + q^n = (1 - q^(n+1)) / (1 - q)."
+    },
+    {
+      "id": "fonction",
+      "objective": "Distinguer une valeur renvoyée d'un affichage",
+      "source": {"document": "Mini-cours synthétique", "page": 2, "text": "return termine l'appel et fournit une valeur à l'appelant. Afficher avec print ne remplace pas return."},
+      "candidate": "Une fonction transmet une valeur à l'appelant avec return. print affiche une valeur et ne remplace pas ce renvoi."
+    },
+    {
+      "id": "source-absente",
+      "objective": "Vérifier une affirmation sur un mécanisme de cache",
+      "source": null,
+      "candidate": "Le cache est toujours invalidé après exactement dix minutes."
+    }
+  ]
+}

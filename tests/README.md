@@ -7,7 +7,7 @@
 node --test tests/ui.cjs
 ```
 
-Le profil courant compte 117 tests Python, plus 6 tests JavaScript. Les scénarios de `test_study_guide.py` couvrent le nouveau parcours sans appel IA : références, couverture, correction bornée, reprise, contexte conversationnel, exemple sans génération, calculs contrôlés, budget et préservation des originaux. Les contrôles du tuteur couvrent aussi les verdicts, exercices et réponses ambiguës.
+Le résumé de chaque commande indique le nombre de tests effectivement exécutés et leur résultat ; ce nombre évolue avec la suite et n'est pas figé ici. Les scénarios de `test_study_guide.py` couvrent le nouveau parcours sans appel IA : références, couverture, correction bornée, reprise, contexte conversationnel, exemple sans génération, calculs contrôlés, budget et préservation des originaux. Les contrôles du tuteur couvrent aussi les verdicts, exercices et réponses ambiguës.
 
 La suite courante sélectionne les risques communs : stockage, import, navigation, contrats IA, sources inventées, omissions, fiches, transcription des formules et reprise après interruption. Les réponses de génération sont simulées ; aucun résultat pédagogique réel n'est prétendu.
 

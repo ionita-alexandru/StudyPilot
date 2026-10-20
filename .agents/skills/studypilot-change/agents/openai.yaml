@@ -1,0 +1,4 @@
+interface:
+  display_name: "StudyPilot : changement ciblé"
+  short_description: "Repérer le code utile et les tests concernés"
+  default_prompt: "Utilise $studypilot-change pour préparer et vérifier cette amélioration de StudyPilot."

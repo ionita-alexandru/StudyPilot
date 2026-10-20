@@ -1,0 +1,4 @@
+interface:
+  display_name: "StudyPilot : fidélité aux sources"
+  short_description: "Comparer une fiche aux seules sources fournies"
+  default_prompt: "Utilise $studypilot-source-review pour comparer cette fiche aux sources fournies."
