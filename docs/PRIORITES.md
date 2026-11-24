@@ -6,6 +6,22 @@ Le détail des fonctions livrées et de leurs limites figure dans `GUIDAGE_ET_CO
 L’état précédent est décrit dans
 `PARCOURS_PEDAGOGIQUE_2026-10-18.md`.
 
+## Reprise du 24 novembre 2026
+
+Le parcours commun, les sessions guidées et Express et les compléments PDF sont
+disponibles. Le guidage s’appuie sur des règles locales et les durées restent des
+estimations. Le bilan retient désormais la dernière autoévaluation de chaque
+fiche et suggère de reprendre une difficulté qui subsiste.
+
+Priorité proposée pour la suite : éprouver le parcours complet avec des cours de
+disciplines différentes, depuis le PDF jusqu’à la révision et aux questions au chat.
+Vérifier en premier la fidélité des fiches aux sources, notamment les conditions,
+formules et figures, puis les réponses sur les passages ambigus ou absents.
+La [campagne d’octobre](ESSAI_IA_APPROFONDI_2026-10-20.md) a laissé une description
+de figure non étayée passer la relecture. La consigne a été renforcée ensuite,
+et son effet sur une nouvelle génération reste à mesurer. L’import complet d’un
+complément avec Gemini reste également à évaluer. Gemma reste le moteur par défaut.
+
 ## Demandes confirmées et constats
 
 L’utilisateur demande une organisation claire, moins de fonctions qui se recouvrent,

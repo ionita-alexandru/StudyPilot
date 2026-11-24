@@ -162,15 +162,21 @@ document.addEventListener('DOMContentLoaded', () => {
   function finish(message='Session arrêtée à ta demande.') {
     if(!running)return;running=false;clearInterval(timer);session.hidden=dock.hidden=true;summary.hidden=false;
     try{localStorage.removeItem(checkpointKey);}catch{}
-    const ids=new Set(completed.map(c=>c.card_id));const left=[...plan.omitted,...skipped,...(current&&!ids.has(current.card_id)?[current]:[]),...queue];
-    const unique=[...new Map(left.filter(c=>!ids.has(c.card_id)).map(c=>[c.card_id,c])).values()];
+    // Une notion peut être évaluée plusieurs fois pendant le même parcours.
+    const results = new Map(completed.map(card => [card.card_id, card]));
+    const mastered = [...results.values()].filter(card => card.rating === 'mastered').length;
+    const review = [...results.values()].filter(card => card.rating === 'review');
+    const left = [...plan.omitted, ...skipped, ...(current ? [current] : []), ...queue];
+    const unique = [...new Map(left.filter(card => !results.has(card.card_id)).map(card => [card.card_id, card])).values()];
     text('summary-description',message+' Les résultats concernent les activités réalisées, pas tout le cours.');
-    text('summary-time',`${Math.round(focusTime/60)} min`);text('summary-seen',ids.size);
-    text('summary-mastered',completed.filter(c=>c.rating==='mastered').length);text('summary-review',completed.filter(c=>c.rating==='review').length);
+    text('summary-time',`${Math.round(focusTime/60)} min`);text('summary-seen',results.size);
+    text('summary-mastered',mastered);text('summary-review',review.length);
     list($('summary-omitted'),unique,c=>c.reason||'À reprendre');
-    text('summary-next',unique.length?`Prochain pas : ${unique[0].title}.`:'Tu peux maintenant essayer un exercice sur une notion abordée.');
+    if (review.length) text('summary-next', `Tu peux commencer par revoir ${review[0].title}.`);
+    else if (unique.length) text('summary-next', `Tu peux poursuivre avec ${unique[0].title}.`);
+    else text('summary-next', 'Tu peux maintenant essayer un exercice sur une notion abordée.');
     try{const key='studypilot.revision.sessions.v1';let logs=JSON.parse(localStorage.getItem(key)||'[]');if(!Array.isArray(logs))logs=[];
-      logs.push({course_id:data.course.course_id,course_title:data.course.title,mode:$('revision-mode').value,planned_work_minutes:initialSeconds/60,worked_seconds:Math.floor(focusTime),cards_seen:ids.size,mastered:completed.filter(c=>c.rating==='mastered').length,review:completed.filter(c=>c.rating==='review').length,ended_at:new Date().toISOString()});localStorage.setItem(key,JSON.stringify(logs.slice(-100)));}catch{}
+      logs.push({course_id:data.course.course_id,course_title:data.course.title,mode:$('revision-mode').value,planned_work_minutes:initialSeconds/60,worked_seconds:Math.floor(focusTime),cards_seen:results.size,mastered,review:review.length,ended_at:new Date().toISOString()});localStorage.setItem(key,JSON.stringify(logs.slice(-100)));}catch{}
     summary.scrollIntoView({behavior:'smooth',block:'start'});
   }
   courseSelect.addEventListener('change',loadCourse);partSelect.addEventListener('change',updateCards);

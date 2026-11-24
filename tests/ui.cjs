@@ -119,3 +119,48 @@ test('deadline keeps running during pause and long background intervals preserve
   const phase=planner.advance('focus',1500,3600,1500,300);
   assert.equal(phase.worked,3000);assert.equal(phase.phase,'focus');assert.equal(phase.left,1500);
 });
+
+test('revision summary keeps the latest rating per card and points to remaining difficulties', async () => {
+  const script = fs.readFileSync(path.join(__dirname, '../static/revision.js'), 'utf8');
+  for (const finalRating of ['mastered', 'review']) {
+    const elements = new Map(), storage = new Map();
+    const element = () => ({value:'', hidden:true, style:{}, selectedOptions:[{textContent:'Tout le cours'}],
+      addEventListener(){}, replaceChildren(){}, append(){}, focus(){}, scrollIntoView(){}});
+    const get = id => {
+      if (!elements.has(id)) elements.set(id, element());
+      return elements.get(id);
+    };
+    const ratings = ['mastered','review'].map(rating => ({dataset:{rating}}));
+    get('revision-course').value = 'course';
+    get('revision-course').options = [{value:'course'}];
+    get('revision-mode').value = 'guided';
+    const card = {card_id:'base', title:'La notion de base', part_number:1};
+    const response = {course:{course_id:'course', title:'Cours'}, parts:[], cards:[card]};
+    vm.runInNewContext(script, {
+      document:{getElementById:get, addEventListener:(_event, init)=>init(), dispatchEvent(){},
+        querySelector:element, querySelectorAll:selector=>selector==='[data-rating]'?ratings:[], createElement:element},
+      window:{addEventListener(){}, scrollTo(){}}, URLSearchParams, location:{search:''},
+      Option:class {}, CustomEvent:class {}, setInterval(){}, clearInterval(){},
+      localStorage:{getItem:k=>storage.get(k), setItem:(k,v)=>storage.set(k,v), removeItem:k=>storage.delete(k)},
+      fetch:async()=>({ok:true,json:async()=>response}), StudyPlan:planner,
+      StudyProgress:{get:()=>({}), mark(){}}, StudyChat:{markup(){}, mount:()=>({select(){}, isBusy:()=>false})},
+    });
+    await new Promise(resolve => setImmediate(resolve));
+    get('revision-start').onclick();
+    get('revision-launch').onclick();
+    get('revision-reveal').onclick();
+    ratings[1].onclick();
+    assert.equal(get('revision-summary').hidden, true);
+    get('revision-reveal').onclick();
+    ratings.find(button=>button.dataset.rating===finalRating).onclick();
+    assert.equal(get('revision-summary').hidden, false);
+    assert.equal(get('summary-seen').textContent, 1);
+    assert.equal(get('summary-mastered').textContent, Number(finalRating==='mastered'));
+    assert.equal(get('summary-review').textContent, Number(finalRating==='review'));
+    assert.match(get('summary-next').textContent, finalRating==='review'?/revoir La notion de base/:/essayer un exercice/);
+    const [log] = JSON.parse(storage.get('studypilot.revision.sessions.v1'));
+    assert.equal(log.cards_seen, 1);
+    assert.equal(log.mastered, Number(finalRating==='mastered'));
+    assert.equal(log.review, Number(finalRating==='review'));
+  }
+});
