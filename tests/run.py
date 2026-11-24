@@ -36,6 +36,9 @@ def main():
     tick = time.monotonic()
     result = unittest.TextTestRunner(verbosity=2 if args.verbose else 1, durations=8).run(suite)
     print(f"Profil {'complet' if args.full else 'courant'} : {result.testsRun} tests en {time.monotonic()-tick:.1f} s.")
+    if result.skipped and not args.verbose:
+        for test, reason in result.skipped:
+            print(f"Test ignoré — {test.id()} : {reason}")
     return 0 if result.wasSuccessful() else 1
 
 

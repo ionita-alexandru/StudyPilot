@@ -2,7 +2,7 @@
 from pathlib import Path
 from tempfile import TemporaryDirectory
 import unittest
-from unittest.mock import patch
+from unittest.mock import Mock, patch
 import json
 from src.ai import client
 from src.courses import pedagogy, cards, learning_material, card_groups, pipeline, service
@@ -11,12 +11,27 @@ from test_pedagogy import MODEL, notion, page
 import manage
 
 class QuotaStopTests(unittest.TestCase):
-    def test_provider_429_is_typed_and_not_retried(self):
-        class RateError(Exception):status_code=429
-        with patch.object(client,'_ollama_chat',return_value=lambda **kw: (_ for _ in ()).throw(RateError('monthly usage limit'))), self.assertRaises(client.AIUsageLimitError):client.chat(messages=[])
+    def test_provider_quota_is_typed_and_not_retried(self):
+        class RateError(Exception):
+            status_code = 429
+
+        failures = {
+            'statut HTTP 429': RateError('quota atteint'),
+            'message de quota sans statut': RuntimeError('monthly usage limit'),
+        }
+        for reason, failure in failures.items():
+            with self.subTest(reason=reason):
+                provider = Mock(side_effect=failure)
+                with patch.object(client, 'AI_PROVIDER', 'ollama'), patch.object(client, '_ollama_chat', return_value=provider):
+                    with self.assertRaises(client.AIUsageLimitError):
+                        client.chat(messages=[])
+                provider.assert_called_once()
 
     def test_ordinary_failure_is_not_treated_as_quota(self):
-        with patch.object(client,'_ollama_chat',return_value=lambda **kw: (_ for _ in ()).throw(ConnectionError('network'))), self.assertRaises(ConnectionError):client.chat(messages=[])
+        provider = Mock(side_effect=ConnectionError('network'))
+        with patch.object(client, 'AI_PROVIDER', 'ollama'), patch.object(client, '_ollama_chat', return_value=provider):
+            with self.assertRaises(ConnectionError):
+                client.chat(messages=[])
 
     def test_checked_audit_stops_after_one_attempt(self):
         with patch.object(pedagogy,'chat_json',side_effect=client.AIUsageLimitError('429')) as call, self.assertRaises(client.AIUsageLimitError):

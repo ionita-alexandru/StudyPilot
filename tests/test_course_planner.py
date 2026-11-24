@@ -154,22 +154,22 @@ class PlannerBehaviorTests(unittest.TestCase):
         self.assertEqual(normalize_name("Cours-de-CSS"), normalize_name("Cours de CSS"))
         self.assertEqual(normalize_name("Réduction"), normalize_name("reduction"))
 
-class PlannerResumeTests(unittest.TestCase):
-    def test_saved_css_plan_resumes_without_rebuilding(self):
-        import json
+    def test_saved_plan_resumes_with_same_titles_and_other_overviews(self):
         from src.courses.planner import restore_preview, preview_snapshot
-        root = Path(__file__).resolve().parents[1]
-        pdf = root / "data" / "pdfs" / "Cours-de-CSS-c41d0f1887.pdf"
-        preview_file = root / "data" / "plans" / "Cours-de-CSS-c41d0f1887.json"
-        if not (pdf.exists() and preview_file.exists()):
-            self.skipTest("Fixtures CSS non disponibles")
-        document = extract_document(pdf)
-        saved = json.loads(preview_file.read_text(encoding="utf-8"))
-        restored = restore_preview(saved, document)
-        self.assertEqual(preview_snapshot(restored), saved)
-        self.assertEqual(len(restored["parts"]), 8)
-        with patch("src.courses.planner._json_ollama", return_value={"summary": "court"}):
-            generate_overviews(restored, document, max_parts=1, force_parts={"1"})
+        document = extract_document(self.path)
+        plan = initial_plan(document)
+        proposed = {"parts": [{"start_page": 1, "end_page": 4, "title": "Fondamentaux"},
+                              {"start_page": 5, "end_page": 8, "title": "Applications"}]}
+        with patch("src.courses.planner._json_ollama", return_value=proposed):
+            propose_ai_structure(plan, document)
+        plan["parts"][1]["overview"] = {"status": "draft", "summary": "Vue déjà enregistrée."}
+        saved = preview_snapshot(plan)
+
+        with patch("src.courses.planner._json_ollama", return_value={"summary": "court"}) as model:
+            restored = restore_preview(saved, document)
+            model.assert_not_called()
+            self.assertEqual(preview_snapshot(restored), saved)
+            generate_overviews(restored, document, max_parts=1, force_parts={restored["parts"][0]["number"]})
         self.assertEqual(restored["parts"][0]["overview"]["status"], "error")
         message = restored["parts"][0]["overview"]["message"]
         self.assertIn("summary invalide", message)
@@ -178,6 +178,7 @@ class PlannerResumeTests(unittest.TestCase):
         self.assertEqual(restored["parts"][1]["overview"], saved["parts"][1]["overview"])
         self.assertEqual([p["title"] for p in restored["parts"]], [p["title"] for p in saved["parts"]])
 
+class PlannerResumeTests(unittest.TestCase):
     def test_resume_refuses_wrong_hash(self):
         from src.courses.planner import restore_preview
         with self.assertRaisesRegex(ValueError, "correspond"):

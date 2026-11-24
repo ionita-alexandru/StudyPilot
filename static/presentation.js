@@ -3,7 +3,7 @@ window.addEventListener('study-progress',()=>{states=StudyProgress.legacy()});
 window.addEventListener('storage',()=>{states=StudyProgress.legacy();if(courses.length&&view==='cards')render()});
 function filtered(){return c().cards.filter(x=>(!type||x.type===type)&&normalize(x.title+' '+(x.aliases||[]).join(' ')+' '+x.summary+' '+x.sections.map(s=>s.content).join(' ')).includes(normalize(query)))}
 function known(){return c().cards.filter(x=>states[x.id]==='known').length}
-function tabs(){document.documentElement.style.setProperty('--accent',c().color);$('#courses').innerHTML=courses.map((x,i)=>`<button class="course-tab ${i===current?'active':''}" data-course="${i}" aria-pressed="${i===current}"><span class="eyebrow" style="font-size:9px"><span class="course-dot" style="background:${x.color}"></span>${esc(x.tag)}</span><b>${esc(x.title.split(' : ')[0])}</b><small>${x.cards.length} fiche${x.cards.length===1?"":"s"} · ${x.pending?"Préparation à terminer":"PDF source"}</small></button>`).join('');document.querySelectorAll('[data-course]').forEach(b=>b.onclick=()=>{current=+b.dataset.course;query='';type='';tabs();render()})}
+function tabs(){document.getElementById('gallery-revision').href='/revision?course_id='+encodeURIComponent(c().id);document.documentElement.style.setProperty('--accent',c().color);$('#courses').innerHTML=courses.map((x,i)=>`<button class="course-tab ${i===current?'active':''}" data-course="${i}" aria-pressed="${i===current}"><span class="eyebrow" style="font-size:9px"><span class="course-dot" style="background:${x.color}"></span>${esc(x.tag)}</span><b>${esc(x.title.split(' : ')[0])}</b><small>${x.cards.length} fiche${x.cards.length===1?"":"s"} · ${x.pending?"Préparation à terminer":"PDF source"}</small></button>`).join('');document.querySelectorAll('[data-course]').forEach(b=>b.onclick=()=>{current=+b.dataset.course;query='';type='';tabs();render()})}
 function nav(v){if(v==='revision'){window.location.href='/revision?course_id='+encodeURIComponent(c().id);return}view='cards';render()}
 
 document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>nav(b.dataset.view));
@@ -41,4 +41,21 @@ function resourcesPanel(){
   return `<details class="study-resources"><summary>Exemples, exercices et compléments du cours · ${items.length}</summary><div class="resource-list">${items.map(r=>`<button data-resource="${r.id}">${r.role==='exercise'?'Exercice · ':r.role==='example'?'Exemple · ':''}${esc(r.title)}</button>`).join('')}</div></details>`;
 }
 $('#close').onclick=()=>$('#detail').close();$('#detail').onclick=e=>{if(e.target===$('#detail')){const r=$('#detail').getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)$('#detail').close()}};
-fetch('/api/presentation').then(r=>{if(!r.ok)throw Error('Données indisponibles');return r.json()}).then(data=>{courses=data;if(!courses.length)throw Error("Aucune fiche disponible");tabs();render()}).catch(()=>{$('#content').innerHTML='<div class="app-error"><h2>Les cours ne sont pas accessibles.</h2><p>Ouvrez vos pages de cours depuis l’accueil. Aucun ensemble de fiches validées n’est actuellement disponible dans cet espace.</p></div>'});
+fetch('/api/presentation')
+  .then(response => {
+    if (!response.ok) throw Error('Données indisponibles');
+    return response.json();
+  })
+  .then(data => {
+    courses = data;
+    if (courses.length) {
+      tabs();
+      render();
+    } else {
+      $('#content').innerHTML = '<div class="empty"><h2>Ta bibliothèque est vide</h2><p>Ajoute ton premier PDF pour préparer tes fiches.</p><a href="/upload">Ajouter un cours →</a></div>';
+    }
+  })
+  .catch(() => {
+    $('#content').innerHTML = '<div class="app-error"><h2>Chargement des fiches impossible</h2><p>Réessaie dans un instant ou retourne à tes cours.</p><a href="/presentation">Réessayer</a> · <a href="/">Mes cours</a></div>';
+  })
+  .finally(() => $('#content').setAttribute('aria-busy', 'false'));

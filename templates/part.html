@@ -3,9 +3,8 @@
 {% block body_class %}chapter-workspace{% endblock %}
 {% block styles %}<link rel="stylesheet" href="/static/study_sessions.css">{% endblock %}
 {% block content %}
-<p class="eyebrow">DISCUSSION · CHAPITRE {{ part.number }} / {{ plan.parts|length }}</p>
-<h1>{{ part.title }}</h1>
-<p class="muted">Pose une question sur ce chapitre ou sur l’ensemble du cours.</p>
+<header class="learning-page-heading"><p class="eyebrow">CHAPITRE {{ part.number }} / {{ plan.parts|length }}</p>
+<h1>{{ part.title }}</h1></header>
 <div class="study-actions chapter-prompts"><button type="button" data-prompt="Explique-moi simplement cette partie.">Expliquer</button><button type="button" data-prompt="Quelles sont les notions les plus importantes de cette partie ?">Notions clés</button><button type="button" data-prompt="À quoi sert cette partie dans le cours ?">À quoi ça sert ?</button></div>
 <details class="learning-panel chapter-context"><summary>Consulter le chapitre · aperçu, fiches et sources</summary>
 <p><a href="{{ pdf_url }}#page={{ part.page_start }}" target="_blank" rel="noopener">Ouvrir le PDF · pages {{ part.page_start }}–{{ part.page_end }} ↗</a></p>
@@ -244,6 +243,7 @@
                   current
                 {% endif %}
               "
+              {% if item.number|string == part.number|string %}aria-current="page"{% endif %}
             >
               <span>
                 {{ item.number }}

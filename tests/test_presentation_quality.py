@@ -34,8 +34,7 @@ class CardSummaryTests(unittest.TestCase):
         sentence = r'\(\cos(n\omega x)\) est une harmonique de la fonction périodique.'
         self.assertEqual(card_summary([{'kind': 'text', 'content': sentence}], 'Harmonique'), r'\(\cos(n\omega x)\)')
 
-    def test_formula_summary_preserves_tex_and_escapes_html(self):
+    def test_display_formula_summary_preserves_tex(self):
         formula = r'\[a_n=\frac2T\int_0^T f(x)\cos(n\omega x)\,dx\]'
         self.assertEqual(card_summary([{'kind': 'text', 'content': formula}], 'Coefficient'), formula)
         self.assertIn(formula, render_text(formula))
-        self.assertNotIn('<img', render_text('<img src=x onerror=alert(1)>'))

@@ -1,1 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="12" fill="#182942"/><path d="M9 12c4-1 7 0 11 3 4-3 7-4 11-3v17c-4-1-7 0-11 3-4-3-7-4-11-3z" stroke="#91baff" stroke-width="2" stroke-linejoin="round"/><path d="M20 16v15m-6-9 4 3 9-9" stroke="#c6b3ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-labelledby="name">
+  <title id="name">StudyPilot</title>
+  <rect width="48" height="48" rx="13" fill="#a7ebc9"/>
+  <path d="m7 15 13 4 19-9-9 24-10-5-8 1z" fill="#193e34"/>
+  <path d="m13 19 8 4 14-10-13 14-8-3z" fill="#a7ebc9"/>
+  <path d="m11 33 9-1 8 4" fill="none" stroke="#193e34" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

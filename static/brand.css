@@ -1,0 +1,16 @@
+:root {
+  color-scheme: dark;
+  --sp-canvas: #101917;
+  --sp-surface: #192421;
+  --sp-ink: #f4f3e9;
+  --sp-muted: #adbbb2;
+  --sp-accent: #a7ebc9;
+  --sp-line: #374740;
+  --sp-serif: Georgia, "Times New Roman", serif;
+  --sp-sans: "Segoe UI", system-ui, sans-serif;
+}
+:focus-visible {
+  outline: 3px solid var(--sp-accent);
+  outline-offset: 3px;
+}
+::selection { color: #101917; background: #a7ebc9; }

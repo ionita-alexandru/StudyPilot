@@ -1,21 +1,10 @@
 """Tests de navigation de l'interface moderne StudyPilot."""
 
-import importlib.util
 import re
 import unittest
 from unittest.mock import patch
 
-
-FLASK_AVAILABLE = (
-    importlib.util.find_spec("flask")
-    is not None
-)
-
-
-if FLASK_AVAILABLE:
-    import app as webapp
-else:
-    webapp = None
+import app as webapp
 
 
 COURSE = {
@@ -74,10 +63,6 @@ PLAN = {
 }
 
 
-@unittest.skipUnless(
-    FLASK_AVAILABLE,
-    "Flask non disponible dans cet environnement de test",
-)
 class AppNavigationTests(
     unittest.TestCase
 ):

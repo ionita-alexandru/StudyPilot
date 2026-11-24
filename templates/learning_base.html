@@ -2,11 +2,14 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,interactive-widget=resizes-content">
   <title>{% block title %}{% endblock %} · StudyPilot</title>
+  <link rel="icon" type="image/svg+xml" href="/static/logo.svg">
   <link rel="stylesheet" href="/static/learning.css">
   <link rel="stylesheet" href="/static/study_chat.css">
   {% block styles %}{% endblock %}
+  <link rel="stylesheet" href="/static/brand.css">
+  <link rel="stylesheet" href="/static/learning_theme.css">
   <script src="/static/study_progress.js"></script>
   <script src="/static/study_chat.js" defer></script>
   <script src="/static/learning_shell.js" defer></script>
@@ -14,23 +17,29 @@
   <script async src="/static/vendor/mathjax/tex-chtml.js"></script>
 </head>
 <body class="learning-workspace {% block body_class %}{% endblock %}">
+  {% set section = "documents" if request.endpoint == "complement_page" else "apprendre" if request.endpoint != "revision_page" else "" %}
+  {% set course_url = url_for("course", course_id=course.course_id) if course else url_for("index") %}
   <a class="skip-link" href="#learning-content">Aller au contenu</a>
   <header class="learning-topbar">
     <button id="menu-toggle" type="button" aria-controls="learning-sidebar" aria-expanded="true" aria-label="Masquer le menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M9 4v16"/></svg></button>
-    <span>Mon espace de travail</span>
-    <a data-course-notions {% if not course %}hidden{% endif %} href="{{ url_for('course',course_id=course.course_id) if course else url_for('index') }}#notions">Les notions <span aria-hidden="true">↗</span></a>
+    <a class="mobile-learning-brand" href="/"><img src="/static/logo.svg" width="24" height="24" alt="">StudyPilot</a>
+    <a class="topbar-course" data-course-context {% if not course %}hidden{% endif %} href="{{ course_url }}" title="{{ course.title if course else '' }}">{{ course.title if course else '' }}</a>
+    <a class="topbar-notions" data-course-notions {% if not course %}hidden{% endif %} href="{{ course_url }}#notions">Les notions <span aria-hidden="true">↗</span></a>
   </header>
-  <button class="menu-backdrop" id="menu-backdrop" aria-label="Fermer le menu" hidden></button>
+  <button class="menu-backdrop" id="menu-backdrop" tabindex="-1" aria-hidden="true" hidden></button>
   <aside class="learning-sidebar" id="learning-sidebar" aria-label="Menu du cours">
-    <a class="learning-brand" href="/"><img src="/static/logo.svg" width="32" height="32" alt="">StudyPilot</a>
+    <div class="learning-sidebar-head">
+      <a class="learning-brand" href="/"><img src="/static/logo.svg" width="32" height="32" alt="">StudyPilot</a>
+      <button id="menu-close" type="button" aria-label="Fermer le menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+    </div>
     <a class="library-link" href="/"><span aria-hidden="true">←</span> Mes cours</a>
     <div class="sidebar-course" {% if not course %}hidden{% endif %}><span class="eyebrow">COURS ACTUEL</span><p data-course-title>{{ course.title if course else '' }}</p></div>
     <nav aria-label="Navigation du cours" data-course-navigation {% if not course %}hidden{% endif %}>
-      <a data-course-nav="apprendre" href="{{ url_for('course',course_id=course.course_id) if course else url_for('index') }}#apprendre" aria-current="page"><span aria-hidden="true">◇</span>Apprendre</a>
-      <a data-course-nav="documents" href="{{ url_for('course',course_id=course.course_id) if course else url_for('index') }}#documents"><span aria-hidden="true">▤</span>Mes documents</a>
-      <a data-course-nav="progression" href="{{ url_for('course',course_id=course.course_id) if course else url_for('index') }}#progression"><span aria-hidden="true">↗</span>Ma progression</a>
+      <a data-course-nav="apprendre" href="{{ course_url }}#apprendre" {% if section == "apprendre" %}aria-current="{{ 'page' if request.endpoint == 'course' else 'location' }}"{% endif %}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6v14M4 5c3-1 5 0 8 2 3-2 5-3 8-2v13c-3-1-5 0-8 2-3-2-5-3-8-2Z"/></svg>Apprendre</a>
+      <a data-course-nav="documents" href="{{ course_url }}#documents" {% if section == "documents" %}aria-current="location"{% endif %}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7a2 2 0 0 1 2-2h4l2 2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/></svg>Mes documents</a>
+      <a data-course-nav="progression" href="{{ course_url }}#progression"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19h14M7 15v-4m5 4V8m5 7V5"/></svg>Ma progression</a>
     </nav>
-    <div class="sidebar-footer"><a data-course-session {% if not course %}hidden{% endif %} href="{{ url_for('revision_page',course_id=course.course_id) if course else url_for('revision_page') }}">M’entraîner en session <span aria-hidden="true">→</span></a><p>Une idée à comprendre.<br>Un pas de plus.</p></div>
+    <div class="sidebar-footer"><a data-course-session {% if not course %}hidden{% endif %} {% if request.endpoint == 'revision_page' %}aria-current="page"{% endif %} href="{{ url_for('revision_page',course_id=course.course_id) if course else url_for('revision_page') }}"><span>Préparer ma révision</span><span aria-hidden="true">→</span></a></div>
   </aside>
   <main class="learning-main" id="learning-content" tabindex="-1">{% block content %}{% endblock %}</main>
   {% block assistant %}{% endblock %}

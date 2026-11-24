@@ -1,5 +1,13 @@
 # Historique des changements
 
+## 2026-11-24 — Reprise du parcours et de la bibliothèque
+
+- Nouveau logo StudyPilot et navigation commune aux écrans de travail. Depuis l’accueil, le cours sélectionné détermine la destination du chat et des raccourcis. La bibliothèque et la galerie restent accessibles sur petit écran.
+- Dans un cours, le menu indique la rubrique active. Sur mobile, il gère le focus et la fermeture au clavier. L’import et la galerie proposent des actions adaptées au document ou à l’état de chargement.
+- Le bilan de révision compte la dernière autoévaluation de chaque fiche. La préparation d’une session devient disponible après chargement des notions.
+- Les contrôles de reprise et de validation de plans s’exécutent sur des PDF d’essai. Le lanceur donne le motif des tests ignorés et le guide de la suite explique les comportements couverts.
+- Première comparaison ciblée de fiches éditoriales avec leurs pages d’origine et de réponses synthétiques archivées. Les constats et les limites figurent dans [les priorités](docs/PRIORITES.md).
+
 ## 2026-10-20 — Comparaison approfondie et repères conservés
 
 - Campagne manuelle : trois questions plus exigeantes et le véritable générateur

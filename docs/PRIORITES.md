@@ -22,6 +22,22 @@ de figure non étayée passer la relecture. La consigne a été renforcée ensui
 et son effet sur une nouvelle génération reste à mesurer. L’import complet d’un
 complément avec Gemini reste également à évaluer. Gemma reste le moteur par défaut.
 
+Première revue ciblée le 24 novembre, sur des fiches éditoriales existantes et
+les sorties synthétiques enregistrées en octobre :
+
+| Cas | Source | Constat |
+| --- | --- | --- |
+| Contre-exemple de diagonalisabilité | PDF d'algèbre, page physique 14 | La matrice, le polynôme et les dimensions des espaces propres concordent avec le PDF. |
+| Théorème de Dirichlet | PDF de Fourier, page physique 6 | La fiche conserve la périodicité, la régularité par morceaux et la moyenne des limites latérales. |
+| Pseudo-classes des liens | PDF CSS, page physique 24 | Les cinq états concordent. La remarque sur la coexistence des états et l'ordre à spécificité égale interprète l'exemple et gagnerait à être présentée comme telle. |
+| Figure non transcrite | Mini-cours synthétique, page 6 | La sortie acceptée en octobre décrit le rôle des branches et des étiquettes sans transcription qui l'établisse. La couverture devrait signaler la limite sans créer de ressource descriptive. |
+| Effectifs d'enquête contradictoires | Corpus synthétique, documents A et B | Les réponses enregistrées distinguent 40 et 400 et refusent la conclusion causale. La réponse Gemini ajoute un jugement sur la fiabilité que le corpus ne permet pas d'établir. |
+
+Cet échantillon n'évalue pas un nouvel import ni la récupération des sources
+par le chatbot en situation réelle. Les réponses d'octobre provenaient d'appels
+directs aux modèles. Pour réévaluer la consigne corrigée, rejouer le cas de la
+figure et suivre une question sourcée via le chatbot du cours.
+
 ## Demandes confirmées et constats
 
 L’utilisateur demande une organisation claire, moins de fonctions qui se recouvrent,

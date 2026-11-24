@@ -30,18 +30,21 @@ class PresentationTests(unittest.TestCase):
         for text in ['Ensemble vide.', 'La tension augmente, le courant diminue, la résistance varie, le système se stabilise.',
                      'The algorithm visits vertices, records visits, stacks neighbours, stops the search.',
                      '速度表示位置随时间的变化。']:
-            self.assertIsNone(publication_issue(card(text)))
+            with self.subTest(text=text):
+                self.assertIsNone(publication_issue(card(text)))
 
     def test_technical_support_is_not_rejected_without_prose(self):
         for text in ['```css\ncolor: red;\n```', 'color: red;', r'\[ E = mc^2 \]',
                      'Étapes :\n1. Mesurer.\n2. Comparer.', 'Couleurs : rouge, vert, bleu.']:
-            self.assertIsNone(publication_issue(card(text)))
+            with self.subTest(text=text):
+                self.assertIsNone(publication_issue(card(text)))
 
     def test_empty_or_title_only_is_rejected(self):
         for text in ['   ', 'Notion', '```\n\n```']:
             self.assertIsNotNone(publication_issue(card(text)))
 
     def test_html_is_escaped_everywhere(self):
+        self.assertIn('&lt;img', render_text('<img src=x onerror=alert(1)>'))
         html = render_text('```html\n<script>alert(1)</script>\n```\n\n**<img src=x onerror=alert(1)>** et `<div>`')
         self.assertNotIn('<script>', html)
         self.assertNotIn('<img', html)

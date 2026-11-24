@@ -212,7 +212,7 @@ class PlanManagementTests(unittest.TestCase):
             plan_manager.validate_candidate(bad, self.pdf)
 
 
-    def test_prepare_candidate_has_no_arbitrary_seven_page_limit(self):
+    def test_candidate_for_a_continuous_topic_validates_and_covers_every_page(self):
         long_pdf = self.pdf.parent / "long-course.pdf"
         document = pymupdf.open()
         for index in range(10):
@@ -228,49 +228,14 @@ class PlanManagementTests(unittest.TestCase):
         candidate_path = self.plans / "long-course.candidate.json"
         plan_manager.prepare_candidate(long_pdf, candidate_path)
         candidate = plan_manager.load_plan_file(candidate_path)
+        validated = plan_manager.validate_candidate(candidate, long_pdf)
 
         self.assertEqual(
-            [page for part in candidate["parts"] for page in part["source_pages"]],
+            [page for part in validated["parts"] for page in part["source_pages"]],
             list(range(1, 11)),
         )
         self.assertTrue(any(part["page_end"] - part["page_start"] + 1 > 7
                             for part in candidate["parts"]))
-
-    def test_three_real_candidates_are_structurally_valid(self):
-        root = Path(__file__).resolve().parents[1]
-        folder = root / 'data' / 'pdfs'
-
-        for name in [
-            'Cours-de-CSS-c41d0f1887',
-            'Séries de Fourier ING2 2024-2025',
-            'Chapitre 4 Réduction endomorphismes ING2 2024-2025'
-        ]:
-            pdf = folder / f'{name}.pdf'
-            candidate = (
-                root / 'data' / 'plans'
-                / f'{name}.candidate.json'
-            )
-
-            if not pdf.is_file() or not candidate.is_file():
-                self.skipTest(
-                    'PDF et plans réels non fournis dans la suite locale'
-                )
-
-            value = json.loads(
-                candidate.read_text(encoding='utf-8')
-            )
-
-            plan_manager.validate_candidate(value, pdf)
-
-            self.assertEqual(
-                [
-                    page
-                    for part in value['parts']
-                    for page in part['source_pages']
-                ],
-                list(range(1, value['page_count'] + 1))
-            )
-
 
 if __name__ == '__main__':
     unittest.main()

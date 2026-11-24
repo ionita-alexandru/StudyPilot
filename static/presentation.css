@@ -21,3 +21,40 @@ a{color:#b3a2ff}.answer{color:#d4dcea}.section h4,.kicker{color:var(--muted)}
 
 .brand{color:var(--ink);text-decoration:none;width:max-content}.brand:hover{color:#c5b7ff}
 .section .sp-formula,.answer .sp-formula{overflow-x:auto;max-width:100%;padding:3px 0 8px}.section,.answer{min-width:0}.section mjx-container,.answer mjx-container{max-width:100%}.card-summary{font-size:12px;line-height:1.65;color:var(--muted);margin:0 0 17px}.card-summary p{margin:0}.card-summary .sp-formula{overflow-x:auto;max-width:100%}.card-summary mjx-container{font-size:100%!important}.section pre{overflow-x:auto;white-space:pre;overflow-wrap:normal}.modal-content .section p{line-height:1.75}
+/* Les surfaces de la bibliothèque suivent les couleurs de l'espace de cours. */
+:root {
+  --paper: var(--sp-canvas);
+  --ink: var(--sp-ink);
+  --muted: var(--sp-muted);
+  --line: var(--sp-line);
+  --violet: var(--sp-accent);
+}
+body { background: var(--paper); font-family: var(--sp-sans); }
+.sidebar { background: #121d19; }
+.navs { margin-top: 36px; }
+.nav { min-height: 44px; text-decoration: none; }
+.nav:hover, .nav.active { color: var(--sp-accent); background: #22352c; }
+.hero { padding: 12px 0 20px; background: none; border: 0; }
+.hero h1 { font: 500 clamp(2.5rem, 5vw, 4rem)/1.05 var(--sp-serif); letter-spacing: -.05em; margin: 0; }
+.hero p { max-width: 56ch; font-size: 1rem; }
+.course-tab, .search, .filter, .card, .panel, .app-error, dialog { background: var(--sp-surface); color: var(--sp-ink); }
+.course-tab.active { border-color: var(--sp-accent); box-shadow: inset 0 -2px var(--sp-accent); }
+.card:hover { border-color: var(--sp-accent); }
+.card-summary, .card p { color: var(--sp-muted); font-size: .92rem; }
+.badge, .secondary { background: #283c32; color: var(--sp-accent); }
+.primary, .page-btn.active { color: var(--sp-canvas); background: var(--sp-accent); }
+.progress { background: #2c3d35; }
+.progress>div { background: var(--sp-accent); }
+.source-side, .section pre { background: #14201b; }
+a, .page-btn, .brand:hover { color: var(--sp-accent); }
+a.brand { color: var(--sp-ink); }
+.page-btn { border-color: var(--sp-line); background: var(--sp-canvas); }
+.close { padding: 8px 14px; min-height: 40px; color: var(--sp-ink); }
+.tools { flex-wrap: wrap; }
+.tools > * { min-width: 0; }
+@media(max-width:720px) {
+  .navs { margin-top: 12px; gap: 4px; }
+  .nav { white-space: nowrap; }
+  .hero { padding: 8px 0 16px; }
+  .title-row { flex-wrap: wrap; }
+}

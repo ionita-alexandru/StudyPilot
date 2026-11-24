@@ -1,52 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Importer un cours | StudyPilot</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='upload.css') }}">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ajouter un cours · StudyPilot</title>
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/brand.css">
+  <link rel="stylesheet" href="/static/upload.css">
 </head>
 <body>
-    <header class="site-header">
-        <div class="header-container">
-            <a href="{{ url_for('index') }}" class="logo-link" aria-label="StudyPilot, accueil">
-                <img src="/static/logo.svg" width="38" height="38" alt="StudyPilot">
-            </a>
-            <a href="{{ url_for('index') }}" class="home-link">Accueil</a>
-        </div>
-    </header>
-
-    <main class="upload-page">
-        <a href="{{ url_for('index') }}" class="back-link">← Retour à mes cours</a>
-        <section class="upload-card">
-            <span class="upload-eyebrow">Nouveau cours</span>
-            <h1>Ajoute ton PDF</h1>
-            <p class="upload-intro">StudyPilot prépare le plan, les vues d’ensemble et les fiches de révision à partir de ton cours. Tu peux ensuite réviser et poser tes questions sur le document.</p>
-            <form id="upload-form" enctype="multipart/form-data">
-                <label for="pdf-file" class="upload-dropzone">
-                    <span class="upload-dropzone-icon" aria-hidden="true">＋</span>
-                    <strong>Choisir un fichier PDF</strong>
-                    <span id="selected-filename">Aucun fichier sélectionné</span>
-                    <input type="file" id="pdf-file" name="pdf" accept=".pdf,application/pdf" required>
-                </label>
-                <p class="upload-help">PDF · 20 Mo maximum · 100 pages maximum. La lecture des scans dépend de leur lisibilité et de l’OCR installé.</p>
-                <button type="submit" id="upload-submit" class="upload-submit">Analyser mon cours</button>
-            </form>
-
-            <div id="upload-progress" class="upload-progress" hidden role="status" aria-live="polite">
-                <div class="upload-spinner" aria-hidden="true"></div>
-                <div>
-                    <strong id="upload-status-title">Préparation de l'import…</strong>
-                    <p id="upload-status-detail">Patiente pendant l'analyse.</p>
-                </div>
-            </div>
-            <p id="upload-error" class="upload-error" role="alert" hidden></p>
-            <button type="button" id="upload-resume" class="upload-submit" hidden>Reprendre l’analyse</button>
-            <a id="upload-open" class="back-link" hidden>Consulter le cours disponible →</a>
-        </section>
-        <p class="upload-note">La préparation peut prendre plusieurs minutes. En cas d’interruption, recharge cette page pour retrouver l’import et reprendre les étapes restantes.</p>
-    </main>
-    <script src="{{ url_for('static', filename='upload.js') }}" defer></script>
+  <header><a href="/" class="wordmark"><img src="/static/logo.svg" width="36" height="36" alt="">StudyPilot</a><a href="/">Mes cours <span aria-hidden="true">↗</span></a></header>
+  <main>
+    <h1>Ajouter un cours</h1>
+    <p class="intro">Choisis le PDF de ton cours pour en préparer le plan et les fiches de révision.</p>
+    <section class="upload-card" aria-label="Import du document">
+      <form id="upload-form" enctype="multipart/form-data">
+        <label for="pdf-file" class="upload-dropzone">
+          <svg viewBox="0 0 40 40" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M10 5h13l7 7v22H10zM23 5v8h7"/><path d="M15 23h10m-5-5v10"/></svg>
+          <strong>Choisir un fichier PDF</strong>
+          <span id="selected-filename">Aucun fichier sélectionné</span>
+          <input type="file" id="pdf-file" name="pdf" accept=".pdf,application/pdf" required aria-describedby="upload-help">
+        </label>
+        <p id="upload-help">20 Mo et 100 pages maximum. Pour un scan, la lecture dépend de la netteté du document et de l’OCR installé.</p>
+        <button type="submit" id="upload-submit" class="upload-submit">Analyser mon cours <span aria-hidden="true">→</span></button>
+      </form>
+      <div id="upload-progress" class="upload-progress" hidden role="status" aria-live="polite">
+        <div class="upload-spinner" aria-hidden="true"></div><div><strong id="upload-status-title">Préparation de l’import…</strong><p id="upload-status-detail">Patiente pendant l’analyse.</p></div>
+      </div>
+      <p id="upload-error" role="alert" hidden></p>
+      <button type="button" id="upload-resume" class="upload-submit" hidden>Reprendre l’analyse</button>
+      <a id="upload-open" hidden>Consulter le cours disponible →</a>
+    </section>
+    <p class="upload-note">La préparation peut prendre quelques minutes. En cas d’interruption, reviens sur cette page pour reprendre l’analyse.</p>
+  </main>
+  <script src="/static/upload.js" defer></script>
 </body>
 </html>
